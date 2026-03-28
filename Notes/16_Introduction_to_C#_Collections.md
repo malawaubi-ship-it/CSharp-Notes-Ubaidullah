@@ -740,9 +740,6 @@ Microsoft, 2021. C# Programming Guide. [online] Available at: https://learn.mi
 Jones, M., 2018. Mastering C# Collections. Packt Publishing.
 
 
-4.1.1. Notes
-ITPCA2 (Second Block)
-4.1.1. Notes
 	•	2. Concurrency in C# - Multithreading and Parallelism
 	•	3. Implementing Multithreading in C#
 	•	9. Concept Overview

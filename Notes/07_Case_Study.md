@@ -58,8 +58,6 @@ Much like with SortDictionary, HashSets have a sorted equivalent, SortedSet. Thi
 [2] Reference source (2024). https://referencesource.microsoft.com/#System/compmod/system/collections/generic/sortedset.cs,bae1c41b842726a2.
 
 
-8.1. Notes
-8.1. Notes
 	•	3. Binary Trees
 	•	4. Tree Traversal
 	•	4.1. Pre-order

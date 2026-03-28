@@ -58,8 +58,6 @@ Virginia Tech has a useful visualisation tool for Insertion Sort[2].
 [2] Insertion sort visualization (2024). https://opendsa-server.cs.vt.edu/OpenDSA/AV/Sorting/insertionsortAV.html.
 
 
-10.1. Notes
-10.1. Notes
 	•	2. Relevance Connection
 	•	3. Bubble Sort
 	•	4. Quicksort

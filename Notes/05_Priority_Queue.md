@@ -355,7 +355,5 @@ Boarding Passenger: Bob (Economy)
 Develop a priority queue to manage patients in the emergency department of a hospital. Patients are assigned a priority from 0 (highest) to 4 (lowest). The queue should ensure that the patients with the highest priority are seen first.
 
 
-6.1. Notes
-6.1. Notes
 	•	2. Activity
 	•	3. Practice Activities

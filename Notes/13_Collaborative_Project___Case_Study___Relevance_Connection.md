@@ -24,9 +24,6 @@ You can create string object using one of the following methods −
 	•	By using the string concatenation operator (+)
 	•	By retrieving a property or calling a method that returns a string
 	•	By calling a formatting method to convert a value or an object to its string representation
-3.1. Notes
-ITPCA2 (First Block)
-3.1. Notes
 	•	1.3 Our First C# Program
 	•	1.3.1 How Does Our First C# Program Work?
 	•	1.3.2 Keywords
@@ -630,9 +627,6 @@ Console.WriteLine(/* Output */  
 From the results it is obvious, that concatenating a number to a character string returns in result the string followed by the text representation of the number. Note that the "+" for concatenating strings can cause unpleasant effects on the addition of numArray, because it has equal priority with the operator "+" for mathematical addition. Unless the priorities of the operations are changed by placing the brackets, they will always be executed from left to right.
 
 
-4.1. Notes
-ITPCA2 (First Block)
-4.1. Notes
 	•	1.5 Variables
 	•	1.5.1 Naming Variables - Rules
 	•	1.5.2 Naming Variables - Recommendations
@@ -718,9 +712,6 @@ secondChar = ch; 
 In this week, we discussed the principles, characteristics and features in using Visual Studio IDE. In addition, we critically evaluated the Visual Studio environment. Further, our first C# program was demonstrated and explained. C# datatypes and operators were discussed. Lastly, we discussed variables and their declaration in C#.
 
 
-5.1. Notes
-ITPCA2 (First Block)
-5.1. Notes
 	•	2.1 Introduction
 	•	2.2 Control Statements
 	•	2.2.1 Selection Statements
@@ -1302,9 +1293,6 @@ Explanation:
 	•	For Loop is used to iterate through the array of student scores and apply the logic of categorizing each student's performance.
 
 
-7.1. Notes
-ITPCA2 (First Block)
-7.1. Notes
 	•	3.1 Introduction
 	•	3.1.1 What is an Exception
 	•	3.1.2 Why an exception occurs?
@@ -1558,9 +1546,6 @@ Explanation:
 	•	Custom LoginException class: A custom exception to handle login-specific errors with a descriptive message.
 
 
-8.1. Notes
-ITPCA2 (First Block)
-8.1. Notes
 	•	3.3 Exceptions Handling Classes
 	•	3.4 Exceptions Handling Methods
 	•	3.4.1 Try …Catch Block
@@ -1987,9 +1972,6 @@ Explanation:
 	•	Handling DivideByZeroException: When dividing by zero, the exception is caught, and the program doesn't crash. Instead, a user-friendly message is displayed, and the method returns NaN (Not-a-Number) to indicate an invalid result.
 
 
-9.1. Notes
-ITPCA2 (First Block)
-9.1. Notes
 	•	4.1 Introduction
 	•	4.1.1 Some key Concept
 	•	4.1.2 Class
@@ -2407,9 +2389,6 @@ Explanation:
 	•	Main Program: In the Main method, we instantiate the Library class and create several Book objects. These books are added to the library, and we demonstrate borrowing and returning books by calling the relevant methods.
 
 
-10.1. Notes
-ITPCA2 (First Block)
-10.1. Notes
 	•	4.2 Fundamental Principles of OOP
 	•	4.2.1 Inheritance
 	•	4.2.2 Abstraction
@@ -2896,9 +2875,6 @@ Key Concepts:
 	•	Encapsulation: The internal details of the objects (e.g., how stock is updated) are hidden inside the class, and the objects provide methods to interact with them. This ensures that the user does not need to know how the internal logic works.
 
 
-11.1. Notes
-ITPCA2 (First Block)
-11.1. Notes
 	•	4.3 Class Diagram
 	•	4.3.1 Generalization
 	•	4.3.2 Associations
@@ -2954,9 +2930,6 @@ It represents part-of relationship. In composition, both the entities are depe
 During this week, we acquainted ourselves with some key concept and the principles of object-oriented programming: inheritance, interface implementation, abstraction of data and behaviour, encapsulation of data and class implementation and polymorphism. We also learned the UML and its role in object-oriented modelling. Finally, we have prepared exercises to strengthen our knowledge of the material in this unit.
 
 
-12.1. Notes
-ITPCA2 (First Block)
-12.1. Notes
 	•	5.1 Introduction
 	•	5.2 C# Arrays
 	•	5.2.1 Advantages of C# Arrays
@@ -3444,9 +3417,6 @@ Outcome:
 	•	This system efficiently manages employee shift assignments, ensuring there is no overlap, and makes it easy to monitor shift distribution.
 
 
-14.1. Notes
-ITPCA2 (First Block)
-14.1. Notes
 	•	6.1 Introduction
 	•	6.2 Database Operations in C#
 	•	6.2.1 Database Creation in C#
@@ -4147,9 +4117,6 @@ class MainProgram
 }
 
 
-15.1. Notes
-ITPCA2 (First Block)
-15.1. Notes
 	•	7.1 File Handling
 	•	7.1.1 StreamWriter Class
 	•	7.1.2 StreamReader Class
@@ -4582,9 +4549,6 @@ class MainProgram
 }
 
 
-1.1. Notes
-ITPCA2 (Second Block)
-1.1. Notes
 	•	2. Collaborative Project
 	•	3. Introduction to LINQ
 	•	3.1. Application of LINQ

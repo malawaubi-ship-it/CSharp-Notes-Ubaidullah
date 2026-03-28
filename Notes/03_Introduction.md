@@ -387,8 +387,6 @@ Stacks are an essential data structure in programming, with many real-world appl
 Create a stack in C# that will mimic the browser forward and backward functionality. Each tab will be represented by a string.
 
 
-4.1. Notes
-4.1. Notes
 	•	2. Introduction to Queues
 	•	3. Implementing Queues in C#
 	•	4. Types of Queues in C#

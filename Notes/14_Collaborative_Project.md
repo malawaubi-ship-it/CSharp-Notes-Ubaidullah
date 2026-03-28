@@ -540,9 +540,6 @@ Total Sales Revenue: $9374.00
 Most Expensive Product: Refrigerator
 
 
-2.1. Notes
-ITPCA2 (Second Block)
-2.1. Notes
 	•	2. Introduction to Generics
 	•	3. Generic Methods
 	•	4. Generic Classes

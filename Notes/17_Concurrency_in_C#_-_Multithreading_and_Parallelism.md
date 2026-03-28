@@ -715,9 +715,6 @@ Explanation of Outcome:
 	•	C# Corner. (n.d.). Multithreading in C# with Examples. https://www.c-sharpcorner.com/UploadFile/1e050f/multithreading-in-C-Sharp/ Accessed April 2025.
 
 
-5.1. Notes
-ITPCA2 (Second Block)
-5.1. Notes
 	•	2. C# Networking Concepts
 	•	3. Implement C# Remote Objects (Remote Method Invocation - RMI)
 	•	4. Example 1

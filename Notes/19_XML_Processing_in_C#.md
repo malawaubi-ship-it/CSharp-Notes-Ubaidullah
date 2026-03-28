@@ -465,9 +465,6 @@ Clean, modern querying and creation
 DigitalArchive.xml
 
 
-7.1. Notes
-ITPCA2 (Second Block)
-7.1. Notes
 	•	2. Video Reference
 	•	7. Scenario 1: E-commerce Product Catalog Update
 	•	8. Scenario 2: Employee Data Query and Export to CSV

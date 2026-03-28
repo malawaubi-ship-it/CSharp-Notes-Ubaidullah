@@ -50,7 +50,5 @@ Virginia Tech has a useful visualisation tool for Quicksort[2].
 [2] Quicksort Visualization (2024). https://opendsa-server.cs.vt.edu/embed/quicksortAV.
 
 
-11.1. Notes
-11.1. Notes
 	•	2. Exploring Graphs
 	•	3. Search Algorithms

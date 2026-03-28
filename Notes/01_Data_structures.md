@@ -394,8 +394,6 @@ FIFO-based task processing
 These case studies cover real-world scenarios where linked lists, stacks, and queues are used effectively. Let me know if you need further modifications or additional examples! 🚀
 
 
-2.1. Notes
-2.1. Notes
 	•	3. Data Structures and Input/Output in C#
 	•	4. Lists in C#
 	•	4.1. Input and Output in C#

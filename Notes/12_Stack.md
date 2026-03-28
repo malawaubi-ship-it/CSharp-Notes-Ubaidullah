@@ -37,6 +37,4 @@ As elements are added to a Queue, the capacity is automatically increased as req
 Queue accepts null as a valid value for reference types and allows duplicate elements.
 
 
-13.1. Notes
-13.1. Notes
 	•	3. Creating String Object

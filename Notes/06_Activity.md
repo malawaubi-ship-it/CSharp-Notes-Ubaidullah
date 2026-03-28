@@ -258,8 +258,6 @@ Conclusion
 These four case studies demonstrate how Priority Queues improve efficiency in different real-world applications.
 
 
-7.1. Notes
-7.1. Notes
 	•	3. Hashing
 	•	3.1. Hash Tables
 	•	3.2. Dictionaries

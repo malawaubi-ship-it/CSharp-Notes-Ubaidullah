@@ -511,8 +511,6 @@ Queue<string>
 Create a queue in C# that will schedule customers in a pharmacy. Customers will enqueue and get a ticket. Their ticket number will then be called when it’s their turn to use the counter.
 
 
-5.1. Notes
-5.1. Notes
 Description
  
  

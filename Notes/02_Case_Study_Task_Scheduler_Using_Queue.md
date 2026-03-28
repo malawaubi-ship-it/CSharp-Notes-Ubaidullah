@@ -684,8 +684,6 @@ class MainProgram {
     }
 }
  
-3.1. Notes
-3.1. Notes
 	•	2. Introduction
 	•	3. Using Stack in C#:
 	•	4. Advantages of Using Stacks:

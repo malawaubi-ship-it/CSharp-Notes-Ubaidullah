@@ -499,9 +499,6 @@ Microsoft, 2024. Generics in C#. [online] Microsoft Learn. Available at: https
 Albahari, J. and Albahari, B., 2021. C# 10 in a Nutshell: The Definitive Reference. 7th ed. Sebastopol: O’Reilly Media.
 Microsoft, 2024. Collections in .NET. [online] Microsoft Learn. Available at: https://learn.microsoft.com/en-us/dotnet/standard/collections/ [Accessed 11 April 2025].
  
-3.1. Notes
-ITPCA2 (Second Block)
-3.1. Notes
 	•	2. Introduction to C# Collections
 	•	3. List (Generic List)
 	•	4. Dictionary

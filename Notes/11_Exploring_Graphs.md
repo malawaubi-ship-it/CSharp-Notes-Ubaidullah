@@ -24,7 +24,5 @@ Kruskal's algorithm is a minimum spanning tree algorithm that takes a graph as 
 	•	 form a tree that includes every vertex
 	•	has the minimum sum of weights among all the trees that can be formed from the graph
 Prim’s algorithm always starts with a single node, and it moves through several adjacent nodes, to explore all of the connected edges along the way. The idea behind Prim’s algorithm is simple, a spanning tree means all vertices must be connected. So, the two disjoint subsets of vertices must be connected to make a Spanning Tree.
-12.1. Notes
-12.1. Notes
 	•	2. Stack
 	•	3. Queue

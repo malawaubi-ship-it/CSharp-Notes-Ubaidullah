@@ -503,9 +503,6 @@ Sent product ID: 101
 Server response: Product 101 is in stock!
 
 
-6.1. Notes
-ITPCA2 (Second Block)
-6.1. Notes
 	•	2. XML Processing in C#
 	•	3. Build XML Documents Using C#
 	•	4. Building XML Using XDocument (LINQ to XML)

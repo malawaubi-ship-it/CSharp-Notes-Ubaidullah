@@ -114,8 +114,6 @@ In a min-heap, parent nodes are smaller than their child nodes. The root node co
 In a max-heap, parent nodes are larger than their child nodes. The root node contains the maximum value.
 
 
-9.1. Notes
-9.1. Notes
 	•	2. Relevance Connection
 	•	3. Sorting
 	•	3.1. Selection Sort

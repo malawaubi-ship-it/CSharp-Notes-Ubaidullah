@@ -1,9 +1,9 @@
 # Module 19: XML Processing in C#
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this lesson, you should be able to:
-	•	Understand C# XML processing
+	-	Understand C# XML processing
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469
@@ -11,32 +11,32 @@ Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice H
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. XML Processing in C#
+## 2. XML Processing in C#
 XML Processing in C#
 Explain XML Parser Architectures and APIs
 XML (Extensible Markup Language) is a widely used standard for encoding documents in a format that is both human-readable and machine-readable. XML processing involves parsing XML documents, modifying them, and generating new XML documents. In C#, there are several ways to process XML data, each suitable for different use cases and performance needs.
-1. XML Parser Architectures:
+## 1. XML Parser Architectures:
 There are several different XML parser architectures used to process XML documents in C#. Each has its advantages, depending on the specific scenario, such as performance, memory usage, and the complexity of the XML structure.
-	•	DOM (Document Object Model):
-	•	The DOM parser loads the entire XML document into memory as a tree structure. This model allows for easy access to the entire document and modification of any element. The DOM model is best used when you need to manipulate or traverse the entire XML structure.
-	•	Advantages: Easy to use, allows random access to elements, suitable for small to medium-sized XML documents.
-	•	Disadvantages: Memory-intensive, can be slow for large documents.
+	-	DOM (Document Object Model):
+	-	The DOM parser loads the entire XML document into memory as a tree structure. This model allows for easy access to the entire document and modification of any element. The DOM model is best used when you need to manipulate or traverse the entire XML structure.
+	-	Advantages: Easy to use, allows random access to elements, suitable for small to medium-sized XML documents.
+	-	Disadvantages: Memory-intensive, can be slow for large documents.
 In C#, the DOM model is implemented using the XmlDocument class.
-	•	SAX (Simple API for XML):
-	•	SAX is an event-driven, read-only parser. It reads the XML document sequentially from top to bottom and triggers events as it encounters elements, attributes, and other XML components. SAX does not load the entire XML into memory, making it more memory-efficient for processing large XML documents.
-	•	Advantages: Memory-efficient, fast for large documents, suitable for streaming XML data.
-	•	Disadvantages: Read-only, cannot be used to modify the XML document during parsing.
+	-	SAX (Simple API for XML):
+	-	SAX is an event-driven, read-only parser. It reads the XML document sequentially from top to bottom and triggers events as it encounters elements, attributes, and other XML components. SAX does not load the entire XML into memory, making it more memory-efficient for processing large XML documents.
+	-	Advantages: Memory-efficient, fast for large documents, suitable for streaming XML data.
+	-	Disadvantages: Read-only, cannot be used to modify the XML document during parsing.
 In C#, SAX-like functionality is provided by the XmlReader class.
-	•	LINQ to XML (Language Integrated Query):
-	•	LINQ to XML allows for querying and manipulating XML documents using LINQ syntax. It provides a more modern, functional way to work with XML, offering a higher-level API that makes it easier to read and modify XML data in a declarative manner.
-	•	Advantages: Clean and readable code, flexible, suitable for modern .NET development.
-	•	Disadvantages: Can be slower than the other approaches for large XML files.
+	-	LINQ to XML (Language Integrated Query):
+	-	LINQ to XML allows for querying and manipulating XML documents using LINQ syntax. It provides a more modern, functional way to work with XML, offering a higher-level API that makes it easier to read and modify XML data in a declarative manner.
+	-	Advantages: Clean and readable code, flexible, suitable for modern .NET development.
+	-	Disadvantages: Can be slower than the other approaches for large XML files.
 In C#, LINQ to XML is provided through the XDocument and XElement classes.
-2. XML Parsing APIs in C#:
-	•	XmlDocument (DOM-based parsing): System.Xml.XmlDocument provides an object model for XML documents. It allows easy manipulation of XML content, adding or removing elements, and navigating the document.
-	•	XmlReader (SAX-based parsing): System.Xml.XmlReader provides a forward-only parser to read XML data. It does not load the entire document into memory, making it ideal for large files.
-	•	XDocument/XElement (LINQ to XML): System.Xml.Linq.XDocument and System.Xml.Linq.XElement offer a LINQ-friendly way to work with XML documents. They provide methods to query XML data, modify it, and create new XML documents.
-3. Build XML Documents Using C#
+## 2. XML Parsing APIs in C#:
+	-	XmlDocument (DOM-based parsing): System.Xml.XmlDocument provides an object model for XML documents. It allows easy manipulation of XML content, adding or removing elements, and navigating the document.
+	-	XmlReader (SAX-based parsing): System.Xml.XmlReader provides a forward-only parser to read XML data. It does not load the entire document into memory, making it ideal for large files.
+	-	XDocument/XElement (LINQ to XML): System.Xml.Linq.XDocument and System.Xml.Linq.XElement offer a LINQ-friendly way to work with XML documents. They provide methods to query XML data, modify it, and create new XML documents.
+## 3. Build XML Documents Using C#
 Build XML Documents Using C#
 C# provides multiple ways to build XML documents, depending on the required performance and memory constraints. Below are examples of building XML documents using different approaches: XmlDocument (DOM), XmlWriter (streaming), and XDocument (LINQ to XML).
 Building XML Using XmlDocument (DOM Approach)
@@ -142,7 +142,7 @@ Expected Output (LibraryWriter.xml):
 </Library>
 
  
-4. Building XML Using XDocument (LINQ to XML)
+## 4. Building XML Using XDocument (LINQ to XML)
 Building XML Using XDocument (LINQ to XML)
 LINQ to XML offers a more modern and declarative way to build and query XML documents. It allows for LINQ queries directly on XML, providing a more readable syntax.
 Example:
@@ -178,11 +178,11 @@ Expected Output (LibraryLinq.xml):
 </Library>
 
 Conclusion
-	•	DOM Parsing (XmlDocument) is best for applications that need to load and modify the entire XML structure in memory.
-	•	SAX Parsing (XmlReader) is a memory-efficient way to read XML documents sequentially, suitable for large documents.
-	•	LINQ to XML (XDocument, XElement) provides a modern, readable, and flexible approach for working with XML data.
+	-	DOM Parsing (XmlDocument) is best for applications that need to load and modify the entire XML structure in memory.
+	-	SAX Parsing (XmlReader) is a memory-efficient way to read XML documents sequentially, suitable for large documents.
+	-	LINQ to XML (XDocument, XElement) provides a modern, readable, and flexible approach for working with XML data.
  
-5. Example 1: Building XML Using XmlDocument (DOM Approach)
+## 5. Example 1: Building XML Using XmlDocument (DOM Approach)
 Example 1: Building XML Using XmlDocument (DOM Approach)
 The XmlDocument class provides a DOM-based approach to creating and manipulating XML documents. It loads the XML document into memory and allows easy access to the nodes.
 Code Example:
@@ -233,7 +233,7 @@ Expected Output (Library.xml):
 </Library>
 
  
-6. Example 2: Building XML Using XmlWriter (Streaming Approach)
+## 6. Example 2: Building XML Using XmlWriter (Streaming Approach)
 Example 2: Building XML Using XmlWriter (Streaming Approach)
 The XmlWriter class provides a streaming approach to XML creation. It is efficient for generating large XML documents since it does not load the entire document into memory at once.
 Code Example:
@@ -287,7 +287,7 @@ Expected Output (LibraryWriter.xml):
   </Book>
 </Library>
  
-7. Example 3: Building XML Using XDocument (LINQ to XML)
+## 7. Example 3: Building XML Using XDocument (LINQ to XML)
 Example 3: Building XML Using XDocument (LINQ to XML)
 The XDocument class allows you to create and manipulate XML documents using LINQ, which provides a more modern and readable way to handle XML data.
 Code Example:
@@ -323,12 +323,12 @@ Expected Output (LibraryLinq.xml):
 </Library>
 
 Conclusion
-	•	XmlDocument (DOM-based): Best for scenarios where you need to load, navigate, and modify the entire XML document in memory. It is ideal for smaller XML files.
-	•	XmlWriter (Streaming): Suitable for scenarios where memory usage is a concern, and you need to generate large XML documents efficiently without loading everything into memory at once.
-	•	XDocument (LINQ to XML): Provides a modern, clean syntax for working with XML documents, making it the best choice for most C# applications that require XML processing.
+	-	XmlDocument (DOM-based): Best for scenarios where you need to load, navigate, and modify the entire XML document in memory. It is ideal for smaller XML files.
+	-	XmlWriter (Streaming): Suitable for scenarios where memory usage is a concern, and you need to generate large XML documents efficiently without loading everything into memory at once.
+	-	XDocument (LINQ to XML): Provides a modern, clean syntax for working with XML documents, making it the best choice for most C# applications that require XML processing.
  
  
-8. Scenarios
+## 8. Scenarios
 Scenario 1: DOM-Based XML Creation with XmlDocument
 Scenario Question:
 A local library wants to keep track of their books in an XML file. Each book must have a unique ID, a title in Setswana, and an author. Use the DOM-based XmlDocument approach to create the file.
@@ -465,6 +465,6 @@ Clean, modern querying and creation
 DigitalArchive.xml
 
 
-	•	2. Video Reference
-	•	7. Scenario 1: E-commerce Product Catalog Update
-	•	8. Scenario 2: Employee Data Query and Export to CSV
+	-	2. Video Reference
+	-	7. Scenario 1: E-commerce Product Catalog Update
+	-	8. Scenario 2: Employee Data Query and Export to CSV

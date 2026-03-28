@@ -1,26 +1,26 @@
 # Module 2: Case Study Task Scheduler Using Queue
 
-1. Learning outcomes
+## 1. Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms.
-	•	Implement data structures in C#.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+	-	Acquire the skill to interpret data structures and algorithms.
+	-	Implement data structures in C#.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
 Prescribed Reading
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd.
 
     
 Not signed in? Click here and then refresh this page.
-2. Case Study: Task Scheduler Using Queue
+## 2. Case Study: Task Scheduler Using Queue
 Understanding the Problem
 Imagine you are developing a task scheduling system for a company. The system needs to handle background tasks, such as sending emails, backing up databases, and generating reports. However, these tasks must be executed in the order they were received—First-In, First-Out (FIFO).
 This is a common problem in computing where jobs are queued up and processed in sequence. A real-world example of this would be a printer queue: when multiple users send documents to a shared printer, the printer processes the documents in the order they were submitted.
 Solution: Using a Queue
 A queue is the ideal data structure for this scenario. A queue follows the FIFO (First-In, First-Out) principle, meaning that the first task added will be the first one to be processed.
 Queues provide two main operations:
-	•	Enqueue – Adds a task to the queue.
-	•	Dequeue – Removes and processes the first task in the queue.
+	-	Enqueue – Adds a task to the queue.
+	-	Dequeue – Removes and processes the first task in the queue.
 Example: Task Scheduler Using Queue
 Let’s implement a simple task scheduler using a queue in C#.
 
@@ -77,11 +77,11 @@ Pending tasks: 
 Database Backup  
 In this example, we use a Queue<string> to store tasks. The program allows adding tasks to the queue, processing them one by one, and displaying the remaining tasks.
 
-3. Data Structures and Input/Output in C#
+## 3. Data Structures and Input/Output in C#
 C# provides a variety of data structures that allow us to store, manage, and manipulate data efficiently. Understanding these structures is crucial for developing robust applications. In this lesson, we will explore different types of lists in C#, understand how to perform input and output operations, and learn how to implement a task scheduler using a queue.
 By the end of this lesson, you will be able to: ✔ Understand different types of lists and their usage. ✔ Use queues to implement a simple task scheduler. ✔ Perform input and output operations in C#. ✔ Work with ArrayLists, Generic Lists, Sorted Lists, Linked Lists, and Circular Linked Lists. ✔ Complete two hands-on activities to reinforce learning.
 
-4. Lists in C#
+## 4. Lists in C#
 A list is a data structure that stores a collection of elements. Unlike arrays, which have a fixed size, lists can dynamically grow and shrink. Lists allow easy insertion, deletion, and searching of elements, making them more flexible than arrays.
 C# provides different types of lists, including ArrayList, Generic List, Sorted List, Linked List, and Circular Linked List. Each type has its own advantages and use cases. Let’s explore them one by one.
 
@@ -149,26 +149,26 @@ Output
 Introduction:
 A Linked List is a linear data structure where each element (called a node) is connected to the next one. Unlike arrays, linked lists do not require contiguous memory, making them efficient for dynamic memory allocation. In C#, linked lists are commonly implemented using the LinkedList<T> class, which is part of the System.Collections.Generic namespace.
 Structure of a Linked List:
-	•	Node: Each node contains two parts:
-	•	Data: The actual data stored in the node.
-	•	Next: A reference (or pointer) to the next node in the list.
-	•	Head: The first node of the list.
-	•	Tail: The last node of the list (which typically points to null).
+	-	Node: Each node contains two parts:
+	-	Data: The actual data stored in the node.
+	-	Next: A reference (or pointer) to the next node in the list.
+	-	Head: The first node of the list.
+	-	Tail: The last node of the list (which typically points to null).
 Types of Linked Lists:
-	•	Singly Linked List: Each node has a reference to the next node. The last node points to null.
-	•	Doubly Linked List: Each node contains two references: one to the next node and another to the previous node.
-	•	Circular Linked List: The last node points back to the head node, forming a circular structure.
+	-	Singly Linked List: Each node has a reference to the next node. The last node points to null.
+	-	Doubly Linked List: Each node contains two references: one to the next node and another to the previous node.
+	-	Circular Linked List: The last node points back to the head node, forming a circular structure.
 Basic Operations:
-	•	Insertion:
-	•	At the beginning: Add a new node as the head.
-	•	At the end: Traverse to the last node and append the new node.
-	•	At a given position: Traverse the list and insert the node at the required position.
-	•	Deletion:
-	•	From the beginning: Remove the head node.
-	•	From the end: Traverse to the second-to-last node and set its next reference to null.
-	•	From a given position: Traverse the list, update the references to bypass the node to be deleted.
-	•	Traversal: Starting from the head node, visit each node until null is reached (for singly linked lists) or the desired condition is met.
-	•	Search: Traverse the list to find a node with specific data.
+	-	Insertion:
+	-	At the beginning: Add a new node as the head.
+	-	At the end: Traverse to the last node and append the new node.
+	-	At a given position: Traverse the list and insert the node at the required position.
+	-	Deletion:
+	-	From the beginning: Remove the head node.
+	-	From the end: Traverse to the second-to-last node and set its next reference to null.
+	-	From a given position: Traverse the list, update the references to bypass the node to be deleted.
+	-	Traversal: Starting from the head node, visit each node until null is reached (for singly linked lists) or the desired condition is met.
+	-	Search: Traverse the list to find a node with specific data.
 C# Implementation (Singly Linked List Example):
 
 using System;
@@ -248,17 +248,17 @@ After Deleting 20:
 Introduction:
 A Circular Linked List is a variation of the linked list where the last node points back to the first node, creating a loop. This makes it a circular structure. Circular linked lists can be either singly or doubly linked.
 Key Characteristics:
-	•	The last node’s Next points to the first node.
-	•	There is no null node in a circular linked list; the list is circular, meaning you can traverse it endlessly.
-	•	Circular Singly Linked List: Each node has a reference to the next node, and the last node points to the head node.
-	•	Circular Doubly Linked List: Each node has two references: one to the next node and another to the previous node. Both the head and tail nodes point to each other, completing the loop.
+	-	The last node’s Next points to the first node.
+	-	There is no null node in a circular linked list; the list is circular, meaning you can traverse it endlessly.
+	-	Circular Singly Linked List: Each node has a reference to the next node, and the last node points to the head node.
+	-	Circular Doubly Linked List: Each node has two references: one to the next node and another to the previous node. Both the head and tail nodes point to each other, completing the loop.
 Advantages:
-	•	Circular linked lists are especially useful for implementing applications like round-robin scheduling, playing a playlist of songs, or managing a circular buffer.
-	•	Can be useful in situations where the list is frequently traversed and you want to avoid rechecking the starting point after reaching the end.
+	-	Circular linked lists are especially useful for implementing applications like round-robin scheduling, playing a playlist of songs, or managing a circular buffer.
+	-	Can be useful in situations where the list is frequently traversed and you want to avoid rechecking the starting point after reaching the end.
 Basic Operations in Circular Linked List:
-	•	Insertion at the beginning, end, or specific position: Similar to regular linked lists, but ensuring that the last node’s Next points to the first node.
-	•	Traversal: To avoid infinite loops, traversal should stop when we reach the starting node again.
-	•	Deletion: Remove a node, ensuring the circular structure is maintained by adjusting the Next pointer of the previous node.
+	-	Insertion at the beginning, end, or specific position: Similar to regular linked lists, but ensuring that the last node’s Next points to the first node.
+	-	Traversal: To avoid infinite loops, traversal should stop when we reach the starting node again.
+	-	Deletion: Remove a node, ensuring the circular structure is maintained by adjusting the Next pointer of the previous node.
 C# Implementation (Circular Singly Linked List Example):
 
 using System;
@@ -376,8 +376,8 @@ Memory Management
 No circular references, easy to delete.
 More complex due to circular references.
 Conclusion:
-	•	A Linked List is a basic dynamic data structure ideal for applications that need efficient insertions and deletions.
-	•	A Circular Linked List is a variation where the last node points back to the first node, making it suitable for scenarios where the data needs to be processed in a cyclic manner.
+	-	A Linked List is a basic dynamic data structure ideal for applications that need efficient insertions and deletions.
+	-	A Circular Linked List is a variation where the last node points back to the first node, making it suitable for scenarios where the data needs to be processed in a cyclic manner.
 Both structures provide efficient ways of handling dynamic data with flexible memory usage, depending on the specific problem requirements.
  
 4.6. Case Study 1
@@ -634,14 +634,14 @@ Level 2
 Level 3
 
 These case studies demonstrate how to apply different data structures in real-world scenarios using C#:
-	•	ArrayList for heterogeneous task data.
-	•	Generic List for managing student grades.
-	•	Linked List for dynamic playlist management.
-	•	Circular Linked List for looping through game levels.
+	-	ArrayList for heterogeneous task data.
+	-	Generic List for managing student grades.
+	-	Linked List for dynamic playlist management.
+	-	Circular Linked List for looping through game levels.
 Each solution provides an efficient way to handle the problem using the most appropriate data structure.
  
  
-5. Activity
+## 5. Activity
 Activity 1: Implement a Stack for Undo Feature
 Task:
 Create a C# program that simulates an Undo feature using a Stack. The user should be able to add actions, undo the last action, and view all actions.
@@ -684,9 +684,9 @@ class MainProgram {
     }
 }
  
-	•	2. Introduction
-	•	3. Using Stack in C#:
-	•	4. Advantages of Using Stacks:
-	•	5. Disadvantages of Using Stacks:
-	•	9. Conclusion
-	•	10. Activity
+	-	2. Introduction
+	-	3. Using Stack in C#:
+	-	4. Advantages of Using Stacks:
+	-	5. Disadvantages of Using Stacks:
+	-	9. Conclusion
+	-	10. Activity

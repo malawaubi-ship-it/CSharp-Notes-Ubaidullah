@@ -1,9 +1,9 @@
 # Module 16: Introduction to C# Collections
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this lesson, you should be able to:
-	•	Understand C# collections
+	-	Understand C# collections
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469
@@ -12,16 +12,16 @@ Chapter 9 & 21
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. Introduction to C# Collections
+## 2. Introduction to C# Collections
 Introduction to C# Collections
 Explanation: C# collections are objects that hold multiple items of data. They are part of the .NET framework, providing various ways to store, access, and manage groups of related data. Collections are much more flexible and efficient than arrays. The most common collections are provided under two namespaces:
-	•	System.Collections (non-generic collections like ArrayList, Hashtable).
-	•	System.Collections.Generic (generic collections like List<T>, Dictionary<TKey, TValue>, Queue<T>, Stack<T>).
+	-	System.Collections (non-generic collections like ArrayList, Hashtable).
+	-	System.Collections.Generic (generic collections like List<T>, Dictionary<TKey, TValue>, Queue<T>, Stack<T>).
 Generic collections offer type safety, which means you can specify the type of elements the collection will hold, making the code easier to maintain and reducing the possibility of runtime errors.
 Play Video
  
 
-3. List (Generic List)
+## 3. List (Generic List)
 List<T> (Generic List)
 Explanation: A List<T> is a dynamic array that can store any data type. It automatically resizes as elements are added or removed. Lists provide indexed access to elements, allowing easy iteration and modification. It’s the most commonly used collection when you need to manage a collection of items with flexibility and speed.
 
@@ -72,7 +72,7 @@ Apple
 Mango
 Orange
  
-4. Dictionary
+## 4. Dictionary
 Dictionary<TKey, TValue>
 Explanation: A Dictionary<TKey, TValue> is a collection that stores key-value pairs. It allows for fast lookups, retrieval, and management of data based on a unique key. The dictionary is useful when you need to quickly access data by a unique identifier (e.g., retrieving a student’s name using their student ID). It provides O(1) complexity for lookups.
 
@@ -124,7 +124,7 @@ Product ID: 2, Product Name: Smartphone
 Product ID: 3, Product Name: Tablet
 
  
-5. Queue
+## 5. Queue
 Queue<T>
 Explanation: A Queue<T> is a collection that follows the First-In, First-Out (FIFO) principle. It is useful for managing tasks, like processing print jobs, where the first item added is the first one to be processed. It supports operations like enqueue (adding an element) and dequeue (removing an element).
 
@@ -175,7 +175,7 @@ Items in queue:
 10
 15
  
-6. Stack
+## 6. Stack
 Stack<T>
 Explanation: A Stack<T> is a collection that follows the Last-In, First-Out (LIFO) principle. The last element added to the stack is the first one to be removed. It’s often used in scenarios like undo operations, where the most recent action needs to be reversed first.
 
@@ -219,7 +219,7 @@ class MainProgram
 Output:
 Top element is: 3
  
-7. HashSet
+## 7. HashSet
 HashSet<T>
 Explanation: A HashSet<T> is a collection that stores unique elements without maintaining any specific order. It is useful for scenarios where you need to check if an item exists in the collection without worrying about duplicates. The HashSet is optimized for fast lookups.
 
@@ -271,24 +271,24 @@ Union of sets:
 5
  
  
-8. Case Study 1: Student Record Management System
+## 8. Case Study 1: Student Record Management System
 Case Study 1: Student Record Management System
 Problem:
 You are tasked with creating a student record management system for a school, where each student has a unique student ID, name, and grade. The system should:
-	•	Store student records (ID, name, and grade).
-	•	Provide functionalities to:
-	•	Add a new student.
-	•	Remove a student by ID.
-	•	Retrieve a student's details by their ID.
-	•	Retrieve a list of students with grades above a certain threshold.
+	-	Store student records (ID, name, and grade).
+	-	Provide functionalities to:
+	-	Add a new student.
+	-	Remove a student by ID.
+	-	Retrieve a student's details by their ID.
+	-	Retrieve a list of students with grades above a certain threshold.
 You must use the appropriate collections to achieve this functionality.
 
 Solution:
 To implement the student record management system, we will use a Dictionary<int, Tuple<string, double>>:
-	•	The key will be the student ID (an int).
-	•	The value will be a Tuple<string, double>, where:
-	•	The first item is the student’s name (a string).
-	•	The second item is the student’s grade (a double).
+	-	The key will be the student ID (an int).
+	-	The value will be a Tuple<string, double>, where:
+	-	The first item is the student’s name (a string).
+	-	The second item is the student’s grade (a double).
 Code:
 using System;
 using System.Collections.Generic;
@@ -339,7 +339,7 @@ Students with grade above 80:
 ID: 101, Name: John, Grade: 85.5
 ID: 102, Name: Mary, Grade: 92.3
  
-9. Case Study 2: Student Grades Tracker
+## 9. Case Study 2: Student Grades Tracker
 Case Study 2: Student Grades Tracker
 Problem:
 You want to store and retrieve a list of students with their test scores.
@@ -372,7 +372,7 @@ Alice's average score: 84.33
 Bob's average score: 84.33
 
  
-10. Case Study 3: Online Shopping Cart
+## 10. Case Study 3: Online Shopping Cart
 Case Study 3: Online Shopping Cart
 Problem:
 Build a shopping cart system where users can add items and view the total cost.
@@ -427,7 +427,7 @@ Laptop x 1 = $999.99
 Mouse x 2 = $51.00
 Total: $1050.99
   
-11. Case Study 4: Call Center Queue
+## 11. Case Study 4: Call Center Queue
 🧠 Case Study 4: Call Center Queue
 Problem:
 Handle a queue of customer support calls in the order they arrive.
@@ -462,7 +462,7 @@ Pending calls:
 Bob
 Charlie
  
-12. Case Study 5: Recently Opened Documents
+## 12. Case Study 5: Recently Opened Documents
 Case Study 5: Recently Opened Documents
 Problem:
 Track the most recently opened files in a text editor (most recent first, no duplicates).
@@ -511,14 +511,14 @@ Recently Opened Files:
 Doc1.txt
 Doc2.txt
  
-13. Case Study 5: Library Book Borrowing System
+## 13. Case Study 5: Library Book Borrowing System
 Case Study 5: Library Book Borrowing System
 Problem:
 Track which books are borrowed by which members.
 Solution:
 Use:
-	•	Dictionary<int, string> for BookID → Title
-	•	Dictionary<int, List<int>> for MemberID → List of borrowed BookIDs
+	-	Dictionary<int, string> for BookID → Title
+	-	Dictionary<int, List<int>> for MemberID → List of borrowed BookIDs
 Code:
 using System;
 using System.Collections.Generic;
@@ -566,30 +566,30 @@ Sample Output:
 Books borrowed by Member 1001:
 To Kill a Mockingbird
  
-14. Scenario Question: Inventory Management System
+## 14. Scenario Question: Inventory Management System
 Scenario Question: Inventory Management System
 Problem:
 You are developing an inventory management system for a small warehouse. The system needs to:
-	•	Track products in the inventory, where each product has:
-	•	Product ID (unique identifier)
-	•	Product Name
-	•	Quantity Available
-	•	Price per unit
-	•	Provide functionalities to:
-	•	Add a new product.
-	•	Update the quantity of a product (when stock is updated or items are sold).
-	•	Retrieve the details of a product by its ID.
-	•	Retrieve a list of products with low stock (e.g., stock less than 10 items).
-	•	Calculate the total value of all products in the inventory (Quantity × Price).
+	-	Track products in the inventory, where each product has:
+	-	Product ID (unique identifier)
+	-	Product Name
+	-	Quantity Available
+	-	Price per unit
+	-	Provide functionalities to:
+	-	Add a new product.
+	-	Update the quantity of a product (when stock is updated or items are sold).
+	-	Retrieve the details of a product by its ID.
+	-	Retrieve a list of products with low stock (e.g., stock less than 10 items).
+	-	Calculate the total value of all products in the inventory (Quantity × Price).
 You need to implement a system using C# collections that efficiently manages these tasks.
 
 Solution:
 For this scenario, we can use a Dictionary<int, Product>:
-	•	Key: The Product ID (integer).
-	•	Value: The Product object, which contains:
-	•	ProductName (string)
-	•	QuantityAvailable (integer)
-	•	PricePerUnit (double)
+	-	Key: The Product ID (integer).
+	-	Value: The Product object, which contains:
+	-	ProductName (string)
+	-	QuantityAvailable (integer)
+	-	PricePerUnit (double)
 We will also implement methods for the various functionalities.
 
 Code:
@@ -700,22 +700,22 @@ class InventoryManagementSystem
 }
 
 Explanation:
-	•	Product Class:
-	•	Represents a product in the inventory, with properties for product name, quantity, and price.
-	•	The TotalValue method calculates the total value of the product based on its price and available quantity.
-	•	Dictionary for Inventory:
-	•	The Dictionary<int, Product> holds the inventory where each product is identified by its unique Product ID.
-	•	The key is the Product ID, and the value is the Product object.
-	•	Adding Products:
-	•	Products are added to the dictionary using the Add method, specifying the unique product ID and creating a new Product object.
-	•	Updating Product Quantity:
-	•	The UpdateProductQuantity method allows updating the quantity of an existing product by providing the Product ID and the change in quantity. It modifies the QuantityAvailable of the corresponding product.
-	•	Retrieving Product Details:
-	•	The PrintProductDetails method retrieves and prints the details (name, available quantity, price) of a product by its Product ID.
-	•	Displaying Low Stock Products:
-	•	The DisplayLowStockProducts method filters and displays products with a quantity below the specified threshold (in this case, 10).
-	•	Calculating Total Inventory Value:
-	•	The CalculateTotalInventoryValue method calculates the total value of all products in the inventory by summing the TotalValue of each product.
+	-	Product Class:
+	-	Represents a product in the inventory, with properties for product name, quantity, and price.
+	-	The TotalValue method calculates the total value of the product based on its price and available quantity.
+	-	Dictionary for Inventory:
+	-	The Dictionary<int, Product> holds the inventory where each product is identified by its unique Product ID.
+	-	The key is the Product ID, and the value is the Product object.
+	-	Adding Products:
+	-	Products are added to the dictionary using the Add method, specifying the unique product ID and creating a new Product object.
+	-	Updating Product Quantity:
+	-	The UpdateProductQuantity method allows updating the quantity of an existing product by providing the Product ID and the change in quantity. It modifies the QuantityAvailable of the corresponding product.
+	-	Retrieving Product Details:
+	-	The PrintProductDetails method retrieves and prints the details (name, available quantity, price) of a product by its Product ID.
+	-	Displaying Low Stock Products:
+	-	The DisplayLowStockProducts method filters and displays products with a quantity below the specified threshold (in this case, 10).
+	-	Calculating Total Inventory Value:
+	-	The CalculateTotalInventoryValue method calculates the total value of all products in the inventory by summing the TotalValue of each product.
 
 Output:
 Updated Product ID 102: New Quantity = 60
@@ -729,20 +729,20 @@ Product ID: 103, Name: Tablet, Quantity: 7
 Total Inventory Value: $57000
 
 Key Concepts Demonstrated:
-	•	Dictionary: Used to map product IDs to their respective Product objects.
-	•	Product Class: Encapsulates the data and logic related to products.
-	•	Inventory Operations: Includes adding products, updating quantities, retrieving details, filtering based on stock levels, and calculating total inventory value.
+	-	Dictionary: Used to map product IDs to their respective Product objects.
+	-	Product Class: Encapsulates the data and logic related to products.
+	-	Inventory Operations: Includes adding products, updating quantities, retrieving details, filtering based on stock levels, and calculating total inventory value.
  
-15. References
+## 15. References
 Deitel, H. and Deitel, P., 2017. C# for Programmers. 6th ed. Pearson Education, Inc.
 Nakov, P., Petrov, P., and Ivanov, K., 2016. Beginning C# Programming. 1st ed. Apress.
 Microsoft, 2021. C# Programming Guide. [online] Available at: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/ [Accessed 11 April 2025].
 Jones, M., 2018. Mastering C# Collections. Packt Publishing.
 
 
-	•	2. Concurrency in C# - Multithreading and Parallelism
-	•	3. Implementing Multithreading in C#
-	•	9. Concept Overview
-	•	10. Video
-	•	11. Scenario 1: Concurrency in Processing Orders in an E-Commerce System
-	•	12. References
+	-	2. Concurrency in C# - Multithreading and Parallelism
+	-	3. Implementing Multithreading in C#
+	-	9. Concept Overview
+	-	10. Video
+	-	11. Scenario 1: Concurrency in Processing Orders in an E-Commerce System
+	-	12. References

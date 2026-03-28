@@ -1,6 +1,6 @@
 # Module 12: Stack
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this topic you should be able to:c
 you will learn about classification of data structures. Also, the diversity of some real-world applications in relation to arrays, lists, stacks, queues, dictionaries, sets, trees, heaps and graphs will be treated.
@@ -12,7 +12,7 @@ Page 258 – 269. 
 Time Allocation:
 2 Hours
  
-2. Stack
+## 2. Stack
 
  
 Stack is a special type of collection that stores elements in LIFO style (Last In First Out). C# includes the generic Stack<T> and non-generic Stack collection classes. It is recommended to use the generic Stack<T> collection.
@@ -25,7 +25,7 @@ It comes under System.Collection.Generic namespace.
 Stack<T> can contain elements of the specified type. It provides compile-time type checking and doesn't perform boxing-unboxing because it is generic.
 Elements can be added using the Push() method. Cannot use collection-initializer syntax.
 Elements can be retrieved using the Pop() and the Peek() methods. It does not support an indexer.
-3. Queue
+## 3. Queue
 
 Queue represents a first-in, first out (FIFO) collection of object. It is used when you need a first-in, first-out access of items. When you add an item in the list, it is called enqueue, and when you remove an item, it is called dequeue . This class comes under System.Collections namespace and implements ICollection, IEnumerable, and ICloneable interfaces.
  Characteristics of Queue Class:
@@ -37,4 +37,4 @@ As elements are added to a Queue, the capacity is automatically increased as req
 Queue accepts null as a valid value for reference types and allows duplicate elements.
 
 
-	•	3. Creating String Object
+	-	3. Creating String Object

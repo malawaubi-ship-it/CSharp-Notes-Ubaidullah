@@ -1,11 +1,11 @@
 # Module 4: Introduction to Queues
 
-1. Learning outcomes
+## 1. Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms.
-	•	Implement data structures in C#.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+	-	Acquire the skill to interpret data structures and algorithms.
+	-	Implement data structures in C#.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
 Prescribed Reading
  
@@ -13,17 +13,17 @@ Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities 
 
    
 Not signed in? Click here and then refresh this page.
-2. Introduction to Queues
+## 2. Introduction to Queues
 Introduction to Queues
 A queue is a linear data structure that follows the First-In, First-Out (FIFO) principle. This means that the first element added to the queue will be the first one to be removed. Queues are widely used in programming for managing tasks that must be processed in order.
 
 Real-World Examples of Queues
-	•	Print Queue: Documents sent to a printer are printed in the order they were received.
-	•	Call Center Queue: Calls are answered in the order they were received.
-	•	Task Scheduling: Background tasks like sending emails or processing orders are executed in the order they were added.
-	•	CPU Scheduling: The operating system manages processes in a queue.
+	-	Print Queue: Documents sent to a printer are printed in the order they were received.
+	-	Call Center Queue: Calls are answered in the order they were received.
+	-	Task Scheduling: Background tasks like sending emails or processing orders are executed in the order they were added.
+	-	CPU Scheduling: The operating system manages processes in a queue.
 
-3. Implementing Queues in C#
+## 3. Implementing Queues in C#
 C# provides built-in support for queues through the Queue<T> class in the System.Collections.Generic namespace.
 Basic Queue Operations
 Operation
@@ -41,7 +41,7 @@ Checks if an element exists in the queue
 Clear()
 Removes all elements from the queue
 
-2. Implementing a Queue in C#
+## 2. Implementing a Queue in C#
 Example: Basic Queue Operations
 
 using System;
@@ -88,7 +88,7 @@ Queue after Dequeue operations:
 Charlie
 
  
-4. Types of Queues in C#
+## 4. Types of Queues in C#
 C# supports different types of queues, depending on the use case:
 3.1 Standard Queue (FIFO)
 The Queue<T> class implements a simple FIFO queue where elements are added to the back and removed from the front.
@@ -158,7 +158,7 @@ Deque after operations:
 1
 
  
-5. Practical Use Cases of Queues
+## 5. Practical Use Cases of Queues
 Task Scheduler Using Queue
 Problem: Background tasks (e.g., email notifications, database backups) must be executed in the order they were added.
 Solution: Use a Queue<string> to manage tasks.
@@ -263,12 +263,12 @@ Used in task scheduling, call centers, printer queues, and messaging systems.
 
 Conclusion
 Queues are fundamental data structures widely used in real-world applications. C# provides multiple ways to implement queues, including Queue<T>, PriorityQueue<T>, and LinkedList<T> for deques. Understanding queues helps in building efficient systems for processing tasks in sequence 
-6. Case study 1
+## 6. Case study 1
 Problem Statement
 A telecom company needs a Customer Service Call Queue system where customer calls are answered in the order they were received. The system should:
-	•	Allow new customer calls to be added to the queue.
-	•	Process calls in a First-In, First-Out (FIFO) manner.
-	•	Display the current queue of waiting calls.
+	-	Allow new customer calls to be added to the queue.
+	-	Process calls in a First-In, First-Out (FIFO) manner.
+	-	Display the current queue of waiting calls.
 
 Solution
 We can implement this system using a Queue<string> in C#.
@@ -340,12 +340,12 @@ Customer 3
 ✅ Queue ensures that customers are served in order!
 
  
-7. Case study 2
+## 7. Case study 2
 Problem Statement
 A university computer lab has multiple students sending print requests to a shared network printer. The printer must:
-	•	Accept multiple print jobs.
-	•	Process the print jobs in order of submission.
-	•	Display the current print queue.
+	-	Accept multiple print jobs.
+	-	Process the print jobs in order of submission.
+	-	Display the current print queue.
 
 Solution
 A Queue<string> is ideal for handling print jobs.
@@ -417,12 +417,12 @@ Presentation.pptx
 ✅ The queue ensures print jobs are processed in the order they were added!
 
  
-8. Case Study 3
+## 8. Case Study 3
 Problem Statement
 A fast-food restaurant processes orders from customers. The system should:
-	•	Accept new orders and add them to a queue.
-	•	Process orders in the order they were placed.
-	•	Display the list of pending orders.
+	-	Accept new orders and add them to a queue.
+	-	Process orders in the order they were placed.
+	-	Display the list of pending orders.
 
 Solution
 A Queue<string> is perfect for tracking orders.
@@ -507,17 +507,17 @@ Tracks and processes restaurant orders in order of arrival
 Queue<string>
  
  
-9. Activity
+## 9. Activity
 Create a queue in C# that will schedule customers in a pharmacy. Customers will enqueue and get a ticket. Their ticket number will then be called when it’s their turn to use the counter.
 
 
 Description
  
  
-	•	1. Lesson Outcomes
-	•	2. Priority Queue
-	•	3. Priority Queues
-	•	4. Using the Built-in PriorityQueue in C#
-	•	5. Scenario 1: Customer Support Ticket System
-	•	6. Scenario 2: Airline Check-in System
-	•	7. Activity
+	-	1. Lesson Outcomes
+	-	2. Priority Queue
+	-	3. Priority Queues
+	-	4. Using the Built-in PriorityQueue in C#
+	-	5. Scenario 1: Customer Support Ticket System
+	-	6. Scenario 2: Airline Check-in System
+	-	7. Activity

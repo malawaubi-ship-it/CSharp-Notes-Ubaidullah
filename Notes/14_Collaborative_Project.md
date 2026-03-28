@@ -1,9 +1,9 @@
 # Module 14: Collaborative Project
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this lesson, you should be able to:
-	•	Understand C# collections
+	-	Understand C# collections
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapter 9
@@ -11,11 +11,11 @@ Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. Collaborative Project
+## 2. Collaborative Project
 
 Write sample code on the following LINQ table. Each method must have its own well commented code.
  
-3. Introduction to LINQ
+## 3. Introduction to LINQ
 Introduction to LINQ in C#
 LINQ, which stands for Language Integrated Query, is a powerful feature in C# that allows developers to write expressive and readable queries directly within the language. Traditionally, querying data required using separate query languages such as SQL for databases or XPath for XML documents. LINQ changes this by integrating query syntax into C#, allowing for a uniform approach to querying various types of data sources, including collections in memory, databases, and XML files.
 The key advantage of LINQ is its ability to bring consistency and type-safety to querying operations. Unlike traditional query approaches that use strings and lack compile-time checking, LINQ enables queries to be written using strongly-typed C# expressions. This allows developers to catch errors at compile-time, leverage IntelliSense support in IDEs like Visual Studio, and write less verbose and more readable code. LINQ queries can be written using either query syntax, which resembles SQL, or method syntax, which uses lambda expressions and method chaining.
@@ -178,7 +178,7 @@ class MainProgram
     }
 }
 Explanation: Here, GroupBy() is used to group product names by their first letter. This functionality is part of System.Linq, and it helps organize data with minimal code.
-4. LINQ Standard Query operators
+## 4. LINQ Standard Query operators
 LINQ standard query operators are a set of extension methods provided by the System.Linq namespace that enable powerful querying capabilities directly on data collections in C#. These operators work primarily on sequences—objects that implement IEnumerable<T> or IQueryable<T>—and allow developers to perform common data operations such as filtering, projection, aggregation, sorting, joining, and more.
 These operators allow developers to work with data in a high-level, declarative way, reducing the need for verbose loops or complex conditional logic. Since they are type-safe and integrated into the language, developers benefit from compile-time checking, IntelliSense support, and cleaner, more readable code.
 There are two main syntaxes for using LINQ in C#: query syntax (which resembles SQL) and method syntax (which chains methods like Where(), Select(), etc.). Method syntax is often preferred for its flexibility and clarity, especially when chaining multiple operations.
@@ -454,14 +454,14 @@ Explanation: Here, we randomly assign a region to each customer from a predefi
 4.4. WEEKLY ACTIVITY
 Scenario Question:
 Scenario: You are working for an e-commerce company that needs to analyze the sales data for the past month. The company wants to know the following:
-	•	The total number of products sold in each category.
-	•	The total sales revenue for each category.
-	•	The most expensive product in each category.
+	-	The total number of products sold in each category.
+	-	The total sales revenue for each category.
+	-	The most expensive product in each category.
 The product sales data is stored in a list of Product objects with the following properties:
-	•	ProductName (string) - the name of the product
-	•	Category (string) - the category the product belongs to (e.g., "Electronics", "Clothing", etc.)
-	•	Price (decimal) - the price of the product
-	•	QuantitySold (int) - the number of units sold in the last month
+	-	ProductName (string) - the name of the product
+	-	Category (string) - the category the product belongs to (e.g., "Electronics", "Clothing", etc.)
+	-	Price (decimal) - the price of the product
+	-	QuantitySold (int) - the number of units sold in the last month
 Question: Write a LINQ query to solve this scenario and display the total number of products sold, total sales revenue, and the most expensive product in each category.
 Solution:
 C# Code:
@@ -516,12 +516,12 @@ class MainProgram
     }
 }
 Explanation:
-	•	Data Structure: We have a Product class representing each product with properties for product name, category, price, and quantity sold.
-	•	LINQ Query: The LINQ query uses the group by clause to group products by their category. For each group (i.e., category), we calculate:
-	•	The total number of products sold using Sum(p => p.QuantitySold).
-	•	The total revenue for that category using Sum(p => p.Price * p.QuantitySold).
-	•	The most expensive product in the category using OrderByDescending(p => p.Price).First() to find the product with the highest price.
-	•	Output: The results are displayed for each category, showing the total products sold, total sales revenue, and the most expensive product in the category.
+	-	Data Structure: We have a Product class representing each product with properties for product name, category, price, and quantity sold.
+	-	LINQ Query: The LINQ query uses the group by clause to group products by their category. For each group (i.e., category), we calculate:
+	-	The total number of products sold using Sum(p => p.QuantitySold).
+	-	The total revenue for that category using Sum(p => p.Price * p.QuantitySold).
+	-	The most expensive product in the category using OrderByDescending(p => p.Price).First() to find the product with the highest price.
+	-	Output: The results are displayed for each category, showing the total products sold, total sales revenue, and the most expensive product in the category.
 
 Example Output:
 Category: Electronics
@@ -540,9 +540,9 @@ Total Sales Revenue: $9374.00
 Most Expensive Product: Refrigerator
 
 
-	•	2. Introduction to Generics
-	•	3. Generic Methods
-	•	4. Generic Classes
-	•	5. Generic Interfaces
-	•	6. Constraints on Generics
-	•	11. References
+	-	2. Introduction to Generics
+	-	3. Generic Methods
+	-	4. Generic Classes
+	-	5. Generic Interfaces
+	-	6. Constraints on Generics
+	-	11. References

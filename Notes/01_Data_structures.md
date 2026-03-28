@@ -1,44 +1,43 @@
 # Module 1: Data structures
 
-1. Learning outcomes
+## 1. Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms.
-	•	Implement data structures in C#.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+	-	Acquire the skill to interpret data structures and algorithms.
+	-	Implement data structures in C#.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
 Prescribed Reading
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd.
 
     
 Not signed in? Click here and then refresh this page.
-2. Data structures
-1. Introduction to Data Structures
+## 2. Data structures
+## 1. Introduction to Data Structures
 Data structures are ways of organizing and storing data to perform operations efficiently. They are fundamental in programming and play a crucial role in solving complex computational problems.
 Types of Data Structures
-	•	Linear Data Structures – Data elements are arranged in a sequential manner.
-	•	Arrays
-	•	Linked Lists
-	•	Stacks
-	•	Queues
-	•	Non-Linear Data Structures – Data elements are arranged in a hierarchical manner.
-	•	Trees
-	•	Graphs
-2. Arrays
-	•	A collection of elements stored in contiguous memory locations.
-	•	Elements are accessed using an index.
-	•	Advantages: Fast access using an index.
-	•	Disadvantages: Fixed size, inserting/removing elements is expensive.
+	-	Linear Data Structures – Data elements are arranged in a sequential manner.
+	-	Arrays
+	-	Linked Lists
+	-	Stacks
+	-	Queues
+	-	Non-Linear Data Structures – Data elements are arranged in a hierarchical manner.
+	-	Trees
+	-	Graphs
+## 2. Arrays
+	-	A collection of elements stored in contiguous memory locations.
+	-	Elements are accessed using an index.
+	-	Advantages: Fast access using an index.
+	-	Disadvantages: Fixed size, inserting/removing elements is expensive.
 Example in C#:
 int[] numArray = new int[5] {1, 2, 3, 4, 5};
 Console.WriteLine(/* Output */ numArray[2]); // Output: 3
-3. Linked Lists
-	•	A sequence of nodes where each node contains data and a reference to the next node.
-	•	Advantages: Dynamic size, efficient insertions/deletions.
-	•	Disadvantages: More memory usage due to pointers.
+## 3. Linked Lists
+	-	A sequence of nodes where each node contains data and a reference to the next node.
+	-	Advantages: Dynamic size, efficient insertions/deletions.
+	-	Disadvantages: More memory usage due to pointers.
 Example in C#:
-csharp
-CopyEdit
+```csharp
 public class Node {
     public int Data;
     public Node Next;
@@ -47,19 +46,20 @@ public class Node {
         Next = null;
     }
 }
-4. Stacks
-	•	A LIFO (Last In, First Out) data structure.
-	•	Supports Push (insert) and Pop (remove) operations.
+```
+## 4. Stacks
+	-	A LIFO (Last In, First Out) data structure.
+	-	Supports Push (insert) and Pop (remove) operations.
 Example in C#:
-csharp
-CopyEdit
+```csharp
 Stack<int> stack = new Stack<int>();
 stack.Push(10);
 stack.Push(20);
 Console.WriteLine(/* Output */ stack.Pop()); // Output: 20
-5. Queues
-	•	A FIFO (First In, First Out) data structure.
-	•	Supports Enqueue (insert) and Dequeue (remove) operations.
+```
+## 5. Queues
+	-	A FIFO (First In, First Out) data structure.
+	-	Supports Enqueue (insert) and Dequeue (remove) operations.
 Example in C#:
 Queue<int> queue = new Queue<int>();
 queue.Enqueue(1);
@@ -150,7 +150,7 @@ public class QueueLinkedList {
 }
  
  
-3. Case Study 1
+## 3. Case Study 1
 Case Study 1: Employee Management System (Using Linked List)
 Problem Statement:
 A company needs a system to manage its employees. The system should allow adding new employees, removing employees by ID, and displaying all employees.
@@ -244,14 +244,14 @@ Employee ID 101 removed.
 ID: 102, Name: Bob
 
 
-4. Case Study 2
+## 4. Case Study 2
 Case Study 2: Browser Back & Forward Navigation (Using Stack)
 Problem Statement:
 A web browser needs a mechanism to navigate back and forward through the pages a user visits. Implement a navigation system using stacks.
 Solution:
 Two stacks are used:
-	•	backStack for storing visited pages.
-	•	forwardStack for tracking forward navigation.
+	-	backStack for storing visited pages.
+	-	forwardStack for tracking forward navigation.
 C# Implementation:
 using System;
 using System.Collections.Generic;
@@ -315,13 +315,13 @@ Visited: Page3
 Back to: Page2
 
 
-5. Case Study 3
+## 5. Case Study 3
 Case Study 3: Task Scheduler (Using Queue)
 Problem Statement:
 A system needs to process background tasks in a First-In, First-Out (FIFO) manner. Implement a task scheduler using a queue.
 Solution:
-	•	Use a queue to store tasks.
-	•	Process tasks in the order they arrive.
+	-	Use a queue to store tasks.
+	-	Process tasks in the order they arrive.
 C# Implementation:
 
 using System;
@@ -394,11 +394,11 @@ FIFO-based task processing
 These case studies cover real-world scenarios where linked lists, stacks, and queues are used effectively. Let me know if you need further modifications or additional examples! 🚀
 
 
-	•	3. Data Structures and Input/Output in C#
-	•	4. Lists in C#
-	•	4.1. Input and Output in C#
-	•	4.2. ArrayList in C#
-	•	4.3. Generic List in C#
-	•	4.4. Linked List
-	•	4.5. Circular-linked List
-	•	5. Activity
+	-	3. Data Structures and Input/Output in C#
+	-	4. Lists in C#
+	-	4.1. Input and Output in C#
+	-	4.2. ArrayList in C#
+	-	4.3. Generic List in C#
+	-	4.4. Linked List
+	-	4.5. Circular-linked List
+	-	5. Activity

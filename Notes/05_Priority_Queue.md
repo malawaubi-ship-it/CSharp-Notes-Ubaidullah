@@ -1,12 +1,12 @@
 # Module 5: Priority Queue
 
-1. Lesson Outcomes
+## 1. Lesson Outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms
-	•	Implement data structures in C#.
-	•	Demonstrate how strings are structured and processed.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision.
+	-	Acquire the skill to interpret data structures and algorithms
+	-	Implement data structures in C#.
+	-	Demonstrate how strings are structured and processed.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision.
 
 
 Prescribed Reading
@@ -16,23 +16,23 @@ Jamro, M., (2018). Stacks and Queues, C# Data Structures and Algorithms: Explor
  
 
 Not signed in? Click here and then refresh this page.
-2. Priority Queue
+## 2. Priority Queue
 Introduction
 A Priority Queue is a special type of queue where elements are dequeued based on their priority rather than their order of arrival. Unlike a standard queue that follows the First-In, First-Out (FIFO) principle, a priority queue processes higher-priority elements first, regardless of when they were added.
 In C#, a Priority Queue can be implemented using:
-	•	The PriorityQueue<TElement, TPriority> class (introduced in .NET 6).
-	•	A SortedList<TPriority, Queue<TElement>>.
-	•	A Binary Heap (Min-Heap / Max-Heap).
+	-	The PriorityQueue<TElement, TPriority> class (introduced in .NET 6).
+	-	A SortedList<TPriority, Queue<TElement>>.
+	-	A Binary Heap (Min-Heap / Max-Heap).
 
 Why Use a Priority Queue?
 A Priority Queue is useful when tasks or elements must be processed based on priority rather than order. Some real-world use cases include:
-	•	Operating System Task Scheduling: High-priority processes execute before lower-priority ones.
-	•	Dijkstra’s Algorithm: Used in shortest path calculations.
-	•	Hospital Emergency Room Management: Critical patients are treated first.
-	•	Networking: Packet scheduling where important data packets are transmitted first.
+	-	Operating System Task Scheduling: High-priority processes execute before lower-priority ones.
+	-	Dijkstra’s Algorithm: Used in shortest path calculations.
+	-	Hospital Emergency Room Management: Critical patients are treated first.
+	-	Networking: Packet scheduling where important data packets are transmitted first.
 
 
-3. Priority Queues
+## 3. Priority Queues
 Priority queues[1] can be seen as an extension of regular queues, where there are sub queues within a main queue. Each sub queue is assigned a priority. As elements are enqueued, they are assigned to the sub queue with their priority. When elements are dequeued, elements are dequeued from the sub queue with the highest priority. When this sub queue is empty, then the algorithm will dequeue elements from the sub queue with the next highest priority, and so on.
  
 Priority queues are implemented in C# and the source code[2] and documentation[3] can be viewed on the Microsoft website.
@@ -43,7 +43,7 @@ It is worth noting that C# implementations of priority queues vary to the tradit
 [1] GeeksforGeeks (2023b) What is Priority Queue   Introduction to Priority Queue. https://www.geeksforgeeks.org/priority-queue-set-1-introduction/.
 [2] Reference source (2024). https://referencesource.microsoft.com/#WindowsBase/Base/MS/Internal/PriorityQueue.cs,f9df8c3c0cbdff22.
 [3] Dotnet-Bot (2024) PriorityQueue Class (System.Collections.Generic). https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.priorityqueue-2?view=net-8.0.
-4. Using the Built-in PriorityQueue in C#
+## 4. Using the Built-in PriorityQueue in C#
 The PriorityQueue<TElement, TPriority> class (introduced in .NET 6) provides a simple way to implement a priority queue.
 Example: Task Management System
 
@@ -73,7 +73,7 @@ Medium Priority Task
 Low Priority Task
 ✅ Lower priority values are dequeued first (since smaller numArray have higher priority).
 
-2. Implementing a Priority Queue Using SortedList<TPriority, Queue<TElement>>
+## 2. Implementing a Priority Queue Using SortedList<TPriority, Queue<TElement>>
 If using .NET versions before .NET 6, we can implement a priority queue using SortedList.
 Example: Hospital Emergency Room Queue
 
@@ -128,10 +128,10 @@ Patient with broken arm
 Patient with mild symptoms
 ✅ The most critical patients (lower priority number) are treated first.
 
-3. Implementing a Priority Queue Using a Min-Heap
+## 3. Implementing a Priority Queue Using a Min-Heap
 A Heap is a more efficient way to implement a priority queue. It provides:
-	•	O(log n) time complexity for insertion and removal.
-	•	Efficient memory usage compared to SortedList.
+	-	O(log n) time complexity for insertion and removal.
+	-	Efficient memory usage compared to SortedList.
 Min-Heap Implementation of Priority Queue
 
 using System;
@@ -223,17 +223,17 @@ Large datasets requiring efficiency
 O(log n) for both enqueue and dequeue
 
 Conclusion
-	•	Priority Queues process elements based on importance rather than order.
-	•	C# provides a built-in PriorityQueue<TElement, TPriority> class for easy implementation.
-	•	SortedList-based and Heap-based approaches are useful for versions before .NET 6.
-	•	Heaps are the most efficient for priority queue implementation.
+	-	Priority Queues process elements based on importance rather than order.
+	-	C# provides a built-in PriorityQueue<TElement, TPriority> class for easy implementation.
+	-	SortedList-based and Heap-based approaches are useful for versions before .NET 6.
+	-	Heaps are the most efficient for priority queue implementation.
  
-5. Scenario 1: Customer Support Ticket System
+## 5. Scenario 1: Customer Support Ticket System
 Problem Statement:
 A company receives customer support requests and needs to prioritize them based on urgency.
-	•	High Priority (1): Critical issues (e.g., system outage).
-	•	Medium Priority (2): Important issues (e.g., slow performance).
-	•	Low Priority (3): General inquiries (e.g., account questions). The system should process tickets based on priority, ensuring critical issues are handled first.
+	-	High Priority (1): Critical issues (e.g., system outage).
+	-	Medium Priority (2): Important issues (e.g., slow performance).
+	-	Low Priority (3): General inquiries (e.g., account questions). The system should process tickets based on priority, ensuring critical issues are handled first.
 
 Solution: Using PriorityQueue<TElement, TPriority> in C#
 using System;
@@ -284,12 +284,12 @@ Processing: Account inquiry
 ✅ Critical issues are handled first, ensuring better customer service.
 
  
-6. Scenario 2: Airline Check-in System
+## 6. Scenario 2: Airline Check-in System
 Problem Statement:
 An airline check-in system prioritizes boarding based on passenger status:
-	•	Priority (1): First-Class & VIP members
-	•	Priority (2): Business-Class passengers
-	•	Priority (3): Economy-Class passengers The system should board passengers in priority order.
+	-	Priority (1): First-Class & VIP members
+	-	Priority (2): Business-Class passengers
+	-	Priority (3): Economy-Class passengers The system should board passengers in priority order.
 
 Solution: Implementing a Custom Priority Queue Using SortedList
 using System;
@@ -351,9 +351,9 @@ Boarding Passenger: Bob (Economy)
 ✅ Passengers board based on their priority, ensuring a smooth check-in process.
  
  
-7. Activity
+## 7. Activity
 Develop a priority queue to manage patients in the emergency department of a hospital. Patients are assigned a priority from 0 (highest) to 4 (lowest). The queue should ensure that the patients with the highest priority are seen first.
 
 
-	•	2. Activity
-	•	3. Practice Activities
+	-	2. Activity
+	-	3. Practice Activities

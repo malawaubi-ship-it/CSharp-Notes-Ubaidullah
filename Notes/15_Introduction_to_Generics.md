@@ -1,9 +1,9 @@
 # Module 15: Introduction to Generics
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this lesson, you should be able to:
-	•	Understand C# collections
+	-	Understand C# collections
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 
@@ -12,7 +12,7 @@ Chapter 9, 20 & 21
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. Introduction to Generics
+## 2. Introduction to Generics
 Generics in C# allow you to create classes, methods, and data structures that work with any data type while ensuring compile-time type safety. They prevent the need to write duplicate code and help reduce runtime errors. For instance, instead of writing separate versions of a function for integers, strings, etc., generics let you write one version that works with all data types.
 Play Video
  
@@ -48,7 +48,7 @@ Output:
 3
 
 
-3. Generic Methods
+## 3. Generic Methods
 Generic Methods
 Generic methods allow developers to write flexible and reusable code without compromising type safety. The type parameter (<T>) is defined in the method signature and replaced at compile time when the method is called.
 Example 1: Swapping two variables using a generic method
@@ -87,7 +87,7 @@ class MainProgram
 Output:
 True  
 False
-4. Generic Classes
+## 4. Generic Classes
 Generic Classes
 A generic class allows defining a blueprint for a class that can operate on any data type. This helps build reusable components like containers, wrappers, or repositories.
 Example 1: Generic Box class
@@ -128,7 +128,7 @@ class MainProgram
 Output:
 ID: 101, Name: Alice
  
-5. Generic Interfaces
+## 5. Generic Interfaces
 Generic Interfaces
 Generic interfaces define a contract for operations that work on data of various types. Interfaces like IComparable<T> or IEnumerable<T> allow flexible, reusable implementations for comparison or iteration.
 Example 1: Implementing IComparable<T>
@@ -182,7 +182,7 @@ Output:
 2  
 3
  
-6. Constraints on Generics
+## 6. Constraints on Generics
 Constraints on Generics
 Constraints provide control over the types that can be used as arguments for type parameters. They enable developers to use certain operations (e.g., object creation) that would otherwise be disallowed.
 Example 1: Using new() constraint
@@ -230,18 +230,18 @@ class MainProgram
 Output:
 String
  
-7. Case Study 1: Student Grade Management System
+## 7. Case Study 1: Student Grade Management System
 Case Study 1: Student Grade Management System
 Problem Statement:
 A university wants a system to manage student records and their corresponding grades. The system should:
-	•	Store student data in a generic way.
-	•	Use a dictionary to store student IDs and their grades.
-	•	Calculate average grades and display student results.
+	-	Store student data in a generic way.
+	-	Use a dictionary to store student IDs and their grades.
+	-	Calculate average grades and display student results.
 
 Solution Approach:
-	•	Create a generic Student<T> class to store student info (like ID and Name).
-	•	Use a Dictionary<int, double> to map student IDs to their grades.
-	•	Iterate over the dictionary and calculate the average
+	-	Create a generic Student<T> class to store student info (like ID and Name).
+	-	Use a Dictionary<int, double> to map student IDs to their grades.
+	-	Iterate over the dictionary and calculate the average
 
 using System;
 using System.Collections.Generic;
@@ -298,17 +298,17 @@ Charlie (ID: 3) - Grade: 92.3
  
 Average Grade: 85.27
  
-8. Case Study 2: Task Scheduling System (Using Queue)
+## 8. Case Study 2: Task Scheduling System (Using Queue)
 Case Study 2: Task Scheduling System (Using Queue<T>)
 Problem Statement:
 A software project management tool needs a feature to schedule and execute tasks in the order they are added (FIFO). Each task includes a name and an estimated time. The system must:
-	•	Store tasks in order.
-	•	Process each task in FIFO manner using Queue<T>.
+	-	Store tasks in order.
+	-	Process each task in FIFO manner using Queue<T>.
 
 Solution Approach:
-	•	Create a generic TaskItem<T> class.
-	•	Use Queue<TaskItem<string>> to manage task execution.
-	•	Print and simulate execution.
+	-	Create a generic TaskItem<T> class.
+	-	Use Queue<TaskItem<string>> to manage task execution.
+	-	Print and simulate execution.
 
 using System;
 using System.Collections.Generic;
@@ -353,19 +353,19 @@ Task: Compile Code, Estimated Time: 10 mins 
 Task: Run Tests, Estimated Time: 20 mins  
 Task: Deploy Build, Estimated Time: 15 mins
  
-9. Case Study 3: Inventory Management System for a Retail Store
+## 9. Case Study 3: Inventory Management System for a Retail Store
 Case Study 3: Inventory Management System for a Retail Store
 Problem Statement:
 A retail store needs a system to manage its product inventory. Each product has a unique ID, name, and available quantity. The system should:
-	•	Use a generic class to handle product information.
-	•	Use a dictionary to store product IDs and their stock quantities.
-	•	Allow updates to inventory (restocking or selling).
-	•	Display product details and total stock available.
+	-	Use a generic class to handle product information.
+	-	Use a dictionary to store product IDs and their stock quantities.
+	-	Allow updates to inventory (restocking or selling).
+	-	Display product details and total stock available.
 
 Solution Approach:
-	•	Create a Product<T> class that stores the product ID, name, and price.
-	•	Use Dictionary<int, int> to map product IDs to their current stock levels.
-	•	Iterate through the inventory and display information.
+	-	Create a Product<T> class that stores the product ID, name, and price.
+	-	Use Dictionary<int, int> to map product IDs to their current stock levels.
+	-	Iterate through the inventory and display information.
 
 using System;
 using System.Collections.Generic;
@@ -421,18 +421,18 @@ Keyboard (ID: 103) - Stock: 30, Price: R45.00
 Total Items in Inventory: 95
 
 
-10. Case Study 4: Library Book Loan Management System
+## 10. Case Study 4: Library Book Loan Management System
 Case Study 4: Library Book Loan Management System
 Problem Statement:
 A library wants to track the borrowing of books by students. Each student can borrow multiple books. The system should:
-	•	Use a generic class to store student details.
-	•	Use a dictionary to map student IDs to lists of books they've borrowed.
-	•	Display each student's borrowed books.
+	-	Use a generic class to store student details.
+	-	Use a dictionary to map student IDs to lists of books they've borrowed.
+	-	Display each student's borrowed books.
 
 Solution Approach:
-	•	Use a generic Student<T> class to hold student details.
-	•	Use a Dictionary<int, List<string>> to map student IDs to book titles.
-	•	Display all borrowings per student.
+	-	Use a generic Student<T> class to hold student details.
+	-	Use a Dictionary<int, List<string>> to map student IDs to book titles.
+	-	Display all borrowings per student.
 
 using System;
 using System.Collections.Generic;
@@ -493,17 +493,17 @@ Naledi (ID: 1003) has borrowed:
   - Clean Code
   - Design Patterns
   
-11. References
+## 11. References
 Deitel, H.M. and Deitel, P.J., 2017. C# How to Program. 6th ed. Boston: Pearson Education.
 Microsoft, 2024. Generics in C#. [online] Microsoft Learn. Available at: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/ [Accessed 11 April 2025].
 Albahari, J. and Albahari, B., 2021. C# 10 in a Nutshell: The Definitive Reference. 7th ed. Sebastopol: O’Reilly Media.
 Microsoft, 2024. Collections in .NET. [online] Microsoft Learn. Available at: https://learn.microsoft.com/en-us/dotnet/standard/collections/ [Accessed 11 April 2025].
  
-	•	2. Introduction to C# Collections
-	•	3. List (Generic List)
-	•	4. Dictionary
-	•	5. Queue
-	•	6. Stack
-	•	7. HashSet
-	•	14. Scenario Question: Inventory Management System
-	•	15. References
+	-	2. Introduction to C# Collections
+	-	3. List (Generic List)
+	-	4. Dictionary
+	-	5. Queue
+	-	6. Stack
+	-	7. HashSet
+	-	14. Scenario Question: Inventory Management System
+	-	15. References

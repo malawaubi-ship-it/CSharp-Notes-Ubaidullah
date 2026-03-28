@@ -1,9 +1,9 @@
 # Module 20: Video Reference
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this lesson, you should be able to:
-	•	Understand C# XML processing
+	-	Understand C# XML processing
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 
@@ -12,10 +12,10 @@ Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice H
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. Video Reference
+## 2. Video Reference
 Play Video
 
-3. Case Study 1: Creating and Writing an XML Document
+## 3. Case Study 1: Creating and Writing an XML Document
 Case Study 1: Creating and Writing an XML Document
 Problem:
 A school system needs to generate an XML file that stores student information. The XML document must contain a root element called <School> with multiple <Student> elements, each having child elements like Name, Age, and Grade.
@@ -84,12 +84,12 @@ Expected Output (Students.xml):
   </Student>
 </School>
 Explanation:
-	•	The code creates an XML document with a <School> root element and multiple <Student> elements.
-	•	Each <Student> has a Name, Age, and Grade element.
-	•	The XML file is saved to disk.
+	-	The code creates an XML document with a <School> root element and multiple <Student> elements.
+	-	Each <Student> has a Name, Age, and Grade element.
+	-	The XML file is saved to disk.
 
  
-4. Case Study 2: Reading and Modifying XML Document
+## 4. Case Study 2: Reading and Modifying XML Document
 Case Study 2: Reading and Modifying XML Document
 Problem:
 A library system needs to read an existing XML file that contains book data and modify the price of a book based on the BookID. After modification, the updated data should be saved back to the file.
@@ -142,11 +142,11 @@ Expected XML Output (Books_Updated.xml):
   </Book>
 </Library>
 Explanation:
-	•	The program reads the XML document Books.xml.
-	•	It finds the book with BookID="2", changes the price of that book, and saves the updated document to Books_Updated.xml.
+	-	The program reads the XML document Books.xml.
+	-	It finds the book with BookID="2", changes the price of that book, and saves the updated document to Books_Updated.xml.
 
  
-5. Case Study 3: Writing XML with XDocument (LINQ to XML)
+## 5. Case Study 3: Writing XML with XDocument (LINQ to XML)
 Case Study 3: Writing XML with XDocument (LINQ to XML)
 Problem:
 We need to create an XML document that stores contact information for a list of people. The XML file must have a root <Contacts> element, and each contact should have Name, Phone, and Email.
@@ -207,11 +207,11 @@ Expected Output (Contacts.xml):
   </Contact>
 </Contacts>
 Explanation:
-	•	The XDocument class is used to create an XML document by using LINQ syntax.
-	•	The program generates an XML file with a <Contacts> root element and multiple <Contact> elements.
+	-	The XDocument class is used to create an XML document by using LINQ syntax.
+	-	The program generates an XML file with a <Contacts> root element and multiple <Contact> elements.
 
  
-6. Case Study 4: Reading and Querying XML with LINQ to XML
+## 6. Case Study 4: Reading and Querying XML with LINQ to XML
 Case Study 4: Reading and Querying XML with LINQ to XML
 Problem:
 A company wants to read an XML file containing employee data and query for all employees who belong to the "Sales" department.
@@ -267,22 +267,22 @@ Expected XML Input (Employees.xml):
   </Employee>
 </Company>
 Explanation:
-	•	The program reads the Employees.xml file using XDocument.
-	•	It queries for all employees in the "Sales" department using LINQ syntax.
-	•	The results are displayed on the console.
+	-	The program reads the Employees.xml file using XDocument.
+	-	It queries for all employees in the "Sales" department using LINQ syntax.
+	-	The results are displayed on the console.
  
-7. Scenario 1: E-commerce Product Catalog Update
+## 7. Scenario 1: E-commerce Product Catalog Update
 Scenario 1: E-commerce Product Catalog Update
 Problem:
 An e-commerce platform needs to update its product catalog. The product information is stored in an XML file, and the company needs to add new products, update the price of some existing products, and remove outdated products. Your task is to implement a solution that can:
-	•	Add new products to the catalog.
-	•	Update the price of an existing product based on the ProductID.
-	•	Remove a product based on the ProductID.
+	-	Add new products to the catalog.
+	-	Update the price of an existing product based on the ProductID.
+	-	Remove a product based on the ProductID.
 Solution:
 We will use XmlDocument to modify the XML file. The solution includes three functionalities:
-	•	Adding a new product.
-	•	Updating an existing product’s price.
-	•	Removing a product.
+	-	Adding a new product.
+	-	Updating an existing product’s price.
+	-	Removing a product.
 Code:
 using System;
 using System.Xml;
@@ -377,12 +377,12 @@ Expected XML Output (UpdatedProductCatalog.xml):
   </Product>
 </ProductCatalog>
  
-8. Scenario 2: Employee Data Query and Export to CSV
+## 8. Scenario 2: Employee Data Query and Export to CSV
 Scenario 2: Employee Data Query and Export to CSV
 Problem:
 A company’s HR department has an XML file containing employee data. The HR team needs to:
-	•	Retrieve all employees who have a specific department.
-	•	Export the data of these employees (Name, Department, and Salary) to a CSV file.
+	-	Retrieve all employees who have a specific department.
+	-	Export the data of these employees (Name, Department, and Salary) to a CSV file.
 You are tasked with implementing this solution using LINQ to XML in C#.
 Solution:
 We will use LINQ to XML to query the employees from the XML file based on their department. Then, we will export the relevant data to a CSV file.
@@ -460,7 +460,7 @@ Expected XML Input (Employees.xml):
 
 Conclusion:
 These two scenarios demonstrate practical use cases for XML processing in C# using Sesotho names:
-	•	Catalog Update: The first scenario updates an XML document (adding, updating, and removing elements).
-	•	Data Query and Export: The second scenario queries an XML document for employees in a specific department and exports the relevant data to a CSV file.
+	-	Catalog Update: The first scenario updates an XML document (adding, updating, and removing elements).
+	-	Data Query and Export: The second scenario queries an XML document for employees in a specific department and exports the relevant data to a CSV file.
 
 

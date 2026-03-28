@@ -1,27 +1,27 @@
 # Module 6: Activity
 
-1. Learning outcomes
+## 1. Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms.
-	•	Implement data structures in C#.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+	-	Acquire the skill to interpret data structures and algorithms.
+	-	Implement data structures in C#.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
 Prescribed Reading
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd
    
 Not signed in? Click here and then refresh this page.
-2. Activity
-	•	Describe the difference between a queue and a stack.
-	•	Describe the difference between a queue and a priority queue.
-	•	Describe the difference between a list and an array list. Which one is better and why?
-3. Practice Activities
+## 2. Activity
+	-	Describe the difference between a queue and a stack.
+	-	Describe the difference between a queue and a priority queue.
+	-	Describe the difference between a list and an array list. Which one is better and why?
+## 3. Practice Activities
 Case Study 1: Hospital Emergency Room Patient Management
 Problem Statement:
 In a hospital emergency room, patients are treated based on the severity of their condition. The priority levels are:
-	•	Critical (Priority 1) – Life-threatening cases
-	•	Serious (Priority 2) – Requires immediate medical attention
-	•	Stable (Priority 3) – Can wait for treatment
+	-	Critical (Priority 1) – Life-threatening cases
+	-	Serious (Priority 2) – Requires immediate medical attention
+	-	Stable (Priority 3) – Can wait for treatment
 The hospital must process patients in order of priority, ensuring that critical patients receive attention first.
 
 Solution: Implementing a Priority Queue for Patient Management
@@ -76,9 +76,9 @@ Treating Patient: Alice (Stable)
 Case Study 2: Job Scheduling in an Operating System
 Problem Statement:
 An operating system schedules processes based on priority:
-	•	Priority 1: System processes
-	•	Priority 2: User applications
-	•	Priority 3: Background tasks
+	-	Priority 1: System processes
+	-	Priority 2: User applications
+	-	Priority 3: Background tasks
 The OS must process higher-priority jobs first.
 
 Solution: Using a Custom Priority Queue
@@ -142,9 +142,9 @@ Executing Job: Background Sync
 Case Study 3: Parcel Delivery System
 Problem Statement:
 A courier company prioritizes deliveries based on urgency:
-	•	Priority 1: Express deliveries
-	•	Priority 2: Standard deliveries
-	•	Priority 3: Economy deliveries
+	-	Priority 1: Express deliveries
+	-	Priority 2: Standard deliveries
+	-	Priority 3: Economy deliveries
 The system must ensure express parcels are delivered first.
 
 Solution: Implementing Priority Queue for Delivery
@@ -199,9 +199,9 @@ Delivering: Economy Parcel C
 Case Study 4: Stock Market Order Processing
 Problem Statement:
 A stock exchange processes buy/sell orders based on priority:
-	•	Priority 1: Market Orders (executed immediately)
-	•	Priority 2: Limit Orders (executed at a set price)
-	•	Priority 3: Stop Orders (triggered later)
+	-	Priority 1: Market Orders (executed immediately)
+	-	Priority 2: Limit Orders (executed at a set price)
+	-	Priority 3: Stop Orders (triggered later)
 The system ensures real-time order execution.
 
 Solution: Stock Order Processing with Priority Queue
@@ -258,9 +258,9 @@ Conclusion
 These four case studies demonstrate how Priority Queues improve efficiency in different real-world applications.
 
 
-	•	3. Hashing
-	•	3.1. Hash Tables
-	•	3.2. Dictionaries
-	•	3.3. Sorted Dictionaries
-	•	3.4. Hash Sets
-	•	3.5. Sorted Sets
+	-	3. Hashing
+	-	3.1. Hash Tables
+	-	3.2. Dictionaries
+	-	3.3. Sorted Dictionaries
+	-	3.4. Hash Sets
+	-	3.5. Sorted Sets

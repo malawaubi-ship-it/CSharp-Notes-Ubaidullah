@@ -1,10 +1,10 @@
 # Module 9: Relevance Connection
 
-1. Learning outcomes
+## 1. Learning outcomes
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms.
-	•	Implement data structures in C#.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+	-	Acquire the skill to interpret data structures and algorithms.
+	-	Implement data structures in C#.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
 Prescribed Reading
 Jamro, M., (2018). Arrays and Lists, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p48-p60
@@ -12,9 +12,9 @@ Jamro, M., (2018). Arrays and Lists, C# Data Structures and Algorithms: Explore 
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. Relevance Connection
+## 2. Relevance Connection
 Find 5 examples of when sorting data structures is required.
-3. Sorting
+## 3. Sorting
 Sorting is a method of arranging a list or array in a specific order, either ascending or descending. There are many different types of sorting algorithms, that work in different ways, which gives characteristics that may be beneficial or even negative in certain circumstances.
  
 Time complexity is an important description of algorithms that describes the amount of time taken by an algorithm, by focusing on the number of operations required, that is independent of computer hardware. Sorting algorithms are often compared to each other using their time complexity.
@@ -58,6 +58,6 @@ Virginia Tech has a useful visualisation tool for Insertion Sort[2].
 [2] Insertion sort visualization (2024). https://opendsa-server.cs.vt.edu/OpenDSA/AV/Sorting/insertionsortAV.html.
 
 
-	•	2. Relevance Connection
-	•	3. Bubble Sort
-	•	4. Quicksort
+	-	2. Relevance Connection
+	-	3. Bubble Sort
+	-	4. Quicksort

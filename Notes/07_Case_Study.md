@@ -1,10 +1,10 @@
 # Module 7: Case Study
 
-1. Learning outcomes
+## 1. Learning outcomes
 By the end of this topic you should be able to:
-	•	Acquire the skill to interpret data structures and algorithms.
-	•	Implement data structures in C#.
-	•	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+	-	Acquire the skill to interpret data structures and algorithms.
+	-	Implement data structures in C#.
+	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
 Prescribed Reading
 Jamro, M., (2018). Dictionaries and Sets, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p115-p143
@@ -12,9 +12,9 @@ Jamro, M., (2018). Dictionaries and Sets, C# Data Structures and Algorithms: Exp
 Not signed in? Click here and then refresh this page.
 Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
-2. Case Study
+## 2. Case Study
 Clothing One Ltd is a department shop that sells many different products. They need to have a system that stores information about the different products they sell. This system must be able to retrieve information quickly, as it is used by the point-of-sale computers to retrieve price information, when customers checkout. The company uses hashing for this. Each product is assigned a unique identification number, that can be represented using a barcode. When a user scans the barcode, the computer reads in the unique identifier number, and queries this in the data system. The computer then returns the relevant product information.
-3. Hashing
+## 3. Hashing
 The idea behind hashing is that an input value is used to obtain some output value. The input  value is know as a key. The output value is known as a value. Together, they are commonly called a key-value pair. A hashing algorithm is then used to map the key to its corresponding value. These values are present in a structure known as buckets. The key doesn’t map to the value itself, rather it maps to a bucket, in which the value is stored. This allows users to retrieve elements from the data structure like they do in arrays, except with hashing, a key is used instead of an index.
  
 The image below shows keys being mapped to values, present in buckets, with a hash function.
@@ -58,14 +58,14 @@ Much like with SortDictionary, HashSets have a sorted equivalent, SortedSet. Thi
 [2] Reference source (2024). https://referencesource.microsoft.com/#System/compmod/system/collections/generic/sortedset.cs,bae1c41b842726a2.
 
 
-	•	3. Binary Trees
-	•	4. Tree Traversal
-	•	4.1. Pre-order
-	•	4.2. Post-order
-	•	4.3. In-order
-	•	5. Binary Search Trees
-	•	6. AVL Trees
-	•	7. Red-Black Trees
-	•	8. Binary Heaps
-	•	8.1. Min-Heap
-	•	8.2. Max-Heap
+	-	3. Binary Trees
+	-	4. Tree Traversal
+	-	4.1. Pre-order
+	-	4.2. Post-order
+	-	4.3. In-order
+	-	5. Binary Search Trees
+	-	6. AVL Trees
+	-	7. Red-Black Trees
+	-	8. Binary Heaps
+	-	8.1. Min-Heap
+	-	8.2. Max-Heap

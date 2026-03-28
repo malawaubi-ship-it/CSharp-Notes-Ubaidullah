@@ -1,6 +1,6 @@
 # Module 13: Collaborative Project   Case Study   Relevance Connection
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this topic you should be able to:
 you will explore strings, strings operations, operations for manipulating strings, strings concatenation, switching to uppercase and lowercase letters, searching for a string within another string, extracting a portion of a string, splitting the string by a separator, replacing a substring, and regular expressions.
@@ -11,40 +11,40 @@ Introduction to Programming with C# / Java Books » Chapter 13. Strings and Text
 Time Allocation:
 4 Hours
  
-2. Collaborative Project / Case Study / Relevance Connection:
+## 2. Collaborative Project / Case Study / Relevance Connection:
 
 A string is an object of type String whose value is text. Internally, the text is stored as a sequential read-only collection of Char objects. There's no null-terminating character at the end of a C# string; therefore a C# string can contain any number of embedded null characters ('\0'). The Length property of a string represents the number of Char objects it contains, not the number of Unicode characters. To access the individual Unicode code points in a string, use the StringInfo object.
 In C#, string is an object of System.String class that represent sequence of characters. We can perform many operations on strings such as concatenation, comparision, getting substring, search, trim, replacement etc. 
-3. Creating String Object
+## 3. Creating String Object
 
 Creating a String Object
 You can create string object using one of the following methods −
-	•	By assigning a string literal to a String variable
-	•	By using a String class constructor
-	•	By using the string concatenation operator (+)
-	•	By retrieving a property or calling a method that returns a string
-	•	By calling a formatting method to convert a value or an object to its string representation
-	•	1.3 Our First C# Program
-	•	1.3.1 How Does Our First C# Program Work?
-	•	1.3.2 Keywords
-	•	1.4 Datatypes and Operators
-	•	1.4.1 Datatypes
-	•	1.4.1.1 Integer Types
-	•	1.4.1.2 Real Floating-Point Types
-	•	1.4.1.3 Boolean Type
-	•	1.4.1.4 Character Type
-	•	1.4.1.5 String Type
-	•	1.4.1.6 Object Type
-	•	1.4.2 Operators
-	•	1.4.2.1 Arithmetic Operators
-	•	1.4.2.2 Assignment Operators
-	•	1.4.2.3 Comparison Operators
-	•	1.4.2.4 Logical Operators
-	•	1.4.2.5 Bitwise Operators
-	•	1.4.2.6 Type Conversion
+	-	By assigning a string literal to a String variable
+	-	By using a String class constructor
+	-	By using the string concatenation operator (+)
+	-	By retrieving a property or calling a method that returns a string
+	-	By calling a formatting method to convert a value or an object to its string representation
+	-	1.3 Our First C# Program
+	-	1.3.1 How Does Our First C# Program Work?
+	-	1.3.2 Keywords
+	-	1.4 Datatypes and Operators
+	-	1.4.1 Datatypes
+	-	1.4.1.1 Integer Types
+	-	1.4.1.2 Real Floating-Point Types
+	-	1.4.1.3 Boolean Type
+	-	1.4.1.4 Character Type
+	-	1.4.1.5 String Type
+	-	1.4.1.6 Object Type
+	-	1.4.2 Operators
+	-	1.4.2.1 Arithmetic Operators
+	-	1.4.2.2 Assignment Operators
+	-	1.4.2.3 Comparison Operators
+	-	1.4.2.4 Logical Operators
+	-	1.4.2.5 Bitwise Operators
+	-	1.4.2.6 Type Conversion
 Learning outcomes
 By the end of this topic you should be able to:
-	•	Acquire programming skills in core C#.
+	-	Acquire programming skills in core C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 1, 2 & 3
@@ -67,9 +67,9 @@ System.Console.WriteLine(/* Output */ "Hello C#!");
 The only thing this program does is to print the message "Hello, C#!" on the default output. It is still early to execute it, which is why we will only take a look at its structure. Later we will describe in full how to compile and run a given program from the command prompt as well as from a development environment. 
 1.3.1 How Does Our First C# Program Work?
 Our first program consists of three logical parts:
-	•	Definition of a class HelloCSharp;
-	•	Definition of a method Main();
-	•	Contents of the method Main().
+	-	Definition of a class HelloCSharp;
+	-	Definition of a method Main();
+	-	Contents of the method Main().
 Defining a Class 
 On the first line of our program we define a class called HelloCSharp. The simplest definition of a class consists of the keyword class, followed by its name. In our case the name of the class is HelloCSharp. The content of the class is located in a block of program lines, surrounded by curly brackets: {}. 
 Defining the Main() Method 
@@ -627,16 +627,16 @@ Console.WriteLine(/* Output */  
 From the results it is obvious, that concatenating a number to a character string returns in result the string followed by the text representation of the number. Note that the "+" for concatenating strings can cause unpleasant effects on the addition of numArray, because it has equal priority with the operator "+" for mathematical addition. Unless the priorities of the operations are changed by placing the brackets, they will always be executed from left to right.
 
 
-	•	1.5 Variables
-	•	1.5.1 Naming Variables - Rules
-	•	1.5.2 Naming Variables - Recommendations
-	•	1.5.3 Declaring Variables
-	•	1.5.4 Assigning a Value to Variables
-	•	1.5.5 Initialization of Variables
-	•	1.6 Conclusion
+	-	1.5 Variables
+	-	1.5.1 Naming Variables - Rules
+	-	1.5.2 Naming Variables - Recommendations
+	-	1.5.3 Declaring Variables
+	-	1.5.4 Assigning a Value to Variables
+	-	1.5.5 Initialization of Variables
+	-	1.6 Conclusion
 Learning outcomes
 By the end of this topic you should be able to:
-	•	Acquire programming skills in core C#.
+	-	Acquire programming skills in core C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 1, 2 & 3
@@ -712,15 +712,15 @@ secondChar = ch; 
 In this week, we discussed the principles, characteristics and features in using Visual Studio IDE. In addition, we critically evaluated the Visual Studio environment. Further, our first C# program was demonstrated and explained. C# datatypes and operators were discussed. Lastly, we discussed variables and their declaration in C#.
 
 
-	•	2.1 Introduction
-	•	2.2 Control Statements
-	•	2.2.1 Selection Statements
-	•	2.2.2 Iteration Statements
-	•	2.2.3 Jump Statement
-	•	Case study
+	-	2.1 Introduction
+	-	2.2 Control Statements
+	-	2.2.1 Selection Statements
+	-	2.2.2 Iteration Statements
+	-	2.2.3 Jump Statement
+	-	Case study
 Learning outcomes
 By the end of this topic you should be able to:
-	•	Acquire programming skills in core C#
+	-	Acquire programming skills in core C#
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 5 & 6
@@ -733,9 +733,9 @@ In this week we will discuss control structures in C# and give corresponding exa
 
 2.2 Control Statements
 Control statements give additional means to control the processing within the applications being developed. This section explores the syntax and function of the the three major control statement C# offers. These statement are categorise as: 
-	•	Selection Statement
-	•	Iteration Statements
-	•	Jump statement.
+	-	Selection Statement
+	-	Iteration Statements
+	-	Jump statement.
 2.2.1 Selection Statements
 The selection statements consist of the if, else, switch-case branching. The if and if-else are conditional control statements. Because of them the program can behave differently based on a defined condition checked during the execution of the statement. 
  
@@ -1100,7 +1100,7 @@ Code Example
 5.           break;  
 6.       //...     
 7.   }  
-8.   Console.WriteLine(/* Output */ "break");
+## 8.   Console.WriteLine(/* Output */ "break");
  
 2.2.3.3       Continue Statement
 The continue statement (shown in example below) is used to jump to the end of the loop immediately and process the next iteration of the loop.
@@ -1118,7 +1118,7 @@ Code Example
 10.      //...     
 11.    
 12.      if (x == 5)  
-13.             Console.WriteLine(/* Output */ "continue");  
+## 13.             Console.WriteLine(/* Output */ "continue");
 14.      //...     
 15.  }  
  
@@ -1141,10 +1141,10 @@ Case study
 Case Study 1: E-Commerce Order Processing System
 Scenario: You are tasked with developing a simple order processing system for an e-commerce platform. The system needs to apply different discounts based on certain conditions, check the stock availability, and ensure that the payment process is completed successfully.
 Control Structures Used:
-	•	If-Else Statements
-	•	Switch Statement
-	•	While Loop
-	•	For Loop
+	-	If-Else Statements
+	-	Switch Statement
+	-	While Loop
+	-	For Loop
 Solution:
 
 using System;
@@ -1224,17 +1224,17 @@ public class MainProgram
     }
 }
 Explanation:
-	•	If-Else Statements are used to check the quantity of items, whether a discount should apply, and if the payment was successful.
-	•	Switch Statement could be used in place of multiple if-else branches to select actions based on specific product IDs (if applicable).
-	•	While Loop could be used for checking a condition until it's met, such as checking if a customer's payment method is valid.
-	•	For Loop could be employed to iterate over a list of products for bulk processing, like applying discounts across multiple products.
+	-	If-Else Statements are used to check the quantity of items, whether a discount should apply, and if the payment was successful.
+	-	Switch Statement could be used in place of multiple if-else branches to select actions based on specific product IDs (if applicable).
+	-	While Loop could be used for checking a condition until it's met, such as checking if a customer's payment method is valid.
+	-	For Loop could be employed to iterate over a list of products for bulk processing, like applying discounts across multiple products.
 
 Case Study 2: Student Grade Classification
 Scenario: You are developing a student grading system where you need to categorize students into different grade categories based on their exam scores. The system should print out appropriate messages for students who pass or fail, and those who are eligible for special honors.
 Control Structures Used:
-	•	If-Else Statements
-	•	Switch Statement
-	•	For Loop
+	-	If-Else Statements
+	-	Switch Statement
+	-	For Loop
 Solution:
 
 using System;
@@ -1288,22 +1288,22 @@ public class MainProgram
     }
 }
 Explanation:
-	•	If-Else Statements determine the grade based on the student's score and check whether the student is eligible for honors.
-	•	Switch Statement could be used if you want to create multiple specific conditions (e.g., student classes, subjects) to categorize students based on their grades.
-	•	For Loop is used to iterate through the array of student scores and apply the logic of categorizing each student's performance.
+	-	If-Else Statements determine the grade based on the student's score and check whether the student is eligible for honors.
+	-	Switch Statement could be used if you want to create multiple specific conditions (e.g., student classes, subjects) to categorize students based on their grades.
+	-	For Loop is used to iterate through the array of student scores and apply the logic of categorizing each student's performance.
 
 
-	•	3.1 Introduction
-	•	3.1.1 What is an Exception
-	•	3.1.2 Why an exception occurs?
-	•	3.1.3 Advantages of Exception Handling
-	•	3.1.4 Difference between Error and Exception
-	•	3.1.5 Types of Exception
-	•	3.2 Catching and Handling Exceptions
+	-	3.1 Introduction
+	-	3.1.1 What is an Exception
+	-	3.1.2 Why an exception occurs?
+	-	3.1.3 Advantages of Exception Handling
+	-	3.1.4 Difference between Error and Exception
+	-	3.1.5 Types of Exception
+	-	3.2 Catching and Handling Exceptions
 Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire programming skills in core C#.
+	-	Acquire programming skills in core C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 8 & 13
@@ -1319,17 +1319,17 @@ Play Video
 An Exception is an unwanted event that interrupts the normal flow of the program. When an exception occurs program execution gets terminated.  In such cases we get a system generated message which may not be meaningful. The good thing about exceptions is that they can be handled in C#.  By handling the exceptions we can provide a meaningful message to the user about the issue rather than a system generated message, which may not be understandable to a user.
 3.1.2 Why an exception occurs?
 There can be several reasons that can cause a program to throw exception. For example:
-	•	Opening a non-existing file in your program,
-	•	Network connection problem,
-	•	bad input data provided by user, etc.
+	-	Opening a non-existing file in your program,
+	-	Network connection problem,
+	-	bad input data provided by user, etc.
 3.1.3 Advantages of Exception Handling
-	•	Exception handling ensures that the flow of the program doesn’t break when an exception occurs.
-	•	For example, if a program has bunch of statements and an exception occurs mid-way after executing certain statements then the statements after the exception will not execute and the program will terminate abruptly.
-	•	By handling we make sure that all the statements execute and the flow of program doesn’t break
+	-	Exception handling ensures that the flow of the program doesn’t break when an exception occurs.
+	-	For example, if a program has bunch of statements and an exception occurs mid-way after executing certain statements then the statements after the exception will not execute and the program will terminate abruptly.
+	-	By handling we make sure that all the statements execute and the flow of program doesn’t break
 3.1.4 Difference between Error and Exception
-	•	Errors: indicate that something severe enough has gone wrong, the application should crash rather than try to handle the error.
-	•	Exceptions: are events that occurs in the code.
-	•	A programmer can handle such conditions and take necessary corrective actions.
+	-	Errors: indicate that something severe enough has gone wrong, the application should crash rather than try to handle the error.
+	-	Exceptions: are events that occurs in the code.
+	-	A programmer can handle such conditions and take necessary corrective actions.
 3.1.5 Types of Exception
 C# statements can execute in either checked or unchecked context. In a checked context, arithmetic overflow raises an exception. In an unchecked context, arithmetic overflow is ignored and the result is truncated by discarding any high-order bits that don't fit in the destination type. 
 3.1.5.1       Checked Exception
@@ -1370,15 +1370,15 @@ checked
  
 The program below is an example of a C# checked exception. This program throws an exception and stops program execution.
 Code Example
-	•	1. using System;  
-	•	2. namespace CSharpProgram  
-	•	3. {  
-	•	4.     class Program  
-	•	5.     {  
-	•	6.         static void Main(string[] args)   
-	•	7.         {  
-	•	8.             checked  
-	•	9.             {  
+	-	1. using System;  
+	-	2. namespace CSharpProgram  
+	-	3. {  
+	-	4.     class Program  
+	-	5.     {  
+	-	6.         static void Main(string[] args)   
+	-	7.         {  
+	-	8.             checked  
+	-	9.             {  
                 int val = int.MaxValue;  
                Console.WriteLine(/* Output */ val + 2);  
            }  
@@ -1406,15 +1406,15 @@ int1 = unchecked(ConstantMax + 10);
  
 If the unchecked environment is removed, a compilation error occurs. The overflow can be detected at compile time because all the terms of the expression are constants. Expressions that contain non-constant terms are unchecked by default at compile time and run time. Because checking for overflow takes time, the use of unchecked code in situations where there is no danger of overflow might improve performance. However, if overflow is a possibility, a checked environment should be used. Below is an example of unchecked exception.
 Code Example
-	•	1. using System;  
-	•	2. namespace CSharpProgram  
-	•	3. {  
-	•	4.     class Program  
-	•	5.     {  
-	•	6.         static void Main(string[] args)   
-	•	7.         {  
-	•	8.             unchecked  
-	•	9.             {  
+	-	1. using System;  
+	-	2. namespace CSharpProgram  
+	-	3. {  
+	-	4.     class Program  
+	-	5.     {  
+	-	6.         static void Main(string[] args)   
+	-	7.         {  
+	-	8.             unchecked  
+	-	9.             {  
                 int val = int.MaxValue;  
                 Console.WriteLine(/* Output */ val + 2);  
             }  
@@ -1472,9 +1472,9 @@ Case Study
 Case Study 1: Handling Invalid User Input in a Login System
 Scenario: In a login system, the user is prompted to enter their username and password. If the username or password is empty, an exception should be thrown. Additionally, if the entered username does not match the stored username, a LoginException should be raised.
 Exception Handling Used:
-	•	try-catch block to handle input validation and login errors.
-	•	throw to explicitly raise exceptions.
-	•	custom exception class to handle specific login-related errors.
+	-	try-catch block to handle input validation and login errors.
+	-	throw to explicitly raise exceptions.
+	-	custom exception class to handle specific login-related errors.
 Solution:
 
 using System;
@@ -1541,22 +1541,22 @@ public class MainProgram
     }
 }
 Explanation:
-	•	try-catch block: The try block contains the code that may throw exceptions. If an exception is thrown, the catch block handles it. In this case, the exception is a LoginExceptionthat catches specific errors like invalid credentials or empty input.
-	•	throw keyword: Used to explicitly raise a LoginException when the conditions are met, such as an empty username or incorrect credentials.
-	•	Custom LoginException class: A custom exception to handle login-specific errors with a descriptive message.
+	-	try-catch block: The try block contains the code that may throw exceptions. If an exception is thrown, the catch block handles it. In this case, the exception is a LoginExceptionthat catches specific errors like invalid credentials or empty input.
+	-	throw keyword: Used to explicitly raise a LoginException when the conditions are met, such as an empty username or incorrect credentials.
+	-	Custom LoginException class: A custom exception to handle login-specific errors with a descriptive message.
 
 
-	•	3.3 Exceptions Handling Classes
-	•	3.4 Exceptions Handling Methods
-	•	3.4.1 Try …Catch Block
-	•	3.4.2 Nested Try …Catch Block
-	•	3.4.3 Try…Finally Block
-	•	3.4.4 Throw Keyword
-	•	3.5 Conclusion
+	-	3.3 Exceptions Handling Classes
+	-	3.4 Exceptions Handling Methods
+	-	3.4.1 Try …Catch Block
+	-	3.4.2 Nested Try …Catch Block
+	-	3.4.3 Try…Finally Block
+	-	3.4.4 Throw Keyword
+	-	3.5 Conclusion
 Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire programming skills in core C#.
+	-	Acquire programming skills in core C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 8 & 13
@@ -1566,8 +1566,8 @@ Need help? Contact Support
 Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
 3.3 Exceptions Handling Classes
 When you have to throw an exception, you can often use an existing exception type in the .NET Framework instead of implementing a custom exception. You should use a standard exception type under these two conditions:
-	•	You are throwing an exception that is caused by a usage error (that is, by an error in program logic made by the developer who is calling your method). Typically, you would throw an exception such as ArgumentException, ArgumentNullException, InvalidOperationException, or NotSupportedException. The string you supply to the exception object's constructor when instantiating the exception object should describe the error so that the developer can fix it.
-	•	You are handling an error that can be communicated to the caller with an existing .NET Framework exception. You should throw the most derived exception possible. For example, if a method requires an argument to be a valid member of an enumeration type, you should throw an InvalidEnumArgumentException (the most derived class) rather than an ArgumentException.
+	-	You are throwing an exception that is caused by a usage error (that is, by an error in program logic made by the developer who is calling your method). Typically, you would throw an exception such as ArgumentException, ArgumentNullException, InvalidOperationException, or NotSupportedException. The string you supply to the exception object's constructor when instantiating the exception object should describe the error so that the developer can fix it.
+	-	You are handling an error that can be communicated to the caller with an existing .NET Framework exception. You should throw the most derived exception possible. For example, if a method requires an argument to be a valid member of an enumeration type, you should throw an InvalidEnumArgumentException (the most derived class) rather than an ArgumentException.
 The following table lists popular exception class and the conditions and meaning under which you would throw them.
 Exception
 Condition
@@ -1861,8 +1861,8 @@ Case Study
 Case Study 2: File Handling with Exception Handling
 Scenario: A file processing application attempts to read a file. If the file doesn't exist or there are any issues while reading the file, an exception should be caught, and the user should be informed about the error. Additionally, the system should ensure that the file is properly closed, even if an error occurs.
 Exception Handling Used:
-	•	try-catch-finally block to manage resources and handle exceptions gracefully.
-	•	FileNotFoundException and IOException for specific errors related to file operations.
+	-	try-catch-finally block to manage resources and handle exceptions gracefully.
+	-	FileNotFoundException and IOException for specific errors related to file operations.
 Solution:
 
 using System;
@@ -1914,15 +1914,15 @@ public class MainProgram
     }
 }
 Explanation:
-	•	try-catch block: The try block attempts to execute the file reading operation. If an exception occurs, the corresponding catch block handles it. In this case, specific exceptions like FileNotFoundException and IOException are caught to handle different types of file errors.
-	•	finally block: Ensures that any necessary cleanup is performed, such as closing resources or logging, regardless of whether an exception was thrown or not. Here, it prints a completion message.
-	•	Specific exceptions: FileNotFoundException and IOException are used to catch errors specific to file-related operations.
+	-	try-catch block: The try block attempts to execute the file reading operation. If an exception occurs, the corresponding catch block handles it. In this case, specific exceptions like FileNotFoundException and IOException are caught to handle different types of file errors.
+	-	finally block: Ensures that any necessary cleanup is performed, such as closing resources or logging, regardless of whether an exception was thrown or not. Here, it prints a completion message.
+	-	Specific exceptions: FileNotFoundException and IOException are used to catch errors specific to file-related operations.
 
 Case Study 3: Division by Zero Handling
 Scenario: In a calculator application, the user can perform division operations. If the user attempts to divide by zero, an exception should be thrown and handled appropriately to prevent the program from crashing.
 Exception Handling Used:
-	•	try-catch block to catch a DivideByZeroException.
-	•	throw to raise an exception explicitly when dividing by zero.
+	-	try-catch block to catch a DivideByZeroException.
+	-	throw to raise an exception explicitly when dividing by zero.
 Solution:
 
 using System;
@@ -1967,21 +1967,21 @@ public class MainProgram
     }
 }
 Explanation:
-	•	try-catch block: Used to catch and handle the DivideByZeroException. When the denominator is zero, an exception is thrown, and the catch block handles it by displaying an error message.
-	•	throw keyword: Used to explicitly throw a DivideByZeroException when the denominator is zero.
-	•	Handling DivideByZeroException: When dividing by zero, the exception is caught, and the program doesn't crash. Instead, a user-friendly message is displayed, and the method returns NaN (Not-a-Number) to indicate an invalid result.
+	-	try-catch block: Used to catch and handle the DivideByZeroException. When the denominator is zero, an exception is thrown, and the catch block handles it by displaying an error message.
+	-	throw keyword: Used to explicitly throw a DivideByZeroException when the denominator is zero.
+	-	Handling DivideByZeroException: When dividing by zero, the exception is caught, and the program doesn't crash. Instead, a user-friendly message is displayed, and the method returns NaN (Not-a-Number) to indicate an invalid result.
 
 
-	•	4.1 Introduction
-	•	4.1.1 Some key Concept
-	•	4.1.2 Class
-	•	4.1.3 Object
-	•	4.1.4 Constructors
-	•	4.1.5 Method
+	-	4.1 Introduction
+	-	4.1.1 Some key Concept
+	-	4.1.2 Class
+	-	4.1.3 Object
+	-	4.1.4 Constructors
+	-	4.1.5 Method
 Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire Object Oriented Skills in C#.
+	-	Acquire Object Oriented Skills in C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 4, 10, 12
@@ -2014,11 +2014,11 @@ class Car
 When a variable is declared directly in a class, it is often referred to as a field (or attribute).
 4.1.3 Object
 Object in C# can be view in the following light:
-	•	A major element in a class which has attributes (state) and behavior (action-what an object can do). 
-	•	It is an instance of a class which can access your data.
-	•	The building blocks of an OOP.
-	•	A program that uses OO technology is a collection of objects
-	•	Objects are instances of classes. For example, John is a Student and Peter is also a Student.
+	-	A major element in a class which has attributes (state) and behavior (action-what an object can do). 
+	-	It is an instance of a class which can access your data.
+	-	The building blocks of an OOP.
+	-	A program that uses OO technology is a collection of objects
+	-	Objects are instances of classes. For example, John is a Student and Peter is also a Student.
  
 For instance: See a person as an object, a person has attributes such as eye, colour, age, height and so on. A person has behaviours such as walking, talking breathing, and so on. OOP is a programming technique in which programs are written on the basis of object
  
@@ -2109,9 +2109,9 @@ class MainProgram
  
  
 Let us explain the example method above.
-	•	MyMethod() is the name of the method
-	•	static means that the method belongs to the Program class and not an object of the Program class. You will learn more about objects and how to access methods through objects later in this tutorial.
-	•	void means that this method does not have a return value. 
+	-	MyMethod() is the name of the method
+	-	static means that the method belongs to the Program class and not an object of the Program class. You will learn more about objects and how to access methods through objects later in this tutorial.
+	-	void means that this method does not have a return value. 
  
 To call (execute) a method, write the method's name followed by two parentheses () and a semicolon; In the following example, MyMethod() is used to print a text (the action), when it is called:
 Example
@@ -2372,35 +2372,35 @@ public class MainProgram
     }
 }
 Explanation:
-1. Book Class:
-	•	Properties: The Book class contains properties such as Title, Author, ISBN, PublicationYear, and IsAvailable. These define the essential attributes of a book.
-	•	Constructor: The constructor initializes the book's properties. When a book is created, it is set to be available by default (IsAvailable = true).
-	•	Methods:
-	•	DisplayDetails: Prints the book's details, including the availability status.
-	•	Other methods could include methods like UpdateAvailability or similar (although not needed for this basic example).
-2. Library Class:
-	•	Properties: The Library class holds a list of Book objects, representing the collection of books in the library.
-	•	Methods:
-	•	AddBook: Adds a new book to the library's collection.
-	•	BorrowBook: Checks if a book with a given ISBN is available and marks it as unavailable if it is borrowed.
-	•	ReturnBook: Marks a borrowed book as available again.
-	•	DisplayBooks: Displays all the books in the library along with their details.
-3. Program Class:
-	•	Main Program: In the Main method, we instantiate the Library class and create several Book objects. These books are added to the library, and we demonstrate borrowing and returning books by calling the relevant methods.
+## 1. Book Class:
+	-	Properties: The Book class contains properties such as Title, Author, ISBN, PublicationYear, and IsAvailable. These define the essential attributes of a book.
+	-	Constructor: The constructor initializes the book's properties. When a book is created, it is set to be available by default (IsAvailable = true).
+	-	Methods:
+	-	DisplayDetails: Prints the book's details, including the availability status.
+	-	Other methods could include methods like UpdateAvailability or similar (although not needed for this basic example).
+## 2. Library Class:
+	-	Properties: The Library class holds a list of Book objects, representing the collection of books in the library.
+	-	Methods:
+	-	AddBook: Adds a new book to the library's collection.
+	-	BorrowBook: Checks if a book with a given ISBN is available and marks it as unavailable if it is borrowed.
+	-	ReturnBook: Marks a borrowed book as available again.
+	-	DisplayBooks: Displays all the books in the library along with their details.
+## 3. Program Class:
+	-	Main Program: In the Main method, we instantiate the Library class and create several Book objects. These books are added to the library, and we demonstrate borrowing and returning books by calling the relevant methods.
 
 
-	•	4.2 Fundamental Principles of OOP
-	•	4.2.1 Inheritance
-	•	4.2.2 Abstraction
-	•	4.2.2.1 Abstract Class
-	•	4.2.2.2 Interface
-	•	4.2.2.3 Types of Abstraction
-	•	4.2.3 Encapsulation
-	•	4.2.4 Polymorphism
+	-	4.2 Fundamental Principles of OOP
+	-	4.2.1 Inheritance
+	-	4.2.2 Abstraction
+	-	4.2.2.1 Abstract Class
+	-	4.2.2.2 Interface
+	-	4.2.2.3 Types of Abstraction
+	-	4.2.3 Encapsulation
+	-	4.2.4 Polymorphism
 Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire Object Oriented Skills in C#.
+	-	Acquire Object Oriented Skills in C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 4, 10, 12
@@ -2480,11 +2480,11 @@ Weeping...
  
  
 Types of Inheritance
-	•	Single Inheritance: refers to a child and parent class relationship where a class extends to another class.
-	•	Multilevel inheritance: refers to a child and parent class relationship where a class extends the child class.
-	•	Hierarchical inheritance: refers to a child and parent class relationship where more than one classes extends the same class.
-	•	Multiple Inheritance: refers to the concept of one class extending more than one classes, which means a child class has two parent classes.
-	•	Hybrid inheritance: Combination of more than one types of inheritance in a single program.
+	-	Single Inheritance: refers to a child and parent class relationship where a class extends to another class.
+	-	Multilevel inheritance: refers to a child and parent class relationship where a class extends the child class.
+	-	Hierarchical inheritance: refers to a child and parent class relationship where more than one classes extends the same class.
+	-	Multiple Inheritance: refers to the concept of one class extending more than one classes, which means a child class has two parent classes.
+	-	Hybrid inheritance: Combination of more than one types of inheritance in a single program.
 4.2.2 Abstraction
 Abstraction is more about hiding the implementation details.  In C# abstraction is achieved through abstract classes and interfaces. Interfaces allows you to abstract the implementation completely while abstract classes allow partial abstraction as well. Therefore, Abstraction can be achieved by two ways: Abstract class or Interface. Abstract class and interface both can have abstract methods which are necessary for abstraction.
 
@@ -2570,12 +2570,12 @@ drawing circle...
  
 4.2.2.3 Types of Abstraction
 There are two major types of abstraction:
-	•	Data abstraction
-	•	Data abstraction is the way to create complex data types and exposing only meaningful operations to interact with the data type, whereas hiding all the implementation details from outside works.
-	•	The benefit of this approach involves capability of improving the implementation over time e.g. solving performance issues. The idea is that such changes are not supposed to have any impact on client code since they involve no difference in the abstract behaviour.
-	•	Control abstraction
-	•	A software is essentially a collection of numerous statements written in any programming language. Most of the times, statement are similar and repeated over places multiple times.
-	•	Control abstraction is the process of identifying all such statements and expose them as a unit of work. We normally use this feature when we create a function to perform any work.
+	-	Data abstraction
+	-	Data abstraction is the way to create complex data types and exposing only meaningful operations to interact with the data type, whereas hiding all the implementation details from outside works.
+	-	The benefit of this approach involves capability of improving the implementation over time e.g. solving performance issues. The idea is that such changes are not supposed to have any impact on client code since they involve no difference in the abstract behaviour.
+	-	Control abstraction
+	-	A software is essentially a collection of numerous statements written in any programming language. Most of the times, statement are similar and repeated over places multiple times.
+	-	Control abstraction is the process of identifying all such statements and expose them as a unit of work. We normally use this feature when we create a function to perform any work.
 4.2.3 Encapsulation
 Encapsulation is one of the main concepts in OOP. It is also called "information hiding". Encapsulation is the concept of wrapping data into a single unit. It collects data members and member functions into a single unit called class. The purpose of encapsulation is to prevent alteration of data from outside. This data can only be accessed by getter functions of the class. A fully encapsulated class has getter and setter functions that are used to read and write data. This class does not allow data access directly.
  
@@ -2854,37 +2854,37 @@ public class MainProgram
     }
 }
 Explanation:
-1. Product Class:
-	•	Properties: The Product class has properties such as Name, Price, and StockQuantity to represent product details.
-	•	Constructor: The constructor initializes the product's name, price, and stock quantity.
-	•	Methods:
-	•	DisplayDetails: Prints the details of the product, including its price and stock.
-	•	Purchase: Reduces the stock when a product is bought and returns true if successful, false if there is insufficient stock.
-2. Cart Class:
-	•	Properties: The Cart class manages a list of products added to the shopping cart.
-	•	Methods:
-	•	AddToCart: Adds a product to the cart and updates the stock using the Purchase method from the Product class.
-	•	DisplayCart: Displays the products in the cart.
-	•	CalculateTotal: Calculates the total price of the products in the cart.
-3. Program Class:
-	•	Main Program: In the Main method, we create Product objects, display their details, add products to the cart, and display the cart's contents along with the total price.
+## 1. Product Class:
+	-	Properties: The Product class has properties such as Name, Price, and StockQuantity to represent product details.
+	-	Constructor: The constructor initializes the product's name, price, and stock quantity.
+	-	Methods:
+	-	DisplayDetails: Prints the details of the product, including its price and stock.
+	-	Purchase: Reduces the stock when a product is bought and returns true if successful, false if there is insufficient stock.
+## 2. Cart Class:
+	-	Properties: The Cart class manages a list of products added to the shopping cart.
+	-	Methods:
+	-	AddToCart: Adds a product to the cart and updates the stock using the Purchase method from the Product class.
+	-	DisplayCart: Displays the products in the cart.
+	-	CalculateTotal: Calculates the total price of the products in the cart.
+## 3. Program Class:
+	-	Main Program: In the Main method, we create Product objects, display their details, add products to the cart, and display the cart's contents along with the total price.
 
 Key Concepts:
-	•	Classes & Objects: In both case studies, we use classes to define blueprints for creating objects that represent real-world entities (e.g., Book, Product).
-	•	Properties & Methods: Properties define the attributes of an object, while methods define behaviors or actions an object can perform (e.g., DisplayDetails, Purchase).
-	•	Encapsulation: The internal details of the objects (e.g., how stock is updated) are hidden inside the class, and the objects provide methods to interact with them. This ensures that the user does not need to know how the internal logic works.
+	-	Classes & Objects: In both case studies, we use classes to define blueprints for creating objects that represent real-world entities (e.g., Book, Product).
+	-	Properties & Methods: Properties define the attributes of an object, while methods define behaviors or actions an object can perform (e.g., DisplayDetails, Purchase).
+	-	Encapsulation: The internal details of the objects (e.g., how stock is updated) are hidden inside the class, and the objects provide methods to interact with them. This ensures that the user does not need to know how the internal logic works.
 
 
-	•	4.3 Class Diagram
-	•	4.3.1 Generalization
-	•	4.3.2 Associations
-	•	4.3.3 Aggregation
-	•	4.3.4 Composition
-	•	4.4 Conclusion
+	-	4.3 Class Diagram
+	-	4.3.1 Generalization
+	-	4.3.2 Associations
+	-	4.3.3 Aggregation
+	-	4.3.4 Composition
+	-	4.4 Conclusion
 Learning outcomes
  
 By the end of this topic you should be able to:
-	•	Acquire Object Oriented Skills in C#.
+	-	Acquire Object Oriented Skills in C#.
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 4, 10, 12
@@ -2930,18 +2930,18 @@ It represents part-of relationship. In composition, both the entities are depe
 During this week, we acquainted ourselves with some key concept and the principles of object-oriented programming: inheritance, interface implementation, abstraction of data and behaviour, encapsulation of data and class implementation and polymorphism. We also learned the UML and its role in object-oriented modelling. Finally, we have prepared exercises to strengthen our knowledge of the material in this unit.
 
 
-	•	5.1 Introduction
-	•	5.2 C# Arrays
-	•	5.2.1 Advantages of C# Arrays
-	•	5.2.2 Disadvantages of C# Array
-	•	5.2.3 Types of C# Arrays
-	•	5.2.3.1 Single Dimensional Array
-	•	5.2.3.2 Multidimensional Arrays
-	•	5.2.3.3 Jagged Arrays
-	•	Case study
+	-	5.1 Introduction
+	-	5.2 C# Arrays
+	-	5.2.1 Advantages of C# Arrays
+	-	5.2.2 Disadvantages of C# Array
+	-	5.2.3 Types of C# Arrays
+	-	5.2.3.1 Single Dimensional Array
+	-	5.2.3.2 Multidimensional Arrays
+	-	5.2.3.3 Jagged Arrays
+	-	Case study
 Learning outcomes
 By the end of this topic you should be able to:
-	•	Develop the skill of designing Graphical User Interfaces (GUI) and implementing Array Orientation in C#
+	-	Develop the skill of designing Graphical User Interfaces (GUI) and implementing Array Orientation in C#
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 8, 14, 15
@@ -2958,18 +2958,18 @@ Like other programming languages, array in C# is a group of similar types of ele
 Source: JavaTpoint (2020), Availabie at: https://www.javatpoint.com/c-sharp-arrays
 5.2.1 Advantages of C# Arrays
 The following are some of the known advantages of C# Arrays:
-	•	Code Optimization (less code)
-	•	Random Access
-	•	Easy to traverse data
-	•	Easy to manipulate data
-	•	Easy to sort data, etc.
+	-	Code Optimization (less code)
+	-	Random Access
+	-	Easy to traverse data
+	-	Easy to manipulate data
+	-	Easy to sort data, etc.
 5.2.2 Disadvantages of C# Array
 The only known disadvantage of C# Array could be seen as the fact the arrays generally have fixed size.
 5.2.3 Types of C# Arrays
 There are three types of arrays in C# programming namely:
-	•	Single Dimensional Array
-	•	Multidimensional Array
-	•	Jagged Array
+	-	Single Dimensional Array
+	-	Multidimensional Array
+	-	Jagged Array
 We will discuss each type in the next sections.
 5.2.3.1 Single Dimensional Array
 To create single dimensional array, you need to use square brackets [] after the type.
@@ -3239,15 +3239,15 @@ Case study
 Case Study 1: Student Grade Management System
 Scenario:
 A school wants to keep track of student grades in a course. The grades are collected for multiple students across multiple subjects. The goal is to implement a system that allows the teacher to:
-	•	Store and display student grades for various subjects.
-	•	Calculate the average grade for each student.
-	•	Identify the highest grade in each subject.
+	-	Store and display student grades for various subjects.
+	-	Calculate the average grade for each student.
+	-	Identify the highest grade in each subject.
 Task:
-	•	Create a two-dimensional array to store student grades.
-	•	Develop methods to:
-	•	Display all grades.
-	•	Calculate the average grade for each student.
-	•	Display the highest grade for each subject.
+	-	Create a two-dimensional array to store student grades.
+	-	Develop methods to:
+	-	Display all grades.
+	-	Calculate the average grade for each student.
+	-	Display the highest grade for each subject.
 Solution:
 
 using System;
@@ -3326,24 +3326,24 @@ public class GradeManagement
     }
 }
 Explanation:
-	•	The 2D array studentGrades is used to store the grades for 5 students across 4 subjects.
-	•	The DisplayGrades method loops through the array and prints all the grades for each student.
-	•	The CalculateAverageGrades method calculates the average grade for each student.
-	•	The DisplayHighestGrades method finds the highest grade for each subject across all students.
+	-	The 2D array studentGrades is used to store the grades for 5 students across 4 subjects.
+	-	The DisplayGrades method loops through the array and prints all the grades for each student.
+	-	The CalculateAverageGrades method calculates the average grade for each student.
+	-	The DisplayHighestGrades method finds the highest grade for each subject across all students.
 Outcome:
-	•	You can easily track and analyze the grades of students.
-	•	The system can provide insights into each student's performance as well as the best-performing subject.
+	-	You can easily track and analyze the grades of students.
+	-	The system can provide insights into each student's performance as well as the best-performing subject.
 Case Study 2: Employee Shift Scheduling System
 Scenario:
 A company needs a system to manage employee shift schedules. The company operates 7 days a week with 3 shifts (morning, afternoon, night). The goal is to:
-	•	Store the employees' shift assignments for a week.
-	•	Display the shift schedule.
-	•	Find out how many employees are assigned to each shift per day.
+	-	Store the employees' shift assignments for a week.
+	-	Display the shift schedule.
+	-	Find out how many employees are assigned to each shift per day.
 Task:
-	•	Create a multidimensional array (3D array) to store employee shifts.
-	•	Develop methods to:
-	•	Display the shift schedule for the week.
-	•	Count how many employees are working each shift per day.
+	-	Create a multidimensional array (3D array) to store employee shifts.
+	-	Develop methods to:
+	-	Display the shift schedule for the week.
+	-	Count how many employees are working each shift per day.
 Solution:
 
 using System;
@@ -3410,25 +3410,25 @@ public class EmployeeShiftScheduling
     }
 }
 Explanation:
-	•	The 3D array shifts stores the employee assignments for 7 days, 3 shifts per day, and 5 employees per shift.
-	•	The DisplayShiftSchedule method prints out the schedule, showing which employees are assigned to which shifts on each day.
-	•	The CountEmployeesPerShift method calculates how many employees are working each shift per day (since it's always 5 in this case, but this can be modified as needed).
+	-	The 3D array shifts stores the employee assignments for 7 days, 3 shifts per day, and 5 employees per shift.
+	-	The DisplayShiftSchedule method prints out the schedule, showing which employees are assigned to which shifts on each day.
+	-	The CountEmployeesPerShift method calculates how many employees are working each shift per day (since it's always 5 in this case, but this can be modified as needed).
 Outcome:
-	•	This system efficiently manages employee shift assignments, ensuring there is no overlap, and makes it easy to monitor shift distribution.
+	-	This system efficiently manages employee shift assignments, ensuring there is no overlap, and makes it easy to monitor shift distribution.
 
 
-	•	6.1 Introduction
-	•	6.2 Database Operations in C#
-	•	6.2.1 Database Creation in C#
-	•	6.2.2 Connect to the Database with C#
-	•	6.2.3 Accessing Data in the Database
-	•	6.2.4 Insert into the Database with C#
-	•	6.2.5 Update a Record in the Database with C#
-	•	6.2.6 Delete a Record from the Database with C#
-	•	6.3 Conclusion
+	-	6.1 Introduction
+	-	6.2 Database Operations in C#
+	-	6.2.1 Database Creation in C#
+	-	6.2.2 Connect to the Database with C#
+	-	6.2.3 Accessing Data in the Database
+	-	6.2.4 Insert into the Database with C#
+	-	6.2.5 Update a Record in the Database with C#
+	-	6.2.6 Delete a Record from the Database with C#
+	-	6.3 Conclusion
 Learning outcomes
 By the end of this topic you should be able to:
-	•	Develop the ability to write database applications in C#
+	-	Develop the ability to write database applications in C#
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapter 22
@@ -3840,31 +3840,31 @@ string sql = ""; 
 Output
 articleID articleName
 1          C#
-	•	          C++
+	-	          C++
  
 6.3 Conclusion
 In this week we learnt about database operations in C#. You learnt database creation, how to connect to a SQL Server database. You also learnt how to perform CRUD operations on a database from within a C# program.
 Case Study
 Case Study 1: Employee Management System
 In this case study, we will create an Employee Management System that allows users to:
-	•	Add new employee records.
-	•	View all employees.
-	•	Update employee details.
-	•	Delete employee records.
+	-	Add new employee records.
+	-	View all employees.
+	-	Update employee details.
+	-	Delete employee records.
 
 Scenario:
 The company needs an application to manage employees' information such as their name, department, and salary. The system should allow administrators to:
-	•	Add a new employee to the database.
-	•	View the list of all employees.
-	•	Edit existing employee information.
-	•	Remove an employee from the database.
+	-	Add a new employee to the database.
+	-	View the list of all employees.
+	-	Edit existing employee information.
+	-	Remove an employee from the database.
 
 Database Schema:
 The database will have a table named Employees with the following columns:
-	•	EmployeeID (Primary Key)
-	•	Name (Employee's name)
-	•	Department (Employee's department)
-	•	Salary (Employee's salary)
+	-	EmployeeID (Primary Key)
+	-	Name (Employee's name)
+	-	Department (Employee's department)
+	-	Salary (Employee's salary)
 
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY IDENTITY,
@@ -3874,7 +3874,7 @@ CREATE TABLE Employees (
 );
 
 C# Code for CRUD Operations:
-1. Create New Employee:
+## 1. Create New Employee:
 
 using System;
 using System.Data;
@@ -3902,7 +3902,7 @@ public class EmployeeManagement
     }
 }
 
-2. Read All Employees:
+## 2. Read All Employees:
 
 public void GetAllEmployees()
 {
@@ -3921,7 +3921,7 @@ public void GetAllEmployees()
     }
 }
 
-3. Update Employee Information:
+## 3. Update Employee Information:
 
 public void UpdateEmployee(int employeeId, string name, string department, decimal salary)
 {
@@ -3940,7 +3940,7 @@ public void UpdateEmployee(int employeeId, string name, string department, decim
     }
 }
 
-4. Delete Employee Record:
+## 4. Delete Employee Record:
 
 public void DeleteEmployee(int employeeId)
 {
@@ -3982,26 +3982,26 @@ class MainProgram
 
 Case Study 2: Product Inventory Management System
 In this case study, we will create a Product Inventory Management System that allows users to:
-	•	Add new products.
-	•	View all products.
-	•	Update product details.
-	•	Remove products from the inventory.
+	-	Add new products.
+	-	View all products.
+	-	Update product details.
+	-	Remove products from the inventory.
 
 Scenario:
 The company needs an application to manage products in their inventory. Each product has:
-	•	A unique product ID.
-	•	A name.
-	•	A description.
-	•	A price.
-	•	A quantity available in the inventory.
+	-	A unique product ID.
+	-	A name.
+	-	A description.
+	-	A price.
+	-	A quantity available in the inventory.
 
 Database Schema:
 The database will have a table named Products with the following columns:
-	•	ProductID (Primary Key)
-	•	ProductName (Name of the product)
-	•	Description (Description of the product)
-	•	Price (Price of the product)
-	•	Quantity (Quantity of the product in stock)
+	-	ProductID (Primary Key)
+	-	ProductName (Name of the product)
+	-	Description (Description of the product)
+	-	Price (Price of the product)
+	-	Quantity (Quantity of the product in stock)
 
 CREATE TABLE Products (
     ProductID INT PRIMARY KEY IDENTITY,
@@ -4012,7 +4012,7 @@ CREATE TABLE Products (
 );
 
 C# Code for CRUD Operations:
-1. Create New Product:
+## 1. Create New Product:
 
 public class ProductInventory
 {
@@ -4037,7 +4037,7 @@ public class ProductInventory
     }
 }
 
-2. Read All Products:
+## 2. Read All Products:
 
 public void GetAllProducts()
 {
@@ -4056,7 +4056,7 @@ public void GetAllProducts()
     }
 }
 
-3. Update Product Information:
+## 3. Update Product Information:
 
 public void UpdateProduct(int productId, string productName, string description, decimal price, int quantity)
 {
@@ -4076,7 +4076,7 @@ public void UpdateProduct(int productId, string productName, string description,
     }
 }
 
-4. Delete Product Record:
+## 4. Delete Product Record:
 
 public void DeleteProduct(int productId)
 {
@@ -4117,13 +4117,13 @@ class MainProgram
 }
 
 
-	•	7.1 File Handling
-	•	7.1.1 StreamWriter Class
-	•	7.1.2 StreamReader Class
-	•	7.2 Conclusion
+	-	7.1 File Handling
+	-	7.1.1 StreamWriter Class
+	-	7.1.2 StreamReader Class
+	-	7.2 Conclusion
 Learning outcomes
 By the end of this topic you should be able to:
-	•	Develop the ability to write database applications in C#
+	-	Develop the ability to write database applications in C#
 
 Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 17
@@ -4274,10 +4274,10 @@ Case Study
 Case Study 1: Personal Notes Application
 Scenario:
 A user wants to manage personal notes by storing, reading, updating, and deleting notes in a simple file-based application. Each note is stored in a separate text file in a folder named Notes, with the file names representing the titles of the notes. The application should allow the user to:
-	•	Create a new note by providing a title and content.
-	•	View a list of all existing notes (file names).
-	•	Read the content of a selected note.
-	•	Delete a selected note.
+	-	Create a new note by providing a title and content.
+	-	View a list of all existing notes (file names).
+	-	Read the content of a selected note.
+	-	Delete a selected note.
 
 Directory Structure:
 All notes are stored in a folder called Notes (which should be created beforehand).
@@ -4288,7 +4288,7 @@ All notes are stored in a folder called Notes (which should be created beforeh
 ├── Note3.txt
 ...
 C# Code for File Operations:
-1. Create New Note:
+## 1. Create New Note:
 
 using System;
 using System.IO;
@@ -4314,7 +4314,7 @@ public class FileManager
     }
 }
 
-2. View All Notes:
+## 2. View All Notes:
 
 public void ViewAllNotes()
 {
@@ -4342,7 +4342,7 @@ public void ViewAllNotes()
     }
 }
 
-3. Read Note Content:
+## 3. Read Note Content:
 
 public void ReadNoteContent(string title)
 {
@@ -4360,7 +4360,7 @@ public void ReadNoteContent(string title)
     }
 }
 
-4. Delete Note:
+## 4. Delete Note:
 
 public void DeleteNote(string title)
 {
@@ -4403,10 +4403,10 @@ class MainProgram
 Case Study 2: Student Report Management System
 Scenario:
 The school wants to manage student reports stored in text files. Each student has a report file named with their ID (e.g., 12345.txt for a student with ID 12345). The system should allow administrators to:
-	•	Add a new report for a student.
-	•	View all student reports.
-	•	Update a student report.
-	•	Delete a student's report.
+	-	Add a new report for a student.
+	-	View all student reports.
+	-	Update a student report.
+	-	Delete a student's report.
 
 Directory Structure:
 The reports are stored in a folder called StudentReports.
@@ -4418,7 +4418,7 @@ StudentReports
 ├── 11223.txt
 ...
 C# Code for File Operations:
-1. Create New Report:
+## 1. Create New Report:
 
 public class ReportManager
 {
@@ -4441,7 +4441,7 @@ public class ReportManager
     }
 }
 
-2. View All Reports:
+## 2. View All Reports:
 
 public void ViewAllReports()
 {
@@ -4469,7 +4469,7 @@ public void ViewAllReports()
     }
 }
 
-3. Read Report Content:
+## 3. Read Report Content:
 
 public void ReadReportContent(string studentId)
 {
@@ -4487,7 +4487,7 @@ public void ReadReportContent(string studentId)
     }
 }
 
-4. Update Report:
+## 4. Update Report:
 
 public void UpdateReport(string studentId, string newContent)
 {
@@ -4504,7 +4504,7 @@ public void UpdateReport(string studentId, string newContent)
     }
 }
 
-5. Delete Report:
+## 5. Delete Report:
 
 public void DeleteReport(string studentId)
 {
@@ -4549,12 +4549,12 @@ class MainProgram
 }
 
 
-	•	2. Collaborative Project
-	•	3. Introduction to LINQ
-	•	3.1. Application of LINQ
-	•	3.2. The shared System.Linq namespace
-	•	4. LINQ Standard Query operators
-	•	4.1. The OrderBy() method.
-	•	4.2. The Any() method.
-	•	4.3. Case Studies
-	•	4.4. WEEKLY ACTIVITY
+	-	2. Collaborative Project
+	-	3. Introduction to LINQ
+	-	3.1. Application of LINQ
+	-	3.2. The shared System.Linq namespace
+	-	4. LINQ Standard Query operators
+	-	4.1. The OrderBy() method.
+	-	4.2. The Any() method.
+	-	4.3. Case Studies
+	-	4.4. WEEKLY ACTIVITY

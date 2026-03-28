@@ -1,13 +1,13 @@
 # Module 18: C# Networking Concepts
 
-1. Learning outcomes
+## 1. Learning outcomes
 
 By the end of this lesson, you should be able to:
-	•	Understand C# networking concepts
+	-	Understand C# networking concepts
 
 Prescribed Reading
 Microsoft Official Documentation
-2. C# Networking Concepts
+## 2. C# Networking Concepts
 Overview:
 C# provides extensive support for networking through various classes, which enable applications to communicate with each other over networks. This involves both Socket Programming (low-level communication) and Remote Objects (higher-level distributed object communication). The focus of this week is to understand how these two concepts work and how to implement them in C#.
 
@@ -60,10 +60,10 @@ class TcpServer
     }
 }
 Explanation of Example 1:
-	•	TcpListener listens for incoming TCP connections on a specified IP address and port.
-	•	Once a client connects, the server reads the message sent by the client and then sends a response back to the client.
-	•	The NetworkStream class allows for bi-directional communication between the client and server.
-	•	The server sends and receives data using byte arrays. UTF-8 encoding/decoding is used to convert strings into byte arrays and vice versa.
+	-	TcpListener listens for incoming TCP connections on a specified IP address and port.
+	-	Once a client connects, the server reads the message sent by the client and then sends a response back to the client.
+	-	The NetworkStream class allows for bi-directional communication between the client and server.
+	-	The server sends and receives data using byte arrays. UTF-8 encoding/decoding is used to convert strings into byte arrays and vice versa.
 
 Example 2: Simple TCP Client in C#
 Here’s a simple TCP client that connects to the server from Example 1, sends a message, and waits for the server’s response.
@@ -103,19 +103,19 @@ class TcpClientApp
     }
 }
 Explanation of Example 2:
-	•	The client connects to the server using TcpClient.
-	•	The client sends a message to the server using NetworkStream.Write.
-	•	After sending the message, the client waits for a response from the server.
-	•	The client receives the server's response and prints it on the console.
+	-	The client connects to the server using TcpClient.
+	-	The client sends a message to the server using NetworkStream.Write.
+	-	After sending the message, the client waits for a response from the server.
+	-	The client receives the server's response and prints it on the console.
 
-3. Implement C# Remote Objects (Remote Method Invocation - RMI)
+## 3. Implement C# Remote Objects (Remote Method Invocation - RMI)
 Implement C# Remote Objects (Remote Method Invocation - RMI)
 What is Remote Objects in C#?
 C# provides a way to work with remote objects through Remote Method Invocation (RMI). This allows an application to call methods on objects residing on a remote machine, effectively enabling communication between distributed applications.
 In C#, remote objects can be created using .NET Remoting (although it is deprecated in favor of more modern communication mechanisms like WCF and gRPC). However, we will focus on implementing remote objects using Windows Communication Foundation (WCF), which is the recommended approach for building distributed systems in modern C# applications.
 Example 1: Simple Remote Object using WCF
 Here, we will create a simple WCF service that provides a remote method to say “Hello” to the client.
-	•	Step 1: Define the Service Contract
+	-	Step 1: Define the Service Contract
 using System.ServiceModel;
  
 [ServiceContract]
@@ -124,7 +124,7 @@ public interface IHelloService
     [OperationContract]
     string SayHello(string name);
 }
-	•	Step 2: Implement the Service
+	-	Step 2: Implement the Service
 using System;
  
 public class HelloService : IHelloService
@@ -134,7 +134,7 @@ public class HelloService : IHelloService
         return $"Hello, {name}!";
     }
 }
-	•	Step 3: Host the Service (Service Host)
+	-	Step 3: Host the Service (Service Host)
 using System;
 using System.ServiceModel;
  
@@ -157,7 +157,7 @@ class MainProgram
         host.Close();
     }
 }
-	•	Step 4: Client to Call the Remote Service
+	-	Step 4: Client to Call the Remote Service
 using System;
 using System.ServiceModel;
  
@@ -181,23 +181,23 @@ class MainProgram
     }
 }
 Explanation of Example 1:
-	•	Service Contract: The IHelloService interface defines the method that the client can call remotely.
-	•	Service Implementation: The HelloService class implements the service contract, providing the logic for the remote method (SayHello).
-	•	Service Hosting: The WCF service is hosted using ServiceHost, and it listens on a specified URI (in this case, http://localhost:8000/HelloService).
-	•	Client: The client uses ChannelFactory to create a proxy that can call the remote method on the service. The client sends a request to the service and gets a response.
+	-	Service Contract: The IHelloService interface defines the method that the client can call remotely.
+	-	Service Implementation: The HelloService class implements the service contract, providing the logic for the remote method (SayHello).
+	-	Service Hosting: The WCF service is hosted using ServiceHost, and it listens on a specified URI (in this case, http://localhost:8000/HelloService).
+	-	Client: The client uses ChannelFactory to create a proxy that can call the remote method on the service. The client sends a request to the service and gets a response.
 
 Conclusion:
 In this week's topic on C# Networking, we covered two essential concepts: Socket Programming and Remote Objects.
-	•	Socket Programming allows low-level communication between client and server, providing flexibility for building network applications. The examples demonstrated how to set up a TCP server and client for communication.
-	•	Remote Objects in C# using WCF provide a higher-level abstraction for remote method invocation, enabling distributed systems where clients can call methods on remote services. The examples demonstrated how to implement a simple WCF service and client.
+	-	Socket Programming allows low-level communication between client and server, providing flexibility for building network applications. The examples demonstrated how to set up a TCP server and client for communication.
+	-	Remote Objects in C# using WCF provide a higher-level abstraction for remote method invocation, enabling distributed systems where clients can call methods on remote services. The examples demonstrated how to implement a simple WCF service and client.
 Both concepts are critical for building networked applications, and knowing how to implement them in C# is vital for developing real-time, distributed systems.
  
-4. Example 1
+## 4. Example 1
 Example 1: Basic TCP Server and Client Communication in C#
 Objective:
 Create a basic TCP server that listens for incoming client connections, receives a message, and sends a response back to the client.
 Solution:
-	•	TCP Server Implementation (Server)
+	-	TCP Server Implementation (Server)
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -240,7 +240,7 @@ class TcpServer
         server.Stop();
     }
 }
-	•	TCP Client Implementation (Client)
+	-	TCP Client Implementation (Client)
 using System;
 using System.Net.Sockets;
 using System.Text;
@@ -286,12 +286,12 @@ Connected to server.
 Sent to server: Hello, Server!
 Received from server: Hello from the server!
  
-5. Example 2
+## 5. Example 2
 Example 2: Basic UDP Client-Server Communication
 Objective:
 Create a simple UDP client-server communication where the client sends a message to the server, and the server responds back with an acknowledgment.
 Solution:
-	•	UDP Server Implementation (Server)
+	-	UDP Server Implementation (Server)
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -321,7 +321,7 @@ class UdpServer
         server.Close();
     }
 }
-	•	UDP Client Implementation (Client)
+	-	UDP Client Implementation (Client)
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -360,7 +360,7 @@ Received from client: Hello, UDP Server!
 Client Output:
 Sent to server: Hello, UDP Server!
 Received from server: Message received by server 
-6. Reference Videos
+## 6. Reference Videos
 
 Play Video
 
@@ -370,14 +370,14 @@ Play Video
 
 Play Video
  
-7. Scenario Question:
+## 7. Scenario Question:
 Scenario Question:
 Scenario:
 You are developing a C# application for a small business that needs to communicate between two components: an inventory system (server-side) and a sales application (client-side). The sales application needs to request the current inventory of products in real-time, and based on that, it will check whether a product is in stock before proceeding with a sale. The communication between the two systems should be done over a local network using a TCP connection for reliability.
 You need to:
-	•	Create a TCP server that will listen for requests from the sales application.
-	•	Implement a method that responds with the current stock of products based on the product ID requested by the sales application.
-	•	The sales application should send the product ID to the server and display whether the product is in stock or not based on the server's response.
+	-	Create a TCP server that will listen for requests from the sales application.
+	-	Implement a method that responds with the current stock of products based on the product ID requested by the sales application.
+	-	The sales application should send the product ID to the server and display whether the product is in stock or not based on the server's response.
 
 Solution:
 Step 1: Define the TCP Server (Inventory System)
@@ -480,15 +480,15 @@ class SalesClient
 }
 
 Explanation of Solution:
-	•	TCP Server (Inventory System):
-	•	The server listens for incoming connections on 127.0.0.1 (localhost) and port 5000.
-	•	When a connection is accepted from the client, the server reads the product ID sent by the client.
-	•	The server checks if the product is in stock by simulating an inventory system (in this case, hardcoded values for product IDs 101 and 102).
-	•	The server then sends a response back to the client based on the availability of the product.
-	•	TCP Client (Sales Application):
-	•	The client connects to the server on 127.0.0.1 and port 5000.
-	•	It prompts the user to enter a product ID and sends this ID to the server.
-	•	The client then waits for the server’s response and displays whether the product is in stock or not.
+	-	TCP Server (Inventory System):
+	-	The server listens for incoming connections on 127.0.0.1 (localhost) and port 5000.
+	-	When a connection is accepted from the client, the server reads the product ID sent by the client.
+	-	The server checks if the product is in stock by simulating an inventory system (in this case, hardcoded values for product IDs 101 and 102).
+	-	The server then sends a response back to the client based on the availability of the product.
+	-	TCP Client (Sales Application):
+	-	The client connects to the server on 127.0.0.1 and port 5000.
+	-	It prompts the user to enter a product ID and sends this ID to the server.
+	-	The client then waits for the server’s response and displays whether the product is in stock or not.
 
 Expected Output:
 Server Output:
@@ -503,10 +503,10 @@ Sent product ID: 101
 Server response: Product 101 is in stock!
 
 
-	•	2. XML Processing in C#
-	•	3. Build XML Documents Using C#
-	•	4. Building XML Using XDocument (LINQ to XML)
-	•	5. Example 1: Building XML Using XmlDocument (DOM Approach)
-	•	6. Example 2: Building XML Using XmlWriter (Streaming Approach)
-	•	7. Example 3: Building XML Using XDocument (LINQ to XML)
-	•	8. Scenarios
+	-	2. XML Processing in C#
+	-	3. Build XML Documents Using C#
+	-	4. Building XML Using XDocument (LINQ to XML)
+	-	5. Example 1: Building XML Using XmlDocument (DOM Approach)
+	-	6. Example 2: Building XML Using XmlWriter (Streaming Approach)
+	-	7. Example 3: Building XML Using XDocument (LINQ to XML)
+	-	8. Scenarios

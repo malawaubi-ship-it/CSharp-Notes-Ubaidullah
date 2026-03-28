@@ -1,54 +1,182 @@
-# Module 10: Relevance Connection
+# Module 10: Algorithm Complexity and Big O Notation
 
-## 1. Learning outcomes
- 
-By the end of this topic you should be able to:
-	-	Acquire the skill to interpret data structures and algorithms.
-	-	Implement data structures in C#.
-	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+## Learning Outcomes
 
-Jamro, M., (2018). Arrays and Lists, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p48-p60
+By the end of this module you should be able to:
+- Define time and space complexity.
+- Read and write Big O notation.
+- Identify the complexity class of a given algorithm.
+- Compare algorithms using their complexity.
 
+---
 
+## Why Complexity Analysis Matters
 
-## 2. Relevance Connection
-We will continue investigating sorting, We have looked at 2 types of sorting, research at least 3 more types of sorting.
-## 3. Bubble Sort
-The sorting algorithm was published in 1956 by Edward Harry Friend[1]. Due to its inefficiency, it is not in common use in real world scenarios, however, as it is a very simple algorithm, it is used in educational contexts.
- 
-In the algorithm, a “bubble” consists of 2 adjacent elements. If the elements in the bubble are in the incorrect order relative to each other, they are swapped. If they are in the correct order, their order is maintained. The bubble then steps 1 element forward and the algorithm is repeated. The algorithm will stop when the iteration counter reaches  However, an improvement can be made to the algorithm to stop when no swaps are made in an iteration, as this implies that the array is sorted.
- 
-Its best-case time complexity is . This occurs when the list is already sorted.
-Its average and worst-case time complexity is . The worst-case scenario occurs when the array is in reverse order.
- 
-As Bubble Sort is an in-place iterative sorting algorithm, its worst-case space complexity is 
-.
-Another advantage of the algorithm is that it is stable.
- 
-Virginia Tech has a useful visualisation tool for Bubble Sort[2].
+Two programs that produce the same output may differ radically in performance as inputs grow.
+An algorithm that takes one second on 1,000 items might take 1,000 seconds on 1,000,000 items
+if it is O(n²). Complexity analysis lets you predict this behaviour before you write a single line of code.
 
+---
 
+## Big O Notation
 
-[1] Friend, E.H. (1956) 'Sorting on electronic computer systems,' Journal of the ACM, 3(3), pp. 134–168. https://doi.org/10.1145/320831.320833.
-[2] Bubble Sort Visualization (2024). https://opendsa-server.cs.vt.edu/embed/bubblesortAV.
-## 4. Quicksort
-This sorting algorithm was published in 1961 by Tony Hoare[1], and is in common use today as it is efficient.
-It follows the divide and conquer paradigm. A pivot element is selected in the array. Elements are then partitioned into two subarrays depending on whether they are greater than or less than the pivot. The subarrays are then sorted recursively.
- 
-It’s best and average case time complexity is . The best-case scenario occurs when the subarrays are equal in length in each recursive call (when the pivots are the median value).
-its worst -case time complexity is This occurs when a subarray is size  in length in each recursive call (when the pivots are either the smallest or largest value).
- 
-An advantage to this type of sorting is that is can be done in place. It has a worst-case space complexity of , due to stack space requirement of the recursive calls made by the algorithm.
- 
-A disadvantage of Quicksort is that it is not stable.
- 
-Virginia Tech has a useful visualisation tool for Quicksort[2].
+**Big O** expresses how the runtime (or memory usage) of an algorithm grows as the input size **n** increases,
+ignoring constants and low-order terms because they become insignificant for large n.
 
+```
+f(n) = 3n² + 7n + 12    →    O(n²)
+f(n) = 2n + 100          →    O(n)
+f(n) = 8                 →    O(1)
+```
 
+---
 
-[1] Hoare, C. a. R. (1961) 'Algorithm 64: Quicksort,' Communications of the ACM, 4(7), p. 321. https://doi.org/10.1145/366622.366644.
-[2] Quicksort Visualization (2024). https://opendsa-server.cs.vt.edu/embed/quicksortAV.
+## Common Complexity Classes
 
+### O(1) — Constant Time
 
-	-	2. Exploring Graphs
-	-	3. Search Algorithms
+Runtime does not change regardless of input size.
+
+```csharp
+// Accessing an array element is always instant, no matter how large the array
+int[] arr = { 10, 20, 30, 40, 50 };
+int value = arr[3]; // O(1)
+```
+
+### O(log n) — Logarithmic Time
+
+Each step halves the problem size. Very efficient for large data.
+
+```csharp
+// Binary search: eliminates half the remaining elements each step
+public static int BinarySearch(int[] arr, int target)
+{
+    int low = 0, high = arr.Length - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target) return mid;
+        if (arr[mid] < target)  low  = mid + 1;
+        else                    high = mid - 1;
+    }
+    return -1;
+}
+// For 1,000,000 elements, at most ~20 iterations are needed
+```
+
+### O(n) — Linear Time
+
+Runtime grows proportionally with input size.
+
+```csharp
+// Linear search: checks every element in the worst case
+public static int LinearSearch(int[] arr, int target)
+{
+    for (int idx = 0; idx < arr.Length; idx++)
+        if (arr[idx] == target) return idx;
+    return -1;
+}
+// For 1,000,000 elements: up to 1,000,000 comparisons
+```
+
+### O(n log n) — Linearithmic Time
+
+Typical for efficient sorting algorithms like Merge Sort and Quick Sort.
+
+```csharp
+// C# Array.Sort() runs in O(n log n) on average
+int[] data = { 5, 2, 8, 1, 9 };
+Array.Sort(data); // O(n log n)
+```
+
+### O(n²) — Quadratic Time
+
+A loop nested inside another loop over n elements.
+
+```csharp
+// Count all pairs in an array — O(n²)
+public static int CountPairs(int[] arr)
+{
+    int count = 0;
+    for (int idx = 0; idx < arr.Length; idx++)
+        for (int jdx = idx + 1; jdx < arr.Length; jdx++)
+            count++;
+    return count;
+}
+// For 1,000 elements: ~500,000 operations
+// For 10,000 elements: ~50,000,000 operations
+```
+
+### O(2ⁿ) — Exponential Time
+
+Typically seen in brute-force algorithms that explore every possible combination.
+Becomes impractical very quickly — for n=50, that is over a quadrillion operations.
+
+---
+
+## Growth Rate Comparison
+
+| n | O(1) | O(log n) | O(n) | O(n log n) | O(n²) |
+|---|------|----------|------|------------|-------|
+| 10 | 1 | 3 | 10 | 33 | 100 |
+| 100 | 1 | 7 | 100 | 664 | 10,000 |
+| 1,000 | 1 | 10 | 1,000 | 9,966 | 1,000,000 |
+| 1,000,000 | 1 | 20 | 1,000,000 | ~20M | 10¹² |
+
+---
+
+## Best, Average, and Worst Case
+
+An algorithm's complexity can vary depending on the input.
+
+- **Best case** — the most favourable input (e.g. the target is the first element in linear search).
+- **Worst case** — the most unfavourable input (e.g. target not present).
+- **Average case** — the expected performance over all possible inputs.
+
+We usually use **worst-case** analysis because it gives an upper bound guarantee.
+
+```
+Linear search:
+  Best case:  O(1)  — target is at index 0
+  Worst case: O(n)  — target is last or not present
+  Average:    O(n/2) = O(n)
+```
+
+---
+
+## Space Complexity
+
+Space complexity measures how much **extra memory** an algorithm uses, not counting the input.
+
+```csharp
+// O(1) space — only uses a fixed number of variables
+public static int Sum(int[] arr)
+{
+    int total = 0;
+    foreach (int x in arr) total += x;
+    return total;
+}
+
+// O(n) space — creates a new array proportional to input size
+public static int[] DoubleAll(int[] arr)
+{
+    int[] result = new int[arr.Length]; // n extra space
+    for (int idx = 0; idx < arr.Length; idx++)
+        result[idx] = arr[idx] * 2;
+    return result;
+}
+```
+
+---
+
+## Summary
+
+Understanding Big O helps you make informed decisions about which data structure or algorithm to use.
+Always aim for the lowest complexity class that is practical for your problem.
+
+| Use this | When | Complexity |
+|----------|------|-----------|
+| Hash table lookup | Fast key-based retrieval | O(1) |
+| Binary search | Sorted array lookup | O(log n) |
+| Merge sort / Quick sort | General sorting | O(n log n) |
+| Bubble / Selection sort | Only for tiny datasets | O(n²) |

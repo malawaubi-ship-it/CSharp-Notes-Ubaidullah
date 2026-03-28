@@ -1,63 +1,217 @@
-# Module 9: Relevance Connection
+# Module 09: Sorting Algorithms
 
-## 1. Learning outcomes
-By the end of this topic you should be able to:
-	-	Acquire the skill to interpret data structures and algorithms.
-	-	Implement data structures in C#.
-	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+## Learning Outcomes
 
-Jamro, M., (2018). Arrays and Lists, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p48-p60
+By the end of this module you should be able to:
+- Implement Selection Sort and Insertion Sort in C#.
+- Explain the time and space complexity of each algorithm.
+- Compare sorting algorithms and choose appropriately for a given scenario.
 
+---
 
+## Why Sorting Matters
 
-## 2. Relevance Connection
-Find 5 examples of when sorting data structures is required.
-## 3. Sorting
-Sorting is a method of arranging a list or array in a specific order, either ascending or descending. There are many different types of sorting algorithms, that work in different ways, which gives characteristics that may be beneficial or even negative in certain circumstances.
- 
-Time complexity is an important description of algorithms that describes the amount of time taken by an algorithm, by focusing on the number of operations required, that is independent of computer hardware. Sorting algorithms are often compared to each other using their time complexity.
- 
-Space complexity describes the amount of space required by an algorithm. The space complexity, in particular, mentioned here describes auxiliary space, i.e. additional space required by the sorting algorithm, excluding the array itself. This is an important descriptor when a sorting algorithm is required for a space constrain environment.
- 
-Sorting stability describes how a sorting algorithm will treat elements that are equal in value. A stable algorithm will maintain the order of equal items, relative to each other. An unstable algorithm is not guaranteed to maintain the order of equal items relative to each other.
-3.1. Selection Sort
-Selection Sort has been known long before the invention of modern computers and cannot be attributed to a single inventor. However, computer scientists have developed many variants over time. Heapsort is a popular example invented by JWJ Williams in 1964[1]. In the same paper, he also proposed the heap data structure, which we looked at last week.
- 
-In Selection Sort, the array can be categorised into 2 parts: sorted and unsorted. In each iteration, the smallest element (for ascending order) or largest element (for descending order) in the unsorted part is found and this element is then swapped with the leftmost unsorted element in the array.
- 
-The algorithm has a best-case, average-case and worst-case time complexity of .
- 
-Sorting can be done in-place, therefore the worst-case space complexity is .
- 
-Selection sort is not stable.
- 
-Virginia Tech has a useful visualisation tool for Selection Sort[2].
+Sorting is one of the most frequently performed operations in software.
+Sorted data is required for binary search, and many algorithms assume sorted input.
+Understanding sorting algorithms teaches recursive thinking, comparison strategies, and complexity analysis.
 
+---
 
+## Selection Sort
 
-[1] Williams, J. (1964) 'Algorithm 232 : HEAPSORT,' Communications of the ACM, 7, pp. 347–348. https://ci.nii.ac.jp/naid/10010193304.
-[2] Selection sort visualization (2024). https://opendsa-server.cs.vt.edu/embed/selectionsortAV.
-3.2. Insertion Sort
-Insertion sort predates modern computers and been in use in non-computer scenarios for a long time. However, many optimisations have been made by computer scientists. A popular example is a variant of Insertion Sort, called Shell Sort, developed by Donald Shell in 1959[1].
- 
-In Insertion Sort, the array can be categorised into 2 parts: sorted and unsorted. In each iteration, the algorithm will find a suitable position of an element, relative to elements already in the sorted section of the array.
- 
-Its best-case time complexity is . This occurs when the list is already sorted.
- 
-Its average and worst-case time complexity is . The worst-case scenario occurs when the array is in reverse order.
- 
-Sorting can be done in-place iteratively, therefore, Insertion Sort has a worst-case space complexity of .
- 
-Insertion Sort is also stable.
- 
-Virginia Tech has a useful visualisation tool for Insertion Sort[2].
+**Idea:** Find the smallest element in the unsorted portion and swap it to its correct position.
+Repeat until the array is sorted.
 
+**Time complexity:** O(n²) — always, regardless of input.
+**Space complexity:** O(1) — in-place.
 
+```csharp
+public static void SelectionSort(int[] arr)
+{
+    int n = arr.Length;
+    for (int idx = 0; idx < n - 1; idx++)
+    {
+        // Find the minimum element in the unsorted section
+        int minIdx = idx;
+        for (int jdx = idx + 1; jdx < n; jdx++)
+        {
+            if (arr[jdx] < arr[minIdx])
+                minIdx = jdx;
+        }
 
-[1] Shell, D.L. (1959) 'A high-speed sorting procedure,' Communications of the ACM, 2(7), pp. 30–32. https://doi.org/10.1145/368370.368387.
-[2] Insertion sort visualization (2024). https://opendsa-server.cs.vt.edu/OpenDSA/AV/Sorting/insertionsortAV.html.
+        // Swap the found minimum with the first unsorted element
+        (arr[minIdx], arr[idx]) = (arr[idx], arr[minIdx]);
+    }
+}
 
+class Program
+{
+    static void Main()
+    {
+        int[] data = { 64, 25, 12, 22, 11 };
+        SelectionSort(data);
+        Console.WriteLine(string.Join(", ", data)); // 11, 12, 22, 25, 64
+    }
+}
+```
 
-	-	2. Relevance Connection
-	-	3. Bubble Sort
-	-	4. Quicksort
+---
+
+## Insertion Sort
+
+**Idea:** Build the sorted section one element at a time. Take the next unsorted element and insert it
+into its correct position in the sorted section by shifting larger elements right.
+
+**Time complexity:** O(n²) worst/average, O(n) best (already sorted).
+**Space complexity:** O(1) — in-place.
+**Advantage:** Very efficient on small or nearly sorted datasets.
+
+```csharp
+public static void InsertionSort(int[] arr)
+{
+    int n = arr.Length;
+    for (int idx = 1; idx < n; idx++)
+    {
+        int key = arr[idx]; // the element to insert
+        int jdx = idx - 1;
+
+        // Shift elements larger than key one position to the right
+        while (jdx >= 0 && arr[jdx] > key)
+        {
+            arr[jdx + 1] = arr[jdx];
+            jdx--;
+        }
+
+        arr[jdx + 1] = key; // place key in correct position
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        int[] data = { 12, 11, 13, 5, 6 };
+        InsertionSort(data);
+        Console.WriteLine(string.Join(", ", data)); // 5, 6, 11, 12, 13
+    }
+}
+```
+
+---
+
+## Merge Sort
+
+**Idea:** A divide-and-conquer algorithm. Recursively split the array in half, sort each half,
+then merge the two sorted halves together.
+
+**Time complexity:** O(n log n) — always.
+**Space complexity:** O(n) — requires auxiliary arrays.
+
+```csharp
+public static void MergeSort(int[] arr, int left, int right)
+{
+    if (left >= right) return;
+
+    int mid = (left + right) / 2;
+    MergeSort(arr, left, mid);
+    MergeSort(arr, mid + 1, right);
+    Merge(arr, left, mid, right);
+}
+
+private static void Merge(int[] arr, int left, int mid, int right)
+{
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    int[] L = new int[n1];
+    int[] R = new int[n2];
+
+    Array.Copy(arr, left,     L, 0, n1);
+    Array.Copy(arr, mid + 1,  R, 0, n2);
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2)
+        arr[k++] = L[i] <= R[j] ? L[i++] : R[j++];
+
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}
+
+class Program
+{
+    static void Main()
+    {
+        int[] data = { 38, 27, 43, 3, 9, 82, 10 };
+        MergeSort(data, 0, data.Length - 1);
+        Console.WriteLine(string.Join(", ", data)); // 3, 9, 10, 27, 38, 43, 82
+    }
+}
+```
+
+---
+
+## Quick Sort
+
+**Idea:** Select a **pivot** element, partition the array so all elements smaller than the pivot come before it
+and all larger elements come after, then recursively sort each partition.
+
+**Time complexity:** O(n log n) average, O(n²) worst case (when pivot is always the smallest/largest).
+**Space complexity:** O(log n) average for the call stack.
+
+```csharp
+public static void QuickSort(int[] arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pivot = Partition(arr, low, high);
+        QuickSort(arr, low, pivot - 1);
+        QuickSort(arr, pivot + 1, high);
+    }
+}
+
+private static int Partition(int[] arr, int low, int high)
+{
+    int pivot = arr[high]; // choose last element as pivot
+    int i = low - 1;
+
+    for (int j = low; j < high; j++)
+    {
+        if (arr[j] <= pivot)
+        {
+            i++;
+            (arr[i], arr[j]) = (arr[j], arr[i]);
+        }
+    }
+    (arr[i + 1], arr[high]) = (arr[high], arr[i + 1]);
+    return i + 1;
+}
+
+class Program
+{
+    static void Main()
+    {
+        int[] data = { 10, 80, 30, 90, 40, 50, 70 };
+        QuickSort(data, 0, data.Length - 1);
+        Console.WriteLine(string.Join(", ", data)); // 10, 30, 40, 50, 70, 80, 90
+    }
+}
+```
+
+---
+
+## Summary Comparison
+
+| Algorithm | Best | Average | Worst | Space | Stable? |
+|-----------|------|---------|-------|-------|---------|
+| Selection Sort | O(n²) | O(n²) | O(n²) | O(1) | No |
+| Insertion Sort | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
+
+**Stable** means equal elements maintain their original relative order after sorting.
+
+For large datasets, prefer **Merge Sort** (guaranteed O(n log n)) or **Quick Sort** (O(n log n) average, faster in practice).
+For small or nearly-sorted data, **Insertion Sort** is surprisingly effective.
+
+In C# you will typically use `Array.Sort()` or `List<T>.Sort()`, which uses an introspective sort
+(combines Quick Sort, Heap Sort, and Insertion Sort depending on data size).

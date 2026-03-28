@@ -1,363 +1,203 @@
-# Module 5: Priority Queue
+# Module 05: Priority Queues
 
-## 1. Lesson Outcomes
- 
-By the end of this topic you should be able to:
-	-	Acquire the skill to interpret data structures and algorithms
-	-	Implement data structures in C#.
-	-	Demonstrate how strings are structured and processed.
-	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision.
+## Learning Outcomes
 
+By the end of this module you should be able to:
+- Explain the difference between a regular queue and a priority queue.
+- Implement a priority queue using a min-heap.
+- Use C# 6's built-in `PriorityQueue<TElement, TPriority>` class.
 
-Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd.
-Jamro, M., (2018). Stacks and Queues, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p108-p113
+---
 
+## What is a Priority Queue?
 
+A **priority queue** is a data structure where each element has an associated **priority**.
+Instead of strictly following FIFO order, the element with the **highest priority** (or lowest priority number, depending on convention) is dequeued first.
 
-## 2. Priority Queue
-Introduction
-A Priority Queue is a special type of queue where elements are dequeued based on their priority rather than their order of arrival. Unlike a standard queue that follows the First-In, First-Out (FIFO) principle, a priority queue processes higher-priority elements first, regardless of when they were added.
-In C#, a Priority Queue can be implemented using:
-	-	The PriorityQueue<TElement, TPriority> class (introduced in .NET 6).
-	-	A SortedList<TPriority, Queue<TElement>>.
-	-	A Binary Heap (Min-Heap / Max-Heap).
+Example: In a hospital, a critical patient (priority 1) is treated before a minor case (priority 5),
+regardless of arrival order.
 
-Why Use a Priority Queue?
-A Priority Queue is useful when tasks or elements must be processed based on priority rather than order. Some real-world use cases include:
-	-	Operating System Task Scheduling: High-priority processes execute before lower-priority ones.
-	-	Dijkstra’s Algorithm: Used in shortest path calculations.
-	-	Hospital Emergency Room Management: Critical patients are treated first.
-	-	Networking: Packet scheduling where important data packets are transmitted first.
+---
 
+## Under the Hood: The Min-Heap
 
-## 3. Priority Queues
-Priority queues[1] can be seen as an extension of regular queues, where there are sub queues within a main queue. Each sub queue is assigned a priority. As elements are enqueued, they are assigned to the sub queue with their priority. When elements are dequeued, elements are dequeued from the sub queue with the highest priority. When this sub queue is empty, then the algorithm will dequeue elements from the sub queue with the next highest priority, and so on.
- 
-Priority queues are implemented in C# and the source code[2] and documentation[3] can be viewed on the Microsoft website.
- 
-It is worth noting that C# implementations of priority queues vary to the traditional theoretical implementation. Priority queues in C# are not guaranteed to output elements within the same priority in the same order.
+Priority queues are most efficiently implemented using a **binary heap** — specifically a **min-heap**,
+where the parent node is always smaller than its children.
 
+This guarantees that the minimum-priority element is always at the root, and can be extracted in O(log n) time.
 
+```
+         1           Root is always the minimum
+       /   \
+      3     2
+     / \   /
+    5   4 6
+```
 
-[1] GeeksforGeeks (2023b) What is Priority Queue   Introduction to Priority Queue. https://www.geeksforgeeks.org/priority-queue-set-1-introduction/.
-[2] Reference source (2024). https://referencesource.microsoft.com/#WindowsBase/Base/MS/Internal/PriorityQueue.cs,f9df8c3c0cbdff22.
-[3] Dotnet-Bot (2024) PriorityQueue Class (System.Collections.Generic). https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.priorityqueue-2?view=net-8.0.
-## 4. Using the Built-in PriorityQueue in C#
-The PriorityQueue<TElement, TPriority> class (introduced in .NET 6) provides a simple way to implement a priority queue.
-Example: Task Management System
+---
 
+## Using C#'s Built-in PriorityQueue<T, TPriority>
+
+Available in .NET 6+. The element with the **smallest** priority value is dequeued first.
+
+```csharp
 using System;
 using System.Collections.Generic;
- 
-class MainProgram {
-    static void Main() {
-        PriorityQueue<string, int> taskQueue = new PriorityQueue<string, int>();
- 
-        // Adding tasks with different priorities (lower number = higher priority)
-        taskQueue.Enqueue("Low Priority Task", 3);
-        taskQueue.Enqueue("Medium Priority Task", 2);
-        taskQueue.Enqueue("High Priority Task", 1);
- 
-        // Processing tasks based on priority
-        Console.WriteLine( "Processing tasks based on priority:");
-        while (taskQueue.Count > 0) {
-            Console.WriteLine( taskQueue.Dequeue());
-        }
-    }
+
+PriorityQueue<string, int> pq = new PriorityQueue<string, int>();
+
+pq.Enqueue("Low urgency task",    3);
+pq.Enqueue("Critical alert",     1);
+pq.Enqueue("Medium urgency task", 2);
+
+while (pq.Count > 0)
+{
+    string item = pq.Dequeue();
+    Console.WriteLine($"Processing: {item}");
 }
-Output:
-Processing tasks based on priority:
-High Priority Task
-Medium Priority Task
-Low Priority Task
- Lower priority values are dequeued first (since smaller numArray have higher priority).
+```
 
-## 2. Implementing a Priority Queue Using SortedList<TPriority, Queue<TElement>>
-If using .NET versions before .NET 6, we can implement a priority queue using SortedList.
-Example: Hospital Emergency Room Queue
+**Output:**
+```
+Processing: Critical alert
+Processing: Medium urgency task
+Processing: Low urgency task
+```
 
+---
+
+## Custom Min-Heap Priority Queue
+
+```csharp
 using System;
 using System.Collections.Generic;
- 
-class PriorityQueue<T> {
-    private SortedList<int, Queue<T>> queue = new SortedList<int, Queue<T>>();
- 
-    public void Enqueue(T item, int priority) {
-        if (!queue.ContainsKey(priority)) {
-            queue[priority] = new Queue<T>();
-        }
-        queue[priority].Enqueue(item);
-    }
- 
-    public T Dequeue() {
-        if (queue.Count == 0) throw new InvalidOperationException("Queue is empty");
- 
-        int highestPriority = queue.Keys[0];
-        T item = queue[highestPriority].Dequeue();
- 
-        if (queue[highestPriority].Count == 0) {
-            queue.Remove(highestPriority);
-        }
-        return item;
-    }
- 
-    public bool IsEmpty() {
-        return queue.Count == 0;
-    }
+
+public class Patient
+{
+    public string Name     { get; set; }
+    public int    Priority { get; set; } // Lower = more urgent
+
+    public Patient(string name, int priority)
+    {
+        Name     = name;
+        Priority = priority;
+    }
 }
- 
-class MainProgram {
-    static void Main() {
-        PriorityQueue<string> erQueue = new PriorityQueue<string>();
- 
-        erQueue.Enqueue("Patient with mild symptoms", 3);
-        erQueue.Enqueue("Patient with broken arm", 2);
-        erQueue.Enqueue("Patient with heart attack", 1);
- 
-        Console.WriteLine( "Processing patients:");
-        while (!erQueue.IsEmpty()) {
-            Console.WriteLine( erQueue.Dequeue());
-        }
-    }
+
+public class PatientQueue
+{
+    private List<Patient> heap = new List<Patient>();
+
+    public int Count => heap.Count;
+
+    public void Enqueue(Patient patient)
+    {
+        heap.Add(patient);
+        HeapifyUp(heap.Count - 1);
+    }
+
+    public Patient Dequeue()
+    {
+        if (heap.Count == 0) throw new InvalidOperationException("Queue is empty.");
+
+        Patient top = heap[0];
+        heap[0] = heap[heap.Count - 1];
+        heap.RemoveAt(heap.Count - 1);
+        HeapifyDown(0);
+        return top;
+    }
+
+    private void HeapifyUp(int index)
+    {
+        while (index > 0)
+        {
+            int parent = (index - 1) / 2;
+            if (heap[index].Priority < heap[parent].Priority)
+            {
+                Swap(index, parent);
+                index = parent;
+            }
+            else break;
+        }
+    }
+
+    private void HeapifyDown(int index)
+    {
+        int left    = 2 * index + 1;
+        int right   = 2 * index + 2;
+        int smallest = index;
+
+        if (left  < heap.Count && heap[left].Priority  < heap[smallest].Priority) smallest = left;
+        if (right < heap.Count && heap[right].Priority < heap[smallest].Priority) smallest = right;
+
+        if (smallest != index)
+        {
+            Swap(index, smallest);
+            HeapifyDown(smallest);
+        }
+    }
+
+    private void Swap(int a, int b)
+    {
+        Patient temp = heap[a];
+        heap[a]      = heap[b];
+        heap[b]      = temp;
+    }
 }
-Output:
-Processing patients:
-Patient with heart attack
-Patient with broken arm
-Patient with mild symptoms
- The most critical patients (lower priority number) are treated first.
 
-## 3. Implementing a Priority Queue Using a Min-Heap
-A Heap is a more efficient way to implement a priority queue. It provides:
-	-	O(log n) time complexity for insertion and removal.
-	-	Efficient memory usage compared to SortedList.
-Min-Heap Implementation of Priority Queue
+class Program
+{
+    static void Main()
+    {
+        PatientQueue er = new PatientQueue();
+        er.Enqueue(new Patient("Alice", 3));   // minor
+        er.Enqueue(new Patient("Bob",   1));   // critical
+        er.Enqueue(new Patient("Carol", 2));   // moderate
+        er.Enqueue(new Patient("Dave",  1));   // critical
 
-using System;
-using System.Collections.Generic;
- 
-class MinHeapPriorityQueue<T> where T : IComparable<T> {
-    private List<T> heap = new List<T>();
- 
-    private void Swap(int idx, int jdx) {
-        T tempVal = heap[idx];
-        heap[idx] = heap[jdx];
-        heap[jdx] = tempVal;
-    }
- 
-    public void Enqueue(T item) {
-        heap.Add(item);
-        int idx = heap.Count - 1;
- 
-        // Heapify up
-        while (idx > 0) {
-            int parent = (i - 1) / 2;
-            if (heap[idx].CompareTo(heap[parent]) >= 0) break;
-            Swap(i, parent);
-            i = parent;
-        }
-    }
- 
-    public T Dequeue() {
-        if (heap.Count == 0) throw new InvalidOperationException("Queue is empty");
- 
-        T root = heap[0];
-        heap[0] = heap[^1]; // Move last element to root
-        heap.RemoveAt(heap.Count - 1);
- 
-        // Heapify down
-        int idx = 0;
-        while (true) {
-            int left = 2 * i + 1, right = 2 * i + 2, smallest = i;
- 
-            if (left < heap.Count && heap[left].CompareTo(heap[smallest]) < 0) smallest = left;
-            if (right < heap.Count && heap[right].CompareTo(heap[smallest]) < 0) smallest = right;
- 
-            if (smallest == i) break;
-            Swap(i, smallest);
-            i = smallest;
-        }
- 
-        return root;
-    }
- 
-    public bool IsEmpty() => heap.Count == 0;
+        while (er.Count > 0)
+        {
+            Patient p = er.Dequeue();
+            Console.WriteLine($"Treating: {p.Name} (priority {p.Priority})");
+        }
+    }
 }
- 
-class MainProgram {
-    static void Main() {
-        MinHeapPriorityQueue<int> pq = new MinHeapPriorityQueue<int>();
- 
-        pq.Enqueue(5);
-        pq.Enqueue(2);
-        pq.Enqueue(8);
-        pq.Enqueue(1);
- 
-        Console.WriteLine( "Dequeuing elements in priority order:");
-        while (!pq.IsEmpty()) {
-            Console.WriteLine( pq.Dequeue());
-        }
-    }
-}
-Output:
-Dequeuing elements in priority order:
-1
-2
-5
-8
- A Min-Heap ensures the smallest element is always dequeued first.
+```
 
-Comparison of Implementations
-Implementation
-Best Use Case
-Time Complexity
-PriorityQueue<TElement, TPriority> (Built-in)
-Simple tasks with priority-based ordering
-O(log n) for enqueue/dequeue
-SortedList<TPriority, Queue<TElement>>
-Small datasets where sorting is manageable
-O(log n) for enqueue, O(1) for dequeue
-Min-Heap
-Large datasets requiring efficiency
-O(log n) for both enqueue and dequeue
+**Expected output:**
+```
+Treating: Bob (priority 1)
+Treating: Dave (priority 1)
+Treating: Carol (priority 2)
+Treating: Alice (priority 3)
+```
 
-Conclusion
-	-	Priority Queues process elements based on importance rather than order.
-	-	C# provides a built-in PriorityQueue<TElement, TPriority> class for easy implementation.
-	-	SortedList-based and Heap-based approaches are useful for versions before .NET 6.
-	-	Heaps are the most efficient for priority queue implementation.
+---
 
+## Time Complexity
 
-## 5. Scenario 1: Customer Support Ticket System
-Problem Statement:
-A company receives customer support requests and needs to prioritize them based on urgency.
-	-	High Priority (1): Critical issues (e.g., system outage).
-	-	Medium Priority (2): Important issues (e.g., slow performance).
-	-	Low Priority (3): General inquiries (e.g., account questions).
-The system should process tickets based on priority, ensuring critical issues are handled first.
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Enqueue (insert) | O(log n) |
+| Dequeue (remove min) | O(log n) |
+| Peek (view min) | O(1) |
 
-Solution: Using PriorityQueue<TElement, TPriority> in C#
-using System;
-using System.Collections.Generic;
- 
-class SupportTicketSystem {
-    private PriorityQueue<string, int> ticketQueue = new PriorityQueue<string, int>();
- 
-    public void SubmitTicket(string issue, int priority) {
-        ticketQueue.Enqueue(issue, priority);
-        Console.WriteLine( $"Ticket added: {issue} (Priority: {priority})");
-    }
- 
-    public void ProcessTicket() {
-        if (ticketQueue.Count > 0) {
-            Console.WriteLine( $"Processing: {ticketQueue.Dequeue()}");
-        } else {
-            Console.WriteLine( "No tickets to process.");
-        }
-    }
-}
- 
-// Test Program
-class MainProgram {
-    static void Main() {
-        SupportTicketSystem supportSystem = new SupportTicketSystem();
- 
-        supportSystem.SubmitTicket("System outage", 1);
-        supportSystem.SubmitTicket("Slow performance", 2);
-        supportSystem.SubmitTicket("Account inquiry", 3);
- 
-        Console.WriteLine( "\nProcessing tickets:");
-        while (true) {
-            supportSystem.ProcessTicket();
-            if (supportSystem.ticketQueue.Count == 0) break;
-        }
-    }
-}
-Output:
-Ticket added: System outage (Priority: 1)
-Ticket added: Slow performance (Priority: 2)
-Ticket added: Account inquiry (Priority: 3)
- 
-Processing tickets:
-Processing: System outage
-Processing: Slow performance
-Processing: Account inquiry
- Critical issues are handled first, ensuring better customer service.
+---
 
+## When to Use a Priority Queue
 
+Use a priority queue when:
+- Items must be processed in order of importance rather than arrival order.
+- You need very fast access to the highest/lowest priority element.
 
-## 6. Scenario 2: Airline Check-in System
-Problem Statement:
-An airline check-in system prioritizes boarding based on passenger status:
-	-	Priority (1): First-Class & VIP members
-	-	Priority (2): Business-Class passengers
-	-	Priority (3): Economy-Class passengers
-The system should board passengers in priority order.
+Common applications: Dijkstra's shortest-path algorithm, A* search, OS task scheduling, real-time event simulation.
 
-Solution: Implementing a Custom Priority Queue Using SortedList
-using System;
-using System.Collections.Generic;
- 
-class AirlineCheckIn {
-    private SortedList<int, Queue<string>> checkInQueue = new SortedList<int, Queue<string>>();
- 
-    public void CheckInPassenger(string passengerName, int priority) {
-        if (!checkInQueue.ContainsKey(priority)) {
-            checkInQueue[priority] = new Queue<string>();
-        }
-        checkInQueue[priority].Enqueue(passengerName);
-        Console.WriteLine( $"Passenger Checked In: {passengerName} (Priority: {priority})");
-    }
- 
-    public void BoardPassenger() {
-        if (checkInQueue.Count == 0) {
-            Console.WriteLine( "No passengers to board.");
-            return;
-        }
- 
-        int highestPriority = checkInQueue.Keys[0];
-        string passenger = checkInQueue[highestPriority].Dequeue();
-        Console.WriteLine( $"Boarding Passenger: {passenger}");
- 
-        if (checkInQueue[highestPriority].Count == 0) {
-            checkInQueue.Remove(highestPriority);
-        }
-    }
-}
- 
-// Test Program
-class MainProgram {
-    static void Main() {
-        AirlineCheckIn airlineCheckIn = new AirlineCheckIn();
- 
-        airlineCheckIn.CheckInPassenger("John (VIP)", 1);
-        airlineCheckIn.CheckInPassenger("Alice (Business)", 2);
-        airlineCheckIn.CheckInPassenger("Bob (Economy)", 3);
- 
-        Console.WriteLine( "\nBoarding Passengers:");
-        while (true) {
-            airlineCheckIn.BoardPassenger();
-            if (airlineCheckIn.checkInQueue.Count == 0) break;
-        }
-    }
-}
-Output:
+---
 
-Passenger Checked In: John (VIP) (Priority: 1)
-Passenger Checked In: Alice (Business) (Priority: 2)
-Passenger Checked In: Bob (Economy) (Priority: 3)
- 
-Boarding Passengers:
-Boarding Passenger: John (VIP)
-Boarding Passenger: Alice (Business)
-Boarding Passenger: Bob (Economy)
- Passengers board based on their priority, ensuring a smooth check-in process.
- 
+## Summary
 
+A priority queue always gives you the most important element first.
+The min-heap implementation provides O(log n) insert and remove, making it highly efficient.
+In C#, .NET 6+ provides `PriorityQueue<TElement, TPriority>` as a ready-to-use implementation.
 
-## 7. Activity
-Develop a priority queue to manage patients in the emergency department of a hospital. Patients are assigned a priority from 0 (highest) to 4 (lowest). The queue should ensure that the patients with the highest priority are seen first.
-
-
-	-	2. Activity
-	-	3. Practice Activities
+Reference: Jamro, M. (2018). *C# Data Structures and Algorithms*. Packt Publishing.

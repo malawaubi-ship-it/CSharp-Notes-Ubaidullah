@@ -1,75 +1,179 @@
-# Module 7: Case Study
+# Module 07: Case Study — Hashing, Hash Tables, and Dictionaries
 
-## 1. Learning outcomes
-By the end of this topic you should be able to:
-	-	Acquire the skill to interpret data structures and algorithms.
-	-	Implement data structures in C#.
-	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+## Learning Outcomes
 
-Jamro, M., (2018). Dictionaries and Sets, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p115-p143
+By the end of this module you should be able to:
+- Explain how hashing works and what a hash collision is.
+- Use C#'s `Hashtable`, `Dictionary<K,V>`, `SortedDictionary<K,V>`, `HashSet<T>`, and `SortedSet<T>`.
+- Analyse the time complexity of hash-based operations.
 
+---
 
+## The Problem: Fast Lookup
 
-## 2. Case Study
-Clothing One Ltd is a department shop that sells many different products. They need to have a system that stores information about the different products they sell. This system must be able to retrieve information quickly, as it is used by the point-of-sale computers to retrieve price information, when customers checkout. The company uses hashing for this. Each product is assigned a unique identification number, that can be represented using a barcode. When a user scans the barcode, the computer reads in the unique identifier number, and queries this in the data system. The computer then returns the relevant product information.
-## 3. Hashing
-The idea behind hashing is that an input value is used to obtain some output value. The input  value is know as a key. The output value is known as a value. Together, they are commonly called a key-value pair. A hashing algorithm is then used to map the key to its corresponding value. These values are present in a structure known as buckets. The key doesn’t map to the value itself, rather it maps to a bucket, in which the value is stored. This allows users to retrieve elements from the data structure like they do in arrays, except with hashing, a key is used instead of an index.
- 
-The image below shows keys being mapped to values, present in buckets, with a hash function.
-Ideally, each bucket will only have one key pointing to it, however, implementing such a system is often complex. Realistically, buckets will have multiple keys pointing to them. Such an event is known as a hash collision. When this occurs, values are stored in arrays, lists or binary trees (or another suitable data structure) within the bucket. A separate search must then be done to retrieve the value corresponding to the key. A key will only ever point to one bucket.
- 
-Hashing functions can be complicated, or as simple as a modulus operation. Here is a visualisation of hashing done using modulus[1].
- 
-As values are retrieved using a key, hashing offers a best and worst case retrieval, insertion and deletion time of O(1). However, in a worst case scenario, when extreme hash collisions takes place, and all elements are present in a single bucket, hashing will offer a worst case retrieval, insertion and deletion of O(n).
+A retail point-of-sale system needs to retrieve a product's price by scanning its barcode.
+With thousands of products, iterating through a list for each scan would be unacceptably slow (O(n)).
 
+**Hashing** solves this by mapping a key directly to a location (called a **bucket**) in constant time — O(1).
 
+---
 
-[1] Open Hashing visualization (2024). https://www.cs.usfca.edu/~galles/visualization/OpenHash.html.
-3.1. Hash Tables
-Hashing algorithms can be complicated to implement. Fortunately, C# includes a few data structures based on hashing. HashTable is a non-generic data structure, which means values can be any type. The documentation[1] and implementation[2] can be found on the Microsoft website.
+## How Hashing Works
 
+1. A **hash function** takes a key (e.g. a barcode number) and returns an index.
+2. The value is stored at that index in an array of buckets.
+3. When you look up the key, the same hash function is applied to find the bucket instantly.
 
+```
+Key: 12345   →   hash(12345) % 10  =  5   →   bucket[5] = "Bread, £1.50"
+```
 
-[1] Dotnet-Bot (2024) Hashtable Class (System.Collections). https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=net-8.0.
-[2] Reference source (2024). https://referencesource.microsoft.com/#mscorlib/system/collections/hashtable.cs,10fefb6e0ae510dd.
-3.2. Dictionaries
-Dictionaries are another hash implementation offered by C#. It is a generic alternative to HashTable, and it is recommended to use this over HashTable. The documentation[1] and implementation[2] can be found on the Microsoft website.
+**Hash collisions** occur when two keys map to the same bucket.
+Collisions are handled by storing multiple items in the same bucket (using a list or tree within the bucket).
 
+For a good hash function, the average lookup time remains O(1). In the absolute worst case
+(all keys in one bucket), it degrades to O(n).
 
+---
 
-[1] Dotnet-Bot (2024) Dictionary Class (System.Collections.Generic). https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-8.0.
-[2] Reference source (2024). https://referencesource.microsoft.com/#mscorlib/system/collections/generic/dictionary.cs,d3599058f8d79be0.
-3.3. Sorted Dictionaries
-SortedDictionary is a class that, to the user, acts like a dictionary, and keeps its keys always sorted. The documentation[1] and implementation[2] can be viewed on the Microsoft website. While having keys always sorted can be advantageous in certain scenarios, sorted dictionaries have the disadvantage of slow performance, having a retrieval, insertion and deletion time of O(logn).
+## HashTable (Non-Generic)
 
+`Hashtable` is the older, non-generic implementation — it accepts any object as key and value.
+It has been largely superseded by `Dictionary<K,V>`.
 
+```csharp
+using System;
+using System.Collections;
 
-[1] Dotnet-Bot (2024) SortedDictionary Class (System.Collections.Generic). https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.sorteddictionary-2?view=net-8.0.
-[2] Reference source (2024). https://referencesource.microsoft.com/#System/compmod/system/collections/generic/sorteddictionary.cs,ba6f0c7de63e2c74.
-3.4. Hash Sets
-A set is a data structure that stores a single type (generic) of data. Unlike HashTable and Dictionary, a set only requires a single value, not a key-value pair. Each element in a sett must be unique. It is useful for performing mathematical operations such as unions, intersections, subtractions, etc. The documentation[1] and implementation[2] for HashSets can be viewed on the Microsoft website.
+Hashtable products = new Hashtable();
+products.Add("001", "Milk - £1.20");
+products.Add("002", "Bread - £0.90");
+products.Add("003", "Coffee - £3.50");
 
+if (products.ContainsKey("002"))
+    Console.WriteLine(products["002"]); // Output: Bread - £0.90
 
+// Iterate all entries
+foreach (DictionaryEntry entry in products)
+    Console.WriteLine($"{entry.Key}: {entry.Value}");
+```
 
-[1] Dotnet-Bot (2024) HashSet Class (System.Collections.Generic). https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.hashset-1?view=net-8.0.
-[2] Reference source (2024). https://referencesource.microsoft.com/#System.Core/System/Collections/Generic/HashSet.cs,50c894a3f7ad7bd0.
-3.5. Sorted Sets
-Much like with SortDictionary, HashSets have a sorted equivalent, SortedSet. This performs similarly to HashSet, except that the elements are always sorted. The documentation[1] and C# implementation[2] can be viewed on the Microsoft website.
+---
 
+## Dictionary<TKey, TValue> (Recommended)
 
+`Dictionary<K,V>` is the generic, type-safe alternative and is strongly preferred.
 
-[1] Dotnet-Bot (2024) SortedSet Class (System.Collections.Generic). https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.sortedset-1?view=net-8.0.
-[2] Reference source (2024). https://referencesource.microsoft.com/#System/compmod/system/collections/generic/sortedset.cs,bae1c41b842726a2.
+```csharp
+using System;
+using System.Collections.Generic;
 
+Dictionary<string, double> prices = new Dictionary<string, double>();
+prices["001"] = 1.20;
+prices["002"] = 0.90;
+prices["003"] = 3.50;
 
-	-	3. Binary Trees
-	-	4. Tree Traversal
-	-	4.1. Pre-order
-	-	4.2. Post-order
-	-	4.3. In-order
-	-	5. Binary Search Trees
-	-	6. AVL Trees
-	-	7. Red-Black Trees
-	-	8. Binary Heaps
-	-	8.1. Min-Heap
-	-	8.2. Max-Heap
+// Safe lookup
+if (prices.TryGetValue("002", out double price))
+    Console.WriteLine($"Bread costs £{price}"); // £0.90
+
+// Add or update
+prices["004"] = 2.75;
+prices["001"] = 1.35; // updates existing
+
+// Remove
+prices.Remove("003");
+
+// Iterate
+foreach (var kvp in prices)
+    Console.WriteLine($"Barcode {kvp.Key}: £{kvp.Value}");
+```
+
+**Time complexity:** O(1) average for insert, lookup, and delete.
+
+---
+
+## SortedDictionary<TKey, TValue>
+
+`SortedDictionary` works like `Dictionary` but keeps keys in **sorted order** at all times.
+This is useful when you need to output keys alphabetically or numerically.
+
+```csharp
+using System.Collections.Generic;
+
+SortedDictionary<string, int> wordCount = new SortedDictionary<string, int>();
+wordCount["banana"] = 3;
+wordCount["apple"]  = 7;
+wordCount["cherry"] = 1;
+
+foreach (var kvp in wordCount)
+    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+// Output (alphabetically sorted):
+// apple: 7
+// banana: 3
+// cherry: 1
+```
+
+**Trade-off:** Lookup, insert, and delete are all O(log n) — slower than `Dictionary` but always sorted.
+
+---
+
+## HashSet<T>
+
+A `HashSet<T>` stores a collection of **unique values** — no duplicates allowed.
+It supports efficient mathematical set operations.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+HashSet<string> setA = new HashSet<string> { "apple", "banana", "cherry" };
+HashSet<string> setB = new HashSet<string> { "banana", "cherry", "date" };
+
+// Attempts to add a duplicate are silently ignored
+setA.Add("apple"); // no effect
+
+// Set operations
+setA.UnionWith(setB);      // setA now contains all unique items from both
+setA.IntersectWith(setB);  // only items in both
+setA.ExceptWith(setB);     // items in setA but not setB
+
+Console.WriteLine(setA.Contains("banana")); // True
+```
+
+---
+
+## SortedSet<T>
+
+Like `HashSet<T>` but elements are always kept sorted.
+
+```csharp
+using System.Collections.Generic;
+
+SortedSet<int> sortedSet = new SortedSet<int> { 5, 2, 8, 1, 9, 3 };
+
+foreach (int val in sortedSet)
+    Console.Write($"{val} "); // Output: 1 2 3 5 8 9
+```
+
+---
+
+## Comparison Table
+
+| Type | Duplicates | Key-Value Pairs | Sorted | Lookups |
+|------|-----------|-----------------|--------|---------|
+| `Hashtable` | No (keys) | Yes | No | O(1) |
+| `Dictionary<K,V>` | No (keys) | Yes | No | O(1) |
+| `SortedDictionary<K,V>` | No (keys) | Yes | Yes (by key) | O(log n) |
+| `HashSet<T>` | No | No | No | O(1) |
+| `SortedSet<T>` | No | No | Yes | O(log n) |
+
+---
+
+## Summary
+
+Hash-based structures allow O(1) average-time lookup, making them ideal wherever fast key-based
+retrieval is needed. Use `Dictionary<K,V>` as your default choice. Reach for `SortedDictionary` when
+sorted key order matters, `HashSet` for unique-item collections, and `SortedSet` when uniqueness and sorting are both needed.
+
+Reference: Jamro, M. (2018). *C# Data Structures and Algorithms*, Chapter: Dictionaries and Sets. Packt Publishing.

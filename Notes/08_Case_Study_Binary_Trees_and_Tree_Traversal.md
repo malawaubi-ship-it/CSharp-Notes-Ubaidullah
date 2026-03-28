@@ -1,133 +1,247 @@
-# Module 8: Case Study
+# Module 08: Case Study — Binary Trees and Tree Traversal
 
-## 1. Learning outcomes
-By the end of this topic you should be able to:
-	-	Acquire the skill to interpret data structures and algorithms.
-	-	Implement data structures in C#.
-	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
+## Learning Outcomes
 
-Jamro, M., (2018). Variants of Trees, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p145-p200
+By the end of this module you should be able to:
+- Describe the structure of a binary tree and its key terminology.
+- Implement pre-order, post-order, and in-order tree traversal.
+- Explain binary search trees, AVL trees, Red-Black trees, and binary heaps.
 
+---
 
+## The Problem: Efficient Spell Checking
 
-## 2. Case Study
-In a word processing application, users often require an efficient and accurate spell checker to detect and correct spelling errors in their documents. Binary trees can be utilized to implement a dictionary data structure for storing valid words, enabling fast and accurate spell checking functionality.
-## 3. Binary Trees
-So far, we have looked at unitary data structures, such as linked-lists, which is made up of nodes that are linked together, where each node will have at most 2 connections: forwards and backwards. There are data structures that allow for nodes to more than 2 connections. One such example is a tree structure.
- 
-In a tree structure, a node is connected to one or more child nodes. The node at the beginning of the tree, with no parent node is called the root. The nodes at the end of the tree, with no children nodes are called leaves. Nodes that share a parent are known as siblings. We will only look at a type of tree called a binary tree in this module, where every node can have at most 2 child nodes.
- 
-In the image below, node 1 is the root, whilst nodes 5, 6 and 3 are leaves. Note how the structure branches out from the root.
+A word-processing application needs a dictionary of valid words that can be searched quickly.
+A binary tree is the ideal structure: it can hold a large vocabulary and locate any word in O(log n) time
+when balanced — far faster than a linear list.
 
-## 4. Tree Traversal
-When iterating through a unitary structure, such as a linked-list, we just proceed in either a forward or backward direction, as there is only one path. However, with binary trees, the structure is more complicated, thus, there are multiple paths to choose when iterating.
- 
-There are 3 ways for traversing a binary tree: pre-order, post-order and in-order.
-4.1. Pre-order
-In pre-order traversal, the root is visited first, followed by the left child node. The next left child node is visited until there is no left child node (a recursive operation), in which case, the right child node is visited, and we reverse up the tree[1].
- 
-The image below shows you pre-order traversal. The numArray represent the order in which the nodes are visited.
+---
 
+## Tree Terminology
 
+- **Root** — the topmost node, which has no parent.
+- **Node** — an element of the tree containing data and references to children.
+- **Leaf** — a node with no children.
+- **Height** — the number of levels from a node to its deepest leaf.
+- **Binary tree** — each node has **at most two** children (left and right).
 
+---
 
+## Implementing a Binary Tree Node in C#
 
-[1] GeeksforGeeks (2023a) Preorder traversal of binary tree. https://www.geeksforgeeks.org/preorder-traversal-of-binary-tree/.
-4.2. Post-order
-In post-order traversal, the left child is visited first (recursively), followed by the right child, and then the root is visited last.[1]
- 
-The image below shows you post-order traversal. The numArray represent the order in which the nodes are visited.
- 
+```csharp
+public class TreeNode
+{
+    public int    Value { get; set; }
+    public TreeNode Left  { get; set; }
+    public TreeNode Right { get; set; }
 
+    public TreeNode(int value)
+    {
+        Value = value;
+        Left  = null;
+        Right = null;
+    }
+}
+```
 
-[1] GeeksforGeeks (2023a) Postorder traversal of binary tree. https://www.geeksforgeeks.org/postorder-traversal-of-binary-tree/.
-4.3. In-order
-In in-order traversal, we visit the left child node first (recursively), then visit its parent, then visit the right child node.[1]
- 
-The image below shows you in-order traversal. The numArray represent the order in which the nodes are visited.
+---
 
+## Tree Traversal
 
+There are three standard ways to visit every node in a binary tree.
 
-[1] GeeksforGeeks (2023a) Inorder traversal of binary tree. https://www.geeksforgeeks.org/inorder-traversal-of-binary-tree/.
-## 5. Binary Search Trees
-Regular binary trees do not specify any relationship between the values of nodes. When searching for an element, in the worst case, we must traverse the entire tree, leading to a time complexity of O(n).
- 
-We can specify rules in a binary tree:
-	-	The value of a node’s left child must be smaller than it.
-	-	The value of a node’s right child must be larger than it.
+### Pre-Order (Root, Left, Right)
 
- 
-The rules above must hold true for every node. When these rules are implemented, the tree becomes sorted, and such a tree is called a binary search tree.
- 
-This is advantageous because this allows us to perform a binary search. When searching for an element in a binary search tree, we compare the value with that of the node, and one of 3 outcomes will be produced:
-	-	The values are equal: in which case, the element has been found.
-	-	The value is less than the node: in which case we search the left node.
-	-	The value is greater than the node: in which case we search the right node.
+Visit the current node first, then recurse left, then recurse right.
+Useful for creating a copy of the tree or serialising it.
 
- 
-This search is done recursively. If a left or right node doesn’t exist (or is null), it means we have reached the end of the tree and the element does not exist.
- 
-Let us look at the diagram below:
+```csharp
+public static void PreOrder(TreeNode node)
+{
+    if (node == null) return;
+    Console.Write($"{node.Value} "); // Visit root first
+    PreOrder(node.Left);
+    PreOrder(node.Right);
+}
+```
 
- 
-Suppose we are searching for 20:
-	-	We compare 20 with the first node: 20 < 45, so we proceed to the left child.
-	-	We compare 20 with the node: 20 > 15, so we proceed to the right child.
-	-	We compare 20 with the node: 20 == 20. The element has been found.
+### In-Order (Left, Root, Right)
 
-Suppose we are searching for 51:
-	-	We compare 51 with the first node: 51 > 45, so we proceed to the right node.
-	-	We compare 51 with the node: 51 < 79, so we proceed to the left node.
-	-	We compare 51 to the node: 51 < 55, so we proceed to the left node.
-	-	We compare 51 to the node: 51 > 50, so we proceed to the right node.
-	-	The node is null (it does not exist). We have reached the end of the tree. Therefore, 51 does not exist.
+Recurse left first, visit the node, then recurse right.
+On a binary search tree this visits nodes in **sorted ascending order**.
 
-From the tree above, we see that at every subtree, half of the subtree gets discarded after a comparison is made, which does not need to be searched. This gives binary search a O(logn) lookup time. You can find a useful visualisation on the University of San Francisco website[1].
+```csharp
+public static void InOrder(TreeNode node)
+{
+    if (node == null) return;
+    InOrder(node.Left);
+    Console.Write($"{node.Value} "); // Visit in the middle
+    InOrder(node.Right);
+}
+```
 
+### Post-Order (Left, Right, Root)
 
+Recurse left, then right, then visit the node.
+Useful for deletion (delete children before parent) and expression evaluation.
 
-[1] Binary Search Tree Visualization (2024). https://www.cs.usfca.edu/~galles/visualization/BST.html.
-## 6. AVL Trees
-One of the issues with binary search trees is that its structure depends on when elements are added and removed. A tree created with the insertion of [1,2,3] will look different than a tree with the insertion of [2,1,3], even though they have the same elements. An extreme problem occurs when each node only has a left node or each node only has a right node. This refers to the balance of a tree.
- 
-The following image shows an unbalanced tree where each node only has a right child node.
+```csharp
+public static void PostOrder(TreeNode node)
+{
+    if (node == null) return;
+    PostOrder(node.Left);
+    PostOrder(node.Right);
+    Console.Write($"{node.Value} "); // Visit root last
+}
+```
 
+---
 
-When this occurs, we cannot benefit from binary search, since the structure becomes unitary. The lookup time will become O(n).
- 
-To solve this, we need an algorithm that balances trees for us, or trees that will balance themselves. Such a tree is called an AVL tree[1], named after its inventors, Adelson-Velsky and Landis.
- 
-In AVL trees, the height (distance from leaf to root) between leave nodes is allowed to differ by at most 1 level. If the tree breaks this rule, rotations to subtrees are made until the tree is in compliance with this rule. AVL trees are a special type of binary search tree, so it must comply with binary search tree rules as well. The University of San Francisco has a useful visualisation[2].
+## Full Traversal Example
 
+```csharp
+class Program
+{
+    static void Main()
+    {
+        // Build a small tree manually:
+        //       10
+        //      /  \
+        //     5    15
+        //    / \
+        //   3   7
 
+        TreeNode root = new TreeNode(10);
+        root.Left        = new TreeNode(5);
+        root.Right       = new TreeNode(15);
+        root.Left.Left   = new TreeNode(3);
+        root.Left.Right  = new TreeNode(7);
 
-[1] GeeksforGeeks (2023a) AVL Tree Data Structure. https://www.geeksforgeeks.org/introduction-to-avl-tree/.
-[2] AVL Tree Visualzation (2024). https://www.cs.usfca.edu/~galles/visualization/AVLtree.html.
-## 7. Red-Black Trees
-Red-black trees[1] are another special type of binary search tree that is self-balanced. Each node is assigned a colour, either red or black. It follows the following rules:
-	-	Nodes with values cannot be leave nodes (leaf nodes must be null)
-	-	Both children of red nodes must be black
-	-	Every path from the root to any leaf must have the same number of black nodes.
+        Console.Write("Pre-order:  "); PreOrder(root);  Console.WriteLine();
+        Console.Write("In-order:   "); InOrder(root);   Console.WriteLine();
+        Console.Write("Post-order: "); PostOrder(root); Console.WriteLine();
+    }
+}
+```
 
- 
-The self-balancing feature allows Red-Black trees to maintain the same time complexity as AVL trees. In practice, however, AVL trees perform faster in retrieval operations as they are stricter about balancing. Red-black trees perform better in insertion and deletion as these are less complicated than in AVL trees.
- 
-The University of San Franciso has a useful visualisation[2].
+**Output:**
+```
+Pre-order:  10 5 3 7 15
+In-order:   3 5 7 10 15
+Post-order: 3 7 5 15 10
+```
 
+Notice that in-order produces a sorted sequence on a binary search tree.
 
+---
 
-[1] GeeksforGeeks (2023b) Introduction to Red Black Tree. https://www.geeksforgeeks.org/introduction-to-red-black-tree/.
-[2] Red/Black tree visualization (2024). https://www.cs.usfca.edu/~galles/visualization/RedBlack.html.
-## 8. Binary Heaps
-Heaps are a type of binary tree (note, not binary search tree) that maintains a relationship between the child and parent node. There are two types of binary heaps: min-heap and max-heap.
-8.1. Min-Heap
-In a min-heap, parent nodes are smaller than their child nodes. The root node contains the minimum value.
+## Binary Search Tree (BST)
 
-8.2. Max-Heap
-In a max-heap, parent nodes are larger than their child nodes. The root node contains the maximum value.
+A BST enforces a rule: every left child is **smaller** than its parent, and every right child is **larger**.
+This means binary search can be applied during lookup, reducing it to O(log n) average.
 
+```csharp
+public class BST
+{
+    private TreeNode root;
 
-	-	2. Relevance Connection
-	-	3. Sorting
-	-	3.1. Selection Sort
-	-	3.2. Insertion Sort
+    public void Insert(int value)
+    {
+        root = InsertRec(root, value);
+    }
+
+    private TreeNode InsertRec(TreeNode node, int value)
+    {
+        if (node == null) return new TreeNode(value);
+        if (value < node.Value) node.Left  = InsertRec(node.Left,  value);
+        else if (value > node.Value) node.Right = InsertRec(node.Right, value);
+        return node; // duplicate values ignored
+    }
+
+    public bool Search(int value)
+    {
+        return SearchRec(root, value);
+    }
+
+    private bool SearchRec(TreeNode node, int value)
+    {
+        if (node == null) return false;
+        if (value == node.Value) return true;
+        if (value < node.Value)  return SearchRec(node.Left,  value);
+        return SearchRec(node.Right, value);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BST tree = new BST();
+        foreach (int val in new[] { 10, 5, 15, 3, 7 })
+            tree.Insert(val);
+
+        Console.WriteLine(tree.Search(7));  // True
+        Console.WriteLine(tree.Search(12)); // False
+    }
+}
+```
+
+---
+
+## AVL Trees
+
+A BST's performance depends on being balanced. If you insert elements in sorted order (e.g. 1, 2, 3, 4),
+the tree degenerates into a linked list and lookups drop to O(n).
+
+An **AVL tree** (named after Adelson-Velsky and Landis) automatically **rebalances** after every insert
+and delete by performing rotations. The height difference between any node's left and right subtrees
+is always at most 1.
+
+AVL trees guarantee **O(log n)** for all operations. This is the tree used in Module 01's assignment (Question 1).
+
+---
+
+## Red-Black Trees
+
+A **Red-Black tree** is another self-balancing BST. Each node is coloured red or black, and a set
+of colour rules ensures the tree stays roughly balanced. The rules are:
+- All leaves (null nodes) are black.
+- Both children of every red node are black.
+- All paths from any node to its leaf descendants have the same number of black nodes.
+
+Red-Black trees are used in .NET's `SortedDictionary<K,V>` and `SortedSet<T>` internally
+because they have slightly better performance for frequent insertions and deletions than AVL trees.
+
+---
+
+## Binary Heaps
+
+A **binary heap** is a complete binary tree (all levels fully filled except possibly the last, filled left-to-right).
+
+- **Min-Heap**: parent ≤ children — root always holds the minimum value.
+- **Max-Heap**: parent ≥ children — root always holds the maximum value.
+
+Heaps are the foundation of the Priority Queue (see Module 05) and the Heap Sort algorithm.
+
+```
+Min-Heap example:
+         1
+       /   \
+      3     2
+     / \   /
+    5   4 6
+```
+
+---
+
+## Summary
+
+| Structure | Lookup | Insert | Delete | Sorted? |
+|-----------|--------|--------|--------|---------|
+| Unbalanced BST | O(n) worst | O(n) worst | O(n) worst | In-order yes |
+| AVL Tree | O(log n) | O(log n) | O(log n) | Yes |
+| Red-Black Tree | O(log n) | O(log n) | O(log n) | Yes |
+| Binary Heap | O(n) | O(log n) | O(log n) (min only) | Partial |
+
+Reference: Jamro, M. (2018). *C# Data Structures and Algorithms*, Chapter: Variants of Trees. Packt Publishing.

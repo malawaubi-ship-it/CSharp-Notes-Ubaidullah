@@ -1,40 +1,213 @@
-# Module 12: Stack
+# Module 12: Stacks In Depth
 
-## 1. Learning outcomes
+## Learning Outcomes
 
-By the end of this topic you should be able to:c
-you will learn about classification of data structures. Also, the diversity of some real-world applications in relation to arrays, lists, stacks, queues, dictionaries, sets, trees, heaps and graphs will be treated.
+By the end of this module you should be able to:
+- Explain the LIFO principle and describe all core stack operations.
+- Implement a generic stack in C# from scratch.
+- Apply stacks to practical problems such as expression evaluation and backtracking.
 
+---
 
+## Stack Operations Review
 
-Jamro, M., 2018. C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd. 
-Page 258 – 269. 
-2 Hours
+A stack operates on the **Last In, First Out (LIFO)** principle.
 
+| Operation | Description | Complexity |
+|-----------|-------------|-----------|
+| `Push(x)` | Add x to the top | O(1) |
+| `Pop()` | Remove and return the top element | O(1) |
+| `Peek()` | Return top element without removing | O(1) |
+| `IsEmpty` | True if stack has no elements | O(1) |
+| `Count` | Number of elements | O(1) |
 
-## 2. Stack
+---
 
- 
-Stack is a special type of collection that stores elements in LIFO style (Last In First Out). C# includes the generic Stack<T> and non-generic Stack collection classes. It is recommended to use the generic Stack<T> collection.
- 
-Stack is useful to store temporary data in LIFO style, and you might want to delete an element after retrieving its value.
- 
-Stack<T> Characteristics
-Stack<T> is Last In First Out collection.
-It comes under System.Collection.Generic namespace.
-Stack<T> can contain elements of the specified type. It provides compile-time type checking and doesn't perform boxing-unboxing because it is generic.
-Elements can be added using the Push() method. Cannot use collection-initializer syntax.
-Elements can be retrieved using the Pop() and the Peek() methods. It does not support an indexer.
-## 3. Queue
+## Generic Stack Implementation
 
-Queue represents a first-in, first out (FIFO) collection of object. It is used when you need a first-in, first-out access of items. When you add an item in the list, it is called enqueue, and when you remove an item, it is called dequeue . This class comes under System.Collections namespace and implements ICollection, IEnumerable, and ICloneable interfaces.
- Characteristics of Queue Class:
-Enqueue adds an element to the end of the Queue.
-Dequeue removes the oldest element from the start of the Queue.
-Peek returns the oldest element that is at the start of the Queue but does not remove it from the Queue.
-The capacity of a Queue is the number of elements the Queue can hold.
-As elements are added to a Queue, the capacity is automatically increased as required by reallocating the internal array.
-Queue accepts null as a valid value for reference types and allows duplicate elements.
+```csharp
+public class Stack<T>
+{
+    private T[] data;
+    private int top;
+    private int capacity;
 
+    public Stack(int capacity = 16)
+    {
+        this.capacity = capacity;
+        data = new T[capacity];
+        top  = -1;
+    }
 
-	-	3. Creating String Object
+    public bool IsEmpty => top == -1;
+    public int  Count   => top + 1;
+
+    public void Push(T value)
+    {
+        if (top == capacity - 1)
+        {
+            // Double the capacity when full
+            T[] larger = new T[capacity * 2];
+            Array.Copy(data, larger, capacity);
+            data = larger;
+            capacity *= 2;
+        }
+        data[++top] = value;
+    }
+
+    public T Pop()
+    {
+        if (IsEmpty) throw new InvalidOperationException("Stack is empty.");
+        return data[top--];
+    }
+
+    public T Peek()
+    {
+        if (IsEmpty) throw new InvalidOperationException("Stack is empty.");
+        return data[top];
+    }
+}
+```
+
+---
+
+## Application 1 — Evaluating Postfix Expressions
+
+Postfix (Reverse Polish Notation) avoids the need for brackets.
+`3 4 + 2 *` means `(3 + 4) * 2 = 14`.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public static int EvaluatePostfix(string expression)
+{
+    Stack<int> stack = new Stack<int>();
+    string[] tokens = expression.Split(' ');
+
+    foreach (string token in tokens)
+    {
+        if (int.TryParse(token, out int number))
+        {
+            stack.Push(number);
+        }
+        else
+        {
+            int b = stack.Pop();
+            int a = stack.Pop();
+            int result = token switch
+            {
+                "+" => a + b,
+                "-" => a - b,
+                "*" => a * b,
+                "/" => a / b,
+                _   => throw new InvalidOperationException($"Unknown operator: {token}")
+            };
+            stack.Push(result);
+        }
+    }
+    return stack.Pop();
+}
+
+Console.WriteLine(EvaluatePostfix("3 4 + 2 *")); // Output: 14
+Console.WriteLine(EvaluatePostfix("5 1 2 + 4 * + 3 -")); // Output: 14
+```
+
+---
+
+## Application 2 — Undo/Redo Functionality
+
+Many applications implement undo/redo using two stacks.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class TextEditor
+{
+    private string text = "";
+    private Stack<string> undoStack = new Stack<string>();
+    private Stack<string> redoStack = new Stack<string>();
+
+    public void Type(string input)
+    {
+        undoStack.Push(text);
+        redoStack.Clear();
+        text += input;
+        Console.WriteLine($"Text: '{text}'");
+    }
+
+    public void Undo()
+    {
+        if (undoStack.Count == 0) { Console.WriteLine("Nothing to undo."); return; }
+        redoStack.Push(text);
+        text = undoStack.Pop();
+        Console.WriteLine($"Undo -> Text: '{text}'");
+    }
+
+    public void Redo()
+    {
+        if (redoStack.Count == 0) { Console.WriteLine("Nothing to redo."); return; }
+        undoStack.Push(text);
+        text = redoStack.Pop();
+        Console.WriteLine($"Redo -> Text: '{text}'");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        TextEditor editor = new TextEditor();
+        editor.Type("Hello");
+        editor.Type(" World");
+        editor.Undo();   // Text: 'Hello'
+        editor.Redo();   // Text: 'Hello World'
+        editor.Type("!"); // Text: 'Hello World!'
+    }
+}
+```
+
+---
+
+## Application 3 — Depth-First Search (Non-Recursive)
+
+DFS can be implemented iteratively using an explicit stack instead of recursion.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public static void IterativeDFS(Dictionary<int, List<int>> graph, int start)
+{
+    HashSet<int> visited = new HashSet<int>();
+    Stack<int> stack = new Stack<int>();
+
+    stack.Push(start);
+
+    Console.Write("DFS: ");
+    while (stack.Count > 0)
+    {
+        int vertex = stack.Pop();
+        if (visited.Contains(vertex)) continue;
+
+        visited.Add(vertex);
+        Console.Write($"{vertex} ");
+
+        foreach (int neighbour in graph[vertex])
+            if (!visited.Contains(neighbour))
+                stack.Push(neighbour);
+    }
+    Console.WriteLine();
+}
+```
+
+---
+
+## Summary
+
+Stacks are deceptively simple but extremely powerful. Their LIFO property makes them
+the natural choice for any algorithm that needs to track a sequence in reverse or
+maintain a "current state" while exploring alternatives (backtracking, DFS, expression parsing).
+
+Reference: Jamro, M. (2018). *C# Data Structures and Algorithms*. Packt Publishing.

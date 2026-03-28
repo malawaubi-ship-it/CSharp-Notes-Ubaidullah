@@ -5,13 +5,12 @@
 By the end of this lesson, you should be able to:
 	-	Understand C# XML processing
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 
 
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 ## 2. Video Reference
 Play Video
 
@@ -61,7 +60,7 @@ class CreateStudentXML
  
         // Save the XML document to a file
         doc.Save("Students.xml");
-        Console.WriteLine(/* Output */ "XML file created successfully.");
+        Console.WriteLine( "XML file created successfully.");
     }
 }
 Expected Output (Students.xml):
@@ -88,7 +87,8 @@ Explanation:
 	-	Each <Student> has a Name, Age, and Grade element.
 	-	The XML file is saved to disk.
 
- 
+
+
 ## 4. Case Study 2: Reading and Modifying XML Document
 Case Study 2: Reading and Modifying XML Document
 Problem:
@@ -117,7 +117,7 @@ class ModifyBookPrice
             if (priceNode != null)
             {
                 priceNode.InnerText = "19.99"; // Update price
-                Console.WriteLine(/* Output */ "Price updated successfully.");
+                Console.WriteLine( "Price updated successfully.");
             }
         }
  
@@ -145,7 +145,8 @@ Explanation:
 	-	The program reads the XML document Books.xml.
 	-	It finds the book with BookID="2", changes the price of that book, and saves the updated document to Books_Updated.xml.
 
- 
+
+
 ## 5. Case Study 3: Writing XML with XDocument (LINQ to XML)
 Case Study 3: Writing XML with XDocument (LINQ to XML)
 Problem:
@@ -184,7 +185,7 @@ class CreateContactsXML
  
         // Save the XML document to a file
         doc.Save("Contacts.xml");
-        Console.WriteLine(/* Output */ "Contacts XML file created successfully.");
+        Console.WriteLine( "Contacts XML file created successfully.");
     }
 }
 Expected Output (Contacts.xml):
@@ -210,7 +211,8 @@ Explanation:
 	-	The XDocument class is used to create an XML document by using LINQ syntax.
 	-	The program generates an XML file with a <Contacts> root element and multiple <Contact> elements.
 
- 
+
+
 ## 6. Case Study 4: Reading and Querying XML with LINQ to XML
 Case Study 4: Reading and Querying XML with LINQ to XML
 Problem:
@@ -239,10 +241,10 @@ class QueryEmployeeDepartment
                              };
  
         // Display the results
-        Console.WriteLine(/* Output */ "Employees in Sales Department:");
+        Console.WriteLine( "Employees in Sales Department:");
         foreach (var employee in salesEmployees)
         {
-            Console.WriteLine(/* Output */ $"Name: {employee.Name}, Department: {employee.Department}");
+            Console.WriteLine( $"Name: {employee.Name}, Department: {employee.Department}");
         }
     }
 }
@@ -270,7 +272,8 @@ Explanation:
 	-	The program reads the Employees.xml file using XDocument.
 	-	It queries for all employees in the "Sales" department using LINQ syntax.
 	-	The results are displayed on the console.
- 
+
+
 ## 7. Scenario 1: E-commerce Product Catalog Update
 Scenario 1: E-commerce Product Catalog Update
 Problem:
@@ -306,7 +309,7 @@ class ECommerceCatalog
  
         // Save the modified document
         doc.Save("UpdatedProductCatalog.xml");
-        Console.WriteLine(/* Output */ "Catalog updated successfully.");
+        Console.WriteLine( "Catalog updated successfully.");
     }
  
     static void AddNewProduct(XmlDocument doc, string productId, string productName, double productPrice)
@@ -323,7 +326,7 @@ class ECommerceCatalog
         productElement.AppendChild(priceElement);
  
         doc.DocumentElement.AppendChild(productElement);
-        Console.WriteLine(/* Output */ $"New product '{productName}' added.");
+        Console.WriteLine( $"New product '{productName}' added.");
     }
  
     static void UpdateProductPrice(XmlDocument doc, string productId, double newPrice)
@@ -333,11 +336,11 @@ class ECommerceCatalog
         {
             XmlNode priceNode = productNode.SelectSingleNode("Price");
             priceNode.InnerText = newPrice.ToString("F2");
-            Console.WriteLine(/* Output */ $"Price of product with ID '{productId}' updated.");
+            Console.WriteLine( $"Price of product with ID '{productId}' updated.");
         }
         else
         {
-            Console.WriteLine(/* Output */ $"Product with ID '{productId}' not found.");
+            Console.WriteLine( $"Product with ID '{productId}' not found.");
         }
     }
  
@@ -347,11 +350,11 @@ class ECommerceCatalog
         if (productNode != null)
         {
             doc.DocumentElement.RemoveChild(productNode);
-            Console.WriteLine(/* Output */ $"Product with ID '{productId}' removed.");
+            Console.WriteLine( $"Product with ID '{productId}' removed.");
         }
         else
         {
-            Console.WriteLine(/* Output */ $"Product with ID '{productId}' not found.");
+            Console.WriteLine( $"Product with ID '{productId}' not found.");
         }
     }
 }
@@ -376,7 +379,8 @@ Expected XML Output (UpdatedProductCatalog.xml):
     <Price>29.99</Price> <!-- New product added -->
   </Product>
 </ProductCatalog>
- 
+
+
 ## 8. Scenario 2: Employee Data Query and Export to CSV
 Scenario 2: Employee Data Query and Export to CSV
 Problem:
@@ -414,7 +418,7 @@ class EmployeeQueryAndExport
  
         // Export the data to a CSV file
         ExportToCSV(salesEmployees, csvFilePath);
-        Console.WriteLine(/* Output */ "Sales department employees exported to CSV.");
+        Console.WriteLine( "Sales department employees exported to CSV.");
     }
  
     static void ExportToCSV(IEnumerable<dynamic> employees, string filePath)

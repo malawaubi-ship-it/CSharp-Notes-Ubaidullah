@@ -5,7 +5,6 @@
 By the end of this lesson, you should be able to:
 	-	Understand C# networking concepts
 
-Prescribed Reading
 Microsoft Official Documentation
 ## 2. C# Networking Concepts
 Overview:
@@ -33,11 +32,11 @@ class TcpServer
         // Create a TcpListener and start listening for incoming connections
         TcpListener server = new TcpListener(ipAddress, port);
         server.Start();
-        Console.WriteLine(/* Output */ "Server is listening...");
+        Console.WriteLine( "Server is listening...");
  
         // Accept a client connection
         TcpClient client = server.AcceptTcpClient();
-        Console.WriteLine(/* Output */ "Client connected.");
+        Console.WriteLine( "Client connected.");
  
         // Get the stream to read and write data
         NetworkStream stream = client.GetStream();
@@ -47,7 +46,7 @@ class TcpServer
         // Read data from the client
         bytesRead = stream.Read(buffer, 0, buffer.Length);
         string messageFromClient = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-        Console.WriteLine(/* Output */ $"Received from client: {messageFromClient}");
+        Console.WriteLine( $"Received from client: {messageFromClient}");
  
         // Send a response back to the client
         string response = "Hello from the server!";
@@ -81,7 +80,7 @@ class TcpClientApp
  
         // Create a TcpClient and connect to the server
         TcpClient client = new TcpClient(serverAddress, port);
-        Console.WriteLine(/* Output */ "Connected to server.");
+        Console.WriteLine( "Connected to server.");
  
         // Get the network stream to send and receive data
         NetworkStream stream = client.GetStream();
@@ -90,13 +89,13 @@ class TcpClientApp
         string message = "Hello, Server!";
         byte[] messageBytes = Encoding.UTF8.GetBytes(message);
         stream.Write(messageBytes, 0, messageBytes.Length);
-        Console.WriteLine(/* Output */ $"Sent to server: {message}");
+        Console.WriteLine( $"Sent to server: {message}");
  
         // Receive the server's response
         byte[] buffer = new byte[256];
         int bytesRead = stream.Read(buffer, 0, buffer.Length);
         string serverResponse = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-        Console.WriteLine(/* Output */ $"Received from server: {serverResponse}");
+        Console.WriteLine( $"Received from server: {serverResponse}");
  
         // Close the connection
         client.Close();
@@ -148,7 +147,7 @@ class MainProgram
         
         // Open the host to begin listening for requests
         host.Open();
-        Console.WriteLine(/* Output */ "Service is hosted at http://localhost:8000/HelloService");
+        Console.WriteLine( "Service is hosted at http://localhost:8000/HelloService");
  
         // Keep the service running
         Console.ReadLine();
@@ -174,7 +173,7 @@ class MainProgram
         
         // Call the remote method
         string response = proxy.SayHello("John");
-        Console.WriteLine(/* Output */ response);
+        Console.WriteLine( response);
  
         // Close the proxy
         ((IClientChannel)proxy).Close();
@@ -191,7 +190,8 @@ In this week's topic on C# Networking, we covered two essential concepts: Sock
 	-	Socket Programming allows low-level communication between client and server, providing flexibility for building network applications. The examples demonstrated how to set up a TCP server and client for communication.
 	-	Remote Objects in C# using WCF provide a higher-level abstraction for remote method invocation, enabling distributed systems where clients can call methods on remote services. The examples demonstrated how to implement a simple WCF service and client.
 Both concepts are critical for building networked applications, and knowing how to implement them in C# is vital for developing real-time, distributed systems.
- 
+
+
 ## 4. Example 1
 Example 1: Basic TCP Server and Client Communication in C#
 Objective:
@@ -214,11 +214,11 @@ class TcpServer
         // Create and start the TCP listener
         TcpListener server = new TcpListener(ipAddress, port);
         server.Start();
-        Console.WriteLine(/* Output */ "Server is listening for connections...");
+        Console.WriteLine( "Server is listening for connections...");
  
         // Accept a client connection
         TcpClient client = server.AcceptTcpClient();
-        Console.WriteLine(/* Output */ "Client connected.");
+        Console.WriteLine( "Client connected.");
  
         // Get the network stream to read and write data
         NetworkStream stream = client.GetStream();
@@ -228,7 +228,7 @@ class TcpServer
         // Read the incoming data from the client
         bytesRead = stream.Read(buffer, 0, buffer.Length);
         string messageFromClient = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-        Console.WriteLine(/* Output */ $"Received from client: {messageFromClient}");
+        Console.WriteLine( $"Received from client: {messageFromClient}");
  
         // Send a response back to the client
         string response = "Hello from the server!";
@@ -255,7 +255,7 @@ class TcpClientApp
  
         // Create a TCP client and connect to the server
         TcpClient client = new TcpClient(serverAddress, port);
-        Console.WriteLine(/* Output */ "Connected to server.");
+        Console.WriteLine( "Connected to server.");
  
         // Get the network stream to send and receive data
         NetworkStream stream = client.GetStream();
@@ -264,13 +264,13 @@ class TcpClientApp
         string message = "Hello, Server!";
         byte[] messageBytes = Encoding.UTF8.GetBytes(message);
         stream.Write(messageBytes, 0, messageBytes.Length);
-        Console.WriteLine(/* Output */ $"Sent to server: {message}");
+        Console.WriteLine( $"Sent to server: {message}");
  
         // Receive the server's response
         byte[] buffer = new byte[256];
         int bytesRead = stream.Read(buffer, 0, buffer.Length);
         string serverResponse = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-        Console.WriteLine(/* Output */ $"Received from server: {serverResponse}");
+        Console.WriteLine( $"Received from server: {serverResponse}");
  
         // Close the connection
         client.Close();
@@ -285,7 +285,8 @@ Client Output:
 Connected to server.
 Sent to server: Hello, Server!
 Received from server: Hello from the server!
- 
+
+
 ## 5. Example 2
 Example 2: Basic UDP Client-Server Communication
 Objective:
@@ -304,14 +305,14 @@ class UdpServer
         // Set up the UDP listener
         int port = 5000;
         UdpClient server = new UdpClient(port);
-        Console.WriteLine(/* Output */ "UDP Server is waiting for messages...");
+        Console.WriteLine( "UDP Server is waiting for messages...");
  
         IPEndPoint clientEndPoint = new IPEndPoint(IPAddress.Any, port);
  
         // Receive a message from the client
         byte[] data = server.Receive(ref clientEndPoint);
         string message = Encoding.UTF8.GetString(data);
-        Console.WriteLine(/* Output */ $"Received from client: {message}");
+        Console.WriteLine( $"Received from client: {message}");
  
         // Send a response to the client
         string response = "Message received by server";
@@ -342,13 +343,13 @@ class UdpClientApp
         string message = "Hello, UDP Server!";
         byte[] messageBytes = Encoding.UTF8.GetBytes(message);
         client.Send(messageBytes, messageBytes.Length, serverAddress, port);
-        Console.WriteLine(/* Output */ $"Sent to server: {message}");
+        Console.WriteLine( $"Sent to server: {message}");
  
         // Receive the server's response
         IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Any, port);
         byte[] responseBytes = client.Receive(ref serverEndPoint);
         string response = Encoding.UTF8.GetString(responseBytes);
-        Console.WriteLine(/* Output */ $"Received from server: {response}");
+        Console.WriteLine( $"Received from server: {response}");
  
         client.Close();
     }
@@ -359,7 +360,8 @@ UDP Server is waiting for messages...
 Received from client: Hello, UDP Server!
 Client Output:
 Sent to server: Hello, UDP Server!
-Received from server: Message received by server 
+Received from server: Message received by server
+
 ## 6. Reference Videos
 
 Play Video
@@ -369,7 +371,8 @@ Play Video
 Play Video
 
 Play Video
- 
+
+
 ## 7. Scenario Question:
 Scenario Question:
 Scenario:
@@ -398,11 +401,11 @@ class InventoryServer
         // Create a TcpListener and start listening for incoming connections
         TcpListener server = new TcpListener(ipAddress, port);
         server.Start();
-        Console.WriteLine(/* Output */ "Server is listening for connections...");
+        Console.WriteLine( "Server is listening for connections...");
  
         // Accept a client connection
         TcpClient client = server.AcceptTcpClient();
-        Console.WriteLine(/* Output */ "Client connected.");
+        Console.WriteLine( "Client connected.");
  
         // Get the network stream to read and write data
         NetworkStream stream = client.GetStream();
@@ -412,7 +415,7 @@ class InventoryServer
         // Read the product ID sent by the client
         bytesRead = stream.Read(buffer, 0, buffer.Length);
         string productIdFromClient = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-        Console.WriteLine(/* Output */ $"Received product ID from client: {productIdFromClient}");
+        Console.WriteLine( $"Received product ID from client: {productIdFromClient}");
  
         // Check the stock of the requested product (simulated data)
         string response = CheckProductStock(productIdFromClient);
@@ -452,7 +455,7 @@ class SalesClient
  
         // Create a TcpClient and connect to the server
         TcpClient client = new TcpClient(serverAddress, port);
-        Console.WriteLine(/* Output */ "Connected to server.");
+        Console.WriteLine( "Connected to server.");
  
         // Get the network stream to send and receive data
         NetworkStream stream = client.GetStream();
@@ -464,7 +467,7 @@ class SalesClient
         // Send the product ID to the server
         byte[] productIdBytes = Encoding.UTF8.GetBytes(productId);
         stream.Write(productIdBytes, 0, productIdBytes.Length);
-        Console.WriteLine(/* Output */ $"Sent product ID: {productId}");
+        Console.WriteLine( $"Sent product ID: {productId}");
  
         // Receive the response from the server
         byte[] buffer = new byte[256];
@@ -472,7 +475,7 @@ class SalesClient
         string serverResponse = Encoding.UTF8.GetString(buffer, 0, bytesRead);
  
         // Display the server's response
-        Console.WriteLine(/* Output */ $"Server response: {serverResponse}");
+        Console.WriteLine( $"Server response: {serverResponse}");
  
         // Close the connection
         client.Close();

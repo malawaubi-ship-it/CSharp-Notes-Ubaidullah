@@ -4,14 +4,14 @@
 
 By the end of this topic you should be able to:c
 you will learn about classification of data structures. Also, the diversity of some real-world applications in relation to arrays, lists, stacks, queues, dictionaries, sets, trees, heaps and graphs will be treated.
- 
 
-Prescribed Reading
+
+
 Jamro, M., 2018. C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd. 
 Page 258 – 269. 
-Time Allocation:
 2 Hours
- 
+
+
 ## 2. Stack
 
  

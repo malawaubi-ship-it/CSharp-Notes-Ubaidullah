@@ -5,16 +5,16 @@
 By the end of this lesson, you should be able to:
 	-	Understand C# collections
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469
 Chapter 9 & 21
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 ## 2. Introduction to C# Collections
 Introduction to C# Collections
-Explanation: C# collections are objects that hold multiple items of data. They are part of the .NET framework, providing various ways to store, access, and manage groups of related data. Collections are much more flexible and efficient than arrays. The most common collections are provided under two namespaces:
+Explanation:
+C# collections are objects that hold multiple items of data. They are part of the .NET framework, providing various ways to store, access, and manage groups of related data. Collections are much more flexible and efficient than arrays. The most common collections are provided under two namespaces:
 	-	System.Collections (non-generic collections like ArrayList, Hashtable).
 	-	System.Collections.Generic (generic collections like List<T>, Dictionary<TKey, TValue>, Queue<T>, Stack<T>).
 Generic collections offer type safety, which means you can specify the type of elements the collection will hold, making the code easier to maintain and reducing the possibility of runtime errors.
@@ -23,7 +23,8 @@ Play Video
 
 ## 3. List (Generic List)
 List<T> (Generic List)
-Explanation: A List<T> is a dynamic array that can store any data type. It automatically resizes as elements are added or removed. Lists provide indexed access to elements, allowing easy iteration and modification. It’s the most commonly used collection when you need to manage a collection of items with flexibility and speed.
+Explanation:
+A List<T> is a dynamic array that can store any data type. It automatically resizes as elements are added or removed. Lists provide indexed access to elements, allowing easy iteration and modification. It’s the most commonly used collection when you need to manage a collection of items with flexibility and speed.
 
 Example 1: Adding Elements to a List
 using System;
@@ -40,7 +41,7 @@ class MainProgram
  
         foreach (var number in numArray)
         {
-            Console.WriteLine(/* Output */ number);
+            Console.WriteLine( number);
         }
     }
 }
@@ -63,7 +64,7 @@ class MainProgram
  
         foreach (var fruit in fruits)
         {
-            Console.WriteLine(/* Output */ fruit);
+            Console.WriteLine( fruit);
         }
     }
 }
@@ -71,10 +72,12 @@ Output:
 Apple
 Mango
 Orange
- 
+
+
 ## 4. Dictionary
 Dictionary<TKey, TValue>
-Explanation: A Dictionary<TKey, TValue> is a collection that stores key-value pairs. It allows for fast lookups, retrieval, and management of data based on a unique key. The dictionary is useful when you need to quickly access data by a unique identifier (e.g., retrieving a student’s name using their student ID). It provides O(1) complexity for lookups.
+Explanation:
+A Dictionary<TKey, TValue> is a collection that stores key-value pairs. It allows for fast lookups, retrieval, and management of data based on a unique key. The dictionary is useful when you need to quickly access data by a unique identifier (e.g., retrieving a student’s name using their student ID). It provides O(1) complexity for lookups.
 
 Example 1: Using Dictionary to Store Key-Value Pairs
 using System;
@@ -91,7 +94,7 @@ class MainProgram
             { 103, "Peter" }
         };
  
-        Console.WriteLine(/* Output */ "Employee with ID 102: " + employees[102]);
+        Console.WriteLine( "Employee with ID 102: " + employees[102]);
     }
 }
 Output:
@@ -114,7 +117,7 @@ class MainProgram
  
         foreach (var product in products)
         {
-            Console.WriteLine(/* Output */ $"Product ID: {product.Key}, Product Name: {product.Value}");
+            Console.WriteLine( $"Product ID: {product.Key}, Product Name: {product.Value}");
         }
     }
 }
@@ -123,10 +126,12 @@ Product ID: 1, Product Name: Laptop
 Product ID: 2, Product Name: Smartphone
 Product ID: 3, Product Name: Tablet
 
- 
+
+
 ## 5. Queue
 Queue<T>
-Explanation: A Queue<T> is a collection that follows the First-In, First-Out (FIFO) principle. It is useful for managing tasks, like processing print jobs, where the first item added is the first one to be processed. It supports operations like enqueue (adding an element) and dequeue (removing an element).
+Explanation:
+A Queue<T> is a collection that follows the First-In, First-Out (FIFO) principle. It is useful for managing tasks, like processing print jobs, where the first item added is the first one to be processed. It supports operations like enqueue (adding an element) and dequeue (removing an element).
 
 Example 1: Enqueue and Dequeue Operations
 using System;
@@ -141,8 +146,8 @@ class MainProgram
         tasks.Enqueue("Task2");
         tasks.Enqueue("Task3");
  
-        Console.WriteLine(/* Output */ "Processing: " + tasks.Dequeue()); // Dequeues Task1
-        Console.WriteLine(/* Output */ "Processing: " + tasks.Dequeue()); // Dequeues Task2
+        Console.WriteLine( "Processing: " + tasks.Dequeue()); // Dequeues Task1
+        Console.WriteLine( "Processing: " + tasks.Dequeue()); // Dequeues Task2
     }
 }
 Output:
@@ -162,10 +167,10 @@ class MainProgram
         numbersQueue.Enqueue(10);
         numbersQueue.Enqueue(15);
  
-        Console.WriteLine(/* Output */ "Items in queue:");
+        Console.WriteLine( "Items in queue:");
         foreach (var number in numbersQueue)
         {
-            Console.WriteLine(/* Output */ number);
+            Console.WriteLine( number);
         }
     }
 }
@@ -174,10 +179,12 @@ Items in queue:
 5
 10
 15
- 
+
+
 ## 6. Stack
 Stack<T>
-Explanation: A Stack<T> is a collection that follows the Last-In, First-Out (LIFO) principle. The last element added to the stack is the first one to be removed. It’s often used in scenarios like undo operations, where the most recent action needs to be reversed first.
+Explanation:
+A Stack<T> is a collection that follows the Last-In, First-Out (LIFO) principle. The last element added to the stack is the first one to be removed. It’s often used in scenarios like undo operations, where the most recent action needs to be reversed first.
 
 Example 1: Pushing and Popping Elements from a Stack
 using System;
@@ -192,8 +199,8 @@ class MainProgram
         history.Push("Page 2");
         history.Push("Page 3");
  
-        Console.WriteLine(/* Output */ "Back in history: " + history.Pop());  // Pops "Page 3"
-        Console.WriteLine(/* Output */ "Back in history: " + history.Pop());  // Pops "Page 2"
+        Console.WriteLine( "Back in history: " + history.Pop());  // Pops "Page 3"
+        Console.WriteLine( "Back in history: " + history.Pop());  // Pops "Page 2"
     }
 }
 Output:
@@ -213,15 +220,17 @@ class MainProgram
         numberStack.Push(2);
         numberStack.Push(3);
  
-        Console.WriteLine(/* Output */ "Top element is: " + numberStack.Peek());  // Peek doesn't remove it
+        Console.WriteLine( "Top element is: " + numberStack.Peek());  // Peek doesn't remove it
     }
 }
 Output:
 Top element is: 3
- 
+
+
 ## 7. HashSet
 HashSet<T>
-Explanation: A HashSet<T> is a collection that stores unique elements without maintaining any specific order. It is useful for scenarios where you need to check if an item exists in the collection without worrying about duplicates. The HashSet is optimized for fast lookups.
+Explanation:
+A HashSet<T> is a collection that stores unique elements without maintaining any specific order. It is useful for scenarios where you need to check if an item exists in the collection without worrying about duplicates. The HashSet is optimized for fast lookups.
 
 Example 1: Adding and Checking for Duplicates
 using System;
@@ -236,7 +245,7 @@ class MainProgram
         uniqueItems.Add("Banana");
         uniqueItems.Add("Apple");  // Duplicate, will not be added
  
-        Console.WriteLine(/* Output */ "Total unique items: " + uniqueItems.Count);
+        Console.WriteLine( "Total unique items: " + uniqueItems.Count);
     }
 }
 Output:
@@ -255,10 +264,10 @@ class MainProgram
  
         set1.UnionWith(set2);  // Union operation
  
-        Console.WriteLine(/* Output */ "Union of sets:");
+        Console.WriteLine( "Union of sets:");
         foreach (var item in set1)
         {
-            Console.WriteLine(/* Output */ item);
+            Console.WriteLine( item);
         }
     }
 }
@@ -270,7 +279,8 @@ Union of sets:
 4
 5
  
- 
+
+
 ## 8. Case Study 1: Student Record Management System
 Case Study 1: Student Record Management System
 Problem:
@@ -310,7 +320,7 @@ class StudentRecordSystem
         if (studentRecords.ContainsKey(searchId))
         {
             var student = studentRecords[searchId];
-            Console.WriteLine(/* Output */ $"Student ID: {searchId}, Name: {student.Item1}, Grade: {student.Item2}");
+            Console.WriteLine( $"Student ID: {searchId}, Name: {student.Item1}, Grade: {student.Item2}");
         }
  
         // Remove a student by ID
@@ -318,16 +328,16 @@ class StudentRecordSystem
         if (studentRecords.ContainsKey(removeId))
         {
             studentRecords.Remove(removeId);
-            Console.WriteLine(/* Output */ $"Student with ID {removeId} has been removed.");
+            Console.WriteLine( $"Student with ID {removeId} has been removed.");
         }
  
         // Retrieve students with grades above 80
-        Console.WriteLine(/* Output */ "Students with grade above 80:");
+        Console.WriteLine( "Students with grade above 80:");
         foreach (var record in studentRecords)
         {
             if (record.Value.Item2 > 80)
             {
-                Console.WriteLine(/* Output */ $"ID: {record.Key}, Name: {record.Value.Item1}, Grade: {record.Value.Item2}");
+                Console.WriteLine( $"ID: {record.Key}, Name: {record.Value.Item1}, Grade: {record.Value.Item2}");
             }
         }
     }
@@ -338,7 +348,8 @@ Student with ID 103 has been removed.
 Students with grade above 80:
 ID: 101, Name: John, Grade: 85.5
 ID: 102, Name: Mary, Grade: 92.3
- 
+
+
 ## 9. Case Study 2: Student Grades Tracker
 Case Study 2: Student Grades Tracker
 Problem:
@@ -363,7 +374,7 @@ class StudentGrades
         foreach (var student in studentGrades)
         {
             double average = (double)student.Value.Sum() / student.Value.Count;
-            Console.WriteLine(/* Output */ $"{student.Key}'s average score: {average:F2}");
+            Console.WriteLine( $"{student.Key}'s average score: {average:F2}");
         }
     }
 }
@@ -371,7 +382,8 @@ Sample Output:
 Alice's average score: 84.33
 Bob's average score: 84.33
 
- 
+
+
 ## 10. Case Study 3: Online Shopping Cart
 Case Study 3: Online Shopping Cart
 Problem:
@@ -402,15 +414,15 @@ class ShoppingCart
  
         // Display cart and total
         double total = 0;
-        Console.WriteLine(/* Output */ "Cart Summary:");
+        Console.WriteLine( "Cart Summary:");
         foreach (var item in cart)
         {
             double subtotal = prices[item.Key] * item.Value;
-            Console.WriteLine(/* Output */ $"{item.Key} x {item.Value} = ${subtotal:F2}");
+            Console.WriteLine( $"{item.Key} x {item.Value} = ${subtotal:F2}");
             total += subtotal;
         }
  
-        Console.WriteLine(/* Output */ $"Total: ${total:F2}");
+        Console.WriteLine( $"Total: ${total:F2}");
     }
  
     static void AddToCart(Dictionary<string, int> cart, string item)
@@ -426,9 +438,11 @@ Cart Summary:
 Laptop x 1 = $999.99
 Mouse x 2 = $51.00
 Total: $1050.99
-  
+
+
+
 ## 11. Case Study 4: Call Center Queue
-🧠 Case Study 4: Call Center Queue
+ Case Study 4: Call Center Queue
 Problem:
 Handle a queue of customer support calls in the order they arrive.
 Solution:
@@ -447,12 +461,12 @@ class CallCenter
         callQueue.Enqueue("Bob");
         callQueue.Enqueue("Charlie");
  
-        Console.WriteLine(/* Output */ $"Now serving: {callQueue.Dequeue()}");
+        Console.WriteLine( $"Now serving: {callQueue.Dequeue()}");
  
-        Console.WriteLine(/* Output */ "Pending calls:");
+        Console.WriteLine( "Pending calls:");
         foreach (var caller in callQueue)
         {
-            Console.WriteLine(/* Output */ caller);
+            Console.WriteLine( caller);
         }
     }
 }
@@ -461,7 +475,8 @@ Now serving: Alice
 Pending calls:
 Bob
 Charlie
- 
+
+
 ## 12. Case Study 5: Recently Opened Documents
 Case Study 5: Recently Opened Documents
 Problem:
@@ -483,10 +498,10 @@ class RecentFiles
         OpenFile(recentFiles, fileSet, "Doc2.txt");
         OpenFile(recentFiles, fileSet, "Doc1.txt"); // Reopens Doc1.txt
  
-        Console.WriteLine(/* Output */ "Recently Opened Files:");
+        Console.WriteLine( "Recently Opened Files:");
         foreach (var file in recentFiles)
         {
-            Console.WriteLine(/* Output */ file);
+            Console.WriteLine( file);
         }
     }
  
@@ -510,7 +525,8 @@ Sample Output:
 Recently Opened Files:
 Doc1.txt
 Doc2.txt
- 
+
+
 ## 13. Case Study 5: Library Book Borrowing System
 Case Study 5: Library Book Borrowing System
 Problem:
@@ -542,10 +558,10 @@ class LibrarySystem
  
         ReturnBook(memberLoans, 1001, 1); // Return 1984
  
-        Console.WriteLine(/* Output */ "Books borrowed by Member 1001:");
+        Console.WriteLine( "Books borrowed by Member 1001:");
         foreach (int bookId in memberLoans[1001])
         {
-            Console.WriteLine(/* Output */ books[bookId]);
+            Console.WriteLine( books[bookId]);
         }
     }
  
@@ -565,7 +581,8 @@ class LibrarySystem
 Sample Output:
 Books borrowed by Member 1001:
 To Kill a Mockingbird
- 
+
+
 ## 14. Scenario Question: Inventory Management System
 Scenario Question: Inventory Management System
 Problem:
@@ -635,16 +652,16 @@ class InventoryManagementSystem
         UpdateProductQuantity(inventory, 103, 2);   // Add 2 more tablets to stock
  
         // Retrieve and display product details by product ID
-        Console.WriteLine(/* Output */ "Product Details for ID 102:");
+        Console.WriteLine( "Product Details for ID 102:");
         PrintProductDetails(inventory, 102);
  
         // Display all products with low stock (less than 10 items)
-        Console.WriteLine(/* Output */ "\nProducts with low stock (less than 10):");
+        Console.WriteLine( "\nProducts with low stock (less than 10):");
         DisplayLowStockProducts(inventory, 10);
  
         // Calculate and display the total value of all products in the inventory
         double totalInventoryValue = CalculateTotalInventoryValue(inventory);
-        Console.WriteLine(/* Output */ $"\nTotal Inventory Value: ${totalInventoryValue}");
+        Console.WriteLine( $"\nTotal Inventory Value: ${totalInventoryValue}");
     }
  
     // Method to update the quantity of a product
@@ -653,11 +670,11 @@ class InventoryManagementSystem
         if (inventory.ContainsKey(productId))
         {
             inventory[productId].QuantityAvailable += quantityChange;
-            Console.WriteLine(/* Output */ $"Updated Product ID {productId}: New Quantity = {inventory[productId].QuantityAvailable}");
+            Console.WriteLine( $"Updated Product ID {productId}: New Quantity = {inventory[productId].QuantityAvailable}");
         }
         else
         {
-            Console.WriteLine(/* Output */ "Product ID not found.");
+            Console.WriteLine( "Product ID not found.");
         }
     }
  
@@ -667,11 +684,11 @@ class InventoryManagementSystem
         if (inventory.ContainsKey(productId))
         {
             var product = inventory[productId];
-            Console.WriteLine(/* Output */ $"Product Name: {product.ProductName}, Quantity Available: {product.QuantityAvailable}, Price per Unit: ${product.PricePerUnit}");
+            Console.WriteLine( $"Product Name: {product.ProductName}, Quantity Available: {product.QuantityAvailable}, Price per Unit: ${product.PricePerUnit}");
         }
         else
         {
-            Console.WriteLine(/* Output */ "Product not found.");
+            Console.WriteLine( "Product not found.");
         }
     }
  
@@ -682,7 +699,7 @@ class InventoryManagementSystem
         {
             if (product.Value.QuantityAvailable < threshold)
             {
-                Console.WriteLine(/* Output */ $"Product ID: {product.Key}, Name: {product.Value.ProductName}, Quantity: {product.Value.QuantityAvailable}");
+                Console.WriteLine( $"Product ID: {product.Key}, Name: {product.Value.ProductName}, Quantity: {product.Value.QuantityAvailable}");
             }
         }
     }
@@ -732,7 +749,8 @@ Key Concepts Demonstrated:
 	-	Dictionary: Used to map product IDs to their respective Product objects.
 	-	Product Class: Encapsulates the data and logic related to products.
 	-	Inventory Operations: Includes adding products, updating quantities, retrieving details, filtering based on stock levels, and calculating total inventory value.
- 
+
+
 ## 15. References
 Deitel, H. and Deitel, P., 2017. C# for Programmers. 6th ed. Pearson Education, Inc.
 Nakov, P., Petrov, P., and Ivanov, K., 2016. Beginning C# Programming. 1st ed. Apress.

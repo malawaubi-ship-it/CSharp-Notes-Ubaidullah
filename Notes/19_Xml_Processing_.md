@@ -5,12 +5,11 @@
 By the end of this lesson, you should be able to:
 	-	Understand C# XML processing
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 ## 2. XML Processing in C#
 XML Processing in C#
 Explain XML Parser Architectures and APIs
@@ -76,7 +75,7 @@ class CreateXmlWithXmlDocument
  
         // Save the XML document to a file
         doc.Save("Library.xml");
-        Console.WriteLine(/* Output */ "XML file created successfully!");
+        Console.WriteLine( "XML file created successfully!");
     }
 }
 Expected Output (Library.xml):
@@ -129,7 +128,7 @@ class CreateXmlWithXmlWriter
             writer.WriteEndDocument();
         }
  
-        Console.WriteLine(/* Output */ "XML file created successfully using XmlWriter!");
+        Console.WriteLine( "XML file created successfully using XmlWriter!");
     }
 }
 Expected Output (LibraryWriter.xml):
@@ -141,7 +140,8 @@ Expected Output (LibraryWriter.xml):
   </Book>
 </Library>
 
- 
+
+
 ## 4. Building XML Using XDocument (LINQ to XML)
 Building XML Using XDocument (LINQ to XML)
 LINQ to XML offers a more modern and declarative way to build and query XML documents. It allows for LINQ queries directly on XML, providing a more readable syntax.
@@ -165,7 +165,7 @@ class CreateXmlWithXDocument
  
         // Save the XML document to a file
         doc.Save("LibraryLinq.xml");
-        Console.WriteLine(/* Output */ "XML file created successfully using LINQ to XML!");
+        Console.WriteLine( "XML file created successfully using LINQ to XML!");
     }
 }
 Expected Output (LibraryLinq.xml):
@@ -181,7 +181,8 @@ Conclusion
 	-	DOM Parsing (XmlDocument) is best for applications that need to load and modify the entire XML structure in memory.
 	-	SAX Parsing (XmlReader) is a memory-efficient way to read XML documents sequentially, suitable for large documents.
 	-	LINQ to XML (XDocument, XElement) provides a modern, readable, and flexible approach for working with XML data.
- 
+
+
 ## 5. Example 1: Building XML Using XmlDocument (DOM Approach)
 Example 1: Building XML Using XmlDocument (DOM Approach)
 The XmlDocument class provides a DOM-based approach to creating and manipulating XML documents. It loads the XML document into memory and allows easy access to the nodes.
@@ -220,7 +221,7 @@ class CreateXmlWithXmlDocument
  
         // Save the XML document to a file
         doc.Save("Library.xml");
-        Console.WriteLine(/* Output */ "XML file created successfully!");
+        Console.WriteLine( "XML file created successfully!");
     }
 }
 Expected Output (Library.xml):
@@ -232,7 +233,8 @@ Expected Output (Library.xml):
     </Book>
 </Library>
 
- 
+
+
 ## 6. Example 2: Building XML Using XmlWriter (Streaming Approach)
 Example 2: Building XML Using XmlWriter (Streaming Approach)
 The XmlWriter class provides a streaming approach to XML creation. It is efficient for generating large XML documents since it does not load the entire document into memory at once.
@@ -275,7 +277,7 @@ class CreateXmlWithXmlWriter
             writer.WriteEndDocument();
         }
  
-        Console.WriteLine(/* Output */ "XML file created successfully using XmlWriter!");
+        Console.WriteLine( "XML file created successfully using XmlWriter!");
     }
 }
 Expected Output (LibraryWriter.xml):
@@ -286,7 +288,8 @@ Expected Output (LibraryWriter.xml):
     <Author>Thuli Zondi</Author>
   </Book>
 </Library>
- 
+
+
 ## 7. Example 3: Building XML Using XDocument (LINQ to XML)
 Example 3: Building XML Using XDocument (LINQ to XML)
 The XDocument class allows you to create and manipulate XML documents using LINQ, which provides a more modern and readable way to handle XML data.
@@ -310,7 +313,7 @@ class CreateXmlWithXDocument
  
         // Save the XML document to a file
         doc.Save("LibraryLinq.xml");
-        Console.WriteLine(/* Output */ "XML file created successfully using LINQ to XML!");
+        Console.WriteLine( "XML file created successfully using LINQ to XML!");
     }
 }
 Expected Output (LibraryLinq.xml):
@@ -327,7 +330,8 @@ Conclusion
 	-	XmlWriter (Streaming): Suitable for scenarios where memory usage is a concern, and you need to generate large XML documents efficiently without loading everything into memory at once.
 	-	XDocument (LINQ to XML): Provides a modern, clean syntax for working with XML documents, making it the best choice for most C# applications that require XML processing.
  
- 
+
+
 ## 8. Scenarios
 Scenario 1: DOM-Based XML Creation with XmlDocument
 Scenario Question:
@@ -361,7 +365,7 @@ class LibraryXmlDom
         book.AppendChild(author);
 
         doc.Save("Library.xml");
-        Console.WriteLine(/* Output */ "Library.xml created successfully.");
+        Console.WriteLine( "Library.xml created successfully.");
     }
 }
 Expected Output (Library.xml):
@@ -401,7 +405,7 @@ class LibraryXmlWriter
             writer.WriteEndDocument();
         }
 
-        Console.WriteLine(/* Output */ "LiveBooks.xml created successfully using XmlWriter.");
+        Console.WriteLine( "LiveBooks.xml created successfully using XmlWriter.");
     }
 }
 Expected Output (LiveBooks.xml):
@@ -434,7 +438,7 @@ class LibraryXDocument
         );
 
         doc.Save("DigitalArchive.xml");
-        Console.WriteLine(/* Output */ "DigitalArchive.xml created using XDocument.");
+        Console.WriteLine( "DigitalArchive.xml created using XDocument.");
     }
 }
 Expected Output (DigitalArchive.xml):

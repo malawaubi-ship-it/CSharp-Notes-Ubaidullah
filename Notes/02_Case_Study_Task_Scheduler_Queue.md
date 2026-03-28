@@ -7,11 +7,13 @@ By the end of this topic you should be able to:
 	-	Implement data structures in C#.
 	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
-Prescribed Reading
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd.
 
-    
-Not signed in? Click here and then refresh this page.
+
+
+
+
+
 ## 2. Case Study: Task Scheduler Using Queue
 Understanding the Problem
 Imagine you are developing a task scheduling system for a company. The system needs to handle background tasks, such as sending emails, backing up databases, and generating reports. However, these tasks must be executed in the order they were received—First-In, First-Out (FIFO).
@@ -32,25 +34,25 @@ public class TaskScheduler {
  
     public void AddTask(string task) {
         taskQueue.Enqueue(task);
-        Console.WriteLine(/* Output */ $"Task added: {task}");
+        Console.WriteLine( $"Task added: {task}");
     }
  
     public void ProcessTask() {
         if (taskQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Processing: {taskQueue.Dequeue()}");
+            Console.WriteLine( $"Processing: {taskQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No tasks to process.");
+            Console.WriteLine( "No tasks to process.");
         }
     }
  
     public void ShowTasks() {
         if (taskQueue.Count == 0) {
-            Console.WriteLine(/* Output */ "No pending tasks.");
+            Console.WriteLine( "No pending tasks.");
             return;
         }
-        Console.WriteLine(/* Output */ "Pending tasks:");
+        Console.WriteLine( "Pending tasks:");
         foreach (var task in taskQueue) {
-            Console.WriteLine(/* Output */ task);
+            Console.WriteLine( task);
         }
     }
 }
@@ -79,7 +81,12 @@ In this example, we use a Queue<string> to store tasks. The program allows add
 
 ## 3. Data Structures and Input/Output in C#
 C# provides a variety of data structures that allow us to store, manage, and manipulate data efficiently. Understanding these structures is crucial for developing robust applications. In this lesson, we will explore different types of lists in C#, understand how to perform input and output operations, and learn how to implement a task scheduler using a queue.
-By the end of this lesson, you will be able to: ✔ Understand different types of lists and their usage. ✔ Use queues to implement a simple task scheduler. ✔ Perform input and output operations in C#. ✔ Work with ArrayLists, Generic Lists, Sorted Lists, Linked Lists, and Circular Linked Lists. ✔ Complete two hands-on activities to reinforce learning.
+By the end of this lesson, you will be able to:
+ Understand different types of lists and their usage.
+ Use queues to implement a simple task scheduler.
+ Perform input and output operations in C#.
+ Work with ArrayLists, Generic Lists, Sorted Lists, Linked Lists, and Circular Linked Lists.
+ Complete two hands-on activities to reinforce learning.
 
 ## 4. Lists in C#
 A list is a data structure that stores a collection of elements. Unlike arrays, which have a fixed size, lists can dynamically grow and shrink. Lists allow easy insertion, deletion, and searching of elements, making them more flexible than arrays.
@@ -87,16 +94,17 @@ C# provides different types of lists, including ArrayList, Generic List, Sorted
 
 4.1. Input and Output in C#
 Understanding Input and Output
-Input and Output (I/O) operations allow a program to interact with users. Input refers to data received from the user, while output refers to data displayed to the user. C# provides the Console.ReadLine() method to read input and Console.WriteLine(/* Output */ ) to display output.
+Input and Output (I/O) operations allow a program to interact with users. Input refers to data received from the user, while output refers to data displayed to the user. C# provides the Console.ReadLine() method to read input and Console.WriteLine( ) to display output.
 Example: Basic Input and Output
 Console.Write("Enter your name: ");
 string name = Console.ReadLine();
-Console.WriteLine(/* Output */ "Hello, " + name);
+Console.WriteLine( "Hello, " + name);
 Output
 Enter your name: John  
 Hello, John  
 
- 
+
+
 4.2. ArrayList in C#
 An ArrayList is a non-generic collection that can store different types of data. Unlike arrays, ArrayList can dynamically grow and shrink. However, because it stores objects, type safety is not enforced.
 Example: Using ArrayList
@@ -111,7 +119,7 @@ class MainProgram {
         arrList.Add(3.14);
         
         foreach (var item in arrList) {
-            Console.WriteLine(/* Output */ item);
+            Console.WriteLine( item);
         }
     }
 }
@@ -120,7 +128,8 @@ Output
 Hello  
 3.14  
 
- 
+
+
 4.3. Generic List in C#
 A Generic List (List<T>) is a strongly typed collection that provides better performance and type safety compared to ArrayList.
 Example: Using Generic List
@@ -134,7 +143,7 @@ class MainProgram {
         numArray.Add(40);
  
         foreach (int num in numArray) {
-            Console.WriteLine(/* Output */ num);
+            Console.WriteLine( num);
         }
     }
 }
@@ -144,7 +153,8 @@ Output
 30  
 40  
 
- 
+
+
 4.4. Linked List
 Introduction:
 A Linked List is a linear data structure where each element (called a node) is connected to the next one. Unlike arrays, linked lists do not require contiguous memory, making them efficient for dynamic memory allocation. In C#, linked lists are commonly implemented using the LinkedList<T> class, which is part of the System.Collections.Generic namespace.
@@ -200,7 +210,7 @@ public class LinkedList {
             Console.Write(current.Data + " ");
             current = current.Next;
         }
-        Console.WriteLine(/* Output */ );
+        Console.WriteLine( );
     }
 
     // Delete a node with a specific value
@@ -230,11 +240,11 @@ class MainProgram {
         list.InsertAtBeginning(20);
         list.InsertAtBeginning(30);
 
-        Console.WriteLine(/* Output */ "List: ");
+        Console.WriteLine( "List: ");
         list.PrintList();
 
         list.Delete(20);
-        Console.WriteLine(/* Output */ "After Deleting 20: ");
+        Console.WriteLine( "After Deleting 20: ");
         list.PrintList();
     }
 }
@@ -296,7 +306,7 @@ public class CircularLinkedList {
     // Print the circular list
     public void PrintList() {
         if (head == null) {
-            Console.WriteLine(/* Output */ "List is empty.");
+            Console.WriteLine( "List is empty.");
             return;
         }
 
@@ -305,7 +315,7 @@ public class CircularLinkedList {
             Console.Write(current.Data + " ");
             current = current.Next;
         } while (current != head); // Stop when we loop back to the head
-        Console.WriteLine(/* Output */ );
+        Console.WriteLine( );
     }
 
     // Delete a node with a specific value
@@ -345,11 +355,11 @@ class MainProgram {
         list.InsertAtEnd(20);
         list.InsertAtEnd(30);
 
-        Console.WriteLine(/* Output */ "Circular List: ");
+        Console.WriteLine( "Circular List: ");
         list.PrintList();
 
         list.Delete(20);
-        Console.WriteLine(/* Output */ "After Deleting 20: ");
+        Console.WriteLine( "After Deleting 20: ");
         list.PrintList();
     }
 }
@@ -379,7 +389,8 @@ Conclusion:
 	-	A Linked List is a basic dynamic data structure ideal for applications that need efficient insertions and deletions.
 	-	A Circular Linked List is a variation where the last node points back to the first node, making it suitable for scenarios where the data needs to be processed in a cyclic manner.
 Both structures provide efficient ways of handling dynamic data with flexible memory usage, depending on the specific problem requirements.
- 
+
+
 4.6. Case Study 1
 Problem:
 You need to develop a simple task management application where tasks can have mixed data types (e.g., string for task description, integer for priority, and DateTime for deadlines). For this, an ArrayList is suitable because it can hold elements of any data type, allowing you to store these varied properties for each task.
@@ -412,16 +423,16 @@ class MainProgram {
         
         // Displaying tasks
         foreach (Task task in taskList) {
-            Console.WriteLine(/* Output */ $"Task: {task.Description}, Priority: {task.Priority}, Deadline: {task.Deadline}");
+            Console.WriteLine( $"Task: {task.Description}, Priority: {task.Priority}, Deadline: {task.Deadline}");
         }
  
         // Removing a task
         taskList.RemoveAt(1); // Remove second task
-        Console.WriteLine(/* Output */ "\nAfter removing second task:\n");
+        Console.WriteLine( "\nAfter removing second task:\n");
         
         // Displaying tasks after removal
         foreach (Task task in taskList) {
-            Console.WriteLine(/* Output */ $"Task: {task.Description}, Priority: {task.Priority}, Deadline: {task.Deadline}");
+            Console.WriteLine( $"Task: {task.Description}, Priority: {task.Priority}, Deadline: {task.Deadline}");
         }
     }
 }
@@ -436,7 +447,8 @@ After removing second task:
 Task: Send Email, Priority: 1, Deadline: [DateTime]
 Task: Generate Report, Priority: 3, Deadline: [DateTime]
 
- 
+
+
 4.7. Case Study 2
 Problem:
 You are tasked with developing a simple grade management system for a class. You need to store students' grades, which will be integers. A Generic List<int> is suitable as it ensures type safety and provides flexible manipulation of the grade data.
@@ -459,14 +471,14 @@ class MainProgram {
         grades.Remove(76);
  
         // Displaying all grades
-        Console.WriteLine(/* Output */ "Student Grades:");
+        Console.WriteLine( "Student Grades:");
         foreach (int grade in grades) {
-            Console.WriteLine(/* Output */ grade);
+            Console.WriteLine( grade);
         }
  
         // Calculating average grade
         double average = CalculateAverage(grades);
-        Console.WriteLine(/* Output */ $"\nAverage Grade: {average:F2}");
+        Console.WriteLine( $"\nAverage Grade: {average:F2}");
     }
  
     static double CalculateAverage(List<int> grades) {
@@ -488,7 +500,8 @@ Student Grades:
  
 Average Grade: 89.80
 
- 
+
+
 4.8. Case Study 3
 Problem:
 You need to develop a music player application where users can dynamically add or remove songs from the playlist. A Linked List is ideal because it allows efficient insertion and removal of songs from the beginning, middle, or end of the list.
@@ -505,24 +518,24 @@ public class Playlist {
     // Add a song to the playlist
     public void AddSong(string song) {
         songs.AddLast(song);
-        Console.WriteLine(/* Output */ $"Song added: {song}");
+        Console.WriteLine( $"Song added: {song}");
     }
  
     // Remove a song from the playlist
     public void RemoveSong(string song) {
         if (songs.Contains(song)) {
             songs.Remove(song);
-            Console.WriteLine(/* Output */ $"Song removed: {song}");
+            Console.WriteLine( $"Song removed: {song}");
         } else {
-            Console.WriteLine(/* Output */ "Song not found in the playlist.");
+            Console.WriteLine( "Song not found in the playlist.");
         }
     }
  
     // Display all songs in the playlist
     public void ShowPlaylist() {
-        Console.WriteLine(/* Output */ "\nCurrent Playlist:");
+        Console.WriteLine( "\nCurrent Playlist:");
         foreach (var song in songs) {
-            Console.WriteLine(/* Output */ song);
+            Console.WriteLine( song);
         }
     }
 }
@@ -563,7 +576,8 @@ Current Playlist:
 Song A
 Song C
 
- 
+
+
 4.9. Case Study 4
 Problem:
 You are designing a game where players can navigate through different levels, and the navigation should loop back to the first level after reaching the last one. A Circular Linked Listis ideal to model this behavior.
@@ -602,13 +616,13 @@ public class CircularLinkedList {
  
     public void ShowLevels() {
         if (head == null) {
-            Console.WriteLine(/* Output */ "No levels in the game.");
+            Console.WriteLine( "No levels in the game.");
             return;
         }
  
         Level current = head;
         do {
-            Console.WriteLine(/* Output */ current.LevelName);
+            Console.WriteLine( current.LevelName);
             current = current.NextLevel;
         } while (current != head); // Stop when we loop back to the first level
     }
@@ -640,7 +654,8 @@ These case studies demonstrate how to apply different data structures in real-wo
 	-	Circular Linked List for looping through game levels.
 Each solution provides an efficient way to handle the problem using the most appropriate data structure.
  
- 
+
+
 ## 5. Activity
 Activity 1: Implement a Stack for Undo Feature
 Task:
@@ -653,21 +668,21 @@ class UndoSystem {
  
     public void AddAction(string action) {
         actions.Push(action);
-        Console.WriteLine(/* Output */ $"Action added: {action}");
+        Console.WriteLine( $"Action added: {action}");
     }
  
     public void UndoAction() {
         if (actions.Count > 0) {
-            Console.WriteLine(/* Output */ $"Undoing: {actions.Pop()}");
+            Console.WriteLine( $"Undoing: {actions.Pop()}");
         } else {
-            Console.WriteLine(/* Output */ "No actions to undo.");
+            Console.WriteLine( "No actions to undo.");
         }
     }
  
     public void ShowActions() {
-        Console.WriteLine(/* Output */ "Actions:");
+        Console.WriteLine( "Actions:");
         foreach (var action in actions) {
-            Console.WriteLine(/* Output */ action);
+            Console.WriteLine( action);
         }
     }
 }

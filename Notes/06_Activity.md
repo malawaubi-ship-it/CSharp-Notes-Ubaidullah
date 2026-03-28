@@ -7,10 +7,11 @@ By the end of this topic you should be able to:
 	-	Implement data structures in C#.
 	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
-Prescribed Reading
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd
-   
-Not signed in? Click here and then refresh this page.
+
+
+
+
 ## 2. Activity
 	-	Describe the difference between a queue and a stack.
 	-	Describe the difference between a queue and a priority queue.
@@ -34,14 +35,14 @@ class HospitalQueue {
 
     public void AddPatient(string name, int priority) {
         patientQueue.Enqueue(name, priority);
-        Console.WriteLine(/* Output */ $"Patient Added: {name} (Priority: {priority})");
+        Console.WriteLine( $"Patient Added: {name} (Priority: {priority})");
     }
 
     public void TreatPatient() {
         if (patientQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Treating Patient: {patientQueue.Dequeue()}");
+            Console.WriteLine( $"Treating Patient: {patientQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No patients to treat.");
+            Console.WriteLine( "No patients to treat.");
         }
     }
 }
@@ -55,7 +56,7 @@ class MainProgram {
         hospital.AddPatient("Alice (Stable)", 3);
         hospital.AddPatient("Bob (Serious)", 2);
 
-        Console.WriteLine(/* Output */ "\nTreating Patients:");
+        Console.WriteLine( "\nTreating Patients:");
         while (true) {
             hospital.TreatPatient();
             if (hospital.patientQueue.Count == 0) break;
@@ -71,7 +72,7 @@ Treating Patients:
 Treating Patient: John (Critical)
 Treating Patient: Bob (Serious)
 Treating Patient: Alice (Stable)
-✅ Critical patients are treated first, ensuring efficient medical care.
+ Critical patients are treated first, ensuring efficient medical care.
 
 Case Study 2: Job Scheduling in an Operating System
 Problem Statement:
@@ -93,18 +94,18 @@ class JobScheduler {
             jobQueue[priority] = new Queue<string>();
         }
         jobQueue[priority].Enqueue(jobName);
-        Console.WriteLine(/* Output */ $"Job Added: {jobName} (Priority: {priority})");
+        Console.WriteLine( $"Job Added: {jobName} (Priority: {priority})");
     }
 
     public void ExecuteJob() {
         if (jobQueue.Count == 0) {
-            Console.WriteLine(/* Output */ "No jobs to execute.");
+            Console.WriteLine( "No jobs to execute.");
             return;
         }
 
         int highestPriority = jobQueue.Keys[0];
         string job = jobQueue[highestPriority].Dequeue();
-        Console.WriteLine(/* Output */ $"Executing Job: {job}");
+        Console.WriteLine( $"Executing Job: {job}");
 
         if (jobQueue[highestPriority].Count == 0) {
             jobQueue.Remove(highestPriority);
@@ -121,7 +122,7 @@ class MainProgram {
         scheduler.AddJob("User App Execution", 2);
         scheduler.AddJob("Background Sync", 3);
 
-        Console.WriteLine(/* Output */ "\nExecuting Jobs:");
+        Console.WriteLine( "\nExecuting Jobs:");
         while (true) {
             scheduler.ExecuteJob();
             if (scheduler.jobQueue.Count == 0) break;
@@ -137,7 +138,7 @@ Executing Jobs:
 Executing Job: System Update
 Executing Job: User App Execution
 Executing Job: Background Sync
-✅ System-critical jobs run before background tasks.
+ System-critical jobs run before background tasks.
 
 Case Study 3: Parcel Delivery System
 Problem Statement:
@@ -156,14 +157,14 @@ class ParcelDelivery {
 
     public void AddParcel(string parcel, int priority) {
         deliveryQueue.Enqueue(parcel, priority);
-        Console.WriteLine(/* Output */ $"Parcel Added: {parcel} (Priority: {priority})");
+        Console.WriteLine( $"Parcel Added: {parcel} (Priority: {priority})");
     }
 
     public void DeliverParcel() {
         if (deliveryQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Delivering: {deliveryQueue.Dequeue()}");
+            Console.WriteLine( $"Delivering: {deliveryQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No parcels to deliver.");
+            Console.WriteLine( "No parcels to deliver.");
         }
     }
 }
@@ -177,7 +178,7 @@ class MainProgram {
         deliverySystem.AddParcel("Standard Parcel B", 2);
         deliverySystem.AddParcel("Economy Parcel C", 3);
 
-        Console.WriteLine(/* Output */ "\nDelivering Parcels:");
+        Console.WriteLine( "\nDelivering Parcels:");
         while (true) {
             deliverySystem.DeliverParcel();
             if (deliverySystem.deliveryQueue.Count == 0) break;
@@ -194,7 +195,7 @@ Delivering Parcels:
 Delivering: Express Parcel A
 Delivering: Standard Parcel B
 Delivering: Economy Parcel C
-✅ Urgent parcels are delivered first, ensuring timely service.
+ Urgent parcels are delivered first, ensuring timely service.
 
 Case Study 4: Stock Market Order Processing
 Problem Statement:
@@ -214,14 +215,14 @@ class StockOrderSystem {
 
     public void PlaceOrder(string order, int priority) {
         orderQueue.Enqueue(order, priority);
-        Console.WriteLine(/* Output */ $"Order Placed: {order} (Priority: {priority})");
+        Console.WriteLine( $"Order Placed: {order} (Priority: {priority})");
     }
 
     public void ProcessOrder() {
         if (orderQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Processing Order: {orderQueue.Dequeue()}");
+            Console.WriteLine( $"Processing Order: {orderQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No orders to process.");
+            Console.WriteLine( "No orders to process.");
         }
     }
 }
@@ -235,7 +236,7 @@ class MainProgram {
         stockSystem.PlaceOrder("Limit Order: Buy at $50", 2);
         stockSystem.PlaceOrder("Stop Order: Sell if Price Falls", 3);
 
-        Console.WriteLine(/* Output */ "\nProcessing Orders:");
+        Console.WriteLine( "\nProcessing Orders:");
         while (true) {
             stockSystem.ProcessOrder();
             if (stockSystem.orderQueue.Count == 0) break;
@@ -252,7 +253,7 @@ Processing Orders:
 Processing Order: Market Order: Buy 100 Shares
 Processing Order: Limit Order: Buy at $50
 Processing Order: Stop Order: Sell if Price Falls
-✅ Market orders are executed first for real-time trading.
+ Market orders are executed first for real-time trading.
 
 Conclusion
 These four case studies demonstrate how Priority Queues improve efficiency in different real-world applications.

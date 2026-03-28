@@ -7,11 +7,13 @@ By the end of this topic you should be able to:
 	-	Implement data structures in C#.
 	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
-Prescribed Reading
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd.
 
-    
-Not signed in? Click here and then refresh this page.
+
+
+
+
+
 ## 2. Data structures
 ## 1. Introduction to Data Structures
 Data structures are ways of organizing and storing data to perform operations efficiently. They are fundamental in programming and play a crucial role in solving complex computational problems.
@@ -31,7 +33,7 @@ Types of Data Structures
 	-	Disadvantages: Fixed size, inserting/removing elements is expensive.
 Example in C#:
 int[] numArray = new int[5] {1, 2, 3, 4, 5};
-Console.WriteLine(/* Output */ numArray[2]); // Output: 3
+Console.WriteLine( numArray[2]); // Output: 3
 ## 3. Linked Lists
 	-	A sequence of nodes where each node contains data and a reference to the next node.
 	-	Advantages: Dynamic size, efficient insertions/deletions.
@@ -55,7 +57,7 @@ Example in C#:
 Stack<int> stack = new Stack<int>();
 stack.Push(10);
 stack.Push(20);
-Console.WriteLine(/* Output */ stack.Pop()); // Output: 20
+Console.WriteLine( stack.Pop()); // Output: 20
 ```
 ## 5. Queues
 	-	A FIFO (First In, First Out) data structure.
@@ -64,7 +66,7 @@ Example in C#:
 Queue<int> queue = new Queue<int>();
 queue.Enqueue(1);
 queue.Enqueue(2);
-Console.WriteLine(/* Output */ queue.Dequeue()); // Output: 1
+Console.WriteLine( queue.Dequeue()); // Output: 1
 
 Activities with Solutions
 Activity 1: Implement a Stack Using an Array
@@ -84,7 +86,7 @@ public class StackArray {
  
     public void Push(int value) {
         if (top == maxSize - 1) {
-            Console.WriteLine(/* Output */ "Stack Overflow");
+            Console.WriteLine( "Stack Overflow");
             return;
         }
         stack[++top] = value;
@@ -92,7 +94,7 @@ public class StackArray {
  
     public int Pop() {
         if (top == -1) {
-            Console.WriteLine(/* Output */ "Stack Underflow");
+            Console.WriteLine( "Stack Underflow");
             return -1;
         }
         return stack[top--];
@@ -100,7 +102,7 @@ public class StackArray {
  
     public int Peek() {
         if (top == -1) {
-            Console.WriteLine(/* Output */ "Stack is empty");
+            Console.WriteLine( "Stack is empty");
             return -1;
         }
         return stack[top];
@@ -139,7 +141,7 @@ public class QueueLinkedList {
  
     public int Dequeue() {
         if (front == null) {
-            Console.WriteLine(/* Output */ "Queue is empty");
+            Console.WriteLine( "Queue is empty");
             return -1;
         }
         int value = front.Data;
@@ -149,7 +151,8 @@ public class QueueLinkedList {
     }
 }
  
- 
+
+
 ## 3. Case Study 1
 Case Study 1: Employee Management System (Using Linked List)
 Problem Statement:
@@ -186,17 +189,17 @@ public class EmployeeList {
             }
             tempVal.Next = newEmployee;
         }
-        Console.WriteLine(/* Output */ $"Employee {name} added.");
+        Console.WriteLine( $"Employee {name} added.");
     }
 
     public void RemoveEmployee(int id) {
         if (head == null) {
-            Console.WriteLine(/* Output */ "Employee list is empty.");
+            Console.WriteLine( "Employee list is empty.");
             return;
         }
         if (head.ID == id) {
             head = head.Next;
-            Console.WriteLine(/* Output */ $"Employee ID {id} removed.");
+            Console.WriteLine( $"Employee ID {id} removed.");
             return;
         }
         Employee tempVal = head;
@@ -204,21 +207,21 @@ public class EmployeeList {
             tempVal = tempVal.Next;
         }
         if (tempVal.Next == null) {
-            Console.WriteLine(/* Output */ "Employee not found.");
+            Console.WriteLine( "Employee not found.");
         } else {
             tempVal.Next = tempVal.Next.Next;
-            Console.WriteLine(/* Output */ $"Employee ID {id} removed.");
+            Console.WriteLine( $"Employee ID {id} removed.");
         }
     }
 
     public void DisplayEmployees() {
         if (head == null) {
-            Console.WriteLine(/* Output */ "No employees found.");
+            Console.WriteLine( "No employees found.");
             return;
         }
         Employee tempVal = head;
         while (tempVal != null) {
-            Console.WriteLine(/* Output */ $"ID: {tempVal.ID}, Name: {tempVal.Name}");
+            Console.WriteLine( $"ID: {tempVal.ID}, Name: {tempVal.Name}");
             tempVal = tempVal.Next;
         }
     }
@@ -265,16 +268,16 @@ public class BrowserHistory {
         backStack.Push(currentPage);
         currentPage = page;
         forwardStack.Clear();
-        Console.WriteLine(/* Output */ $"Visited: {currentPage}");
+        Console.WriteLine( $"Visited: {currentPage}");
     }
 
     public void Back() {
         if (backStack.Count > 0) {
             forwardStack.Push(currentPage);
             currentPage = backStack.Pop();
-            Console.WriteLine(/* Output */ $"Back to: {currentPage}");
+            Console.WriteLine( $"Back to: {currentPage}");
         } else {
-            Console.WriteLine(/* Output */ "No back history available.");
+            Console.WriteLine( "No back history available.");
         }
     }
 
@@ -282,14 +285,14 @@ public class BrowserHistory {
         if (forwardStack.Count > 0) {
             backStack.Push(currentPage);
             currentPage = forwardStack.Pop();
-            Console.WriteLine(/* Output */ $"Forward to: {currentPage}");
+            Console.WriteLine( $"Forward to: {currentPage}");
         } else {
-            Console.WriteLine(/* Output */ "No forward history available.");
+            Console.WriteLine( "No forward history available.");
         }
     }
 
     public void ShowCurrentPage() {
-        Console.WriteLine(/* Output */ $"Current Page: {currentPage}");
+        Console.WriteLine( $"Current Page: {currentPage}");
     }
 }
 
@@ -332,25 +335,25 @@ public class TaskScheduler {
 
     public void AddTask(string task) {
         taskQueue.Enqueue(task);
-        Console.WriteLine(/* Output */ $"Task added: {task}");
+        Console.WriteLine( $"Task added: {task}");
     }
 
     public void ProcessTask() {
         if (taskQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Processing: {taskQueue.Dequeue()}");
+            Console.WriteLine( $"Processing: {taskQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No tasks to process.");
+            Console.WriteLine( "No tasks to process.");
         }
     }
 
     public void ShowTasks() {
         if (taskQueue.Count == 0) {
-            Console.WriteLine(/* Output */ "No pending tasks.");
+            Console.WriteLine( "No pending tasks.");
             return;
         }
-        Console.WriteLine(/* Output */ "Pending tasks:");
+        Console.WriteLine( "Pending tasks:");
         foreach (var task in taskQueue) {
-            Console.WriteLine(/* Output */ task);
+            Console.WriteLine( task);
         }
     }
 }
@@ -391,7 +394,7 @@ Task Scheduler
 Queue
 FIFO-based task processing
 
-These case studies cover real-world scenarios where linked lists, stacks, and queues are used effectively. Let me know if you need further modifications or additional examples! 🚀
+These case studies cover real-world scenarios where linked lists, stacks, and queues are used effectively. Let me know if you need further modifications or additional examples! 
 
 
 	-	3. Data Structures and Input/Output in C#

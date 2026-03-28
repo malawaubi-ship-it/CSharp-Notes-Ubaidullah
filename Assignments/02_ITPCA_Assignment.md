@@ -1,8 +1,9 @@
+# C# Programming — Final Assignment
 
-Individual Assessment Coversheet
-To be attached to the front of the assessment.
+It demonstrates core object-oriented programming concepts, LINQ, file I/O, and applied C# features.
 
-Campus:			 Bedfordview campus		 Faculty:			 Information Technology		 Module Code:			ITPCA		  Group:		1		  Lecturer’s Name:		 Mr Mosingathi	 Student Full Name: Ubaidullah Abdula	  Student Number:	Eduv4957588		 
+---
+
 
 Indicate
 Yes
@@ -11,12 +12,9 @@ Plagiarism report attached
 
 
 Declaration:
-I declare that this assessment is my own original work except for source material explicitly acknowledged. I also declare that this assessment or any other of my original work related to it has not been previously, or is not being simultaneously, submitted for this or any other course. I am aware of the AI policy and acknowledge that I have not used any AI technology to generate or manipulate data, other than as permitted by the assessment instructions. I also declare that I am aware of the Institution’s policy and regulations on honesty in academic work as set out in the Conditions of Enrolment, and of the disciplinary guidelines applicable to breaches of such policy and regulations.
 
 Signature
 Date
-
-Lecturer’s Comments:
 
 
 Marks Awarded:
@@ -29,7 +27,6 @@ Date
 1
 1
 
-Eduvos (Pty) Ltd. (formerly Pearson Institute of Higher Education) is registered with the Department of Higher Education and Training as a private higher education institution under the Higher Education Act, 101, of 1997. Registration Certificate number: 2001/HE07/008
 
 Contents
 Question 1	3
@@ -40,11 +37,11 @@ I had then proceeded to continue with the UI phase of the project in which I has
 I then proceeded with the required CRUD operations required which is detailed within this code below. This code also includes the required Data Validation and Error Handling required that prevents invalid inputs during product registration, customer information updates, and other processing. It also displays appropriate error
 messages to users.	14
 Question 3	20
-	-	20
-	-	20
-	-	20
-	-	20
-	-	20
+	•	20
+	•	20
+	•	20
+	•	20
+	•	20
 
 Question 1
 using System;
@@ -84,9 +81,9 @@ reservations = new List<Reservation>();
 }
 private bool IsRoomAvailableForDates(int roomNumber, DateTime checkIn, DateTime checkOut)
 {
-for (int idx = 0; idx < reservations.Count; idx++)
+for (int i = 0; i < reservations.Count; i++)
 {
-Reservation reservation = reservations[idx];
+Reservation reservation = reservations[i];
 if (reservation.RoomNumber == roomNumber)
 {
 //We need to check to see if there is a date overlap
@@ -102,13 +99,13 @@ return true; // Case in which an overlap is not found
 
 public void BookRoom()
 {
-Console.WriteLine(/* Output */ "Enter Guest Name: "); string guestName = Console.ReadLine();
-Console.WriteLine(/* Output */ "Enter Room Type (Single/Double/Suite): "); string roomType = Console.ReadLine(); Console.WriteLine(/* Output */ "Enter in Check-in Date (MM/DD/YYYY): "); DateTime checkIn = DateTime.Parse(Console.ReadLine()); DateTime checkOut = DateTime.Parse(Console.ReadLine());
+Console.WriteLine("Enter Guest Name: "); string guestName = Console.ReadLine();
+Console.WriteLine("Enter Room Type (Single/Double/Suite): "); string roomType = Console.ReadLine(); Console.WriteLine("Enter in Check-in Date (MM/DD/YYYY): "); DateTime checkIn = DateTime.Parse(Console.ReadLine()); DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
 Room availableRoom = null;
-for (int idx = 0; idx < rooms.Count; idx++)
+for (int i = 0; i < rooms.Count; i++)
 {
-Room room = rooms[idx];
+Room room = rooms[i];
 if (room.RoomType == roomType && IsRoomAvailableForDates(room.RoomNumber, checkIn, checkOut))
 {
 availableRoom = room; break;
@@ -117,48 +114,48 @@ availableRoom = room; break;
 
 if (availableRoom != null)
 {
-reservations.Add(new Reservation(guestName, availableRoom.RoomNumber, checkIn, checkOut)); Console.WriteLine(/* Output */ $"Room {availableRoom.RoomNumber} booked for {guestName} from {checkIn:MM/dd/yyyy} to
+reservations.Add(new Reservation(guestName, availableRoom.RoomNumber, checkIn, checkOut)); Console.WriteLine($"Room {availableRoom.RoomNumber} booked for {guestName} from {checkIn:MM/dd/yyyy} to
 {checkOut:MM/dd/yyyy}.");
 
 }
 else
 {
 
-Console.WriteLine(/* Output */ "No available rooms of this type.");
+Console.WriteLine("No available rooms of this type.");
 }
 }
 
 public void CheckInGuest()
 {
-Console.WriteLine(/* Output */ "Enter Guest Name: "); string guestName = Console.ReadLine(); Console.WriteLine(/* Output */ "Enter Room Number: ");
+Console.WriteLine("Enter Guest Name: "); string guestName = Console.ReadLine(); Console.WriteLine("Enter Room Number: ");
 int roomNumber = int.Parse(Console.ReadLine());
 
 bool found = false;
-for (int idx = 0; idx < reservations.Count; idx++)
+for (int i = 0; i < reservations.Count; i++)
 {
-Reservation reservation = reservations[idx];
+Reservation reservation = reservations[i];
 if (reservation.RoomNumber == roomNumber && reservation.GuestName == guestName)
 {
-Console.WriteLine(/* Output */ $"{guestName} has been checked into room {roomNumber}."); found = true;
+Console.WriteLine($"{guestName} has been checked into room {roomNumber}."); found = true;
 break;
 }
 }
 
 if (!found)
 {
-Console.WriteLine(/* Output */ "No matching reservation found.");
+Console.WriteLine("No matching reservation found.");
 
 }
 }
 
 public void CheckOutGuest()
 {
-Console.WriteLine(/* Output */ "Enter Room Number to check-out:"); int roomNumber = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter Room Number to check-out:"); int roomNumber = int.Parse(Console.ReadLine());
 
 int reservationIndex = -1;
-for (int idx = 0; idx < reservations.Count; idx++)
+for (int i = 0; i < reservations.Count; i++)
 {
-if (reservations[idx].RoomNumber == roomNumber)
+if (reservations[i].RoomNumber == roomNumber)
 {
 reservationIndex = i; break;
 }
@@ -167,11 +164,11 @@ reservationIndex = i; break;
 if (reservationIndex != -1)
 {
 reservations.RemoveAt(reservationIndex);
-Console.WriteLine(/* Output */ $"Room {roomNumber} is now available for new guests. ");
+Console.WriteLine($"Room {roomNumber} is now available for new guests. ");
 }
 else
 {
-Console.WriteLine(/* Output */ "Room not found or no active reservation. ");
+Console.WriteLine("Room not found or no active reservation. ");
 
 }
 
@@ -179,24 +176,24 @@ Console.WriteLine(/* Output */ "Room not found or no active reservation. ");
 
 public void ViewAvailableRooms()
 {
-Console.WriteLine(/* Output */ "Enter Check-in Date (MM/DD/YYYY): "); DateTime checkIn = DateTime.Parse(Console.ReadLine()); Console.WriteLine(/* Output */ "Enter Check-out Date (MM/DD/YYYY)"); DateTime checkOut = DateTime.Parse(Console.ReadLine());
+Console.WriteLine("Enter Check-in Date (MM/DD/YYYY): "); DateTime checkIn = DateTime.Parse(Console.ReadLine()); Console.WriteLine("Enter Check-out Date (MM/DD/YYYY)"); DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-Console.WriteLine(/* Output */ "Available Rooms: "); for (int idx = 0; idx < rooms.Count; idx++)
+Console.WriteLine("Available Rooms: "); for (int i = 0; i < rooms.Count; i++)
 {
-Room room = rooms[idx];
+Room room = rooms[i];
 if (IsRoomAvailableForDates(room.RoomNumber, checkIn, checkOut))
 {
-Console.WriteLine(/* Output */ $"Room {room.RoomNumber} ({room.RoomType})");
+Console.WriteLine($"Room {room.RoomNumber} ({room.RoomType})");
 }
 }
 }
 
 public void ViewReservationHistory()
 {
-Console.WriteLine(/* Output */ "Reservation History:"); for (int idx = 0; idx < reservations.Count; idx++)
+Console.WriteLine("Reservation History:"); for (int i = 0; i < reservations.Count; i++)
 {
-Reservation r = reservations[idx];
-Console.WriteLine(/* Output */ $"Room {r.RoomNumber}, Guest: {r.GuestName}, From: {r.CheckInDate} To:
+Reservation r = reservations[i];
+Console.WriteLine($"Room {r.RoomNumber}, Guest: {r.GuestName}, From: {r.CheckInDate} To:
 {r.CheckOutDate:MM/dd/yyyy}");
 
 }
@@ -206,7 +203,7 @@ public void Run()
 {
 while (true)
 {
-Console.WriteLine(/* Output */ "1. Book Room"); Console.WriteLine(/* Output */ "2. Check-in Guest"); Console.WriteLine(/* Output */ "3. Check-out Guest"); Console.WriteLine(/* Output */ "4. View Available Rooms"); Console.WriteLine(/* Output */ "5. View Reservation History"); Console.WriteLine(/* Output */ "6.Exit"); Console.WriteLine(/* Output */ "Choose an option:");
+Console.WriteLine("1. Book Room"); Console.WriteLine("2. Check-in Guest"); Console.WriteLine("3. Check-out Guest"); Console.WriteLine("4. View Available Rooms"); Console.WriteLine("5. View Reservation History"); Console.WriteLine("6.Exit"); Console.WriteLine("Choose an option:");
 
 string choice = Console.ReadLine();
 
@@ -220,12 +217,12 @@ case "4": BookRoom(); break;
 case "5": ViewAvailableRooms(); break;
 case "6": return;
 default:
-Console.WriteLine(/* Output */ "Invalid choice. Please try again."); break;
+Console.WriteLine("Invalid choice. Please try again."); break;
 }
 }
 }
 }
-class MainProgram
+class Program
 {
 static void Main(string[] args)
 {
@@ -240,12 +237,12 @@ case "4": BookRoom(); break;
 case "5": ViewAvailableRooms(); break;
 case "6": return;
 default:
-Console.WriteLine(/* Output */ "Invalid choice. Please try again."); break;
+Console.WriteLine("Invalid choice. Please try again."); break;
 }
 }
 }
 }
-class MainProgram
+class Program
 {
 static void Main(string[] args)
 {
@@ -511,7 +508,8 @@ if (!int.TryParse(txtQuantityInStock.Text, out quantity) || quantity < 0)
 negative.");
 
 }
- MessageBox.Show("Invalid Quantity. Quantity in stock cannot be return;
+
+MessageBox.Show("Invalid Quantity. Quantity in stock cannot be return;
 
 
 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -519,7 +517,7 @@ using (SqlConnection conn = new SqlConnection(connectionString))
 
 try
 {
- 
+
 
 conn.Open();
 SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Products WHERE
@@ -596,7 +594,8 @@ int count = (int)cmd.ExecuteScalar(); if (count > 0)
 
 
 exists.");
- MessageBox.Show("Another product with this name already
+
+MessageBox.Show("Another product with this name already
 
 return;
 }
@@ -650,15 +649,12 @@ return;
 }
 
 
-
 @ProductID", conn);
 
 
-
-
-
 }
- cmd = new SqlCommand("DELETE FROM Products WHERE ProductID =
+
+cmd = new SqlCommand("DELETE FROM Products WHERE ProductID =
 
 cmd.Parameters.AddWithValue("@ProductID", productID); cmd.ExecuteNonQuery();
 MessageBox.Show("Product deleted successfully."); LoadProducts();
@@ -738,9 +734,9 @@ Question 3
 
 3.1
 This is a custom exception designed to handle specific invalid order conditions and as such, it’s purpose is to
-	-	Signal when an order cannot be processed due to invalid inputs
-	-	Allow the system to catch these specific exceptions and display user friendly error messages
-	-	To provide a more meaningful error handling compared to other more general exceptions This in turn allows for the developer to
+	•	Signal when an order cannot be processed due to invalid inputs
+	•	Allow the system to catch these specific exceptions and display user friendly error messages
+	•	To provide a more meaningful error handling compared to other more general exceptions This in turn allows for the developer to
 Clearly identify and log error-related errors and handle these errors separately from other exceptions.
 
 3.2
@@ -759,10 +755,6 @@ The finally block in exception handling is used to specify code that must execut
 The thow keyword is used to raise an exception. An example of this is throw new
 InvalidOrderException("Quantity cannot be negative."); which is when you wish to create and throw a new exception instance.
 It can also be used to rethrow an already caught exception. An example as per our scenario would be when you throw a custom exception like InvalidOrderExecution
-
-
-
-
 
 
 Reference Page

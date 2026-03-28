@@ -7,12 +7,13 @@ By the end of this topic you should be able to:
 	-	Implement data structures in C#.
 	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
-Prescribed Reading
  
 Jamro, M., (2018). C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd.
 
-   
-Not signed in? Click here and then refresh this page.
+
+
+
+
 ## 2. Introduction to Queues
 Introduction to Queues
 A queue is a linear data structure that follows the First-In, First-Out (FIFO) principle. This means that the first element added to the queue will be the first one to be removed. Queues are widely used in programming for managing tasks that must be processed in order.
@@ -56,20 +57,20 @@ class MainProgram {
         queue.Enqueue("Bob");
         queue.Enqueue("Charlie");
  
-        Console.WriteLine(/* Output */ "Queue after Enqueue operations:");
+        Console.WriteLine( "Queue after Enqueue operations:");
         foreach (var person in queue)
-            Console.WriteLine(/* Output */ person);
+            Console.WriteLine( person);
  
         // Peek - Check first element
-        Console.WriteLine(/* Output */ "\nFront of the queue: " + queue.Peek());
+        Console.WriteLine( "\nFront of the queue: " + queue.Peek());
  
         // Dequeue - Removing elements
-        Console.WriteLine(/* Output */ "\nProcessing: " + queue.Dequeue());
-        Console.WriteLine(/* Output */ "Processing: " + queue.Dequeue());
+        Console.WriteLine( "\nProcessing: " + queue.Dequeue());
+        Console.WriteLine( "Processing: " + queue.Dequeue());
  
-        Console.WriteLine(/* Output */ "\nQueue after Dequeue operations:");
+        Console.WriteLine( "\nQueue after Dequeue operations:");
         foreach (var person in queue)
-            Console.WriteLine(/* Output */ person);
+            Console.WriteLine( person);
     }
 }
 Output:
@@ -87,7 +88,8 @@ Processing: Bob
 Queue after Dequeue operations:
 Charlie
 
- 
+
+
 ## 4. Types of Queues in C#
 C# supports different types of queues, depending on the use case:
 3.1 Standard Queue (FIFO)
@@ -97,7 +99,7 @@ Queue<int> queue = new Queue<int>();
 queue.Enqueue(1);
 queue.Enqueue(2);
 queue.Enqueue(3);
-Console.WriteLine(/* Output */ queue.Dequeue()); // Output: 1
+Console.WriteLine( queue.Dequeue()); // Output: 1
 
 3.2 Priority Queue
 A priority queue processes elements based on their priority instead of their arrival order. The PriorityQueue<TElement, TPriority> class in .NET 6+ provides a built-in way to create priority queues.
@@ -114,9 +116,9 @@ class MainProgram {
         taskQueue.Enqueue("High Priority Task", 1);
         taskQueue.Enqueue("Medium Priority Task", 2);
  
-        Console.WriteLine(/* Output */ "Processing tasks in priority order:");
+        Console.WriteLine( "Processing tasks in priority order:");
         while (taskQueue.Count > 0) {
-            Console.WriteLine(/* Output */ taskQueue.Dequeue());
+            Console.WriteLine( taskQueue.Dequeue());
         }
     }
 }
@@ -148,16 +150,17 @@ class MainProgram {
         deque.RemoveLast();
         deque.RemoveFirst();
  
-        Console.WriteLine(/* Output */ "Deque after operations:");
+        Console.WriteLine( "Deque after operations:");
         foreach (var item in deque)
-            Console.WriteLine(/* Output */ item);
+            Console.WriteLine( item);
     }
 }
 Output:
 Deque after operations:
 1
 
- 
+
+
 ## 5. Practical Use Cases of Queues
 Task Scheduler Using Queue
 Problem: Background tasks (e.g., email notifications, database backups) must be executed in the order they were added.
@@ -171,21 +174,21 @@ class TaskScheduler {
  
     public void AddTask(string task) {
         taskQueue.Enqueue(task);
-        Console.WriteLine(/* Output */ $"Task added: {task}");
+        Console.WriteLine( $"Task added: {task}");
     }
  
     public void ProcessTask() {
         if (taskQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Processing: {taskQueue.Dequeue()}");
+            Console.WriteLine( $"Processing: {taskQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No tasks to process.");
+            Console.WriteLine( "No tasks to process.");
         }
     }
  
     public void ShowTasks() {
-        Console.WriteLine(/* Output */ "Pending tasks:");
+        Console.WriteLine( "Pending tasks:");
         foreach (var task in taskQueue)
-            Console.WriteLine(/* Output */ task);
+            Console.WriteLine( task);
     }
 }
  
@@ -220,14 +223,14 @@ class CallCenter {
  
     public void ReceiveCall(string caller) {
         callQueue.Enqueue(caller);
-        Console.WriteLine(/* Output */ $"Call received from: {caller}");
+        Console.WriteLine( $"Call received from: {caller}");
     }
  
     public void AnswerCall() {
         if (callQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Answering call from: {callQueue.Dequeue()}");
+            Console.WriteLine( $"Answering call from: {callQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No calls in queue.");
+            Console.WriteLine( "No calls in queue.");
         }
     }
 }
@@ -262,7 +265,8 @@ Real-World Applications
 Used in task scheduling, call centers, printer queues, and messaging systems.
 
 Conclusion
-Queues are fundamental data structures widely used in real-world applications. C# provides multiple ways to implement queues, including Queue<T>, PriorityQueue<T>, and LinkedList<T> for deques. Understanding queues helps in building efficient systems for processing tasks in sequence 
+Queues are fundamental data structures widely used in real-world applications. C# provides multiple ways to implement queues, including Queue<T>, PriorityQueue<T>, and LinkedList<T> for deques. Understanding queues helps in building efficient systems for processing tasks in sequence
+
 ## 6. Case study 1
 Problem Statement
 A telecom company needs a Customer Service Call Queue system where customer calls are answered in the order they were received. The system should:
@@ -283,26 +287,26 @@ class CallCenter {
     // Method to add a call to the queue
     public void ReceiveCall(string caller) {
         callQueue.Enqueue(caller);
-        Console.WriteLine(/* Output */ $"Call received from: {caller}");
+        Console.WriteLine( $"Call received from: {caller}");
     }
  
     // Method to answer and remove a call from the queue
     public void AnswerCall() {
         if (callQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Answering call from: {callQueue.Dequeue()}");
+            Console.WriteLine( $"Answering call from: {callQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No calls in the queue.");
+            Console.WriteLine( "No calls in the queue.");
         }
     }
  
     // Display all pending calls
     public void ShowQueue() {
         if (callQueue.Count == 0) {
-            Console.WriteLine(/* Output */ "No pending calls.");
+            Console.WriteLine( "No pending calls.");
         } else {
-            Console.WriteLine(/* Output */ "Pending Calls:");
+            Console.WriteLine( "Pending Calls:");
             foreach (var caller in callQueue) {
-                Console.WriteLine(/* Output */ caller);
+                Console.WriteLine( caller);
             }
         }
     }
@@ -337,9 +341,10 @@ Answering call from: Customer 1
 Pending Calls:
 Customer 2
 Customer 3
-✅ Queue ensures that customers are served in order!
+ Queue ensures that customers are served in order!
 
- 
+
+
 ## 7. Case study 2
 Problem Statement
 A university computer lab has multiple students sending print requests to a shared network printer. The printer must:
@@ -360,26 +365,26 @@ class PrintQueue {
     // Method to add a print job
     public void AddPrintJob(string document) {
         jobQueue.Enqueue(document);
-        Console.WriteLine(/* Output */ $"Print job added: {document}");
+        Console.WriteLine( $"Print job added: {document}");
     }
  
     // Method to process the next print job
     public void ProcessPrintJob() {
         if (jobQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Printing: {jobQueue.Dequeue()}");
+            Console.WriteLine( $"Printing: {jobQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No print jobs in the queue.");
+            Console.WriteLine( "No print jobs in the queue.");
         }
     }
  
     // Show all pending print jobs
     public void ShowQueue() {
         if (jobQueue.Count == 0) {
-            Console.WriteLine(/* Output */ "No pending print jobs.");
+            Console.WriteLine( "No pending print jobs.");
         } else {
-            Console.WriteLine(/* Output */ "Pending Print Jobs:");
+            Console.WriteLine( "Pending Print Jobs:");
             foreach (var job in jobQueue) {
-                Console.WriteLine(/* Output */ job);
+                Console.WriteLine( job);
             }
         }
     }
@@ -414,9 +419,10 @@ Printing: Assignment.pdf
 Pending Print Jobs:
 Research_Paper.docx
 Presentation.pptx
-✅ The queue ensures print jobs are processed in the order they were added!
+ The queue ensures print jobs are processed in the order they were added!
 
- 
+
+
 ## 8. Case Study 3
 Problem Statement
 A fast-food restaurant processes orders from customers. The system should:
@@ -436,26 +442,26 @@ class RestaurantOrderQueue {
     // Method to add an order
     public void PlaceOrder(string order) {
         orderQueue.Enqueue(order);
-        Console.WriteLine(/* Output */ $"Order placed: {order}");
+        Console.WriteLine( $"Order placed: {order}");
     }
  
     // Method to serve an order
     public void ServeOrder() {
         if (orderQueue.Count > 0) {
-            Console.WriteLine(/* Output */ $"Serving order: {orderQueue.Dequeue()}");
+            Console.WriteLine( $"Serving order: {orderQueue.Dequeue()}");
         } else {
-            Console.WriteLine(/* Output */ "No orders in the queue.");
+            Console.WriteLine( "No orders in the queue.");
         }
     }
  
     // Show all pending orders
     public void ShowPendingOrders() {
         if (orderQueue.Count == 0) {
-            Console.WriteLine(/* Output */ "No pending orders.");
+            Console.WriteLine( "No pending orders.");
         } else {
-            Console.WriteLine(/* Output */ "Pending Orders:");
+            Console.WriteLine( "Pending Orders:");
             foreach (var order in orderQueue) {
-                Console.WriteLine(/* Output */ order);
+                Console.WriteLine( order);
             }
         }
     }
@@ -490,7 +496,7 @@ Serving order: Burger
 Pending Orders:
 Pizza
 Pasta
-✅ Orders are served in the same sequence they were placed!
+ Orders are served in the same sequence they were placed!
 
 Summary of Case Studies
 Case Study
@@ -506,7 +512,8 @@ Restaurant Order Queue
 Tracks and processes restaurant orders in order of arrival
 Queue<string>
  
- 
+
+
 ## 9. Activity
 Create a queue in C# that will schedule customers in a pharmacy. Customers will enqueue and get a ticket. Their ticket number will then be called when it’s their turn to use the counter.
 

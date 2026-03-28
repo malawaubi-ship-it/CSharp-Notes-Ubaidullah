@@ -7,12 +7,10 @@ By the end of this topic you should be able to:
 	-	Implement data structures in C#.
 	-	Develop the skill to select a suitable data structure/algorithm and effectively justify your decision
 
-Prescribed Reading
 Jamro, M., (2018). Arrays and Lists, C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd, p48-p60
-  
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
 ## 2. Relevance Connection
 We will continue investigating sorting, We have looked at 2 types of sorting, research at least 3 more types of sorting.
 ## 3. Bubble Sort
@@ -28,7 +26,8 @@ As Bubble Sort is an in-place iterative sorting algorithm, its worst-case space 
 Another advantage of the algorithm is that it is stable.
  
 Virginia Tech has a useful visualisation tool for Bubble Sort[2].
- 
+
+
 
 [1] Friend, E.H. (1956) 'Sorting on electronic computer systems,' Journal of the ACM, 3(3), pp. 134–168. https://doi.org/10.1145/320831.320833.
 [2] Bubble Sort Visualization (2024). https://opendsa-server.cs.vt.edu/embed/bubblesortAV.
@@ -44,7 +43,8 @@ An advantage to this type of sorting is that is can be done in place. It has a w
 A disadvantage of Quicksort is that it is not stable.
  
 Virginia Tech has a useful visualisation tool for Quicksort[2].
- 
+
+
 
 [1] Hoare, C. a. R. (1961) 'Algorithm 64: Quicksort,' Communications of the ACM, 4(7), p. 321. https://doi.org/10.1145/366622.366644.
 [2] Quicksort Visualization (2024). https://opendsa-server.cs.vt.edu/embed/quicksortAV.

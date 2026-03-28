@@ -5,13 +5,12 @@
 By the end of this lesson, you should be able to:
 	-	Understand C# collections
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 
 Chapter 9, 20 & 21
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 ## 2. Introduction to Generics
 Generics in C# allow you to create classes, methods, and data structures that work with any data type while ensuring compile-time type safety. They prevent the need to write duplicate code and help reduce runtime errors. For instance, instead of writing separate versions of a function for integers, strings, etc., generics let you write one version that works with all data types.
 Play Video
@@ -21,7 +20,7 @@ public class DisplayUtility
 {
     public static void Show<T>(T value)
     {
-        Console.WriteLine(/* Output */ $"Value: {value}");
+        Console.WriteLine( $"Value: {value}");
     }
 }
  
@@ -40,7 +39,7 @@ Example 2: Using generics to avoid boxing
 List<int> numArray = new List<int> { 1, 2, 3 };
 foreach (int n in numArray)
 {
-    Console.WriteLine(/* Output */ n); // No boxing/unboxing needed
+    Console.WriteLine( n); // No boxing/unboxing needed
 }
 Output:
 1  
@@ -65,7 +64,7 @@ class MainProgram
     {
         int x = 5, y = 10;
         Swap(ref x, ref y);
-        Console.WriteLine(/* Output */ $"x = {x}, y = {y}");
+        Console.WriteLine( $"x = {x}, y = {y}");
     }
 }
 Output:
@@ -80,8 +79,8 @@ class MainProgram
 {
     static void Main()
     {
-        Console.WriteLine(/* Output */ AreEqual(5, 5));
-        Console.WriteLine(/* Output */ AreEqual("apple", "banana"));
+        Console.WriteLine( AreEqual(5, 5));
+        Console.WriteLine( AreEqual("apple", "banana"));
     }
 }
 Output:
@@ -103,8 +102,8 @@ class MainProgram
         Box<int> intBox = new Box<int> { Content = 42 };
         Box<string> strBox = new Box<string> { Content = "Books" };
  
-        Console.WriteLine(/* Output */ intBox.Content);
-        Console.WriteLine(/* Output */ strBox.Content);
+        Console.WriteLine( intBox.Content);
+        Console.WriteLine( strBox.Content);
     }
 }
 Output:
@@ -122,12 +121,13 @@ class MainProgram
     static void Main()
     {
         Pair<int, string> student = new Pair<int, string> { First = 101, Second = "Alice" };
-        Console.WriteLine(/* Output */ $"ID: {student.First}, Name: {student.Second}");
+        Console.WriteLine( $"ID: {student.First}, Name: {student.Second}");
     }
 }
 Output:
 ID: 101, Name: Alice
- 
+
+
 ## 5. Generic Interfaces
 Generic Interfaces
 Generic interfaces define a contract for operations that work on data of various types. Interfaces like IComparable<T> or IEnumerable<T> allow flexible, reusable implementations for comparison or iteration.
@@ -149,7 +149,7 @@ class MainProgram
         Product p1 = new Product { Name = "Apple" };
         Product p2 = new Product { Name = "Banana" };
  
-        Console.WriteLine(/* Output */ p1.CompareTo(p2)); // Output depends on alphabetical order
+        Console.WriteLine( p1.CompareTo(p2)); // Output depends on alphabetical order
     }
 }
 Output:
@@ -174,14 +174,15 @@ class MainProgram
         list.Add(1); list.Add(2); list.Add(3);
  
         foreach (var item in list)
-            Console.WriteLine(/* Output */ item);
+            Console.WriteLine( item);
     }
 }
 Output:
 1  
 2  
 3
- 
+
+
 ## 6. Constraints on Generics
 Constraints on Generics
 Constraints provide control over the types that can be used as arguments for type parameters. They enable developers to use certain operations (e.g., object creation) that would otherwise be disallowed.
@@ -205,7 +206,7 @@ class MainProgram
     {
         var factory = new Factory<Sample>();
         var instance = factory.CreateInstance();
-        Console.WriteLine(/* Output */ instance.Text);
+        Console.WriteLine( instance.Text);
     }
 }
 Output:
@@ -215,7 +216,7 @@ public class ReferenceHandler<T> where T : class
 {
     public void PrintTypeName()
     {
-        Console.WriteLine(/* Output */ typeof(T).Name);
+        Console.WriteLine( typeof(T).Name);
     }
 }
  
@@ -229,7 +230,8 @@ class MainProgram
 }
 Output:
 String
- 
+
+
 ## 7. Case Study 1: Student Grade Management System
 Case Study 1: Student Grade Management System
 Problem Statement:
@@ -282,12 +284,12 @@ class MainProgram
         foreach (var student in students)
         {
             double grade = grades[student.ID];
-            Console.WriteLine(/* Output */ $"{student.Name} (ID: {student.ID}) - Grade: {grade}");
+            Console.WriteLine( $"{student.Name} (ID: {student.ID}) - Grade: {grade}");
             total += grade;
         }
  
         double avg = total / students.Count;
-        Console.WriteLine(/* Output */ $"\nAverage Grade: {avg:F2}");
+        Console.WriteLine( $"\nAverage Grade: {avg:F2}");
     }
 }
 
@@ -297,7 +299,8 @@ Bob (ID: 2) - Grade: 78 
 Charlie (ID: 3) - Grade: 92.3
  
 Average Grade: 85.27
- 
+
+
 ## 8. Case Study 2: Task Scheduling System (Using Queue)
 Case Study 2: Task Scheduling System (Using Queue<T>)
 Problem Statement:
@@ -336,12 +339,12 @@ class MainProgram
         taskQueue.Enqueue(new TaskItem<string>("Run Tests", 20));
         taskQueue.Enqueue(new TaskItem<string>("Deploy Build", 15));
  
-        Console.WriteLine(/* Output */ "Processing Tasks:\n");
+        Console.WriteLine( "Processing Tasks:\n");
  
         while (taskQueue.Count > 0)
         {
             var task = taskQueue.Dequeue();
-            Console.WriteLine(/* Output */ $"Task: {task.Name}, Estimated Time: {task.TimeInMinutes} mins");
+            Console.WriteLine( $"Task: {task.Name}, Estimated Time: {task.TimeInMinutes} mins");
         }
     }
 }
@@ -352,7 +355,8 @@ Processing Tasks:
 Task: Compile Code, Estimated Time: 10 mins  
 Task: Run Tests, Estimated Time: 20 mins  
 Task: Deploy Build, Estimated Time: 15 mins
- 
+
+
 ## 9. Case Study 3: Inventory Management System for a Retail Store
 Case Study 3: Inventory Management System for a Retail Store
 Problem Statement:
@@ -406,11 +410,11 @@ class MainProgram
         foreach (var item in products)
         {
             int quantity = stock[item.ProductID];
-            Console.WriteLine(/* Output */ $"{item.Name} (ID: {item.ProductID}) - Stock: {quantity}, Price: R{item.Price:F2}");
+            Console.WriteLine( $"{item.Name} (ID: {item.ProductID}) - Stock: {quantity}, Price: R{item.Price:F2}");
             totalStock += quantity;
         }
 
-        Console.WriteLine(/* Output */ $"\nTotal Items in Inventory: {totalStock}");
+        Console.WriteLine( $"\nTotal Items in Inventory: {totalStock}");
     }
 }
 Output:
@@ -469,13 +473,13 @@ class MainProgram
 
         foreach (var student in students)
         {
-            Console.WriteLine(/* Output */ $"{student.Name} (ID: {student.ID}) has borrowed:");
+            Console.WriteLine( $"{student.Name} (ID: {student.ID}) has borrowed:");
 
             foreach (var book in borrowedBooks[student.ID])
             {
-                Console.WriteLine(/* Output */ $"  - {book}");
+                Console.WriteLine( $"  - {book}");
             }
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 }
@@ -492,7 +496,9 @@ Naledi (ID: 1003) has borrowed:
   - Algorithms in C#
   - Clean Code
   - Design Patterns
-  
+
+
+
 ## 11. References
 Deitel, H.M. and Deitel, P.J., 2017. C# How to Program. 6th ed. Boston: Pearson Education.
 Microsoft, 2024. Generics in C#. [online] Microsoft Learn. Available at: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/ [Accessed 11 April 2025].

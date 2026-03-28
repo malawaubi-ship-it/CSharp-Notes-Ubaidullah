@@ -5,16 +5,16 @@
 By the end of this lesson, you should be able to:
 	-	Understand C# collections
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapter 9
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 ## 2. Collaborative Project
 
 Write sample code on the following LINQ table. Each method must have its own well commented code.
- 
+
+
 ## 3. Introduction to LINQ
 Introduction to LINQ in C#
 LINQ, which stands for Language Integrated Query, is a powerful feature in C# that allows developers to write expressive and readable queries directly within the language. Traditionally, querying data required using separate query languages such as SQL for databases or XPath for XML documents. LINQ changes this by integrating query syntax into C#, allowing for a uniform approach to querying various types of data sources, including collections in memory, databases, and XML files.
@@ -43,7 +43,8 @@ class MainProgram
         }
     }
 }
- 
+
+
 Example 2: Using Method Syntax to Query a List of Strings
 
 using System;
@@ -62,12 +63,13 @@ class MainProgram
 
         foreach (var fruit in result)
         {
-            Console.WriteLine(/* Output */ fruit);
+            Console.WriteLine( fruit);
         }
     }
 }
 Output:
- 
+
+
 
 Play Video
 3.1. Application of LINQ
@@ -94,15 +96,16 @@ class MainProgram
 
         foreach (var group in grouped)
         {
-            Console.WriteLine(/* Output */ $"Names starting with '{group.Key}':");
+            Console.WriteLine( $"Names starting with '{group.Key}':");
             foreach (var name in group)
             {
-                Console.WriteLine(/* Output */ $" - {name}");
+                Console.WriteLine( $" - {name}");
             }
         }
     }
 }
-Explanation: This example groups names by their starting letter and displays the grouped results. It demonstrates how LINQ can replace more verbose dictionary-based grouping code.
+Explanation:
+This example groups names by their starting letter and displays the grouped results. It demonstrates how LINQ can replace more verbose dictionary-based grouping code.
 
 Example 2: Using LINQ to Calculate Average of Filtered Values
 
@@ -120,10 +123,11 @@ class MainProgram
             .Where(score => score >= 80)
             .Average();
 
-        Console.WriteLine(/* Output */ "Average of high scores (80+): " + averageHighScores);
+        Console.WriteLine( "Average of high scores (80+): " + averageHighScores);
     }
 }
-Explanation: This snippet filters out scores below 80 and calculates the average of the remaining ones using LINQ’s Where() and Average() methods.
+Explanation:
+This snippet filters out scores below 80 and calculates the average of the remaining ones using LINQ’s Where() and Average() methods.
 3.2. The shared System.Linq namespace
 The System.Linq namespace is a fundamental part of the .NET framework that enables Language Integrated Query (LINQ) functionality in C#. It introduces a set of extension methods for querying collections that implement the IEnumerable or IEnumerable<T> interfaces. This makes LINQ a first-class citizen in the C# language, allowing developers to write SQL-like queries directly in code, using familiar syntax and type safety.
 Traditionally, querying data required external query languages such as SQL for databases or XPath for XML. These approaches involved string-based commands that lacked compile-time checking, IntelliSense support, and integration with the type system. The System.Linq namespace addresses this by allowing developers to write expressive and concise queries in C#, which are checked at compile-time and fully integrated with the language's features.
@@ -147,11 +151,12 @@ class MainProgram
 
         foreach (var city in lCities)
         {
-            Console.WriteLine(/* Output */ city);
+            Console.WriteLine( city);
         }
     }
 }
-Explanation: This example uses Where() to filter cities that start with the letter "L", and Select() to convert the results to uppercase. These methods come from System.Linq and operate on IEnumerable<string>.
+Explanation:
+This example uses Where() to filter cities that start with the letter "L", and Select() to convert the results to uppercase. These methods come from System.Linq and operate on IEnumerable<string>.
 
 Example 2: Using GroupBy() to Organize Data
 
@@ -169,15 +174,16 @@ class MainProgram
 
         foreach (var group in groupedProducts)
         {
-            Console.WriteLine(/* Output */ $"Group {group.Key}:");
+            Console.WriteLine( $"Group {group.Key}:");
             foreach (var item in group)
             {
-                Console.WriteLine(/* Output */ $" - {item}");
+                Console.WriteLine( $" - {item}");
             }
         }
     }
 }
-Explanation: Here, GroupBy() is used to group product names by their first letter. This functionality is part of System.Linq, and it helps organize data with minimal code.
+Explanation:
+Here, GroupBy() is used to group product names by their first letter. This functionality is part of System.Linq, and it helps organize data with minimal code.
 ## 4. LINQ Standard Query operators
 LINQ standard query operators are a set of extension methods provided by the System.Linq namespace that enable powerful querying capabilities directly on data collections in C#. These operators work primarily on sequences—objects that implement IEnumerable<T> or IQueryable<T>—and allow developers to perform common data operations such as filtering, projection, aggregation, sorting, joining, and more.
 These operators allow developers to work with data in a high-level, declarative way, reducing the need for verbose loops or complex conditional logic. Since they are type-safe and integrated into the language, developers benefit from compile-time checking, IntelliSense support, and cleaner, more readable code.
@@ -200,14 +206,15 @@ class MainProgram
             .Where(n => n > 5)
             .OrderBy(n => n);
 
-        Console.WriteLine(/* Output */ "Numbers greater than 5, sorted:");
+        Console.WriteLine( "Numbers greater than 5, sorted:");
         foreach (var num in filteredAndSorted)
         {
             Console.Write(num + " ");
         }
     }
 }
-Explanation: In this example, Where() filters out numArray less than or equal to 5, and OrderBy() sorts the remaining numArray in ascending order.
+Explanation:
+In this example, Where() filters out numArray less than or equal to 5, and OrderBy() sorts the remaining numArray in ascending order.
 
 Example 2: Aggregation with Sum() and Projection with Select()
 
@@ -224,16 +231,17 @@ class MainProgram
         var total = prices.Sum();
         var formattedPrices = prices.Select(p => $"${p:F2}");
 
-        Console.WriteLine(/* Output */ "Formatted prices:");
+        Console.WriteLine( "Formatted prices:");
         foreach (var price in formattedPrices)
         {
-            Console.WriteLine(/* Output */ price);
+            Console.WriteLine( price);
         }
 
-        Console.WriteLine(/* Output */ $"\nTotal: ${total:F2}");
+        Console.WriteLine( $"\nTotal: ${total:F2}");
     }
 }
-Explanation: This example uses Select() to project each price into a formatted string and Sum() to calculate the total of all prices. These operators streamline data transformation and aggregation.
+Explanation:
+This example uses Select() to project each price into a formatted string and Sum() to calculate the total of all prices. These operators streamline data transformation and aggregation.
 4.1. The OrderBy() method.
 The OrderBy() method is one of the fundamental LINQ standard query operators used to sort elements in a sequence in ascending order based on a specified key. This method is typically applied to collections that implement the IEnumerable<T> interface, such as lists or arrays.
 The OrderBy() method takes a lambda expression that defines the sorting key. If no custom key is specified, it sorts based on the natural order of the data type. It returns a new sequence with the elements ordered, without modifying the original collection.
@@ -249,17 +257,17 @@ class MainProgram
     {
         List<int> listOfNumbers = new List<int> { 6, 5, 4, 3, 7, 8, 9, 1, 2 };
 
-        Console.WriteLine(/* Output */ "Before:");
+        Console.WriteLine( "Before:");
         foreach (var item in listOfNumbers)
         {
             Console.Write(item + " ");
         }
 
-        Console.WriteLine(/* Output */ );
+        Console.WriteLine( );
 
         var sortedNumbers = listOfNumbers.OrderBy(num => num);
 
-        Console.WriteLine(/* Output */ "After:");
+        Console.WriteLine( "After:");
         foreach (var item in sortedNumbers)
         {
             Console.Write(item + " ");
@@ -284,7 +292,7 @@ class MainProgram
 
         bool hasElements = listOfNumbers.Any();
 
-        Console.WriteLine(/* Output */ "The list " + (hasElements ? "is not" : "is") + " empty.");
+        Console.WriteLine( "The list " + (hasElements ? "is not" : "is") + " empty.");
     }
 }
 Output:
@@ -293,7 +301,8 @@ Explanation:
 In this example, Any() checks if listOfNumbers contains any items. Since it does, the output confirms the list is not empty. If the list had no elements, the output would be: "The list is empty."
 4.3. Case Studies
 Case Study 1: Filtering Students Based on Random Grades
-Scenario: In this case study, we randomly generate a list of students with grades ranging from 0 to 100. We will use LINQ to filter students based on whether they passed (grade >= 50) or failed (grade < 50).
+Scenario:
+In this case study, we randomly generate a list of students with grades ranging from 0 to 100. We will use LINQ to filter students based on whether they passed (grade >= 50) or failed (grade < 50).
 Example Code:
 using System;
 using System.Collections.Generic;
@@ -322,16 +331,16 @@ class MainProgram
         var passedStudents = students.Where(s => s.Grade >= 50).ToList();
         var failedStudents = students.Where(s => s.Grade < 50).ToList();
 
-        Console.WriteLine(/* Output */ "Passed Students:");
+        Console.WriteLine( "Passed Students:");
         foreach (var student in passedStudents)
         {
-            Console.WriteLine(/* Output */ $"{student.Name} - {student.Grade}");
+            Console.WriteLine( $"{student.Name} - {student.Grade}");
         }
 
-        Console.WriteLine(/* Output */ "\nFailed Students:");
+        Console.WriteLine( "\nFailed Students:");
         foreach (var student in failedStudents)
         {
-            Console.WriteLine(/* Output */ $"{student.Name} - {student.Grade}");
+            Console.WriteLine( $"{student.Name} - {student.Grade}");
         }
     }
 }
@@ -344,10 +353,12 @@ Eva - 61
 Failed Students:
 Bob - 35
 David - 48
-Explanation: In this case, the students' grades are randomly generated between 0 and 100. LINQ is used to filter and categorize students into "passed" and "failed" based on a passing grade of 50.
+Explanation:
+In this case, the students' grades are randomly generated between 0 and 100. LINQ is used to filter and categorize students into "passed" and "failed" based on a passing grade of 50.
 
 Case Study 2: Sorting Products by Random Price
-Scenario: Here, we simulate an e-commerce application where we generate random product prices and sort them in ascending order using LINQ.
+Scenario:
+Here, we simulate an e-commerce application where we generate random product prices and sort them in ascending order using LINQ.
 Example Code:
 using System;
 using System.Collections.Generic;
@@ -375,10 +386,10 @@ class MainProgram
 
         var sortedProducts = products.OrderBy(p => p.Price).ToList();  // Ascending order
 
-        Console.WriteLine(/* Output */ "Products Sorted by Price (Ascending):");
+        Console.WriteLine( "Products Sorted by Price (Ascending):");
         foreach (var product in sortedProducts)
         {
-            Console.WriteLine(/* Output */ $"{product.Name}: ${product.Price:F2}");
+            Console.WriteLine( $"{product.Name}: ${product.Price:F2}");
         }
     }
 }
@@ -389,10 +400,12 @@ Smartwatch: $143.73
 Tablet: $389.52
 Smartphone: $695.31
 Laptop: $1421.47
-Explanation: We generate random product prices within specified ranges. Then, LINQ's OrderBy() method is used to sort the products in ascending order based on their price.
+Explanation:
+We generate random product prices within specified ranges. Then, LINQ's OrderBy() method is used to sort the products in ascending order based on their price.
 
 Case Study 3: Grouping Customers by Region with Random Data
-Scenario: For this case study, we simulate customers with random regions. We will then use LINQ to group customers by region.
+Scenario:
+For this case study, we simulate customers with random regions. We will then use LINQ to group customers by region.
 Example Code:
 using System;
 using System.Collections.Generic;
@@ -423,15 +436,15 @@ class MainProgram
 
         var groupedCustomers = customers.GroupBy(c => c.Region).ToList();
 
-        Console.WriteLine(/* Output */ "Customers Grouped by Region:");
+        Console.WriteLine( "Customers Grouped by Region:");
         foreach (var group in groupedCustomers)
         {
-            Console.WriteLine(/* Output */ $"Region: {group.Key}");
+            Console.WriteLine( $"Region: {group.Key}");
             foreach (var customer in group)
             {
-                Console.WriteLine(/* Output */ $"- {customer.Name}");
+                Console.WriteLine( $"- {customer.Name}");
             }
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 }
@@ -450,10 +463,12 @@ Region: West
 Region: North
 - John
 - Anna
-Explanation: Here, we randomly assign a region to each customer from a predefined list (North, South, East, West). LINQ's GroupBy() method is then used to group the customers by their region.
+Explanation:
+Here, we randomly assign a region to each customer from a predefined list (North, South, East, West). LINQ's GroupBy() method is then used to group the customers by their region.
 4.4. WEEKLY ACTIVITY
 Scenario Question:
-Scenario: You are working for an e-commerce company that needs to analyze the sales data for the past month. The company wants to know the following:
+Scenario:
+You are working for an e-commerce company that needs to analyze the sales data for the past month. The company wants to know the following:
 	-	The total number of products sold in each category.
 	-	The total sales revenue for each category.
 	-	The most expensive product in each category.
@@ -462,7 +477,8 @@ The product sales data is stored in a list of Product objects with the followi
 	-	Category (string) - the category the product belongs to (e.g., "Electronics", "Clothing", etc.)
 	-	Price (decimal) - the price of the product
 	-	QuantitySold (int) - the number of units sold in the last month
-Question: Write a LINQ query to solve this scenario and display the total number of products sold, total sales revenue, and the most expensive product in each category.
+Question:
+Write a LINQ query to solve this scenario and display the total number of products sold, total sales revenue, and the most expensive product in each category.
 Solution:
 C# Code:
 using System;
@@ -507,21 +523,24 @@ class MainProgram
         // Display results
         foreach (var category in categoryStats)
         {
-            Console.WriteLine(/* Output */ $"Category: {category.Category}");
-            Console.WriteLine(/* Output */ $"Total Products Sold: {category.TotalProductsSold}");
-            Console.WriteLine(/* Output */ $"Total Sales Revenue: ${category.TotalRevenue:F2}");
-            Console.WriteLine(/* Output */ $"Most Expensive Product: {category.MostExpensiveProduct}");
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( $"Category: {category.Category}");
+            Console.WriteLine( $"Total Products Sold: {category.TotalProductsSold}");
+            Console.WriteLine( $"Total Sales Revenue: ${category.TotalRevenue:F2}");
+            Console.WriteLine( $"Most Expensive Product: {category.MostExpensiveProduct}");
+            Console.WriteLine( );
         }
     }
 }
 Explanation:
-	-	Data Structure: We have a Product class representing each product with properties for product name, category, price, and quantity sold.
-	-	LINQ Query: The LINQ query uses the group by clause to group products by their category. For each group (i.e., category), we calculate:
+	-	Data Structure:
+We have a Product class representing each product with properties for product name, category, price, and quantity sold.
+	-	LINQ Query:
+The LINQ query uses the group by clause to group products by their category. For each group (i.e., category), we calculate:
 	-	The total number of products sold using Sum(p => p.QuantitySold).
 	-	The total revenue for that category using Sum(p => p.Price * p.QuantitySold).
 	-	The most expensive product in the category using OrderByDescending(p => p.Price).First() to find the product with the highest price.
-	-	Output: The results are displayed for each category, showing the total products sold, total sales revenue, and the most expensive product in the category.
+	-	Output:
+The results are displayed for each category, showing the total products sold, total sales revenue, and the most expensive product in the category.
 
 Example Output:
 Category: Electronics

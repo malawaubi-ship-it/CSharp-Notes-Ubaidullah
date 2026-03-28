@@ -5,12 +5,12 @@
 By the end of this lesson, you should be able to:
 	-	Develop the ability to implement concurrency and parallelism in C#
 
-Prescribed Reading
-Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469  Chapter 9 & 21
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 
+Chapter 9 & 21
+
+
+
+
 ## 2. Concurrency in C# - Multithreading and Parallelism
 Overview:
 Concurrency and parallelism are essential concepts for building efficient, high-performance applications in C#. Concurrency refers to the ability of a system to manage multiple tasks at once, while parallelism involves executing multiple tasks simultaneously on multiple processors or cores. In this week’s notes, we will explore methods for creating threads and implementing multithreading in C#.
@@ -36,7 +36,7 @@ class ThreadExample
     {
         for (int idx = 1; idx <= 5; idx++)
         {
-            Console.WriteLine(/* Output */ $"Number {i}");
+            Console.WriteLine( $"Number {i}");
             Thread.Sleep(1000);  // Simulate some work by sleeping for 1 second
         }
     }
@@ -48,7 +48,7 @@ class ThreadExample
         thread.Start();  // Start the thread
  
         // Continue with the main thread
-        Console.WriteLine(/* Output */ "Main thread is doing some work...");
+        Console.WriteLine( "Main thread is doing some work...");
         thread.Join();  // Wait for the created thread to finish
     }
 }
@@ -74,7 +74,7 @@ class TaskExample
     {
         for (int idx = 1; idx <= 5; idx++)
         {
-            Console.WriteLine(/* Output */ $"Number {i}");
+            Console.WriteLine( $"Number {i}");
             Task.Delay(1000).Wait();  // Simulate some work by delaying for 1 second
         }
     }
@@ -86,7 +86,7 @@ class TaskExample
         task.Start();  // Start the task
  
         // Continue with the main thread
-        Console.WriteLine(/* Output */ "Main thread is doing some work...");
+        Console.WriteLine( "Main thread is doing some work...");
         task.Wait();  // Wait for the task to finish
     }
 }
@@ -112,7 +112,7 @@ class ThreadPoolExample
     {
         for (int idx = 1; idx <= 5; idx++)
         {
-            Console.WriteLine(/* Output */ $"Number {i}");
+            Console.WriteLine( $"Number {i}");
             Thread.Sleep(1000);  // Simulate some work by sleeping for 1 second
         }
     }
@@ -123,7 +123,7 @@ class ThreadPoolExample
         ThreadPool.QueueUserWorkItem(PrintNumbers);
  
         // Continue with the main thread
-        Console.WriteLine(/* Output */ "Main thread is doing some work...");
+        Console.WriteLine( "Main thread is doing some work...");
         Thread.Sleep(6000);  // Sleep for enough time to allow the thread pool to finish its work
     }
 }
@@ -157,7 +157,7 @@ class MultithreadingExample
         {
             sum += i;
         }
-        Console.WriteLine(/* Output */ $"Thread {threadNumber}: Sum = {sum}");
+        Console.WriteLine( $"Thread {threadNumber}: Sum = {sum}");
     }
  
     static void Main()
@@ -185,7 +185,8 @@ Key Points:
 	-	ThreadPool: Ideal for short-lived tasks to avoid overhead of creating and destroying threads manually.
 	-	Multithreading Benefits: Multithreading can improve the responsiveness and performance of applications by utilizing multiple processors or cores.
 	-	Synchronization: When using multithreading, it's essential to ensure proper synchronization (e.g., using locks or other synchronization techniques) to avoid race conditions.
- 
+
+
 ## 4. Case Study 1: Asynchronous File Downloading
 Case Study 1: Asynchronous File Downloading
 Problem:
@@ -203,9 +204,9 @@ class FileDownloader
     {
         using (HttpClient client = new HttpClient())
         {
-            Console.WriteLine(/* Output */ $"Starting download for {filename} from {url}");
+            Console.WriteLine( $"Starting download for {filename} from {url}");
             var content = await client.GetStringAsync(url);  // Simulate downloading content
-            Console.WriteLine(/* Output */ $"Downloaded {filename} successfully.");
+            Console.WriteLine( $"Downloaded {filename} successfully.");
         }
     }
  
@@ -229,7 +230,7 @@ class FileDownloader
  
         // Wait for all downloads to complete
         await Task.WhenAll(downloadTasks);
-        Console.WriteLine(/* Output */ "All files downloaded successfully.");
+        Console.WriteLine( "All files downloaded successfully.");
     }
 }
 Explanation:
@@ -244,7 +245,8 @@ Downloaded file1 successfully.
 Downloaded file2 successfully.
 Downloaded file3 successfully.
 All files downloaded successfully.
- 
+
+
 ## 5. Case Study 2: Parallel Processing of Large Data Set
 Case Study 2: Parallel Processing of Large Data Set
 Problem:
@@ -261,7 +263,7 @@ class ParallelProcessingExample
     {
         // Simulate a time-consuming computation
         double result = Math.Pow(number, 2);  // Square the number
-        Console.WriteLine(/* Output */ $"Processed number: {number}, Result: {result}");
+        Console.WriteLine( $"Processed number: {number}, Result: {result}");
     }
  
     static void Main()
@@ -275,7 +277,7 @@ class ParallelProcessingExample
             ProcessData(numArray[idx]);
         });
  
-        Console.WriteLine(/* Output */ "All data processed.");
+        Console.WriteLine( "All data processed.");
     }
 }
 Explanation:
@@ -289,7 +291,8 @@ Processed number: 3, Result: 9
 Processed number: 100, Result: 10000
 All data processed.
 
- 
+
+
 ## 6. Case Study 3: Parallel Data Aggregation
 Case Study 3: Parallel Data Aggregation
 Problem:
@@ -310,7 +313,7 @@ class ParallelAggregationExample
         // Use Parallel LINQ (PLINQ) for parallel aggregation
         int totalSum = numArray.AsParallel().Sum();
  
-        Console.WriteLine(/* Output */ $"The total sum is: {totalSum}");
+        Console.WriteLine( $"The total sum is: {totalSum}");
     }
 }
 Explanation:
@@ -319,7 +322,8 @@ Explanation:
 Outcome:
 The total sum is: 500000500000
 
- 
+
+
 ## 7. Case Study 4: Thread Safety in Bank Account Operations
 Case Study 4: Thread Safety in Bank Account Operations
 Problem:
@@ -344,7 +348,7 @@ class BankAccount
         lock (balanceLock)  // Lock to ensure thread safety
         {
             balance += amount;
-            Console.WriteLine(/* Output */ $"Deposited {amount:C}. New balance: {balance:C}");
+            Console.WriteLine( $"Deposited {amount:C}. New balance: {balance:C}");
         }
     }
  
@@ -355,11 +359,11 @@ class BankAccount
             if (balance >= amount)
             {
                 balance -= amount;
-                Console.WriteLine(/* Output */ $"Withdrew {amount:C}. New balance: {balance:C}");
+                Console.WriteLine( $"Withdrew {amount:C}. New balance: {balance:C}");
             }
             else
             {
-                Console.WriteLine(/* Output */ $"Insufficient funds to withdraw {amount:C}. Balance: {balance:C}");
+                Console.WriteLine( $"Insufficient funds to withdraw {amount:C}. Balance: {balance:C}");
             }
         }
     }
@@ -384,7 +388,7 @@ class BankAccountExample
         // Wait for all tasks to complete
         Task.WhenAll(tasks).Wait();
  
-        Console.WriteLine(/* Output */ $"Final account balance: {account.Balance:C}");
+        Console.WriteLine( $"Final account balance: {account.Balance:C}");
     }
 }
 Explanation:
@@ -405,7 +409,8 @@ These case studies demonstrate practical applications of multithreading and para
 	-	Parallel processing: Efficiently processing a large dataset of numArray using Parallel.For.
 	-	Parallel aggregation: Summing a large collection of numArray using PLINQ for parallelism.
 	-	Thread safety: Ensuring safe concurrent access to shared resources (bank account) using locks.
- 
+
+
 ## 8. Case Study 5: Thread Safety in Bank Account Operations with Random Values
 Case Study 5: Thread Safety in Bank Account Operations with Random Values
 Problem:
@@ -433,7 +438,7 @@ class BankAccount
         {
             decimal amount = random.Next(100, 1000);  // Random deposit amount between 100 and 1000
             balance += amount;
-            Console.WriteLine(/* Output */ $"Deposited {amount:C}. New balance: {balance:C}");
+            Console.WriteLine( $"Deposited {amount:C}. New balance: {balance:C}");
         }
     }
  
@@ -445,11 +450,11 @@ class BankAccount
             if (balance >= amount)
             {
                 balance -= amount;
-                Console.WriteLine(/* Output */ $"Withdrew {amount:C}. New balance: {balance:C}");
+                Console.WriteLine( $"Withdrew {amount:C}. New balance: {balance:C}");
             }
             else
             {
-                Console.WriteLine(/* Output */ $"Insufficient funds to withdraw {amount:C}. Balance: {balance:C}");
+                Console.WriteLine( $"Insufficient funds to withdraw {amount:C}. Balance: {balance:C}");
             }
         }
     }
@@ -477,7 +482,7 @@ class BankAccountExample
         // Wait for all tasks to complete
         Task.WhenAll(tasks).Wait();
  
-        Console.WriteLine(/* Output */ $"Final account balance: {account.Balance:C}");
+        Console.WriteLine( $"Final account balance: {account.Balance:C}");
     }
 }
 Explanation:
@@ -495,7 +500,9 @@ Final account balance: $2,051.96
 Explanation of Outcome:
 	-	Each task randomly deposits or withdraws an amount from the account, and the final account balance reflects the combined results of all operations.
 	-	Thread safety is maintained by using lock to prevent simultaneous access to the balance during deposit or withdrawal.
-  
+
+
+
 ## 9. Concept Overview
 Concept Overview
 Multithreading
@@ -516,7 +523,7 @@ class HorseRace
 {
     static void Main()
     {
-        Console.WriteLine(/* Output */ "🏁 Horse Race Started!\n");
+        Console.WriteLine( " Horse Race Started!\n");
 
         for (int idx = 1; idx <= 5; idx++)
         {
@@ -525,7 +532,7 @@ class HorseRace
             thread.Start();
         }
 
-        Console.WriteLine(/* Output */ "\nAll horses are running concurrently!\n");
+        Console.WriteLine( "\nAll horses are running concurrently!\n");
     }
 
     static void RunHorse(int horseNumber)
@@ -537,10 +544,10 @@ class HorseRace
         {
             Thread.Sleep(rand.Next(100, 300));  // Simulate running
             distance += rand.Next(5, 15);       // Advance
-            Console.WriteLine(/* Output */ $"🐴 Horse {horseNumber} at {distance}m");
+            Console.WriteLine( $" Horse {horseNumber} at {distance}m");
         }
 
-        Console.WriteLine(/* Output */ $"🎉 Horse {horseNumber} has finished!");
+        Console.WriteLine( $" Horse {horseNumber} has finished!");
     }
 }
 Sample Output:
@@ -566,14 +573,14 @@ class HorseRaceParallel
 {
     static void Main()
     {
-        Console.WriteLine(/* Output */ "🏁 Parallel Horse Race Started!\n");
+        Console.WriteLine( " Parallel Horse Race Started!\n");
 
         Parallel.For(1, 6, (idx) =>
         {
             RunHorse(idx);
         });
 
-        Console.WriteLine(/* Output */ "\nAll horses have finished!");
+        Console.WriteLine( "\nAll horses have finished!");
     }
 
     static void RunHorse(int horseNumber)
@@ -585,10 +592,10 @@ class HorseRaceParallel
         {
             Thread.Sleep(rand.Next(100, 300));
             distance += rand.Next(5, 15);
-            Console.WriteLine(/* Output */ $"🐴 Horse {horseNumber} at {distance}m");
+            Console.WriteLine( $" Horse {horseNumber} at {distance}m");
         }
 
-        Console.WriteLine(/* Output */ $"🎉 Horse {horseNumber} has finished!");
+        Console.WriteLine( $" Horse {horseNumber} has finished!");
     }
 }
 
@@ -597,8 +604,8 @@ Feature
 Threading
 Parallel.For
 Manual Thread Control
-✅ Yes
-❌ Managed automatically
+ Yes
+ Managed automatically
 Better for...
 Fine-grained control (start, pause, stop)
 CPU-bound tasks (parallel computation)
@@ -608,9 +615,11 @@ Easy (auto-managed)
 Performance
 Scales well but requires tuning
 Auto-balances across cores
- 
+
+
 ## 10. Video
- 
+
+
 ## 11. Scenario 1: Concurrency in Processing Orders in an E-Commerce System
 Scenario 1: Concurrency in Processing Orders in an E-Commerce System
 Problem:
@@ -633,7 +642,7 @@ class OrderProcessor
     {
         lock (inventoryLock)  // Lock to ensure thread safety during stock updates
         {
-            Console.WriteLine(/* Output */ $"Order {orderId} - Processing started.");
+            Console.WriteLine( $"Order {orderId} - Processing started.");
             if (stock >= orderQuantity)
             {
                 // Deduct the stock
@@ -642,23 +651,23 @@ class OrderProcessor
  
                 // Simulate payment processing
                 Thread.Sleep(500);  // Simulating a delay for payment processing
-                Console.WriteLine(/* Output */ $"Order {orderId} - Payment processed. Revenue updated.");
+                Console.WriteLine( $"Order {orderId} - Payment processed. Revenue updated.");
  
                 // Simulate shipment generation
                 Thread.Sleep(500);  // Simulating a delay for shipment processing
-                Console.WriteLine(/* Output */ $"Order {orderId} - Shipment generated.");
+                Console.WriteLine( $"Order {orderId} - Shipment generated.");
             }
             else
             {
-                Console.WriteLine(/* Output */ $"Order {orderId} - Insufficient stock. Order cannot be processed.");
+                Console.WriteLine( $"Order {orderId} - Insufficient stock. Order cannot be processed.");
             }
         }
     }
  
     public void DisplayStockAndRevenue()
     {
-        Console.WriteLine(/* Output */ $"Remaining stock: {stock}");
-        Console.WriteLine(/* Output */ $"Total Revenue: {totalRevenue:C}");
+        Console.WriteLine( $"Remaining stock: {stock}");
+        Console.WriteLine( $"Total Revenue: {totalRevenue:C}");
     }
 }
  
@@ -708,11 +717,18 @@ Total Revenue: $330.00
 Explanation of Outcome:
 	-	Orders are processed concurrently, but only one order is allowed to update the stock at a time due to the lock. As a result, the system avoids overselling.
 	-	Orders with insufficient stock are rejected, and the stock and revenue are correctly updated.
- 
+
+
 ## 12. References
-	-	Microsoft Learn. (n.d.). Threading in C#. https://learn.microsoft.com/en-us/dotnet/standard/threading/ Accessed April 2025.
-	-	Microsoft Learn. (n.d.). Parallel Programming in .NET. https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/ Accessed April 2025.
-	-	C# Corner. (n.d.). Multithreading in C# with Examples. https://www.c-sharpcorner.com/UploadFile/1e050f/multithreading-in-C-Sharp/ Accessed April 2025.
+	-	Microsoft Learn. (n.d.). Threading in C#.
+https://learn.microsoft.com/en-us/dotnet/standard/threading/
+Accessed April 2025.
+	-	Microsoft Learn. (n.d.). Parallel Programming in .NET.
+https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/
+Accessed April 2025.
+	-	C# Corner. (n.d.). Multithreading in C# with Examples.
+https://www.c-sharpcorner.com/UploadFile/1e050f/multithreading-in-C-Sharp/
+Accessed April 2025.
 
 
 	-	2. C# Networking Concepts

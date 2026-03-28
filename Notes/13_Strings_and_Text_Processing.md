@@ -4,17 +4,18 @@
 
 By the end of this topic you should be able to:
 you will explore strings, strings operations, operations for manipulating strings, strings concatenation, switching to uppercase and lowercase letters, searching for a string within another string, extracting a portion of a string, splitting the string by a separator, replacing a substring, and regular expressions.
- 
 
-Prescribed Reading
+
+
 Introduction to Programming with C# / Java Books » Chapter 13. Strings and Text Processing (introprogramming.info).
-Time Allocation:
 4 Hours
- 
+
+
 ## 2. Collaborative Project / Case Study / Relevance Connection:
 
 A string is an object of type String whose value is text. Internally, the text is stored as a sequential read-only collection of Char objects. There's no null-terminating character at the end of a C# string; therefore a C# string can contain any number of embedded null characters ('\0'). The Length property of a string represents the number of Char objects it contains, not the number of Unicode characters. To access the individual Unicode code points in a string, use the StringInfo object.
-In C#, string is an object of System.String class that represent sequence of characters. We can perform many operations on strings such as concatenation, comparision, getting substring, search, trim, replacement etc. 
+In C#, string is an object of System.String class that represent sequence of characters. We can perform many operations on strings such as concatenation, comparision, getting substring, search, trim, replacement etc.
+
 ## 3. Creating String Object
 
 Creating a String Object
@@ -46,12 +47,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire programming skills in core C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 1, 2 & 3
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 1.3 Our First C# Program
 Before we continue with an in-depth description of the C# language and the .NET platform, let’s take a look at a simple example, illustrating how a program written in C# looks like:
  
@@ -60,7 +60,7 @@ class HelloCSharp 
 { 
 static void Main(string[] args) 
 { 
-System.Console.WriteLine(/* Output */ "Hello C#!");
+System.Console.WriteLine( "Hello C#!");
  } 
  
  
@@ -206,14 +206,14 @@ ushort years = 2000; 
 uint days = 730480; 
 ulong hours = 17531520; 
 // Print the result on the console 
-Console.WriteLine(/* Output */ centuries + " centuries are " + years + 
+Console.WriteLine( centuries + " centuries are " + years + 
 " years, or " + days + " days, or " + hours + " hours."); 
  
 // Console output: 
 // 20 centuries are 2000 years, or 730480 days, or 17531520 
 // hours. 
 ulong maxIntValue = UInt64.MaxValue; 
-Console.WriteLine(/* Output */ maxIntValue); // 18446744073709551615 
+Console.WriteLine( maxIntValue); // 18446744073709551615 
  
 1.4.1.2 Real Floating-Point Types
 Real types in C# are the real numArray we know from mathematics. They are represented by a floating-point according to the standard IEEE 754 and are float and double. Let’s consider in details these two data types and understand what their similarities and differences are. 
@@ -234,13 +234,13 @@ Real Floating-Point Types – Example 
 Here is an example in which we declare variables of real number types, assign values to them and print them: 
 Code Example
 float floatPI = 3.14f; 
-Console.WriteLine(/* Output */ floatPI); // 3.14 
+Console.WriteLine( floatPI); // 3.14 
 double doublePI = 3.14; 
-Console.WriteLine(/* Output */ doublePI); // 3.14 
+Console.WriteLine( doublePI); // 3.14 
 double nan = Double.NaN; 
-Console.WriteLine(/* Output */ nan); // NaN 
+Console.WriteLine( nan); // NaN 
 double infinity = Double.PositiveInfinity; 
-Console.WriteLine(/* Output */ infinity); // Infinity 
+Console.WriteLine( infinity); // Infinity 
  
 1.4.1.3 Boolean Type
 Boolean type is declared with the keyword bool. It has two possible values: true and false. Its default value is false. It is used most often to store the calculation result of logical expressions.
@@ -256,14 +256,14 @@ bool equalA1 = (a == 1); 
 // Print the results on the console 
 if (greaterAB) 
 { 
-Console.WriteLine(/* Output */ "A > B"); 
+Console.WriteLine( "A > B"); 
 } 
 else 
 { 
-Console.WriteLine(/* Output */ "A <= B"); 
+Console.WriteLine( "A <= B"); 
 } 
-Console.WriteLine(/* Output */ "greaterAB = " + greaterAB); 
-Console.WriteLine(/* Output */ "equalA1 = " + equalA1); 
+Console.WriteLine( "greaterAB = " + greaterAB); 
+Console.WriteLine( "equalA1 = " + equalA1); 
 // Console output: 
 // A <= B 
 // greaterAB = False 
@@ -280,13 +280,13 @@ Code Example
 // Declare a variable 
 char ch = 'a'; 
 // Print the results on the console 
-Console.WriteLine(/* Output */  
+Console.WriteLine(  
 "The code of '" + ch + "' is: " + (int)ch); 
 ch = 'b'; 
-Console.WriteLine(/* Output */  
+Console.WriteLine(  
 "The code of '" + ch + "' is: " + (int)ch); 
 ch = 'A'; 
-Console.WriteLine(/* Output */  
+Console.WriteLine(  
 "The code of '" + ch + "' is: " + (int)ch); 
 // Console output: 
 // The code of 'a' is: 97 
@@ -305,8 +305,8 @@ string firstName = "John"; 
 string lastName = "Smith"; 
 string fullName = firstName + " " + lastName; 
 // Print the results on the console 
-Console.WriteLine(/* Output */ "Hello, " + firstName + "!"); 
-Console.WriteLine(/* Output */ "Your full name is " + fullName + "."); 
+Console.WriteLine( "Hello, " + firstName + "!"); 
+Console.WriteLine( "Your full name is " + fullName + "."); 
 // Console output: 
 // Hello, John! 
 // Your full name is John Smith.  
@@ -321,16 +321,16 @@ Consider an example in which we declare several variables of type object, initi
 Code Example
 int i = 5; 
 int? ni = i; 
-Console.WriteLine(/* Output */ ni); // 5 
+Console.WriteLine( ni); // 5 
 // i = ni; // this will fail to compile 
-Console.WriteLine(/* Output */ ni.HasValue); // True 
+Console.WriteLine( ni.HasValue); // True 
 i = ni.Value; 
-Console.WriteLine(/* Output */ idx); // 5 
+Console.WriteLine( idx); // 5 
 ni = null; 
-Console.WriteLine(/* Output */ ni.HasValue); // False 
+Console.WriteLine( ni.HasValue); // False 
 //i = ni.Value; // System.InvalidOperationException 
 i = ni.GetValueOrDefault(); 
-Console.WriteLine(/* Output */ idx); // 0 
+Console.WriteLine( idx); // 0 
  
 As you can see from the example, we can store the value of any other type in an object type variable. This makes the object type a universal data container.
 1.4.2 Operators
@@ -407,26 +407,26 @@ Code Example
 int squarePerimeter = 17; 
 double squareSide = squarePerimeter / 4.0; 
 double squareArea = squareSide * squareSide; 
-Console.WriteLine(/* Output */ squareSide); // 4.25 
-Console.WriteLine(/* Output */ squareArea); // 18.0625
+Console.WriteLine( squareSide); // 4.25 
+Console.WriteLine( squareArea); // 18.0625
  
 int a = 5; 
 int b = 4; 
-Console.WriteLine(/* Output */ a + b); // 9 
-Console.WriteLine(/* Output */ a + (b++)); // 9 
-Console.WriteLine(/* Output */ a + b); // 10 
-Console.WriteLine(/* Output */ a + (++b)); // 11 
-Console.WriteLine(/* Output */ a + b); // 11 
-Console.WriteLine(/* Output */ 14 / a); // 2 
-Console.WriteLine(/* Output */ 14 % a); // 4 
+Console.WriteLine( a + b); // 9 
+Console.WriteLine( a + (b++)); // 9 
+Console.WriteLine( a + b); // 10 
+Console.WriteLine( a + (++b)); // 11 
+Console.WriteLine( a + b); // 11 
+Console.WriteLine( 14 / a); // 2 
+Console.WriteLine( 14 % a); // 4 
 int one = 1; 
 int zero = 0; 
  
-// Console.WriteLine(/* Output */ one / zero); // DivideByZeroException 
+// Console.WriteLine( one / zero); // DivideByZeroException 
 double dMinusOne = -1.0; 
 double dZero = 0.0; 
-Console.WriteLine(/* Output */ dMinusOne / zero); // -Infinity 
-Console.WriteLine(/* Output */ one / dZero); // Infinity 
+Console.WriteLine( dMinusOne / zero); // -Infinity 
+Console.WriteLine( one / dZero); // Infinity 
 1.4.2.2 Assignment Operators
 The operator for assigning value to a variable is "=" (the character for mathematical equation). The syntax used for assigning value is as it follows:
 operand1 = literal, expression or operand2; 
@@ -451,15 +451,15 @@ Comparison operators in C# are used to compare two or more operands. C# supports
 All comparison operators in C# are binary (take two operands) and the returned result is a Boolean value (true or false). Comparison operators have lower priority than arithmetical operators but higher than the assignment operators. The following example demonstrates the usage of comparison operators in C#:
 Code Example
 int x = 10, y = 5; 
-Console.WriteLine(/* Output */ "x > y : " + (x > y)); // True 
-Console.WriteLine(/* Output */ "x < y : " + (x < y)); // False 
-Console.WriteLine(/* Output */ "x >= y : " + (x >= y)); // True 
-Console.WriteLine(/* Output */ "x <= y : " + (x <= y)); // False 
-Console.WriteLine(/* Output */ "x == y : " + (x == y)); // False 
-Console.WriteLine(/* Output */ "x != y : " + (x != y)); // True 
+Console.WriteLine( "x > y : " + (x > y)); // True 
+Console.WriteLine( "x < y : " + (x < y)); // False 
+Console.WriteLine( "x >= y : " + (x >= y)); // True 
+Console.WriteLine( "x <= y : " + (x <= y)); // False 
+Console.WriteLine( "x == y : " + (x == y)); // False 
+Console.WriteLine( "x != y : " + (x != y)); // True 
  
  
-In the example, first we create two variables x and y and we assign them the values 10 and 5. On the next line we print on the console using the method Console.WriteLine(/* Output */ …) the result from comparing the two variables x and y using the operator >. The returned value is true because x has a greater value than y. Similarly, in the next rows the results from the other 5 comparison operators, used to compare the variables x and y, are printed.
+In the example, first we create two variables x and y and we assign them the values 10 and 5. On the next line we print on the console using the method Console.WriteLine( …) the result from comparing the two variables x and y using the operator >. The returned value is true because x has a greater value than y. Similarly, in the next rows the results from the other 5 comparison operators, used to compare the variables x and y, are printed.
 1.4.2.4 Logical Operators
 Logical (Boolean) operators take Boolean values and return a Boolean result (true or false). The basic Boolean operators are "AND" (&&), "OR" (||), "exclusive OR" (^) and logical negation (!). 
  
@@ -500,11 +500,11 @@ The table and the following example show that the logical "AND" (&&) returns tru
 Code Example
 bool a = true; 
 bool b = false; 
-Console.WriteLine(/* Output */ a && b); // False 
-Console.WriteLine(/* Output */ a || b); // True 
-Console.WriteLine(/* Output */ !b); // True 
-Console.WriteLine(/* Output */ b || true); // True 
-Console.WriteLine(/* Output */ (5 > 7) ^ (a == b)); // False 
+Console.WriteLine( a && b); // False 
+Console.WriteLine( a || b); // True 
+Console.WriteLine( !b); // True 
+Console.WriteLine( b || true); // True 
+Console.WriteLine( (5 > 7) ^ (a == b)); // False 
 
 1.4.2.5 Bitwise Operators
 A bitwise operator is an operator that acts on the binary representation of numeric types. In computers all the data and particularly numerical data is represented as a series of ones and zeros. The binary numeral system is used for this purpose. For example, number 55 in the binary numeral system is represented as 00110111. 
@@ -555,13 +555,13 @@ Here is an example of using bitwise operators. The binary representation of the 
 Code Example
 byte a = 3; // 0000 0011 = 3 
 byte b = 5; // 0000 0101 = 5 
-Console.WriteLine(/* Output */ a | b); // 0000 0111 = 7 
-Console.WriteLine(/* Output */ a & b); // 0000 0001 = 1 
-Console.WriteLine(/* Output */ a ^ b); // 0000 0110 = 6 
-Console.WriteLine(/* Output */ ~a & b); // 0000 0100 = 4 
-Console.WriteLine(/* Output */ a << 1); // 0000 0110 = 6 
-Console.WriteLine(/* Output */ a << 2); // 0000 1100 = 12 
-Console.WriteLine(/* Output */ a >> 1); // 0000 0001 = 1 
+Console.WriteLine( a | b); // 0000 0111 = 7 
+Console.WriteLine( a & b); // 0000 0001 = 1 
+Console.WriteLine( a ^ b); // 0000 0110 = 6 
+Console.WriteLine( ~a & b); // 0000 0100 = 4 
+Console.WriteLine( a << 1); // 0000 0110 = 6 
+Console.WriteLine( a << 2); // 0000 1100 = 12 
+Console.WriteLine( a >> 1); // 0000 0001 = 1 
  
 In the example we first create and initialize the values of two variables a and b. Then we print on the console the results of some bitwise operations on the two variables. The first operation that we apply is "OR". The example shows that for all positions where there was 1 in the binary representation of the variables a and b, there is also 1 in the result. The second operation is "AND". The result of the operation contains 1 only in the right-most bit, because the only place where a and b have 1 at the same time is their right-most bit. Exclusive "OR" returns ones only in positions where a and b have different values in their binary bits. Finally, the logical negation and bitwise shifting: left and right, are illustrated.
 1.4.2.6 Type Conversion
@@ -579,29 +579,29 @@ Implicit (hidden) type conversion is possible only when there is no risk of data
  
 Code Example
 int myInt = 5; 
-Console.WriteLine(/* Output */ myInt); // 5 
+Console.WriteLine( myInt); // 5 
 long myLong = myInt; 
-Console.WriteLine(/* Output */ myLong); // 5 
-Console.WriteLine(/* Output */ myLong + myInt); // 10 
+Console.WriteLine( myLong); // 5 
+Console.WriteLine( myLong + myInt); // 10 
  
-In the example we create a variable myInt of type int and assign it the value 5. After that we create a variable myLong of type long and assign it the value contained in myInt. The value stored in myLong is automatically converted from type int to type long. Finally, we output the result from adding the two variables. Because the variables are from different types they are automatically converted to the type with the greater range, i.e. to type long and the result that is printed on the console is long again. Indeed, the given parameter to the method Console.WriteLine(/* Output */ ) is of type long, but inside the method it will be converted again, this time to type string, so it can be printed on the console. This transformation is performed by the method Long.ToString().
+In the example we create a variable myInt of type int and assign it the value 5. After that we create a variable myLong of type long and assign it the value contained in myInt. The value stored in myLong is automatically converted from type int to type long. Finally, we output the result from adding the two variables. Because the variables are from different types they are automatically converted to the type with the greater range, i.e. to type long and the result that is printed on the console is long again. Indeed, the given parameter to the method Console.WriteLine( ) is of type long, but inside the method it will be converted again, this time to type string, so it can be printed on the console. This transformation is performed by the method Long.ToString().
  
 B.        Explicit Type Conversion
 Explicit type conversion is used whenever there is a possibility of data loss. When converting floating point type to integer type there is always a loss of data coming from the elimination of the fractional part and an explicit conversion is obligatory (e.g. double to long). To make such a conversion it is necessary to use the operator for data conversion (type). There may also be data loss when converting a type with a wider range to type with a narrower one (double to float or long to int). The following example illustrates the use of explicit type conversion and data loss that may occur in some cases:
  
 Code Example
 double myDouble = 5.1d; 
-Console.WriteLine(/* Output */ myDouble); // 5.1 
+Console.WriteLine( myDouble); // 5.1 
  
 long myLong = (long)myDouble; 
-Console.WriteLine(/* Output */ myLong); // 5 
+Console.WriteLine( myLong); // 5 
  
 myDouble = 5e9d; // 5 * 10^9 
-Console.WriteLine(/* Output */ myDouble); // 5000000000 
+Console.WriteLine( myDouble); // 5000000000 
  
 int myInt = (int)myDouble; 
-Console.WriteLine(/* Output */ myInt); // -2147483648 
-Console.WriteLine(/* Output */ int.MinValue); // -2147483648 
+Console.WriteLine( myInt); // -2147483648 
+Console.WriteLine( int.MinValue); // -2147483648 
  
  
 In the first line of the example we assign a value 5.1 to the variable myDouble. After we convert (explicitly) to type long using the operator (long) and print on the console the variable myLong we see that the variable has lost its fractional part, because long is an integer. Then we assign to the real double precision variable myDouble the value 5 billion. Finally, we convert myDouble to int by the operator (int) and print variable myInt. The result is the same like when we print int.MinValue because myDouble contains a value bigger than the range of int.
@@ -615,12 +615,12 @@ int a = 5; 
 int b = 7; 
  
 string sum = "Sum = " + (a + b); 
-Console.WriteLine(/* Output */ sum); 
+Console.WriteLine( sum); 
  
 String incorrect = "Sum = " + a + b; 
-Console.WriteLine(/* Output */ incorrect); 
+Console.WriteLine( incorrect); 
  
-Console.WriteLine(/* Output */  
+Console.WriteLine(  
 "Perimeter = " + 2 * (a + b) + ". Area = " + (a * b) + "."); 
  
  
@@ -638,12 +638,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire programming skills in core C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 1, 2 & 3
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 1.5 Variables
 A variable is a container of information, which can change its value during the cause of program execution. It is a named area of memory, which stores a value from a particular data type, and that area of memory is accessible in the program by its name. It provides means for storing information, retrieving the stored information, and modifying the stored information. In C# programming, you will use variables to store and process information all the time. 
 Variables are characterized by name (identifier), for example age; type (of the information preserved in them), for example int; value (stored information), for example 25.
@@ -722,12 +721,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire programming skills in core C#
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 5 & 6
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 2.1 Introduction
 In this week we will discuss control structures in C# and give corresponding examples to demonstrate how they work. We will also discuss various relational operators in C# also give the corresponding examples to demonstrate them.
 
@@ -754,7 +752,7 @@ The expression in the brackets which follows the keyword if must return the Bo
 Code Example
 static void Main() 
 { 
-Console.WriteLine(/* Output */ "Enter two numArray."); 
+Console.WriteLine( "Enter two numArray."); 
 Console.Write("Enter first number: "); 
 int firstNumber = int.Parse(Console.ReadLine()); 
 Console.Write("Enter second number: "); 
@@ -764,7 +762,7 @@ if (secondNumber > firstNumber) 
 { 
 biggerNumber = secondNumber; 
 } 
-Console.WriteLine(/* Output */ "The bigger number is: {0}", biggerNumber); 
+Console.WriteLine( "The bigger number is: {0}", biggerNumber); 
 } 
  
  
@@ -797,11 +795,11 @@ static void Main() 
 int x = 2; 
 if (x > 3) 
 { 
-Console.WriteLine(/* Output */ "x is greater than 3"); 
+Console.WriteLine( "x is greater than 3"); 
 } 
 else 
 { 
-Console.WriteLine(/* Output */ "x is not greater than 3"); 
+Console.WriteLine( "x is not greater than 3"); 
 } 
 } 
  
@@ -820,17 +818,17 @@ int first = 5; 
 int second = 3; 
 if (first == second) 
 { 
-Console.WriteLine(/* Output */ "These two numArray are equal."); 
+Console.WriteLine( "These two numArray are equal."); 
 } 
 else 
 { 
 if (first > second) 
 { 
-Console.WriteLine(/* Output */ "The first number is greater."); 
+Console.WriteLine( "The first number is greater."); 
 } 
 else 
 { 
-Console.WriteLine(/* Output */ "The second number is greater."); 
+Console.WriteLine( "The second number is greater."); 
 } 
 } 
  
@@ -874,14 +872,14 @@ case 4: 
 case 6: 
 case 8: 
 case 10: 
-Console.WriteLine(/* Output */ "The number is not prime!"); break; 
+Console.WriteLine( "The number is not prime!"); break; 
 case 2: 
 case 3: 
 case 5: 
 case 7: 
-Console.WriteLine(/* Output */ "The number is prime!"); break; 
+Console.WriteLine( "The number is prime!"); break; 
 default: 
-Console.WriteLine(/* Output */ "Unknown number!"); break; 
+Console.WriteLine( "Unknown number!"); break; 
 } 
  
  
@@ -920,7 +918,7 @@ do 
 factorial *= n; 
 n--; 
 } while (n > 0); 
-Console.WriteLine(/* Output */ "n! = " + factorial);  
+Console.WriteLine( "n! = " + factorial);  
  
  
  At the beginning we start with a result of 1 and multiply consecutively the result at each iteration by n, and reduce n by one unit, until n reaches 0. This gives us the product n*(n-1)*…*1. Finally, we print the result on the console. This algorithm always performs at least one multiplication and that’s why it will not work properly when n ≤ 0. 
@@ -984,7 +982,7 @@ for (int col = 1; col <= row; col++) 
 { 
 Console.Write(col + " "); 
 } 
-Console.WriteLine(/* Output */ ); 
+Console.WriteLine( ); 
 }     
  
  
@@ -1016,7 +1014,7 @@ foreach (int i in numArray) 
 { 
 Console.Write(" " + i); 
 } 
-Console.WriteLine(/* Output */ ); 
+Console.WriteLine( ); 
 string[] towns = { "London", "Paris", "Milan", "New York" }; 
 foreach (string town in towns) 
 { 
@@ -1056,7 +1054,7 @@ int counter = 0; 
 while (counter <= 9) 
 { 
 // Print the counter value 
-Console.WriteLine(/* Output */ "Number : " + counter); 
+Console.WriteLine( "Number : " + counter); 
 // Increment the counter 
 counter++; 
 } 
@@ -1100,7 +1098,7 @@ Code Example
 5.           break;  
 6.       //...     
 7.   }  
-## 8.   Console.WriteLine(/* Output */ "break");
+## 8.   Console.WriteLine( "break");
  
 2.2.3.3       Continue Statement
 The continue statement (shown in example below) is used to jump to the end of the loop immediately and process the next iteration of the loop.
@@ -1118,7 +1116,7 @@ Code Example
 10.      //...     
 11.    
 12.      if (x == 5)  
-## 13.             Console.WriteLine(/* Output */ "continue");
+## 13.             Console.WriteLine( "continue");
 14.      //...     
 15.  }  
  
@@ -1139,7 +1137,8 @@ Code Example
  
 Case study
 Case Study 1: E-Commerce Order Processing System
-Scenario: You are tasked with developing a simple order processing system for an e-commerce platform. The system needs to apply different discounts based on certain conditions, check the stock availability, and ensure that the payment process is completed successfully.
+Scenario:
+You are tasked with developing a simple order processing system for an e-commerce platform. The system needs to apply different discounts based on certain conditions, check the stock availability, and ensure that the payment process is completed successfully.
 Control Structures Used:
 	-	If-Else Statements
 	-	Switch Statement
@@ -1156,7 +1155,7 @@ public class OrderProcessor
         // Check if the product exists and quantity is available
         if (productId < 1 || quantity < 1)
         {
-            Console.WriteLine(/* Output */ "Invalid product or quantity.");
+            Console.WriteLine( "Invalid product or quantity.");
             return 0;
         }
 
@@ -1177,14 +1176,14 @@ public class OrderProcessor
         int stock = GetProductStock(productId);
         if (quantity > stock)
         {
-            Console.WriteLine(/* Output */ "Not enough stock available.");
+            Console.WriteLine( "Not enough stock available.");
             return 0;
         }
 
         // Check if payment was successful
         if (!isPaymentSuccessful)
         {
-            Console.WriteLine(/* Output */ "Payment failed.");
+            Console.WriteLine( "Payment failed.");
             return 0;
         }
 
@@ -1212,15 +1211,15 @@ public class MainProgram
         
         // Case 1: Valid order with discount
         double price1 = processor.ProcessOrder(1, 6, true);
-        Console.WriteLine(/* Output */ $"Total price: {price1:C}");
+        Console.WriteLine( $"Total price: {price1:C}");
 
         // Case 2: Invalid order (out of stock)
         double price2 = processor.ProcessOrder(1, 25, true);
-        Console.WriteLine(/* Output */ $"Total price: {price2:C}");
+        Console.WriteLine( $"Total price: {price2:C}");
 
         // Case 3: Payment failure
         double price3 = processor.ProcessOrder(1, 6, false);
-        Console.WriteLine(/* Output */ $"Total price: {price3:C}");
+        Console.WriteLine( $"Total price: {price3:C}");
     }
 }
 Explanation:
@@ -1230,7 +1229,8 @@ Explanation:
 	-	For Loop could be employed to iterate over a list of products for bulk processing, like applying discounts across multiple products.
 
 Case Study 2: Student Grade Classification
-Scenario: You are developing a student grading system where you need to categorize students into different grade categories based on their exam scores. The system should print out appropriate messages for students who pass or fail, and those who are eligible for special honors.
+Scenario:
+You are developing a student grading system where you need to categorize students into different grade categories based on their exam scores. The system should print out appropriate messages for students who pass or fail, and those who are eligible for special honors.
 Control Structures Used:
 	-	If-Else Statements
 	-	Switch Statement
@@ -1271,7 +1271,7 @@ public class GradeProcessor
         {
             string grade = GetGrade(score);
             string honorStatus = GetHonorStatus(score);
-            Console.WriteLine(/* Output */ $"Score: {score}, Grade: {grade}, Status: {honorStatus}");
+            Console.WriteLine( $"Score: {score}, Grade: {grade}, Status: {honorStatus}");
         }
     }
 }
@@ -1305,12 +1305,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire programming skills in core C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 8 & 13
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 3.1 Introduction
 When we write a program, we describe step-by-step what the computer must do and in most of the cases we rely that the program will execute normally. Indeed, most of the time, programs are following this normal pattern, but there are some exceptions. Let’s say we want to read a file and display its contents on the screen. Let’s assume the file is located on a remote server and during the process of reading it, the connection goes down. The file then will be only partially loaded. The program will not be able to execute normally and show file’s contents on the screen. In this case, we have an exception from the normal (and correct) program execution and this exception must be reported to the user and/or the administrator.
 
@@ -1347,7 +1346,7 @@ int i2 = 2147483647 + ten;
 // By default, the overflow in the previous statement also does
 // not cause a run-time exception. The following line displays
 // -2,147,483,639 as the sum of 2,147,483,647 and 10.
-Console.WriteLine(/* Output */ i2);
+Console.WriteLine( i2);
  
  
  By default, these non-constant expressions are not checked for overflow at run time either, and they do not raise overflow exceptions. The above example displays -2,147,483,639 as the sum of two positive integers.
@@ -1358,13 +1357,13 @@ Code Example
 // OverflowException error is raised.
  
 // Checked expression.
-Console.WriteLine(/* Output */ checked(2147483647 + ten));
+Console.WriteLine( checked(2147483647 + ten));
  
 // Checked block.
 checked
 {
     int i3 = 2147483647 + ten;
-    Console.WriteLine(/* Output */ i3);
+    Console.WriteLine( i3);
 }
  
  
@@ -1380,7 +1379,7 @@ Code Example
 	-	8.             checked  
 	-	9.             {  
                 int val = int.MaxValue;  
-               Console.WriteLine(/* Output */ val + 2);  
+               Console.WriteLine( val + 2);  
            }  
         }  
     }  
@@ -1416,7 +1415,7 @@ Code Example
 	-	8.             unchecked  
 	-	9.             {  
                 int val = int.MaxValue;  
-                Console.WriteLine(/* Output */ val + 2);  
+                Console.WriteLine( val + 2);  
             }  
         }  
     }  
@@ -1470,7 +1469,8 @@ class MilesPerGallon
 
 Case Study
 Case Study 1: Handling Invalid User Input in a Login System
-Scenario: In a login system, the user is prompted to enter their username and password. If the username or password is empty, an exception should be thrown. Additionally, if the entered username does not match the stored username, a LoginException should be raised.
+Scenario:
+In a login system, the user is prompted to enter their username and password. If the username or password is empty, an exception should be thrown. Additionally, if the entered username does not match the stored username, a LoginException should be raised.
 Exception Handling Used:
 	-	try-catch block to handle input validation and login errors.
 	-	throw to explicitly raise exceptions.
@@ -1494,11 +1494,11 @@ public class UserLoginSystem
         try
         {
             ValidateCredentials(username, password);
-            Console.WriteLine(/* Output */ "Login successful.");
+            Console.WriteLine( "Login successful.");
         }
         catch (LoginException ex)
         {
-            Console.WriteLine(/* Output */ $"Login failed: {ex.Message}");
+            Console.WriteLine( $"Login failed: {ex.Message}");
         }
     }
 
@@ -1558,12 +1558,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire programming skills in core C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 8 & 13
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 3.3 Exceptions Handling Classes
 When you have to throw an exception, you can often use an existing exception type in the .NET Framework instead of implementing a custom exception. You should use a standard exception type under these two conditions:
 	-	You are throwing an exception that is caused by a usage error (that is, by an error in program logic made by the developer who is calling your method). Typically, you would throw an exception such as ArgumentException, ArgumentNullException, InvalidOperationException, or NotSupportedException. The string you supply to the exception object's constructor when instantiating the exception object should describe the error so that the developer can fix it.
@@ -1595,7 +1594,8 @@ Play Video
 An exception is a problem that arises during the execution of a program. A C# exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero. Exceptions provide a way to transfer control from one part of a program to another. C# exception handling is built upon four keywords: try, catch, finally, and throw.
 3.4.1 Try …Catch Block
 
- 
+
+
 A try block identifies a block of code for which particular exceptions is activated. The try block contains set of statements where an exception can occur. It is always followed by a catch block, which handles the exception that occurs in associated try block. A try block must be followed by catch blocks or finally block or both.
  
 Syntax
@@ -1613,7 +1613,7 @@ catch (exception(type) e(object))‏
 Consider the following example, where we create an array of three integers:
 Code Example
 int[] myNumbers = {1, 2, 3}
-Console.WriteLine(/* Output */ myNumber[10]); // error!
+Console.WriteLine( myNumber[10]); // error!
  
  
 The error message will be something like this:
@@ -1627,11 +1627,11 @@ Code Example
 try
 {
   int[] myNumbers = {1, 2, 3};
-  Console.WriteLine(/* Output */ myNumbers[10]);
+  Console.WriteLine( myNumbers[10]);
 }
 catch (Exception e)
 {
-  Console.WriteLine(/* Output */ e.Message);
+  Console.WriteLine( e.Message);
 }
  
  
@@ -1646,11 +1646,11 @@ Code Example
 try
 {
   int[] myNumbers = {1, 2, 3};
-  Console.WriteLine(/* Output */ myNumbers[10]);
+  Console.WriteLine( myNumbers[10]);
 }
 catch (Exception e)
 {
-  Console.WriteLine(/* Output */ "Something went wrong.");
+  Console.WriteLine( "Something went wrong.");
 }
  
  
@@ -1724,7 +1724,7 @@ class GFG { 
  
                 try { 
                     
-                    Console.WriteLine(/* Output */ "Number: " + number[jdx] + 
+                    Console.WriteLine( "Number: " + number[jdx] + 
                                     "\nDivisor: " + divisor[jdx] + 
                                     "\nQuotient: " + number[jdx] / divisor[jdx]); 
                 } 
@@ -1732,7 +1732,7 @@ class GFG { 
                 // Catch block for inner try block 
                 catch (DivideByZeroException) { 
                     
-                    Console.WriteLine(/* Output */ "Inner Try Catch Block"); 
+                    Console.WriteLine( "Inner Try Catch Block"); 
                 } 
             } 
         } 
@@ -1740,7 +1740,7 @@ class GFG { 
         // Catch block for outer try block 
         catch (IndexOutOfRangeException) { 
             
-            Console.WriteLine(/* Output */ "Outer Try Catch Block"); 
+            Console.WriteLine( "Outer Try Catch Block"); 
             
         } 
     } 
@@ -1793,22 +1793,23 @@ Code Example
 try
 {
   int[] myNumbers = {1, 2, 3};
-  Console.WriteLine(/* Output */ myNumbers[10]);
+  Console.WriteLine( myNumbers[10]);
 }
 catch (Exception e)
 {
-  Console.WriteLine(/* Output */ "Something went wrong.");
+  Console.WriteLine( "Something went wrong.");
 }
 finally
 {
-  Console.WriteLine(/* Output */ "The 'try catch' is finished.");
+  Console.WriteLine( "The 'try catch' is finished.");
 }
  
  
 The output will be:
  
 Code Example
-     Something went wrong.  The 'try catch' is finished
+     Something went wrong.
+ The 'try catch' is finished
  
  
 3.4.4 Throw Keyword
@@ -1829,7 +1830,7 @@ static void checkAge(int age)
   }
   else
   {
-    Console.WriteLine(/* Output */ "Access granted - You are old enough!");
+    Console.WriteLine( "Access granted - You are old enough!");
   }
 }
  
@@ -1859,7 +1860,8 @@ Access granted - You are old enough!
 During this week, we discussed exception handling in C#. The two types of exception handling were discussed with the associate examples. We also discussed the exception handling classes followed by exception handling methods and the corresponding examples to demonstrate how they work. Finally, we have prepared exercises to strengthen our knowledge of the material in this unit.
 Case Study
 Case Study 2: File Handling with Exception Handling
-Scenario: A file processing application attempts to read a file. If the file doesn't exist or there are any issues while reading the file, an exception should be caught, and the user should be informed about the error. Additionally, the system should ensure that the file is properly closed, even if an error occurs.
+Scenario:
+A file processing application attempts to read a file. If the file doesn't exist or there are any issues while reading the file, an exception should be caught, and the user should be informed about the error. Additionally, the system should ensure that the file is properly closed, even if an error occurs.
 Exception Handling Used:
 	-	try-catch-finally block to manage resources and handle exceptions gracefully.
 	-	FileNotFoundException and IOException for specific errors related to file operations.
@@ -1876,23 +1878,23 @@ public class FileProcessor
         {
             // Try to open and read the file
             string content = File.ReadAllText(filePath);
-            Console.WriteLine(/* Output */ "File content:");
-            Console.WriteLine(/* Output */ content);
+            Console.WriteLine( "File content:");
+            Console.WriteLine( content);
         }
         catch (FileNotFoundException ex)
         {
             // Catch file not found errors
-            Console.WriteLine(/* Output */ $"Error: File not found. {ex.Message}");
+            Console.WriteLine( $"Error: File not found. {ex.Message}");
         }
         catch (IOException ex)
         {
             // Catch general IO exceptions
-            Console.WriteLine(/* Output */ $"Error: Issue reading the file. {ex.Message}");
+            Console.WriteLine( $"Error: Issue reading the file. {ex.Message}");
         }
         finally
         {
             // Cleanup or resource release can go here
-            Console.WriteLine(/* Output */ "File operation completed.");
+            Console.WriteLine( "File operation completed.");
         }
     }
 }
@@ -1919,7 +1921,8 @@ Explanation:
 	-	Specific exceptions: FileNotFoundException and IOException are used to catch errors specific to file-related operations.
 
 Case Study 3: Division by Zero Handling
-Scenario: In a calculator application, the user can perform division operations. If the user attempts to divide by zero, an exception should be thrown and handled appropriately to prevent the program from crashing.
+Scenario:
+In a calculator application, the user can perform division operations. If the user attempts to divide by zero, an exception should be thrown and handled appropriately to prevent the program from crashing.
 Exception Handling Used:
 	-	try-catch block to catch a DivideByZeroException.
 	-	throw to raise an exception explicitly when dividing by zero.
@@ -1944,7 +1947,7 @@ public class Calculator
         }
         catch (DivideByZeroException ex)
         {
-            Console.WriteLine(/* Output */ $"Error: {ex.Message}");
+            Console.WriteLine( $"Error: {ex.Message}");
             return double.NaN;  // Return Not-a-Number to indicate an error in division
         }
     }
@@ -1957,13 +1960,13 @@ public class MainProgram
         Calculator calculator = new Calculator();
 
         // Case 1: Valid division
-        Console.WriteLine(/* Output */ "Result: " + calculator.Divide(10, 2));
+        Console.WriteLine( "Result: " + calculator.Divide(10, 2));
 
         // Case 2: Division by zero
-        Console.WriteLine(/* Output */ "Result: " + calculator.Divide(10, 0));
+        Console.WriteLine( "Result: " + calculator.Divide(10, 0));
 
         // Case 3: Valid division
-        Console.WriteLine(/* Output */ "Result: " + calculator.Divide(25, 5));
+        Console.WriteLine( "Result: " + calculator.Divide(25, 5));
     }
 }
 Explanation:
@@ -1983,12 +1986,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire Object Oriented Skills in C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 4, 10, 12
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 4.1 Introduction
 In this week we will familiarize ourselves with some key concept and the principles of object-oriented programming: inheritance, interface implementation, abstraction of data and behaviour, encapsulation of data and class implementation and polymorphism. We will familiarize ourselves with UML and its role in object-oriented modeling. We will briefly discuss design patterns and illustrate some of those that are widely used in practice. Finally, we have prepared exercises to strengthen our knowledge of the material in this week.
 4.1.1 Some key Concept
@@ -2034,7 +2036,7 @@ class Car 
   static void Main(string[] args)
   {
     Car myObj = new Car();
-    Console.WriteLine(/* Output */ myObj.color);
+    Console.WriteLine( myObj.color);
   }
 }
  
@@ -2057,7 +2059,7 @@ class Car
   static void Main(string[] args)
   {
     Car Ford = new Car();  // Create an object of the Car Class (this will call the constructor)
-    Console.WriteLine(/* Output */ Ford.model);  // Print the value of model
+    Console.WriteLine( Ford.model);  // Print the value of model
   }
 }
  
@@ -2085,7 +2087,7 @@ class Car
   static void Main(string[] args)
   {
     Car Ford = new Car("Mustang", "Red", 1969);
-    Console.WriteLine(/* Output */ Ford.colour + " " + Ford.year + " " + Ford.model);
+    Console.WriteLine( Ford.colour + " " + Ford.year + " " + Ford.model);
   }
 }
  
@@ -2120,7 +2122,7 @@ Code Example
  
 static void MyMethod() 
 {
-  Console.WriteLine(/* Output */ "I just got executed!");
+  Console.WriteLine( "I just got executed!");
 }
  
 static void Main(string[] args)
@@ -2135,7 +2137,7 @@ Information can be passed to methods as parameter. Parameters act as variables i
 Code Example
 static void MyMethod(string fname) 
 {
-  Console.WriteLine(/* Output */ fname + " Refsnes");
+  Console.WriteLine( fname + " Refsnes");
 }
  
 static void Main(string[] args)
@@ -2155,7 +2157,7 @@ You can have as many parameters as you like, example:
 Code Example
 static void MyMethod(string fname, int age) 
 {
-  Console.WriteLine(/* Output */ fname + " is " + age);
+  Console.WriteLine( fname + " is " + age);
 }
  
 static void Main(string[] args)
@@ -2179,7 +2181,7 @@ static int MyMethod(int x) 
 }
 static void Main(string[] args)
 {
-  Console.WriteLine(/* Output */ MyMethod(3));
+  Console.WriteLine( MyMethod(3));
 }
 // Outputs 8 (5 + 3)
  
@@ -2210,8 +2212,8 @@ static void Main(string[] args)
 {
   int myNum1 = PlusMethodInt(8, 5);
   double myNum2 = PlusMethodDouble(4.3, 6.26);
-  Console.WriteLine(/* Output */ "Int: " + myNum1);
-  Console.WriteLine(/* Output */ "Double: " + myNum2);
+  Console.WriteLine( "Int: " + myNum1);
+  Console.WriteLine( "Double: " + myNum2);
 }
  
  
@@ -2222,14 +2224,14 @@ Code Example
 using System;  
 public class Animal{  
     public virtual void eat(){  
-        Console.WriteLine(/* Output */ "Eating...");  
+        Console.WriteLine( "Eating...");  
     }  
 }  
 public class Dog: Animal  
 {  
     public override void eat()  
     {  
-        Console.WriteLine(/* Output */ "Eating bread...");  
+        Console.WriteLine( "Eating bread...");  
     }  
 }  
 public class TestOverriding  
@@ -2277,11 +2279,11 @@ public class Book
     // Method to display book details
     public void DisplayDetails()
     {
-        Console.WriteLine(/* Output */ $"Title: {Title}");
-        Console.WriteLine(/* Output */ $"Author: {Author}");
-        Console.WriteLine(/* Output */ $"ISBN: {ISBN}");
-        Console.WriteLine(/* Output */ $"Published Year: {PublicationYear}");
-        Console.WriteLine(/* Output */ $"Availability: {(IsAvailable ? "Available" : "Not Available")}");
+        Console.WriteLine( $"Title: {Title}");
+        Console.WriteLine( $"Author: {Author}");
+        Console.WriteLine( $"ISBN: {ISBN}");
+        Console.WriteLine( $"Published Year: {PublicationYear}");
+        Console.WriteLine( $"Availability: {(IsAvailable ? "Available" : "Not Available")}");
     }
 }
 
@@ -2294,7 +2296,7 @@ public class Library
     public void AddBook(Book book)
     {
         books.Add(book);
-        Console.WriteLine(/* Output */ $"Book '{book.Title}' added to the library.");
+        Console.WriteLine( $"Book '{book.Title}' added to the library.");
     }
 
     // Method to borrow a book
@@ -2304,11 +2306,11 @@ public class Library
         if (book != null && book.IsAvailable)
         {
             book.IsAvailable = false;
-            Console.WriteLine(/* Output */ $"You borrowed '{book.Title}'.");
+            Console.WriteLine( $"You borrowed '{book.Title}'.");
         }
         else
         {
-            Console.WriteLine(/* Output */ "Sorry, the book is either unavailable or doesn't exist.");
+            Console.WriteLine( "Sorry, the book is either unavailable or doesn't exist.");
         }
     }
 
@@ -2319,11 +2321,11 @@ public class Library
         if (book != null && !book.IsAvailable)
         {
             book.IsAvailable = true;
-            Console.WriteLine(/* Output */ $"You returned '{book.Title}'.");
+            Console.WriteLine( $"You returned '{book.Title}'.");
         }
         else
         {
-            Console.WriteLine(/* Output */ "Sorry, this book wasn't borrowed or doesn't exist.");
+            Console.WriteLine( "Sorry, this book wasn't borrowed or doesn't exist.");
         }
     }
 
@@ -2333,7 +2335,7 @@ public class Library
         foreach (var book in books)
         {
             book.DisplayDetails();
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 }
@@ -2373,20 +2375,24 @@ public class MainProgram
 }
 Explanation:
 ## 1. Book Class:
-	-	Properties: The Book class contains properties such as Title, Author, ISBN, PublicationYear, and IsAvailable. These define the essential attributes of a book.
-	-	Constructor: The constructor initializes the book's properties. When a book is created, it is set to be available by default (IsAvailable = true).
+	-	Properties:
+The Book class contains properties such as Title, Author, ISBN, PublicationYear, and IsAvailable. These define the essential attributes of a book.
+	-	Constructor:
+The constructor initializes the book's properties. When a book is created, it is set to be available by default (IsAvailable = true).
 	-	Methods:
 	-	DisplayDetails: Prints the book's details, including the availability status.
 	-	Other methods could include methods like UpdateAvailability or similar (although not needed for this basic example).
 ## 2. Library Class:
-	-	Properties: The Library class holds a list of Book objects, representing the collection of books in the library.
+	-	Properties:
+The Library class holds a list of Book objects, representing the collection of books in the library.
 	-	Methods:
 	-	AddBook: Adds a new book to the library's collection.
 	-	BorrowBook: Checks if a book with a given ISBN is available and marks it as unavailable if it is borrowed.
 	-	ReturnBook: Marks a borrowed book as available again.
 	-	DisplayBooks: Displays all the books in the library along with their details.
 ## 3. Program Class:
-	-	Main Program: In the Main method, we instantiate the Library class and create several Book objects. These books are added to the library, and we demonstrate borrowing and returning books by calling the relevant methods.
+	-	Main Program:
+In the Main method, we instantiate the Library class and create several Book objects. These books are added to the library, and we demonstrate borrowing and returning books by calling the relevant methods.
 
 
 	-	4.2 Fundamental Principles of OOP
@@ -2402,12 +2408,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire Object Oriented Skills in C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 4, 10, 12
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 4.2 Fundamental Principles of OOP
 In order for a programming language to be object-oriented, it has to enable working with classes and objects as well as the implementation and use of the fundamental object-oriented principles and concepts: inheritance, abstraction, encapsulation and polymorphism.
 4.2.1 Inheritance
@@ -2417,10 +2422,10 @@ For example, a child includes the properties of its parents. Another example is 
 Code Example
 public class ParentClass {  
     public ParentClass() {  
-        Console.WriteLine(/* Output */ "Parent Constructor.");  
+        Console.WriteLine( "Parent Constructor.");  
     }  
     public void print() {  
-        Console.WriteLine(/* Output */ "I'm a Parent Class.");  
+        Console.WriteLine( "I'm a Parent Class.");  
     }  
 }  
  
@@ -2430,7 +2435,7 @@ The ChildClass can inherit the properties of the ParentClass.
 Code Example
 public class ChildClass: ParentClass {  
     public ChildClass() {  
-        Console.WriteLine(/* Output */ "Child Constructor.");  
+        Console.WriteLine( "Child Constructor.");  
     }  
     public static void Main() {  
         ChildClass child = new ChildClass();  
@@ -2450,15 +2455,15 @@ Code Example
 using System;  
    public class Animal  
     {  
-       public void eat() { Console.WriteLine(/* Output */ "Eating..."); }  
+       public void eat() { Console.WriteLine( "Eating..."); }  
    }  
    public class Dog: Animal  
    {  
-       public void bark() { Console.WriteLine(/* Output */ "Barking..."); }  
+       public void bark() { Console.WriteLine( "Barking..."); }  
    }  
    public class BabyDog : Dog  
    {  
-       public void weep() { Console.WriteLine(/* Output */ "Weeping..."); }  
+       public void weep() { Console.WriteLine( "Weeping..."); }  
    }  
    class TestInheritance2{  
        public static void Main(string[] args)  
@@ -2500,14 +2505,14 @@ public class Rectangle : Shape  
 {  
     public override void draw()  
     {  
-        Console.WriteLine(/* Output */ "drawing rectangle...");  
+        Console.WriteLine( "drawing rectangle...");  
     }  
 }  
 public class Circle : Shape  
 {  
     public override void draw()  
     {  
-        Console.WriteLine(/* Output */ "drawing circle...");  
+        Console.WriteLine( "drawing circle...");  
     }  
 }  
 public class TestAbstract  
@@ -2541,14 +2546,14 @@ public class Rectangle : Drawable  
 {  
     public void draw()  
     {  
-        Console.WriteLine(/* Output */ "drawing rectangle...");  
+        Console.WriteLine( "drawing rectangle...");  
     }  
 }  
 public class Circle : Drawable  
 {  
     public void draw()  
     {  
-        Console.WriteLine(/* Output */ "drawing circle...");  
+        Console.WriteLine( "drawing circle...");  
     }  
 }  
 public class TestInterface  
@@ -2609,9 +2614,9 @@ namespace AccessSpecifiers  
             student.Name = "Gugu Ruan";  
             student.Email = "MyEamil@pearson.com";  
             // getting values  
-            Console.WriteLine(/* Output */ "ID = "+student.ID);  
-            Console.WriteLine(/* Output */ "Name = "+student.Name);  
-            Console.WriteLine(/* Output */ "Email = "+student.Email);  
+            Console.WriteLine( "ID = "+student.ID);  
+            Console.WriteLine( "Name = "+student.Name);  
+            Console.WriteLine( "Email = "+student.Email);  
         }  
     }  
 }  
@@ -2631,14 +2636,14 @@ Code Example
  using System;  
 public class Animal{  
     public virtual void eat(){  
-        Console.WriteLine(/* Output */ "eating...");  
+        Console.WriteLine( "eating...");  
     }  
 }  
 public class Dog: Animal  
 {  
     public override void eat()  
     {  
-        Console.WriteLine(/* Output */ "eating bread...");  
+        Console.WriteLine( "eating bread...");  
     }  
       
 }  
@@ -2663,14 +2668,14 @@ Code Example
  using System;  
 public class Shape{  
     public virtual void draw(){  
-        Console.WriteLine(/* Output */ "drawing...");  
+        Console.WriteLine( "drawing...");  
     }  
 }  
 public class Rectangle: Shape  
 {  
     public override void draw()  
     {  
-        Console.WriteLine(/* Output */ "drawing rectangle...");  
+        Console.WriteLine( "drawing rectangle...");  
     }  
       
 }  
@@ -2678,7 +2683,7 @@ public class Circle : Shape  
 {  
     public override void draw()  
     {  
-        Console.WriteLine(/* Output */ "drawing circle...");  
+        Console.WriteLine( "drawing circle...");  
     }  
   
 }  
@@ -2728,9 +2733,9 @@ public class Demo {
  
 public class Program {
    public static void Main() {
-      Console.WriteLine(/* Output */ "Multiplication of two numArray: "+Demo.mulDisplay(10, 15));
-      Console.WriteLine(/* Output */ "Multiplication of three numArray: "+Demo.mulDisplay(8, 13, 20));
-      Console.WriteLine(/* Output */ "Multiplication of four numArray: "+Demo.mulDisplay(3, 7, 10, 7));
+      Console.WriteLine( "Multiplication of two numArray: "+Demo.mulDisplay(10, 15));
+      Console.WriteLine( "Multiplication of three numArray: "+Demo.mulDisplay(8, 13, 20));
+      Console.WriteLine( "Multiplication of four numArray: "+Demo.mulDisplay(3, 7, 10, 7));
    }
 }
  
@@ -2768,9 +2773,9 @@ public class Product
     // Method to display product details
     public void DisplayDetails()
     {
-        Console.WriteLine(/* Output */ $"Product: {Name}");
-        Console.WriteLine(/* Output */ $"Price: {Price:C}");
-        Console.WriteLine(/* Output */ $"Stock: {StockQuantity}");
+        Console.WriteLine( $"Product: {Name}");
+        Console.WriteLine( $"Price: {Price:C}");
+        Console.WriteLine( $"Stock: {StockQuantity}");
     }
 
     // Method to reduce stock when a product is bought
@@ -2779,12 +2784,12 @@ public class Product
         if (quantity <= StockQuantity)
         {
             StockQuantity -= quantity;
-            Console.WriteLine(/* Output */ $"Purchased {quantity} {Name}(s).");
+            Console.WriteLine( $"Purchased {quantity} {Name}(s).");
             return true;
         }
         else
         {
-            Console.WriteLine(/* Output */ "Insufficient stock.");
+            Console.WriteLine( "Insufficient stock.");
             return false;
         }
     }
@@ -2800,18 +2805,18 @@ public class Cart
         if (product.Purchase(quantity))
         {
             products.Add(product);
-            Console.WriteLine(/* Output */ $"{quantity} of {product.Name} added to cart.");
+            Console.WriteLine( $"{quantity} of {product.Name} added to cart.");
         }
     }
 
     // Method to display cart contents
     public void DisplayCart()
     {
-        Console.WriteLine(/* Output */ "\nCart Contents:");
+        Console.WriteLine( "\nCart Contents:");
         foreach (var product in products)
         {
             product.DisplayDetails();
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 
@@ -2850,29 +2855,36 @@ public class MainProgram
         cart.DisplayCart();
 
         // Calculate and display total price
-        Console.WriteLine(/* Output */ $"Total Price: {cart.CalculateTotal():C}");
+        Console.WriteLine( $"Total Price: {cart.CalculateTotal():C}");
     }
 }
 Explanation:
 ## 1. Product Class:
-	-	Properties: The Product class has properties such as Name, Price, and StockQuantity to represent product details.
-	-	Constructor: The constructor initializes the product's name, price, and stock quantity.
+	-	Properties:
+The Product class has properties such as Name, Price, and StockQuantity to represent product details.
+	-	Constructor:
+The constructor initializes the product's name, price, and stock quantity.
 	-	Methods:
 	-	DisplayDetails: Prints the details of the product, including its price and stock.
 	-	Purchase: Reduces the stock when a product is bought and returns true if successful, false if there is insufficient stock.
 ## 2. Cart Class:
-	-	Properties: The Cart class manages a list of products added to the shopping cart.
+	-	Properties:
+The Cart class manages a list of products added to the shopping cart.
 	-	Methods:
 	-	AddToCart: Adds a product to the cart and updates the stock using the Purchase method from the Product class.
 	-	DisplayCart: Displays the products in the cart.
 	-	CalculateTotal: Calculates the total price of the products in the cart.
 ## 3. Program Class:
-	-	Main Program: In the Main method, we create Product objects, display their details, add products to the cart, and display the cart's contents along with the total price.
+	-	Main Program:
+In the Main method, we create Product objects, display their details, add products to the cart, and display the cart's contents along with the total price.
 
 Key Concepts:
-	-	Classes & Objects: In both case studies, we use classes to define blueprints for creating objects that represent real-world entities (e.g., Book, Product).
-	-	Properties & Methods: Properties define the attributes of an object, while methods define behaviors or actions an object can perform (e.g., DisplayDetails, Purchase).
-	-	Encapsulation: The internal details of the objects (e.g., how stock is updated) are hidden inside the class, and the objects provide methods to interact with them. This ensures that the user does not need to know how the internal logic works.
+	-	Classes & Objects:
+In both case studies, we use classes to define blueprints for creating objects that represent real-world entities (e.g., Book, Product).
+	-	Properties & Methods:
+Properties define the attributes of an object, while methods define behaviors or actions an object can perform (e.g., DisplayDetails, Purchase).
+	-	Encapsulation:
+The internal details of the objects (e.g., how stock is updated) are hidden inside the class, and the objects provide methods to interact with them. This ensures that the user does not need to know how the internal logic works.
 
 
 	-	4.3 Class Diagram
@@ -2886,12 +2898,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Acquire Object Oriented Skills in C#.
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 4, 10, 12
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 4.3 Class Diagram
 A Class Diagram is one of several types of diagrams defined in UML. UML (Unified Modeling Language) is a notation for visualizing different processes and objects related to software development. Let’s discuss class diagrams.
 What is UML Class Diagram? 
@@ -2943,12 +2954,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Develop the skill of designing Graphical User Interfaces (GUI) and implementing Array Orientation in C#
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 8, 14, 15
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 5.1 Introduction
 In this week we will get familiar with array programming in C#. We will explain what arrays are, how we declare, create, instantiate and use them. We will examine one-dimensional and multidimensional arrays. We will learn different ways to iterate through the array, read from the standard input and write to the standard output. Further, we will implement GUI design in relation to objects, objects behaviours and algorithms using Visual studio IDE. Explain testing, documentation, and comments in C#. Finally, in order to strengthen our knowledge of the material in this unit, we will prepare exercises at the end of the week.
 5.2 C# Arrays
@@ -2993,7 +3003,7 @@ public class ArrayExample  
   //traversing array  
         for (int i = 0; i < myArray.Length; idx++)  
         {  
-            Console.WriteLine(/* Output */ myArray[idx]);  
+            Console.WriteLine( myArray[idx]);  
         }  
     }  
 }  
@@ -3030,7 +3040,7 @@ public class ArrayExample  
         //traversing array  
         for (int i = 0; i < myArray.Length; idx++)  
         {  
-            Console.WriteLine(/* Output */ myArray[idx]);  
+            Console.WriteLine( myArray[idx]);  
         }  
     }  
 }  
@@ -3058,7 +3068,7 @@ public class ArrayExample  
         //traversing array  
         foreach (int i in myArray)  
         {  
-            Console.WriteLine(/* Output */ idx);  
+            Console.WriteLine( idx);  
         }  
     }  
 }  
@@ -3098,7 +3108,7 @@ public class MultiArrayExample  
             for(int j=0;j<3;jdx++){  
                 Console.Write(myArray[i,j]+" ");  
             }  
-            Console.WriteLine(/* Output */ );//new line at each row  
+            Console.WriteLine( );//new line at each row  
         }  
     }  
 }  
@@ -3135,7 +3145,7 @@ public class MultiArrayExample  
             for(int j=0;j<3;jdx++){  
                 Console.Write(myArray[i,j]+" ");  
             }  
-            Console.WriteLine(/* Output */ );//new line at each row  
+            Console.WriteLine( );//new line at each row  
         }  
     }  
 }  
@@ -3183,7 +3193,7 @@ public class JaggedArrayTest  
             {  
                 System.Console.Write(myArray[idx][jdx]+" ");  
             }  
-            System.Console.WriteLine(/* Output */ );  
+            System.Console.WriteLine( );  
         }  
     }  
 }  
@@ -3222,7 +3232,7 @@ Code Example
             {  
                 System.Console.Write(myArray[idx][jdx]+" ");  
             }  
-            System.Console.WriteLine(/* Output */ );  
+            System.Console.WriteLine( );  
         }  
     }  
 }  
@@ -3279,7 +3289,7 @@ public class GradeManagement
     // Method to display all grades
     public static void DisplayGrades(int[,] grades)
     {
-        Console.WriteLine(/* Output */ "Student Grades:");
+        Console.WriteLine( "Student Grades:");
         for (int idx = 0; idx < grades.GetLength(0); idx++)
         {
             Console.Write($"Student {i + 1}: ");
@@ -3287,14 +3297,14 @@ public class GradeManagement
             {
                 Console.Write(grades[i, j] + " ");
             }
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 
     // Method to calculate and display the average grade for each student
     public static void CalculateAverageGrades(int[,] grades)
     {
-        Console.WriteLine(/* Output */ "\nAverage Grades:");
+        Console.WriteLine( "\nAverage Grades:");
         for (int idx = 0; idx < grades.GetLength(0); idx++)
         {
             int sum = 0;
@@ -3303,14 +3313,14 @@ public class GradeManagement
                 sum += grades[i, j];
             }
             double average = sum / (double)grades.GetLength(1);
-            Console.WriteLine(/* Output */ $"Student {i + 1}: {average:F2}");
+            Console.WriteLine( $"Student {i + 1}: {average:F2}");
         }
     }
 
     // Method to display the highest grade in each subject
     public static void DisplayHighestGrades(int[,] grades)
     {
-        Console.WriteLine(/* Output */ "\nHighest Grades per Subject:");
+        Console.WriteLine( "\nHighest Grades per Subject:");
         for (int jdx = 0; jdx < grades.GetLength(1); jdx++)
         {
             int highestGrade = grades[0, j];
@@ -3321,7 +3331,7 @@ public class GradeManagement
                     highestGrade = grades[i, j];
                 }
             }
-            Console.WriteLine(/* Output */ $"Subject {j + 1}: {highestGrade}");
+            Console.WriteLine( $"Subject {j + 1}: {highestGrade}");
         }
     }
 }
@@ -3374,11 +3384,11 @@ public class EmployeeShiftScheduling
     // Method to display the shift schedule
     public static void DisplayShiftSchedule(string[,,] shifts)
     {
-        Console.WriteLine(/* Output */ "Employee Shift Schedule for the Week:");
+        Console.WriteLine( "Employee Shift Schedule for the Week:");
 
         for (int day = 0; day < shifts.GetLength(0); day++)
         {
-            Console.WriteLine(/* Output */ $"Day {day + 1}:");
+            Console.WriteLine( $"Day {day + 1}:");
             for (int shift = 0; shift < shifts.GetLength(1); shift++)
             {
                 Console.Write($"Shift {shift + 1}: ");
@@ -3386,26 +3396,26 @@ public class EmployeeShiftScheduling
                 {
                     Console.Write(shifts[day, shift, emp] + " ");
                 }
-                Console.WriteLine(/* Output */ );
+                Console.WriteLine( );
             }
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 
     // Method to count how many employees are working each shift per day
     public static void CountEmployeesPerShift(string[,,] shifts)
     {
-        Console.WriteLine(/* Output */ "Number of Employees Working Each Shift Per Day:");
+        Console.WriteLine( "Number of Employees Working Each Shift Per Day:");
         
         for (int day = 0; day < shifts.GetLength(0); day++)
         {
-            Console.WriteLine(/* Output */ $"Day {day + 1}:");
+            Console.WriteLine( $"Day {day + 1}:");
             for (int shift = 0; shift < shifts.GetLength(1); shift++)
             {
                 int employeeCount = shifts.GetLength(2);
-                Console.WriteLine(/* Output */ $"Shift {shift + 1}: {employeeCount} employees");
+                Console.WriteLine( $"Shift {shift + 1}: {employeeCount} employees");
             }
-            Console.WriteLine(/* Output */ );
+            Console.WriteLine( );
         }
     }
 }
@@ -3430,12 +3440,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Develop the ability to write database applications in C#
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapter 22
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 6.1 Introduction
 In this week, you learn how to perform basic database operations using system.data.SqlClient namespace in C#. You will also learn the basic database operations such as INSERT, UPDATE, SELECT and DELETE. Although the target database system is SQL Server Database, the same techniques can be applied to other database systems because the query syntax used is standard SQL that is generally supported by all relational database systems. We will also learn file handling operations in C#. We will explain what a File Stream, the two classes of file stream and how they work. At the end we will strengthen our knowledge of the material in this week with some exercises.
 6.2 Database Operations in C#
@@ -3506,7 +3515,7 @@ class DBConn { 
         // to open the connection 
         conn.Open(); 
  
-        Console.WriteLine(/* Output */ "Connection Open!"); 
+        Console.WriteLine( "Connection Open!"); 
     
         // to close the connection 
         conn.Close(); 
@@ -3915,7 +3924,7 @@ public void GetAllEmployees()
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(/* Output */ $"ID: {reader["EmployeeID"]}, Name: {reader["Name"]}, Department: {reader["Department"]}, Salary: {reader["Salary"]}");
+                Console.WriteLine( $"ID: {reader["EmployeeID"]}, Name: {reader["Name"]}, Department: {reader["Department"]}, Salary: {reader["Salary"]}");
             }
         }
     }
@@ -3976,7 +3985,7 @@ class MainProgram
         // Delete an employee
         empMgmt.DeleteEmployee(1);
 
-        Console.WriteLine(/* Output */ "Operations completed successfully!");
+        Console.WriteLine( "Operations completed successfully!");
     }
 }
 
@@ -4050,7 +4059,7 @@ public void GetAllProducts()
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(/* Output */ $"ID: {reader["ProductID"]}, Name: {reader["ProductName"]}, Price: {reader["Price"]}, Quantity: {reader["Quantity"]}");
+                Console.WriteLine( $"ID: {reader["ProductID"]}, Name: {reader["ProductName"]}, Price: {reader["Price"]}, Quantity: {reader["Quantity"]}");
             }
         }
     }
@@ -4112,7 +4121,7 @@ class MainProgram
         // Delete a product
         productInventory.DeleteProduct(1);
 
-        Console.WriteLine(/* Output */ "Operations completed successfully!");
+        Console.WriteLine( "Operations completed successfully!");
     }
 }
 
@@ -4125,12 +4134,11 @@ Learning outcomes
 By the end of this topic you should be able to:
 	-	Develop the ability to write database applications in C#
 
-Prescribed Reading
 Paul Deitel and Harvey Deitel. 2016. Visual C# How to Program. Sofia, Prentice Hall, ISBN: 9781292153469 Chapters 17
-   
-Not signed in? Click here and then refresh this page.
-Need help? Contact Support
-Please note: You will only be able to access the book on Kortext if you have purchased it with your vossie.net account via the Eduvos eBookstore.
+
+
+
+
 7.1 File Handling
 In programming, a file is used to store the data. The term File Handling refers to the various operations like creating the file, reading from the file, writing to the file, appending the file, etc. There are two basic operation which is mostly used in file handling, they are: reading and writing of the file. The file becomes stream when we open the file for writing and reading. A stream is a sequence of bytes which is used for communication. In C#, System.IO namespace contains classes which handle input and output streams and provide information about file and directory structure. There are two major stream classes that are used for most of the operations in file handling. These classes are StreamWriter class and StreamReader class.
 7.1.1 StreamWriter Class
@@ -4167,7 +4175,7 @@ class GFG { 
             StreamWriter sw = new StreamWriter("C://Test.txt"); 
             
             // To write on the console screen 
-            Console.WriteLine(/* Output */ "Enter the Text that you want to write on File"); 
+            Console.WriteLine( "Enter the Text that you want to write on File"); 
             
             // To read the input from the user 
             string str = Console.ReadLine(); 
@@ -4234,7 +4242,7 @@ class GFG { 
             // geeksforgeeks.txt and opens it 
             StreamReader sr = new StreamReader("C://Test.txt"); 
             
-            Console.WriteLine(/* Output */ "Content of the File"); 
+            Console.WriteLine( "Content of the File"); 
             
             // This is used to specify from where 
             // to start reading input stream 
@@ -4245,7 +4253,7 @@ class GFG { 
             // To read the whole file line by line 
             while (str != null) 
             { 
-                Console.WriteLine(/* Output */ str); 
+                Console.WriteLine( str); 
                 str = sr.ReadLine(); 
             } 
             Console.ReadLine(); 
@@ -4282,10 +4290,10 @@ A user wants to manage personal notes by storing, reading, updating, and deletin
 Directory Structure:
 All notes are stored in a folder called Notes (which should be created beforehand).
 
-│
-├── Note1.txt
-├── Note2.txt
-├── Note3.txt
+
+ Note1.txt
+ Note2.txt
+ Note3.txt
 ...
 C# Code for File Operations:
 ## 1. Create New Note:
@@ -4305,11 +4313,11 @@ public class FileManager
         if (!File.Exists(filePath)) // Ensure the file doesn't already exist
         {
             File.WriteAllText(filePath, content);
-            Console.WriteLine(/* Output */ "Note created successfully.");
+            Console.WriteLine( "Note created successfully.");
         }
         else
         {
-            Console.WriteLine(/* Output */ "A note with this title already exists.");
+            Console.WriteLine( "A note with this title already exists.");
         }
     }
 }
@@ -4324,21 +4332,21 @@ public void ViewAllNotes()
 
         if (noteFiles.Length > 0)
         {
-            Console.WriteLine(/* Output */ "Available notes:");
+            Console.WriteLine( "Available notes:");
             foreach (var note in noteFiles)
             {
                 string noteTitle = Path.GetFileNameWithoutExtension(note);
-                Console.WriteLine(/* Output */ noteTitle);
+                Console.WriteLine( noteTitle);
             }
         }
         else
         {
-            Console.WriteLine(/* Output */ "No notes available.");
+            Console.WriteLine( "No notes available.");
         }
     }
     else
     {
-        Console.WriteLine(/* Output */ "Notes directory not found.");
+        Console.WriteLine( "Notes directory not found.");
     }
 }
 
@@ -4351,12 +4359,12 @@ public void ReadNoteContent(string title)
     if (File.Exists(filePath))
     {
         string content = File.ReadAllText(filePath);
-        Console.WriteLine(/* Output */ $"Content of {title}:");
-        Console.WriteLine(/* Output */ content);
+        Console.WriteLine( $"Content of {title}:");
+        Console.WriteLine( content);
     }
     else
     {
-        Console.WriteLine(/* Output */ "Note not found.");
+        Console.WriteLine( "Note not found.");
     }
 }
 
@@ -4369,11 +4377,11 @@ public void DeleteNote(string title)
     if (File.Exists(filePath))
     {
         File.Delete(filePath);
-        Console.WriteLine(/* Output */ "Note deleted successfully.");
+        Console.WriteLine( "Note deleted successfully.");
     }
     else
     {
-        Console.WriteLine(/* Output */ "Note not found.");
+        Console.WriteLine( "Note not found.");
     }
 }
 
@@ -4396,7 +4404,7 @@ class MainProgram
         // Delete a note
         fileManager.DeleteNote("FirstNote");
 
-        Console.WriteLine(/* Output */ "Operations completed successfully.");
+        Console.WriteLine( "Operations completed successfully.");
     }
 }
 
@@ -4412,10 +4420,10 @@ Directory Structure:
 The reports are stored in a folder called StudentReports.
 
 StudentReports
-│
-├── 12345.txt
-├── 67890.txt
-├── 11223.txt
+
+ 12345.txt
+ 67890.txt
+ 11223.txt
 ...
 C# Code for File Operations:
 ## 1. Create New Report:
@@ -4432,11 +4440,11 @@ public class ReportManager
         if (!File.Exists(filePath)) // Check if the report already exists
         {
             File.WriteAllText(filePath, content);
-            Console.WriteLine(/* Output */ "Report created successfully.");
+            Console.WriteLine( "Report created successfully.");
         }
         else
         {
-            Console.WriteLine(/* Output */ "A report for this student already exists.");
+            Console.WriteLine( "A report for this student already exists.");
         }
     }
 }
@@ -4451,21 +4459,21 @@ public void ViewAllReports()
 
         if (reportFiles.Length > 0)
         {
-            Console.WriteLine(/* Output */ "Available student reports:");
+            Console.WriteLine( "Available student reports:");
             foreach (var report in reportFiles)
             {
                 string studentId = Path.GetFileNameWithoutExtension(report);
-                Console.WriteLine(/* Output */ studentId);
+                Console.WriteLine( studentId);
             }
         }
         else
         {
-            Console.WriteLine(/* Output */ "No reports available.");
+            Console.WriteLine( "No reports available.");
         }
     }
     else
     {
-        Console.WriteLine(/* Output */ "Reports directory not found.");
+        Console.WriteLine( "Reports directory not found.");
     }
 }
 
@@ -4478,12 +4486,12 @@ public void ReadReportContent(string studentId)
     if (File.Exists(filePath))
     {
         string content = File.ReadAllText(filePath);
-        Console.WriteLine(/* Output */ $"Report for student {studentId}:");
-        Console.WriteLine(/* Output */ content);
+        Console.WriteLine( $"Report for student {studentId}:");
+        Console.WriteLine( content);
     }
     else
     {
-        Console.WriteLine(/* Output */ "Report not found.");
+        Console.WriteLine( "Report not found.");
     }
 }
 
@@ -4496,11 +4504,11 @@ public void UpdateReport(string studentId, string newContent)
     if (File.Exists(filePath))
     {
         File.WriteAllText(filePath, newContent);
-        Console.WriteLine(/* Output */ "Report updated successfully.");
+        Console.WriteLine( "Report updated successfully.");
     }
     else
     {
-        Console.WriteLine(/* Output */ "Report not found.");
+        Console.WriteLine( "Report not found.");
     }
 }
 
@@ -4513,11 +4521,11 @@ public void DeleteReport(string studentId)
     if (File.Exists(filePath))
     {
         File.Delete(filePath);
-        Console.WriteLine(/* Output */ "Report deleted successfully.");
+        Console.WriteLine( "Report deleted successfully.");
     }
     else
     {
-        Console.WriteLine(/* Output */ "Report not found.");
+        Console.WriteLine( "Report not found.");
     }
 }
 
@@ -4544,7 +4552,7 @@ class MainProgram
         // Delete a student report
         reportManager.DeleteReport("12345");
 
-        Console.WriteLine(/* Output */ "Operations completed successfully.");
+        Console.WriteLine( "Operations completed successfully.");
     }
 }
 

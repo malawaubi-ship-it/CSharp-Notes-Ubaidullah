@@ -1,50 +1,80 @@
-# C# Data Structures and Algorithms 🚀
+# C# Data Structures and Algorithms
 
-Welcome to my comprehensive C# Data Structures and Algorithms learning repository! This repository contains a complete, chronologically ordered series of notes, concepts, practical coding implementations, and applied assignments. 
+A complete, self-contained reference repository covering core Computer Science concepts implemented in C#.
+This repository contains chronologically ordered study notes spanning from foundational data structures through to
+advanced language features, as well as two applied final assignments.
 
-It serves as both a detailed reference guide and a demonstration of my proficiency with core computer science concepts in C#.
-
-## 📚 Repository Contents
-
-The repository is structured into two main sections: structured learning modules and comprehensive applied assignments.
-
-### 📝 Course Notes Overview (`/Notes`)
-
-The notes carefully progress from fundamental data structures to advanced C# features such as Concurrency, Networking, and XML Processing.
-
-1. **[Data Structures Overview](Notes/01_Data_Structures.md)**
-2. **[Task Scheduler Case Study (Using Queues)](Notes/02_Case_Study_Task_Scheduler_.md)**
-3. **[Introduction to Algorithms](Notes/03_Introduction.md)**
-4. **[Deep Dive into Queues](Notes/04_Introduction_to_Queues.md)**
-5. **[Priority Queues](Notes/05_Priority_Queue.md)**
-6. **[Applied Activities](Notes/06_Activity.md)**
-7. **[Case Studies I](Notes/07_Case_Study.md)**
-8. **[Case Studies II](Notes/08_Case_Study.md)**
-9. **[Relevance and Connections I](Notes/09_Relevance_Connection.md)**
-10. **[Relevance and Connections II](Notes/10_Relevance_Connection.md)**
-11. **[Exploring Graphs](Notes/11_Exploring_Graphs.md)**
-12. **[Stacks Implementation](Notes/12_Stack.md)**
-13. **[Collaborative Project Case Study](Notes/13_Collaborative_Project_Case_Study_Relevance_Connection.md)**
-14. **[Collaborative Projects](Notes/14_Collaborative_Project.md)**
-15. **[Introduction to Generics](Notes/15_Introduction_to_Generics.md)**
-16. **[C# Collections](Notes/16_Introduction_to_CSharp_Collections.md)**
-17. **[Concurrency, Multithreading and Parallelism](Notes/17_Concurrency__Multithreading_and_Parallelism.md)**
-18. **[C# Networking Concepts](Notes/18_CSharp_Networking_Concepts.md)**
-19. **[XML Processing in C#](Notes/19_Xml_Processing_.md)**
-20. **[Video References](Notes/20_Video_Reference.md)**
-
-### 🛠 Applied Assignments (`/Assignments`)
-
-My capstone assignments demonstrating applied, real-world development problems.
-
-- **[ITDCA Final Assignment](Assignments/01_ITDCA_Final_Assignment.md)**
-- **[ITPCA Final Assignment](Assignments/02_ITPCA_Assignment.md)**
+Concepts are introduced in progressive order — from the basics of arrays and linked lists through to
+concurrency, networking, and XML processing — making this suitable as both a revision guide and a
+demonstration of applied programming depth.
 
 ---
 
-## 💻 Tech Stack & Concepts Covered
-- **Language**: C#
-- **Concepts**: Arrays, Linked Lists, Stacks, Queues (and Priority Queues), Graphs, Generic Types
-- **Advanced C#**: Multithreading, Parallel Programming, Asynchronous Programming, Networking, XML Parsing (DOM and LINQ to XML).
+## Repository Structure
 
-*Prepared by Ubaidullah Abdula*
+```
+CSharp-Notes-Ubaidullah/
+    Notes/               Chronological learning modules (01 to 20)
+    Assignments/         Final assessed assignments with full working code
+    README.md            This file
+```
+
+---
+
+## Learning Modules
+
+The notes progress from foundational to advanced concepts. Each module is self-contained and includes
+explanatory text, code examples, and applied case studies.
+
+| Module | Topic |
+|--------|-------|
+| [01](Notes/01_Data_Structures.md) | Data Structures Overview — Arrays, Linked Lists, Stacks, Queues |
+| [02](Notes/02_Case_Study_Task_Scheduler_Queue.md) | Case Study: Task Scheduler Using Queues |
+| [03](Notes/03_Introduction.md) | Introduction to Algorithms |
+| [04](Notes/04_Introduction_to_Queues.md) | Queues — Implementation and Operations |
+| [05](Notes/05_Priority_Queue.md) | Priority Queues and Min-Heap |
+| [06](Notes/06_Activity.md) | Applied Activities |
+| [07](Notes/07_Case_Study_Hashing_and_Dictionaries.md) | Case Study: Hashing, Hash Tables and Dictionaries |
+| [08](Notes/08_Case_Study_Binary_Trees_and_Tree_Traversal.md) | Case Study: Binary Trees and Tree Traversal |
+| [09](Notes/09_Sorting_Algorithms.md) | Sorting Algorithms |
+| [10](Notes/10_Algorithm_Complexity_and_Big_O.md) | Algorithm Complexity and Big O Notation |
+| [11](Notes/11_Graph_Theory_and_Traversal.md) | Graph Theory and Graph Traversal |
+| [12](Notes/12_Stacks_In_Depth.md) | Stacks In Depth |
+| [13](Notes/13_Strings_and_Text_Processing.md) | Strings and Text Processing |
+| [14](Notes/14_Collaborative_Project.md) | Collaborative Project — Applied Case Study |
+| [15](Notes/15_Introduction_to_Generics.md) | Generics in C# |
+| [16](Notes/16_Introduction_to_CSharp_Collections.md) | C# Collections Framework |
+| [17](Notes/17_Concurrency__Multithreading_and_Parallelism.md) | Concurrency, Multithreading, and Parallelism |
+| [18](Notes/18_CSharp_Networking_Concepts.md) | Networking in C# |
+| [19](Notes/19_Xml_Processing_.md) | XML Processing (DOM, SAX, LINQ to XML) |
+| [20](Notes/20_Further_Reading_and_References.md) | Further Reading and References |
+
+---
+
+## Assignments
+
+| Assignment | Topic |
+|------------|-------|
+| [ITDCA Final Assignment](Assignments/01_ITDCA_Final_Assignment.md) | Data Structures — AVL Tree, Priority Queue, QuickSort, JSON |
+| [ITPCA Final Assignment](Assignments/02_ITPCA_Assignment.md) | C# Programming — OOP, LINQ, File I/O |
+
+---
+
+## Technical Concepts Covered
+
+**Data Structures**
+Arrays, Linked Lists, Stacks, Queues, Priority Queues, Hash Tables, Dictionaries, Binary Trees,
+AVL Trees, Red-Black Trees, Binary Heaps, Graphs
+
+**Algorithms**
+Tree Traversal (pre-order, post-order, in-order), Binary Search, QuickSort, Selection Sort,
+Insertion Sort, Hashing
+
+**C# Language Features**
+Generics, Collections (List, Dictionary, HashSet, SortedSet), Concurrency and Multithreading,
+Async/Await and the Task Parallel Library, Networking (TCP/UDP), XML Processing (XmlDocument,
+XmlReader, XDocument/LINQ to XML), String Processing, File I/O, JSON serialisation
+
+**Core CS Theory**
+Big O Notation, Time and Space Complexity, Tree Balancing, Graph Traversal (BFS, DFS),
+Object-Oriented Design Principles

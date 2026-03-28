@@ -4,14 +4,14 @@
 
 By the end of this topic you should be able to:
 learn graphs concepts, its application, adjacency list and matrix, node, edge and graph implementation, depth-first search and breadth-first search, application of Kruskal's and Prim's algorithms, as well as colouring and shortest path.
- 
 
-Prescribed Reading
+
+
 Jamro, M., 2018. C# Data Structures and Algorithms: Explore the possibilities of C# for developing a variety of efficient applications. Packt Publishing Ltd. 
 Page 202 – 257.  
-Time Allocation:
 2 Hours
- 
+
+
 ## 2. Exploring Graphs
 
 Adjacency list: An adjacency list represents a graph as an array of linked lists. The index of the array represents a vertex and each element in its linked list represents the other vertices that form an edge with the vertex.
